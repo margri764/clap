@@ -1,0 +1,21 @@
+
+.example-form {
+    // min-width: 15px;
+    max-width: 15vw;
+    width: 100%;
+    max-height: 10px;
+    font-size: 12px;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+
+  ::ng-deep .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 28px !important;
+  }
+  
+  ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+  }

@@ -1,1 +1,74 @@
-<p>dashboard works!</p>
+
+
+<div  fxLayout="row wrap" style="height: 10vw; border: 1px solid aquamarine; ">
+
+    
+
+    <div  fxLayoutAlign="center" fxFlex="100">
+        
+    <div class="example-form"> 
+         
+              <mat-icon matSuffix>search</mat-icon>
+    </div>
+
+
+   <div> 
+    <form class="example-form" >
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>&nbsp;Buscar</mat-label>
+          <!-- <span matPrefix>+1 &nbsp;</span> -->
+          <input type="text" matInput>
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </form>
+    </div>
+
+    <div class="example-form"> 
+   
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>&nbsp;Registrarse</mat-label>
+              <!-- <span matPrefix>+1 &nbsp;</span> -->
+              <input type="text" matInput>
+              <!-- <mat-icon matSuffix>search</mat-icon> -->
+            </mat-form-field>
+         
+    </div>
+
+    <div class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill" >
+            <mat-label>&nbsp;Iniciar Sesion</mat-label>
+            <input type="text" matInput>
+          </mat-form-field>
+    </div>
+
+  
+
+</div>
+<br><br><br>
+<div  fxFlex="100" fxLayoutAlign="center">
+
+    <mat-toolbar  fxLayoutAlign="space-between center" style="background-color: #4f8dc8; width: 50vw;border-radius: 2em; height: 1.5em;">
+        <!-- <span>Menú</span>
+        <span class="spacer"></span>
+        <button mat-icon-button >
+            <mat-icon>menu</mat-icon>
+        </button> -->
+        <button mat-button style="color: whitesmoke; font-size:medium;">Personas</button>
+  
+        
+        <button mat-button  style="color: whitesmoke; font-size: medium;">Empleos</button>
+        
+        <button mat-button #con style="color: whitesmoke; font-size: medium;" >Empresas</button>
+        <button mat-button #con style="color: whitesmoke; font-size: medium;" >Eventos</button>
+        <button mat-button #con style="color: whitesmoke; font-size: medium;" >Concursos</button>
+
+
+       
+        
+    </mat-toolbar>
+</div>
+
+<!-- end header -->
+</div>
+
+
