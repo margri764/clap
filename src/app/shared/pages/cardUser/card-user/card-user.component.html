@@ -1,0 +1,125 @@
+
+<h1 mat-dialog-title>Mi Perfil </h1>
+<mat-dialog-content>
+<div  fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px" fxFlex="100">
+
+
+    <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form"   >     
+
+        <br> <br> <br>
+        
+        <div fxLayoutAlign="center">
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+        </div>
+        
+        <div fxLayoutAlign="space-between center">  
+        <mat-form-field appearance="outline"> 
+            <mat-label>Nombre y Apellido*</mat-label>
+            <input matInput type="text" required formControlName="name">
+        </mat-form-field> 
+        <mat-error  *ngIf ="validField ('name')">
+          completa este dato
+          </mat-error> 
+             
+
+        <mat-form-field appearance="outline">		
+            <mat-label >Alias</mat-label>
+            <input matInput type="text" required formControlName="alias">
+        </mat-form-field> 
+        <mat-error  *ngIf ="validField ('alias')">
+            completa este dato / no es un formato de email valido
+            </mat-error> 
+        </div>
+        <br>
+        
+        <mat-form-field appearance="outline" style="display: block;">		
+            <mat-label >Titular</mat-label>
+            <input matInput type="text" required formControlName="titular">
+        </mat-form-field> 
+        <mat-error  *ngIf ="validField ('titular')">
+            completa este dato
+        </mat-error> 
+        
+        
+        <br>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Fecha de Nacimiento</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Pais*</mat-label>
+            <mat-select>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Ciudad*</mat-label>
+            <mat-select>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+       
+          <br>  
+   
+        <div fxLayoutAlign="space-between center">  
+        <mat-form-field appearance="outline">		
+            <mat-label >Correo</mat-label>
+            <input matInput type="email" required formControlName="email">
+        </mat-form-field> 
+        <mat-error  *ngIf ="validField ('email')">
+          completa este dato / no es un formato de email valido
+          </mat-error> 
+          
+
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Inicio de actividad laboral</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>  
+        </div> 
+         
+          <br>
+
+
+    <div fxLayoutAlign="center center"> 
+          <mat-form-field appearance="outline" style="">		
+            <mat-label >Pagina Web</mat-label>
+            <input matInput type="text" required formControlName="web">
+        </mat-form-field> 
+        <mat-error  *ngIf ="validField ('web')">
+            completa este dato
+        </mat-error> 
+    </div>
+
+    
+        <br>
+  
+      <br><br><br>
+      <span class="spacer"></span>
+      <div fxLayoutAlign="center center" >
+       
+        <button  mat-raised-button  appearance="outline" type="submit" style=" width: 300px; background-color: black;border-radius: 30px;"><mat-label style="color: blanchedalmond;">Publicar</mat-label></button>
+      </div> 
+  
+      </form>
+
+
+
+ </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
+  </mat-dialog-actions>

@@ -1,6 +1,6 @@
 
 
-<div  fxLayout="row wrap" style="height: 10vw; border: 1px solid aquamarine; ">
+<div  fxLayout="row wrap" style="height: 10vw; border: 2px solid blue;">
 
     
 
@@ -45,30 +45,116 @@
 
 </div>
 <br><br><br>
-<div  fxFlex="100" fxLayoutAlign="center">
 
-    <mat-toolbar  fxLayoutAlign="space-between center" style="background-color: #4f8dc8; width: 50vw;border-radius: 2em; height: 1.5em;">
-        <!-- <span>Menú</span>
-        <span class="spacer"></span>
-        <button mat-icon-button >
-            <mat-icon>menu</mat-icon>
-        </button> -->
-        <button mat-button style="color: whitesmoke; font-size:medium;">Personas</button>
-  
-        
-        <button mat-button  style="color: whitesmoke; font-size: medium;">Empleos</button>
-        
-        <button mat-button #con style="color: whitesmoke; font-size: medium;" >Empresas</button>
-        <button mat-button #con style="color: whitesmoke; font-size: medium;" >Eventos</button>
-        <button mat-button #con style="color: whitesmoke; font-size: medium;" >Concursos</button>
+<!-- ToolBar start-->
+<div  fxFlex="100" fxLayoutAlign="center" style="margin-top: 2em;">
 
+    <mat-toolbar  fxLayoutAlign="space-between center" style="background-color: #61a7e9; width: 50vw;border-radius: 2em; height: 2em;">
 
-       
+        <button mat-button (click)="getPeople()" style="color: black; font-size:medium;"> Personas</button>        
+        <button mat-stroked-button  style="color: black; font-size: medium;">Empleos</button>
+        <button mat-button  style="color: black; font-size: medium;" >Empresas</button>
+        <button mat-button  style="color: black; font-size: medium;" >Eventos</button>
+        <button mat-button  style="color: black; font-size: medium;" >Concursos</button>       
         
     </mat-toolbar>
 </div>
+<!-- ToolBar End -->
+
+
+<!-- se muestran cuando se presiona persona -->
+<div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center" style="margin-top: 3em;" *ngIf="showPeople">
+
+<button mat-raised-button> <b>FILTROS</b></button>
+
+<button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Campos</b>  <mat-icon >expand_more</mat-icon></button>
+<mat-menu #aboveMenu="matMenu" >
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Habilidades</b>  <mat-icon >expand_more</mat-icon></button>
+<mat-menu #aboveMenu="matMenu" >
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Software</b>  <mat-icon >expand_more</mat-icon></button>
+<mat-menu #aboveMenu="matMenu" >
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Idiomas</b>  <mat-icon >expand_more</mat-icon></button>
+<mat-menu #aboveMenu="matMenu" >
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-raised-button> <b>Experiencia</b></button>
+
+<button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Min</b>  <mat-icon >expand_more</mat-icon></button>
+<mat-menu #aboveMenu="matMenu" >
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Max</b>  <mat-icon >expand_more</mat-icon></button>
+<mat-menu #aboveMenu="matMenu" >
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+<button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Contrato</b>  <mat-icon >expand_more</mat-icon></button>
+<mat-menu #aboveMenu="matMenu" >
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
+
+
+<div class="example-button-row">
+  <div class="example-flex-container">
+    <div class="example-button-container">
+      <button mat-fab style="background-color: #61a7e9;" aria-label="Example icon button with a delete icon">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- <button mat-raised-button> <b>BUSCAR</b></button> -->
+</div>
+
+<!-- Chips start -->
+<div fxFlex="100" style="margin-top: 2em;">
+  <mat-form-field class="example-chip-list" appearance="fill">
+    <mat-label>Favorite Fruits</mat-label>
+    <mat-chip-list #chipList aria-label="Fruit selection">
+      <mat-chip *ngFor="let fruit of fruits" (removed)="remove(fruit)">
+        {{fruit.name}}
+        <button matChipRemove>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+      <input placeholder="New fruit..."
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="addOnBlur"
+             (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+  </mat-form-field>  
+</div>
+<!-- Chips end -->
+
+
 
 <!-- end header -->
 </div>
 
+<button mat-button (click)="openDialog()">Launch dialog</button>
 
+<!-- <app-card-user></app-card-user> -->
+<!-- <div style="margin-top: 300px;">
+<app-card-user></app-card-user>
+</div> -->

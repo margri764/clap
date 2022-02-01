@@ -7,6 +7,8 @@ import { Page404Component } from './pages/page404/page404/page404.component';
 import { SharedRoutingModule } from './shared-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CardUserComponent } from './pages/cardUser/card-user/card-user.component';
 
 
 
@@ -15,19 +17,23 @@ import { MaterialModule } from '../material/material/material.module';
     DashboardComponent,
     FooterComponent,
     HomeComponent,
-    Page404Component
+    Page404Component,
+    CardUserComponent
   ],
   imports: [
     CommonModule,
     SharedRoutingModule,
     FlexLayoutModule,
-    MaterialModule
+    MaterialModule,
+    // FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     DashboardComponent,
     FooterComponent,
     HomeComponent,
-    Page404Component
+    Page404Component,
+    CardUserComponent
     
   ]
 })
