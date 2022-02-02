@@ -1,0 +1,20 @@
+.mat-dialog-container {
+    border-radius: 40px !important;
+    flex:1 1 auto;
+  }
+
+  mat-form-field{
+      font-size: 0.8em;
+  }
+
+  mat-label{
+      font-size: 1.3em;
+  }
+
+  mat-error{
+    font-size: 1.5em;
+  }
+
+  .example-spacer{
+    flex:1 1 auto;
+  }

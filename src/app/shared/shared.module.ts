@@ -10,6 +10,7 @@ import { MaterialModule } from '../material/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CardUserComponent } from './pages/cardUser/card-user/card-user.component';
 import { WorkExperienceComponent } from './pages/workExperience/work-experience/work-experience.component';
+import { EducationComponent } from './pages/education/education/education.component';
 
 
 
@@ -20,7 +21,8 @@ import { WorkExperienceComponent } from './pages/workExperience/work-experience/
     HomeComponent,
     Page404Component,
     CardUserComponent,
-    WorkExperienceComponent
+    WorkExperienceComponent,
+    EducationComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,10 @@ import { WorkExperienceComponent } from './pages/workExperience/work-experience/
     FooterComponent,
     HomeComponent,
     Page404Component,
-    CardUserComponent
+    CardUserComponent,
+    EducationComponent,
+    WorkExperienceComponent
+
     
   ]
 })

@@ -4,6 +4,8 @@ import {MatChipInputEvent} from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import { CardUserComponent } from '../../cardUser/card-user/card-user.component';
 import { WorkExperienceComponent } from '../../workExperience/work-experience/work-experience.component';
+import { EducationComponent } from '../../education/education/education.component';
+import { CardJobCreatorComponent } from 'src/app/jobs/pages/cardJobCreator/card-job-creator/card-job-creator.component';
 
 export interface Fruit {
   name: string;
@@ -20,8 +22,8 @@ export class DashboardComponent implements OnInit {
   addOnBlur = true;
   readonly separatorKeysCodes = [ENTER, COMMA] as const;
   fruits: Fruit[] = [{name: 'Lemon'}, {name: 'Lime'}, {name: 'Apple'}];
-  public showPeople : boolean = true;
-
+  public showPeople : boolean = false;
+  public showJobs : boolean = false;
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
@@ -48,8 +50,13 @@ export class DashboardComponent implements OnInit {
   }
 
 getPeople(){
+  (this.showJobs = true) ? this.showJobs = false : this.showJobs= true;
   this.showPeople = !this.showPeople;
+}
 
+getJobs(){
+  (this.showPeople = true) ? this.showPeople = false : this.showPeople= true;
+  this.showJobs = !this.showJobs;
 }
 
   ngOnInit(): void {
@@ -57,24 +64,35 @@ getPeople(){
   }
 
   openDialog() {
-    // this.dialog.open(CardUserComponent);
     const dialogRef = this.dialog.open(CardUserComponent, {
       width: '800px',
       panelClass:"custom",
-      // data: { name: this.name, animal: this.animal }
+    });
+  }
+
+  openDialogExperience() {
+    const dialogRef = this.dialog.open(WorkExperienceComponent, {
+      width: '800px',
+      panelClass:"custom",
     });
   
   }
 
-  openDialogExperience() {
-    // this.dialog.open(CardUserComponent);
-    const dialogRef = this.dialog.open(WorkExperienceComponent, {
+  openDialogEducation() {    
+    const dialogRef = this.dialog.open(EducationComponent, {
       width: '800px',
       panelClass:"custom",
-      // data: { name: this.name, animal: this.animal }
-    });
-  
+    });  
   }
+
+openDialogJob(){
+  const dialogRef = this.dialog.open(CardJobCreatorComponent, {
+    width: '800px',
+    panelClass:"custom",
+  });  
+
+}
+
  
 }
 

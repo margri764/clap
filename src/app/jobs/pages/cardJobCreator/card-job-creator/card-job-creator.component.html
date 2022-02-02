@@ -1,0 +1,246 @@
+
+
+
+<div class="mat-dialog-container">
+
+    <div >
+  
+ 
+  
+          <mat-dialog-actions align="end" fxLayoutAlign="space-between center">
+            <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">arrow_back</mat-icon>
+            <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">close</mat-icon>
+          </mat-dialog-actions>
+  </div>
+  <br>
+  <h1 mat-dialog-title>Crea tu empleo </h1>
+  <mat-label>Informacion del cargo</mat-label>
+  <br>
+  
+  <mat-dialog-content>
+
+ 
+
+  <div  fxLayout="row" fxLayoutAlign="center center" fxFlex="100">
+  
+  
+      <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxFlex="100"  >     
+  
+         
+          
+      
+          
+        <div fxLayoutAlign="space-between center">  
+
+          
+            <mat-form-field appearance="outline" fxFlex="49" > 
+              
+            <mat-label>Cargo</mat-label>
+                    <input matInput type="text" required formControlName="jobTitle">
+            </mat-form-field>
+
+            <!-- <mat-error  *ngIf ="validField ('jobTitle')">
+                completa este dato
+            </mat-error>  -->
+               
+  
+            <mat-form-field appearance="outline" fxFlex="49" >
+            
+                <mat-label>Categoria</mat-label>
+                    <mat-select>
+                      <mat-option>None</mat-option>
+                      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                    </mat-select>
+            </mat-form-field>
+          
+            <!-- <mat-error  *ngIf ="validField ('company')">
+                completa este dato / no es un formato de email valido
+            </mat-error>  -->
+        </div>
+          
+
+        <div fxLayoutAlign="space-between center" >
+        
+          <mat-form-field appearance="outline" fxFlex="49" >
+            
+            <mat-label>Modalidad</mat-label>
+                <mat-select>
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                </mat-select>
+        </mat-form-field>
+                <!-- <mat-error  *ngIf ="validField ('titular')">
+                    completa este dato
+                </mat-error>  -->
+
+                <mat-form-field appearance="outline" fxFlex="49" >
+            
+                    <mat-label>Tipo de contrato</mat-label>
+                        <mat-select>
+                          <mat-option>None</mat-option>
+                          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                        </mat-select>
+                </mat-form-field>
+
+        </div>
+
+        <div fxLayoutAlign="space-between center" >
+
+            <mat-form-field appearance="outline" fxFlex="49" >
+            
+                <mat-label>Idioma</mat-label>
+                    <mat-select>
+                      <mat-option>None</mat-option>
+                      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                    </mat-select>
+            </mat-form-field>
+
+          <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
+            <mat-label>Fecha de inicio</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+          
+
+        <div fxLayoutAlign="space-between center">
+
+            <div fxFlex="49" fxLayoutGap="5px">
+               
+            <mat-label fxFlex="33"  style="margin-top: 80px;" ><b style="font-size: larger;">Experiencia</b></mat-label>
+        
+           
+        
+            <mat-form-field appearance="outline" fxFlex="33" >
+                 
+              <mat-label>Minima</mat-label>
+                  <mat-select>
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                  </mat-select>
+            
+          </mat-form-field>   
+
+          <mat-form-field appearance="outline" fxFlex="33" >
+              
+            <mat-label>Maxima</mat-label>
+                <mat-select>
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                </mat-select>
+        </mat-form-field>  
+
+        </div>
+
+        <div fxFlex="49" fxLayoutGap="5px">
+
+            <mat-form-field appearance="outline" fxFlex="49" >
+            <mat-label>Pais</mat-label>
+            <mat-select>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+            </mat-select>
+           </mat-form-field>  
+
+           <mat-form-field appearance="outline" fxFlex="49" >
+            <mat-label>Ciudad</mat-label>
+            <mat-select>
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+            </mat-select>
+           </mat-form-field> 
+
+        </div>
+
+        
+        </div>  
+
+        <div  fxLayoutAlign="space-between center" >
+
+            <div fxFlex="49">
+
+            <mat-form-field appearance="outline" fxFlex="33" >
+              
+                <mat-label>$</mat-label>
+                    <mat-select>
+                      <mat-option>None</mat-option>
+                      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                    </mat-select>
+            </mat-form-field>  
+
+            <mat-form-field appearance="outline" fxFlex="66" > 
+              
+                <mat-label>Salario</mat-label>
+                        <input matInput type="text" required formControlName="jobTitle">
+            </mat-form-field>
+            
+          </div>
+
+          <div fxFlex="49">
+
+            <mat-form-field appearance="outline" fxFlex="99" >
+                <mat-label>Software</mat-label>
+                <mat-select>
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                </mat-select>
+               </mat-form-field> 
+
+          </div>
+
+   
+            
+
+        </div>
+
+        <div>
+            <section class="example-section" fxFlex="49" >
+               
+            <mat-radio-button class="example-margin" value="after">Ocultar salario para aplicantes</mat-radio-button>
+     
+
+            </section>
+        </div>
+
+        <br>
+        <div fxLayoutAlign="space-between center">
+
+
+            <div fxFlex="49">
+                <mat-form-field appearance="outline" fxFlex="100" >
+                    <mat-label>Descripcion del cargo</mat-label>
+                    <textarea matInput 
+                    rows="5" 
+                    formControlName="comment" 
+                    (change)="onCommentChange()">          
+                    </textarea>
+                </mat-form-field> 
+        </div>
+
+        <div fxFlex="49">
+            <mat-form-field appearance="outline" fxFlex="100" >
+                <mat-label>Requisitos del cargo</mat-label>
+                <textarea matInput 
+                rows="5" 
+                formControlName="comment" 
+                (change)="onCommentChange()">          
+                </textarea>
+            </mat-form-field> 
+    </div>
+        
+    </div>
+  
+        <div fxLayoutAlign="end center" style="background-color: #61a7e9; height: 5em;" >
+          <button  fxFlex="30" mat-raised-button  appearance="outline" type="submit" style="background-color: black;border-radius: 30px; margin-right: 10px;" ><mat-label style="color: blanchedalmond;">Siguiente</mat-label></button>
+        </div> 
+    
+        </form>
+   </div>
+  
+  </mat-dialog-content>
+  
+  
+  </div> 

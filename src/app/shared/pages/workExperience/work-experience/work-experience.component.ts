@@ -8,12 +8,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class WorkExperienceComponent implements OnInit {
 
-  quantity:any;
-array: any []=[] 
-string:any;
-clicked:boolean= false;
-hidden: boolean = false;
-showSpinner : boolean = false;
+
   
 states: string[] = [
   'Alabama',
@@ -73,7 +68,7 @@ comment = new FormControl();
 myForm:FormGroup = this.fb.group({
   jobTitle:    ['', [Validators.required] ],
   company:     ['', [Validators.required] ],
-  comment: ['', [Validators.required]],
+  comment:     ['', [Validators.required]],
   web :    [''],
   email:   [''],
 

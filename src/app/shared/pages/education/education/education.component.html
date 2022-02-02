@@ -1,6 +1,8 @@
 
 
 
+
+
 <div class="mat-dialog-container">
 
     <div >
@@ -13,7 +15,8 @@
           </mat-dialog-actions>
   </div>
   <br>
-  <h1 mat-dialog-title>Añade tu experiencia </h1>
+  <h1 mat-dialog-title>Añade tu educación </h1>
+  <mat-label style="font-size: 0.9em;">*campos obligatorios</mat-label>
   <br>
   
   <mat-dialog-content>
@@ -34,25 +37,27 @@
           
             <mat-form-field appearance="outline" fxFlex="49" > 
               
-            <mat-label>Cargo del Empleo*</mat-label>
-                    <input matInput type="text" required formControlName="jobTitle">
+            <mat-label>Disciplina académica*</mat-label>
+                    <input matInput type="text" required formControlName="education">
+                    <mat-error  *ngIf ="validField ('education')">
+                      completa este dato
+                    </mat-error> 
             </mat-form-field>
-
-            <!-- <mat-error  *ngIf ="validField ('jobTitle')">
-                completa este dato
-            </mat-error>  -->
-               
+           
+       
+            
   
           <mat-form-field appearance="outline" fxFlex="49">		
           
-            <mat-label >Empresa en la que trabajaste*</mat-label>
-            <input matInput type="text" required formControlName="company">
+            <mat-label >Título</mat-label>
+            <input matInput type="text" required formControlName="degree">
+             <mat-error  *ngIf ="validField ('degree')">
+                completa este dato / no es un formato de email valido
+            </mat-error> 
 
           </mat-form-field> 
           
-            <!-- <mat-error  *ngIf ="validField ('company')">
-                completa este dato / no es un formato de email valido
-            </mat-error>  -->
+   
         </div>
           
 
@@ -60,15 +65,16 @@
         
           <mat-form-field appearance="outline" fxFlex="49" >
             
-            <mat-label>Tipo de empleo*</mat-label>
+            <mat-label>Institución académica*</mat-label>
                 <mat-select>
                   <mat-option>None</mat-option>
                   <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
                 </mat-select>
-        </mat-form-field>
                 <!-- <mat-error  *ngIf ="validField ('titular')">
-                    completa este dato
-                </mat-error>  -->
+                  completa este dato
+              </mat-error>  -->
+        </mat-form-field>
+       
 
           <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
             <mat-label>Fecha de inicio</mat-label>
@@ -82,28 +88,6 @@
           
         <div fxLayoutAlign="space-between center" >
         
-            <mat-form-field appearance="outline" fxFlex="49" >
-              
-              <mat-label>Link portafolio de este empleo</mat-label>
-                  <mat-select>
-                    <mat-option>None</mat-option>
-                    <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-                  </mat-select>
-          </mat-form-field>   
-
-          <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
-            <mat-label>Fecha de finalización</mat-label>
-            <input matInput [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker">
-              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-            </mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field> 
-        
-        </div>  
-
-        <div fxLayoutAlign="space-between center" >
-
             <mat-form-field appearance="outline" fxFlex="24" >
               
                 <mat-label>Pais*</mat-label>
@@ -122,10 +106,32 @@
                       <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
                     </mat-select>
             </mat-form-field>  
+       
+          <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
+            <mat-label>Fecha de finalización</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field> 
+        
+        </div>  
+
+        <div fxLayoutAlign="space-between center" >
+
+            <mat-form-field appearance="outline" fxFlex="49" >
+              
+                <mat-label>Modalidad*</mat-label>
+                    <mat-select>
+                      <mat-option>None</mat-option>
+                      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                    </mat-select>
+            </mat-form-field>  
 
             <section class="example-section" fxFlex="49" >
                
-                    <mat-radio-button class="example-margin" value="after">Trabajo actualmente acá</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="after">Estudio actualmente acá</mat-radio-button>
              
                 <!-- <mat-label style="font-size: 1em;"></mat-label> -->
 
@@ -134,18 +140,7 @@
 
         </div>
 
-        <div fxLayoutAlign="center"  >
-
-        <mat-form-field appearance="outline" fxFlex="100" >
-            <mat-label>Descripcion del trabajo</mat-label>
-            <textarea matInput 
-            rows="7" 
-             formControlName="comment" 
-            (change)="onCommentChange()">          
-            </textarea>
-        </mat-form-field> 
-        
-    </div>
+       
   
         <div fxLayoutAlign="center center" style="background-color: #61a7e9; height: 5em;" >
           <button  fxFlex="30" mat-raised-button  appearance="outline" type="submit" style="border-radius: 30px;"><mat-label >Guardar</mat-label></button>
