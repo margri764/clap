@@ -1,19 +1,29 @@
 
-<h1 mat-dialog-title>Mi Perfil </h1>
+<div class="mat-dialog-container">
+
+  <div fxLayoutAlign="space-between center">
+
+        <h1 mat-dialog-title>Mi Perfil </h1>
+
+        <mat-dialog-actions align="end">
+          <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">close</mat-icon>
+        </mat-dialog-actions>
+</div>
+
 <mat-dialog-content>
 <div  fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px" fxFlex="100">
 
 
     <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form"   >     
 
-        <br> <br> <br>
+        <!-- <br> <br> <br> -->
         
         <div fxLayoutAlign="center">
             <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
         </div>
         
         <div fxLayoutAlign="space-between center">  
-        <mat-form-field appearance="outline"> 
+        <mat-form-field appearance="outline" > 
             <mat-label>Nombre y Apellido*</mat-label>
             <input matInput type="text" required formControlName="name">
         </mat-form-field> 
@@ -30,8 +40,9 @@
             completa este dato / no es un formato de email valido
             </mat-error> 
         </div>
-        <br>
+        <!-- <br> -->
         
+        <div>
         <mat-form-field appearance="outline" style="display: block;">		
             <mat-label >Titular</mat-label>
             <input matInput type="text" required formControlName="titular">
@@ -39,10 +50,11 @@
         <mat-error  *ngIf ="validField ('titular')">
             completa este dato
         </mat-error> 
+      </div>
         
-        
-        <br>
+       
 
+        <div fxLayoutAlign="space-between center">
         <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Fecha de Nacimiento</mat-label>
             <input matInput [matDatepicker]="picker">
@@ -67,30 +79,33 @@
               <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
             </mat-select>
           </mat-form-field>
-       
-          <br>  
+      
+        </div>
+      
+        <!-- <br>   -->
    
+        
         <div fxLayoutAlign="space-between center">  
-        <mat-form-field appearance="outline">		
-            <mat-label >Correo</mat-label>
-            <input matInput type="email" required formControlName="email">
-        </mat-form-field> 
-        <mat-error  *ngIf ="validField ('email')">
-          completa este dato / no es un formato de email valido
+          <mat-form-field appearance="outline">		
+              <mat-label >Correo</mat-label>
+              <input matInput type="email" required formControlName="email">
+          </mat-form-field> 
+          <mat-error  *ngIf ="validField ('email')">
+            completa este dato / no es un formato de email valido
           </mat-error> 
-          
+            
 
-          <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Inicio de actividad laboral</mat-label>
-            <input matInput [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker">
-              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-            </mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Inicio de actividad laboral</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker">
+                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+              </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>  
-        </div> 
-         
-          <br>
+          </div> 
+          
+          <!-- <br> -->
 
 
     <div fxLayoutAlign="center center"> 
@@ -102,24 +117,32 @@
             completa este dato
         </mat-error> 
     </div>
+    <br>
+    <div fxLayoutAlign="center center">
+        <mat-label> <b>Redes Sociales</b></mat-label>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+        <mat-icon>close</mat-icon>
+        <mat-icon>cancel</mat-icon>
 
+
+    </div>
+    <br>
+    <hr>
+    <br>
     
-        <br>
+        <!-- <br>
   
-      <br><br><br>
-      <span class="spacer"></span>
+      <br><br><br> -->
+      <!-- <span class="spacer"></span> -->
       <div fxLayoutAlign="center center" >
        
         <button  mat-raised-button  appearance="outline" type="submit" style=" width: 300px; background-color: black;border-radius: 30px;"><mat-label style="color: blanchedalmond;">Publicar</mat-label></button>
       </div> 
   
       </form>
-
-
-
  </div>
+
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
-  </mat-dialog-actions>
+
+
+</div>

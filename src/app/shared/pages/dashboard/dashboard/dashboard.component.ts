@@ -3,6 +3,7 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import { CardUserComponent } from '../../cardUser/card-user/card-user.component';
+import { WorkExperienceComponent } from '../../workExperience/work-experience/work-experience.component';
 
 export interface Fruit {
   name: string;
@@ -56,9 +57,24 @@ getPeople(){
   }
 
   openDialog() {
-    this.dialog.open(CardUserComponent);
+    // this.dialog.open(CardUserComponent);
+    const dialogRef = this.dialog.open(CardUserComponent, {
+      width: '800px',
+      panelClass:"custom",
+      // data: { name: this.name, animal: this.animal }
+    });
+  
   }
 
+  openDialogExperience() {
+    // this.dialog.open(CardUserComponent);
+    const dialogRef = this.dialog.open(WorkExperienceComponent, {
+      width: '800px',
+      panelClass:"custom",
+      // data: { name: this.name, animal: this.animal }
+    });
+  
+  }
  
 }
 

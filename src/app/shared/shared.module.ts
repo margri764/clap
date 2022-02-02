@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CardUserComponent } from './pages/cardUser/card-user/card-user.component';
+import { WorkExperienceComponent } from './pages/workExperience/work-experience/work-experience.component';
 
 
 
@@ -18,7 +19,8 @@ import { CardUserComponent } from './pages/cardUser/card-user/card-user.componen
     FooterComponent,
     HomeComponent,
     Page404Component,
-    CardUserComponent
+    CardUserComponent,
+    WorkExperienceComponent
   ],
   imports: [
     CommonModule,
