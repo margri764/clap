@@ -1,0 +1,58 @@
+
+
+
+<br><br><br>  <br><br><br>  
+
+
+   <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign="space-between center" fxLayoutGap="10px" style="padding: 20px;" >
+
+
+       <div  class="card" *ngFor="let heroe of heroes" fxFlex="49">
+     
+
+            <div fxLayout="row" fxLayoutAlign=" center" fxFlex="30" >
+
+                    <div  fxLayoutAlign="center center">
+                        <img  src="https://material.angular.io/assets/img/examples/shiba2.jpg">   			
+                    </div>
+                    
+        
+            </div>
+
+             <div  fxLayout="column" fxFlex="70"  >
+
+                <div fxLayout="row"  fxLayoutAlign="space-between start" fxFlex="100">
+
+                        <div fxFlex="40" style="">
+
+                            <h3 style="margin-top: 0.5em;"> Diseñador digital</h3>
+                            <h4>{{heroe.nombre}}</h4>
+                            <h4>2 años de Experiencia</h4>
+                            
+                        </div>
+                        
+                
+                        <div fxFlex="60" fxLayoutAlign="end start" style=" margin-top: 1em;">
+                        
+                             <button  mat-raised-button  appearance="outline" type="submit"
+                              style="background-color: plum;border-radius: 15px; line-height: 20px; margin-right: 1em;"
+                              >Aplicar</button>
+            
+                              <mat-icon style="font-size: 2em; margin-right: 0.5em; color: rgb(185, 185, 185);">bookmark_border</mat-icon>
+                      
+                    </div>
+                 
+                </div>
+                    
+            
+            <div fxLayout="row" fxLayoutAlign="space-between" >
+                <!-- <mat-divider [inset]="true"></mat-divider> -->
+                <h4 style="">vdrtrtt</h4>
+                <h4 style="margin-right: 1em;">vence en 30 dias</h4>
+            </div>  
+       
+         </div>
+      
+    </div>
+</div>
+

@@ -5,12 +5,16 @@ import { JobsRoutingModule } from './jobs-routing.module';
 import { MaterialModule } from '../material/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HomeJobsComponent } from './pages/homeJobs/home-jobs/home-jobs.component';
+import { JobViewMoreComponent } from './pages/jobViewMore/job-view-more/job-view-more.component';
 
 
 
 @NgModule({
   declarations: [
-    CardJobCreatorComponent
+    CardJobCreatorComponent,
+    HomeJobsComponent,
+    JobViewMoreComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MaterialModule
   ],
   exports:[
-    CardJobCreatorComponent
+    CardJobCreatorComponent,
+    HomeJobsComponent,
+    JobViewMoreComponent
+
 
   ]
 })

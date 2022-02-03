@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CardUserComponent } from './pages/cardUser/card-user/card-user.component';
 import { WorkExperienceComponent } from './pages/workExperience/work-experience/work-experience.component';
 import { EducationComponent } from './pages/education/education/education.component';
+import { JobViewMoreComponent } from '../jobs/pages/jobViewMore/job-view-more/job-view-more.component';
 
 
 
@@ -22,7 +23,9 @@ import { EducationComponent } from './pages/education/education/education.compon
     Page404Component,
     CardUserComponent,
     WorkExperienceComponent,
-    EducationComponent
+    EducationComponent,
+
+    
   ],
   imports: [
     CommonModule,
@@ -30,7 +33,8 @@ import { EducationComponent } from './pages/education/education/education.compon
     FlexLayoutModule,
     MaterialModule,
     // FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
   ],
   exports:[
     DashboardComponent,
@@ -39,9 +43,9 @@ import { EducationComponent } from './pages/education/education/education.compon
     Page404Component,
     CardUserComponent,
     EducationComponent,
-    WorkExperienceComponent
+    WorkExperienceComponent,
 
-    
-  ]
+  ],
+  providers: [JobViewMoreComponent],
 })
 export class SharedModule { }
