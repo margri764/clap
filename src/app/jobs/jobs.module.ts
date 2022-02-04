@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeJobsComponent } from './pages/homeJobs/home-jobs/home-jobs.component';
 import { JobViewMoreComponent } from './pages/jobViewMore/job-view-more/job-view-more.component';
+import { CardJobProposalComponent } from './pages/cardJobProposal/card-job-proposal/card-job-proposal.component';
 
 
 
@@ -14,7 +15,8 @@ import { JobViewMoreComponent } from './pages/jobViewMore/job-view-more/job-view
   declarations: [
     CardJobCreatorComponent,
     HomeJobsComponent,
-    JobViewMoreComponent
+    JobViewMoreComponent,
+    CardJobProposalComponent
   ],
   imports: [
     CommonModule,
