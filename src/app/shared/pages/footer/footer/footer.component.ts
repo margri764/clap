@@ -22,27 +22,33 @@ export class FooterComponent implements OnInit, AfterViewChecked {
  { }
 
   ngOnInit(): void {
+    this.changePath()
   }
 
   ngAfterViewChecked(): void {
     this.cdRef.detectChanges();
     this.changePath();
+    console.log('detct')
   }
 
 
 
 
 changePath() {
-  
+
+
   this.router.events
   .pipe(filter(evt => evt instanceof NavigationEnd))  
   .subscribe( (event:any) => {
    if (event.url.includes('/home')){
-      this.rights= true;
-      this.register= false;
-   } else {
       this.rights= false;
       this.register= true;
+      console.log(this.rights,this.register)
+   } else {
+      this.rights= true;
+      this.register= false;
+      // console.log(this.rights,this.register)
+
    }
 
   });
