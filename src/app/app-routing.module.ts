@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './shared/pages/dashboard/dashboard/dashboard.component';
 import { HomeComponent } from './shared/pages/home/home/home.component';
 import { Page404Component } from './shared/pages/page404/page404/page404.component';
 

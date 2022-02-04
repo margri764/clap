@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//modules
+
 import { SharedModule } from './shared/shared.module';
 import { JobsModule } from './jobs/jobs.module';
+import { PeoplesModule } from './peoples/peoples.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { JobsModule } from './jobs/jobs.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    JobsModule
+    JobsModule,
+    PeoplesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

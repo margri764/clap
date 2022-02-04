@@ -27,8 +27,8 @@ import { JobViewMoreComponent } from './pages/jobViewMore/job-view-more/job-view
     CardJobCreatorComponent,
     HomeJobsComponent,
     JobViewMoreComponent
+  ],
+  providers: [JobViewMoreComponent,HomeJobsComponent],
 
-
-  ]
 })
 export class JobsModule { }

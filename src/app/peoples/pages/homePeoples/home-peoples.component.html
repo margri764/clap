@@ -1,0 +1,120 @@
+
+
+
+<!-- se muestran cuando se presiona persona -->
+<div fxLayout="row wrap"  fxLayoutAlign="space-evenly center" fxLayoutGap="2px" style="height: 80px;" *ngIf="showPeople" >
+
+    <button mat-raised-button> <b>FILTROS</b></button>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Campos</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Habilidades</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Software</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Idiomas</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button> <b>Experiencia</b></button>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Min</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Max</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Contrato</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    
+    <div class="example-raised-button-row">
+      <div class="example-flex-container">
+        <div class="example-raised-button-container">
+          <button mat-fab style="background-color: #61a7e9;" aria-label="Example icon button with a delete icon">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    
+    </div>
+
+
+    
+   <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign="space-between center" fxLayoutGap="10px" style="padding: 20px;" >
+
+
+    <div  class="card" *ngFor="let heroe of heroes" fxFlex="49">
+  
+
+         <div fxLayout="row" fxLayoutAlign=" center" fxFlex="30" >
+
+                 <div  fxLayoutAlign="center center">
+                     <img  src="https://material.angular.io/assets/img/examples/shiba2.jpg">   			
+                 </div>
+                 
+     
+         </div>
+
+          <div  fxLayout="column" fxFlex="70"  >
+
+             <div fxLayout="row"  fxLayoutAlign="space-between start" fxFlex="100">
+
+                     <div fxFlex="40" style="">
+
+                         <h3 style="margin-top: 0.5em;"> Diseñador digital</h3>
+                         <h4>{{heroe.nombre}}</h4>
+                         <h4>2 años de Experiencia</h4>
+                         
+                     </div>
+                     
+             
+                     <div fxFlex="60" fxLayoutAlign="end start" style=" margin-top: 1em;">
+                     
+                          <button  mat-raised-button  appearance="outline" type="submit"
+                           style="background-color: #61a7e9;border-radius: 15px; line-height: 20px; margin-right: 1em;"
+                           >Aplicar</button>
+         
+                           <mat-icon style="font-size: 2em; margin-right: 0.5em; color: rgb(185, 185, 185);">bookmark_border</mat-icon>
+                   
+                 </div>
+              
+             </div>
+                 
+         
+         <div fxLayout="row" fxLayoutAlign="space-between" >
+             <!-- <mat-divider [inset]="true"></mat-divider> -->
+             <h4 style="">vdrtrtt</h4>
+             <h4 style="margin-right: 1em;">vence en 30 dias</h4>
+         </div>  
+    
+      </div>
+   
+ </div>
+</div>
+

@@ -8,16 +8,16 @@
     <div fxFlex="100" fxLayoutAlign=" "  style=" height: 80px;">
       
         
-        <div  fxFlex="33" style=""> 
+        <div  fxFlex="33" routerLink="../home" style="cursor: pointer;"> 
             
-                  <mat-icon matSuffix fxFlexOffset="10">search</mat-icon>
+                 <img src="assets/logoClap.png" style="margin-left: 2em;" >
         </div>
 
 
-        <div fxLayoutAlign="center" fxFlex="33" style=""> 
-              <form class="example-form" >
+        <div fxLayoutAlign="center" fxFlex="33" > 
+              <form class="example-form"  >
                 <mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>&nbsp;Buscar</mat-label>
+                  <mat-label >&nbsp;Buscar</mat-label>
                   <!-- <span matPrefix>+1 &nbsp;</span> -->
                   <input type="text" matInput>
                   <mat-icon matSuffix>search</mat-icon>
@@ -47,7 +47,7 @@ gt-sm = screen and (min-width: 960px)
 gt-xs = screen and (min-width: 600px) -->
 <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center">
 
-  <div  fxFlex.gt-xs="17" fxFlex.md="20"  fxFlex.lg="20" >
+  <div  fxFlex.gt-xs="17"  fxFlex.md="20"  fxFlex.lg="20" >
 
     <button mat-button class="industrias" appearance="outline"  [matMenuTriggerFor]="aboveMenu" style="margin-left: 2em;">  <b>Industrias</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #aboveMenu="matMenu" >
@@ -56,13 +56,15 @@ gt-xs = screen and (min-width: 600px) -->
     </mat-menu>
 </div>
 <!-- ToolBar start-->
-<div fxFlex.gt-xs="65" fxFlex.md="60" fxFlex.lg="60">
+<div fxFlex.gt-xs="65"  fxFlex.md="60" fxFlex.lg="60">
 
     <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-around center" class="mat-elevation-z10"
-      fxLayoutGap.lg="55px"  >
+      fxLayoutGap.lg="55px" [ngStyle]="styleObject()" >
  
-        <button mat-button (click)="getPeople()" routerLink="../ver-empleo"> Personas</button>        
-        <button mat-button (click)="getJobs()" routerLink="../empleos">Empleos</button>
+        <button mat-button (click)="getPeople()" routerLink="../personas"> Personas</button>        
+        <button mat-button (click)="getJobs()"   routerLink="../empleos">Empleos</button>
+        <!-- <button mat-button (click)="getJobs()" routerLink="../empleos">Empleos</button> -->
+
         <button mat-button   >Empresas</button>
         <button mat-button   >Eventos</button>
         <button mat-button   >Concursos</button>       
@@ -109,147 +111,14 @@ gt-xs = screen and (min-width: 600px) -->
 <button mat-button (click)="openDialogJob()">Empleos</button> -->
 
 </div>
-<div fxLayout="row wrap" style="height: 40px;">
-
-<!-- se muestran cuando se presiona persona -->
-<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-between center" style="margin-top: 3em;" *ngIf="showPeople">
-
-  <button mat-raised-button> <b>FILTROS</b></button>
-  
-  <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Campos</b>  <mat-icon >expand_more</mat-icon></button>
-  <mat-menu #aboveMenu="matMenu" >
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-  
-  <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Habilidades</b>  <mat-icon >expand_more</mat-icon></button>
-  <mat-menu #aboveMenu="matMenu" >
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-  
-  <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Software</b>  <mat-icon >expand_more</mat-icon></button>
-  <mat-menu #aboveMenu="matMenu" >
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-  
-  <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Idiomas</b>  <mat-icon >expand_more</mat-icon></button>
-  <mat-menu #aboveMenu="matMenu" >
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-  
-  <button mat-raised-button> <b>Experiencia</b></button>
-  
-  <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Min</b>  <mat-icon >expand_more</mat-icon></button>
-  <mat-menu #aboveMenu="matMenu" >
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-  
-  <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Max</b>  <mat-icon >expand_more</mat-icon></button>
-  <mat-menu #aboveMenu="matMenu" >
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-  
-  <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Contrato</b>  <mat-icon >expand_more</mat-icon></button>
-  <mat-menu #aboveMenu="matMenu" >
-    <button mat-menu-item>Item 1</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu>
-  
-  
-  <div class="example-button-row">
-    <div class="example-flex-container">
-      <div class="example-button-container">
-        <button mat-fab style="background-color: #61a7e9;" aria-label="Example icon button with a delete icon">
-          <mat-icon>search</mat-icon>
-        </button>
-      </div>
-    </div>
-  </div>
-  
-  
-  </div>
-  
-  
-  
-  <!-- se muestran cuando se presiona EMPLEOS -->
-  <div fxLayout="row" fxFlex="100" fxLayoutAlign="space-between center" style="margin-top: 3em;" *ngIf="showJobs">
-  
-    <button mat-raised-button> <b>FILTROS</b></button>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Categoría</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Modalidad</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Salario</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>$</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button> <b>Experiencia</b></button>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Min</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Max</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <mat-form-field class="" appearance="outline">
-      <mat-label>Fecha de inicio</mat-label>
-      <input matInput [matDatepicker]="picker">
-      <mat-datepicker-toggle matSuffix [for]="picker">
-        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-      </mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Contrato</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <div class="example-button-row">
-      <div class="example-flex-container">
-        <div class="example-button-container">
-          <button mat-fab style="background-color: #61a7e9;" aria-label="Example icon button with a delete icon">
-            <mat-icon>search</mat-icon>
-          </button>
-        </div>
-      </div>
-    </div>
 
 
-    
-    </div >
-  <!-- FIN EMPLEOS -->
 
-</div>
+  
+  
+  
+  
+
 
 
 

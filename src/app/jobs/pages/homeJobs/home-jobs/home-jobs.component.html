@@ -1,7 +1,90 @@
 
 
 
-<br><br><br>  <br><br><br>  
+
+
+
+<!-- se muestran cuando se presiona EMPLEOS -->
+<div fxLayout="row wrap"   fxLayoutAlign="space-evenly center" fxLayoutGap="2px" style="height: 80px;" *ngIf="showJobs">
+  
+    <button mat-button style="cursor:auto"> <b>FILTROS</b></button>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu" appearance="outline" >  <b>Categoría</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Modalidad</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Salario</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>$</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button> <b>Experiencia</b></button>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Min</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Max</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <button mat-raised-button >  <b (click)="picker.open()">Fecha de Inicio</b> 
+        
+         <input matInput [matDatepicker]="picker" style="width:0px; height: 0px;">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>    
+        
+    </button>
+
+    <!-- <mat-form-field appearance="outline" style="margin-top: 15px; font-size: 0.8em; width: 140px;">
+        <mat-label style="font-size: 1.2em;"> <b> Fecha de inicio </b></mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> -->
+
+    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Contrato</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" >
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    
+    <div class="example-raised-button-row">
+      <div class="example-flex-container">
+        <div class="example-raised-button-container">
+          <button mat-fab style="background-color: #e961aa;" aria-label="Example icon button with a delete icon">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    
+    </div >
+  <!-- FIN EMPLEOS -->
 
 
    <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign="space-between center" fxLayoutGap="10px" style="padding: 20px;" >
@@ -35,7 +118,7 @@
                         <div fxFlex="60" fxLayoutAlign="end start" style=" margin-top: 1em;">
                         
                              <button  mat-raised-button  appearance="outline" type="submit"
-                              style="background-color: plum;border-radius: 15px; line-height: 20px; margin-right: 1em;"
+                              style="background-color: #e961aa;border-radius: 15px; line-height: 20px; margin-right: 1em;"
                               >Aplicar</button>
             
                               <mat-icon style="font-size: 2em; margin-right: 0.5em; color: rgb(185, 185, 185);">bookmark_border</mat-icon>

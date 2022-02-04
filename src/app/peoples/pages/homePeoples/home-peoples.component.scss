@@ -21,7 +21,7 @@ img{
 
 .card{
 
-     border: 2px solid #e961aa;
+     border: 2px solid #61a7e9;
      border-radius: 20px;
      box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
@@ -35,19 +35,13 @@ img{
     border: 2px solid;
     border-radius: 20px;
     border-color: rgb(211, 211, 211);
+ 
+
 }
 
 .mat-raised-button:active{
-    background-color:#e961aa ;
+    background-color:#61a7e9 ;
 }
-
-.mat-button{
-    border: 2px solid;
-    border-radius: 20px;
-    border-color: rgb(211, 211, 211);
-}
-
-
 
 .mat-form-field{
     font-size: 1em;
