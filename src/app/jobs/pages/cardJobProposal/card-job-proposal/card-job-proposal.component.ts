@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardJobProposalComponent implements OnInit {
 
+  public clicked : boolean= false
+  public push : boolean= false;
+  showFiller = true;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  test(){
+    this.clicked= !this.clicked;
+  }
+  test2(){
+    this.push= !this.push;
+  }
 }

@@ -8,6 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HomeJobsComponent } from './pages/homeJobs/home-jobs/home-jobs.component';
 import { JobViewMoreComponent } from './pages/jobViewMore/job-view-more/job-view-more.component';
 import { CardJobProposalComponent } from './pages/cardJobProposal/card-job-proposal/card-job-proposal.component';
+import { CardComponent } from './pages/card/card/card.component';
 
 
 
@@ -16,7 +17,8 @@ import { CardJobProposalComponent } from './pages/cardJobProposal/card-job-propo
     CardJobCreatorComponent,
     HomeJobsComponent,
     JobViewMoreComponent,
-    CardJobProposalComponent
+    CardJobProposalComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

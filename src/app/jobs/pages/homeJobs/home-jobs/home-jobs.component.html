@@ -87,7 +87,9 @@
   <!-- EMPLEOS end -->
 
 
-  <button mat-button (click)="openDialogJob()">Empleos</button> 
+  <!-- <button mat-button (click)="openDialogJob()">Empleos</button>  -->
+  <button mat-button (click)="openDialogJob2()">Creador de Empleos</button> 
+
 
 
   <!-- card start -->
@@ -122,7 +124,7 @@
                 
                         <div fxFlex="60" fxLayoutAlign="end start" style=" margin-top: 1em;">
                         
-                             <button  mat-raised-button  appearance="outline" type="submit"
+                             <button  mat-raised-button  appearance="outline" type="submit" (click)="openDialogJob()"
                               style="background-color: #e961aa;border-radius: 15px; line-height: 20px; margin-right: 1em;"
                               >Aplicar</button>
             

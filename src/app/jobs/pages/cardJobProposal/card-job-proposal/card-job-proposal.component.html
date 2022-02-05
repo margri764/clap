@@ -1,11 +1,15 @@
 
 
+<!-- <div class="mat-dialog-container">
+
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, sunt dolores debitis repudiandae nihil in pariatur nam! Vel, dolore quisquam beatae esse necessitatibus temporibus recusandae earum, at quas iure vero.</p>
+</div> -->
 
 
-
-<div class="mat-dialog-container" >
+<div class="mat-dialog-container">
 
 <div fxFlex="94"> 
+  
         <div fxLayoutAlign="space-between center">
                     <div>
                         <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">arrow_back</mat-icon>
@@ -18,7 +22,6 @@
           </div>
 
   <br>
-
   <h1 mat-dialog-title>Animador Junior </h1>
   <mat-card-title>Banco Falabella</mat-card-title>
   <br>
@@ -40,6 +43,7 @@
  <h4><b>Requisitos parael cargo</b></h4>
  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cum explicabo est impedit ex, eaque odio debitis assumenda itaque id saepe eligendi eius voluptatum deleniti facere mollitia velit aspernatur quaerat.</p>
 
+ 
 </mat-dialog-content> 
 
 
@@ -57,15 +61,52 @@
 
 </div>
 
-  <div fxFlex="6" class="mat-elevation-z20" fxLayout="column"  style="background-color: #e961aa; border-radius: 30px; cursor:pointer;   " >
+
+
+
+
+  <div fxFlex="6" class="mat-elevation-z20" fxLayout="column"  style="background-color: #e961aa; border-radius: 30px; cursor:pointer;" (click)="drawer.toggle();test();test2()" [ngStyle]="(push) ? {'display': 'none'} : {'display': 'block'}" >
         <div fxLayoutAlign="center">
-             <mat-icon style="font-size: 2vw;margin-top: 2em; margin-right: 10px; ">keyboard_arrow_right</mat-icon>
+             <mat-icon style="font-size: 2vw; margin-top: 2em; margin-right: 10px; ">keyboard_arrow_right</mat-icon>
         </div>
         <div fxLayoutAlign="center center">
             <mat-label   style="writing-mode: vertical-lr ;transform: rotate(180deg); margin-top: 2em; font-size: 1.4em;"><b> Empleos Similares</b> &nbsp;&nbsp;
        
             </mat-label>
+       
         </div>    
   
-
+    
 </div>
+<!-- [ngStyle]="(clicked) ? {'visibility': 'hidden'} : {'visibility': 'visible'}"  -->
+<!-- [ngStyle]="(clicked) ? {'display': 'block'} : {'display': 'none'}" -->
+
+<mat-drawer-container style="padding: 20px;  " fxFlex="grow" [ngStyle]="(clicked) ? {'display': 'block'} : {'display': 'none'}" >
+
+  <mat-drawer #drawer class="example-sidenav" mode="side" >
+    
+
+ <div *ngIf="showFiller" style="border: 2px solid green; height: 200px; background-color: #e961aa;"></div>
+
+<app-card></app-card>
+    <p *ngIf="showFiller" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+
+    <p *ngIf="showFiller" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+
+  </mat-drawer>
+</mat-drawer-container> 
+
+ 
+
+
+</div>    
+
