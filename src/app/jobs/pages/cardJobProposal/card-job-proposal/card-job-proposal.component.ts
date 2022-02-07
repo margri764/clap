@@ -11,6 +11,18 @@ export class CardJobProposalComponent implements OnInit {
   public push : boolean= false;
   showFiller = true;
 
+  heroes =[
+    {
+      nombre: "marcelo"
+    },
+    {
+      nombre: "fenando"
+    },
+    {
+      nombre: "juan"
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {

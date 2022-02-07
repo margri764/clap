@@ -6,7 +6,7 @@
 </div> -->
 
 
-<div class="mat-dialog-container">
+<div class="mat-dialog-container"  >
 
 <div fxFlex="94"> 
   
@@ -78,29 +78,29 @@
   
     
 </div>
-<!-- [ngStyle]="(clicked) ? {'visibility': 'hidden'} : {'visibility': 'visible'}"  -->
-<!-- [ngStyle]="(clicked) ? {'display': 'block'} : {'display': 'none'}" -->
 
-<mat-drawer-container style="padding: 20px;  " fxFlex="grow" [ngStyle]="(clicked) ? {'display': 'block'} : {'display': 'none'}" >
+<!-- [ngClass]="clicked ? 'openSidenav':' closeSidenav'" -->
 
-  <mat-drawer #drawer class="example-sidenav" mode="side" >
+<mat-drawer-container style="padding: 20px;" fxFlex="grow"   [ngStyle]="(clicked) ? {'display': 'block'} : {'display': 'none'}"  >
+
+  <mat-drawer #drawer class="example-sidenav" fxLayoutAlign="center center" mode="side" style="background-color: #e961aa; border-radius: 13px;">
     
 
- <div *ngIf="showFiller" style="border: 2px solid green; height: 200px; background-color: #e961aa;"></div>
 
-<app-card></app-card>
+    <app-card *ngIf="showFiller"></app-card>
+    
+    
+    <!-- <p *ngIf="showFiller" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+
     <p *ngIf="showFiller" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
-
     <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
     <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
     <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
-    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
-
-    <p *ngIf="showFiller" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
-    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
-    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
-    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
-    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p>
+    <p *ngIf="showFiller">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, rerum voluptatibus corrupti cupiditate unde nobis similique! Error maxime, distinctio sed accusantium quam, cum nisi suscipit dignissimos aut eum consequuntur eligendi..</p> -->
 
   </mat-drawer>
 </mat-drawer-container> 

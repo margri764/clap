@@ -2,21 +2,18 @@
 .mat-dialog-container{
 
     border: 5px solid #e961aa;
-    // border-radius: 40%;
-
-    // background-image:url(../../../../../assets/logoClap.png);
-    // background-repeat: no-repeat;
-    // background-position: center;
-    // background-size: 40% 40%;
-
-
-    // margin: 0px;
 }
 
-.mat-drawer-container { 
-    // width: 100%;
-    // flex: 1 1 auto;  
-    // position:fixed;
-    // display: flex;
-    // display: inline-table; overflow: auto; 
+.openSidenav{
+    display: block;
+    transition: all 3s ease 0s; 
+}
+
+
+
+.closeSidenav{
+    display: none;
+}
+mat-card{
+    overflow-x: scroll;
 }

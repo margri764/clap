@@ -1,14 +1,14 @@
  <!-- card start -->
 
- <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign="space-between center" fxLayoutGap="10px" style="padding: 20px;" >
+ <div fxLayout="row wrap" fxLayout.xs="column" fxFlex="95">
 
 
-    <div  class="card" *ngFor="let heroe of heroes" fxFlex="49">
+    <div  class="card" *ngFor="let heroe of heroes" fxFlex="100"  >
   
 
-         <div fxLayout="row" fxLayoutAlign=" center" fxFlex="30" >
+         <div fxLayout="row" fxLayoutAlign="center start" fxFlex="30" fxFlexOffset="2" >
 
-                 <div  fxLayoutAlign="center center">
+                 <div  fxLayoutAlign="center start" >
                      <img  src="https://material.angular.io/assets/img/examples/shiba2.jpg">   			
                  </div>
                  
@@ -17,33 +17,37 @@
 
           <div  fxLayout="column" fxFlex="70"  >
 
-             <div fxLayout="row"  fxLayoutAlign="space-between start" fxFlex="100">
+             <div fxLayout="row"   >
 
-                     <div fxFlex="40" style="">
+                     <div fxFlex="70">
 
-                         <h3 style="margin-top: 0.5em;"> Diseñador digital</h3>
-                         <h4>{{heroe.nombre}}</h4>
-                         <h4>2 años de Experiencia</h4>
-                         
+                         <p style="margin-top: 0.5em;"> Diseñador digital</p>
+                         <p>{{heroe.nombre}}</p>
+                         <p>2 años de Experiencia</p>
+                         <p>Realico - Argentina</p>
+
                      </div>
+              
+                     <div fxFlex="30" fxLayoutAlign="end start" style=" margin-top: 1em; ">
                      
-             
-                     <div fxFlex="60" fxLayoutAlign="end start" style=" margin-top: 1em;">
-                     
-                          <button  mat-raised-button  appearance="outline" type="submit"
+                          <!-- <button  mat-raised-button  appearance="outline" type="submit"
                            style="background-color: #e961aa;border-radius: 15px; line-height: 20px; margin-right: 1em;"
-                           >Aplicar</button>
+                           >Aplicar</button> -->
          
                            <mat-icon style="font-size: 2em; margin-right: 0.5em; color: rgb(185, 185, 185);">bookmark_border</mat-icon>
-                   
+                           <mat-divider ></mat-divider>
+                        
                  </div>
+   
               
              </div>
-                 
-         
-         <div fxLayout="row" fxLayoutAlign="space-between" >
+      
              <!-- <mat-divider [inset]="true"></mat-divider> -->
-             <h4 style="">vdrtrtt</h4>
+         <div  style="border: 1px solid; color: rgb(206, 206, 206); width: 250px;"></div>
+         <div fxLayout="row" fxLayoutAlign="space-between" >
+           
+  
+             <h4 >vdrtrtt</h4>
              <h4 style="margin-right: 1em;">vence en 30 dias</h4>
          </div>  
     
