@@ -2,64 +2,63 @@
 
 
 <!-- se muestran cuando se presiona persona -->
-<div fxLayout="row wrap"  fxLayoutAlign="space-evenly center" fxLayoutGap="2px" style="height: 80px;" *ngIf="showPeople" >
+<div fxLayout="row wrap"  fxLayoutAlign="space-evenly center" fxLayoutGap="2px" style="height: 180px;" *ngIf="showPeople" >
 
-    <button mat-raised-button> <b>FILTROS</b></button>
+  <button mat-button  style=" background-color: black;color: whitesmoke; cursor:text; "> 
+    <mat-label> <b >FILTROS</b> </mat-label>       
+  </button>
     
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Campos</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
+    <button mat-button [matMenuTriggerFor]="field">  <b>Campos</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #field="matMenu" >
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
     </mat-menu>
     
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Habilidades</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
+    <button mat-button [matMenuTriggerFor]="skills">  <b>Habilidades</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #skills="matMenu" >
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
     </mat-menu>
     
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Software</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
+    <button mat-button [matMenuTriggerFor]="software">  <b>Software</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #software="matMenu" >
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
     </mat-menu>
     
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Idiomas</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
+    <button mat-button [matMenuTriggerFor]="languaje">  <b>Idiomas</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #languaje="matMenu" >
+      <button mat-menu-item>Inglés</button>
+      <button mat-menu-item>Español</button>
     </mat-menu>
     
-    <button mat-raised-button> <b>Experiencia</b></button>
+
+    <button mat-button [matMenuTriggerFor]="expertise"> <b>Experiencia</b> <mat-icon >expand_more</mat-icon></button>
+ <mat-menu #expertise="matMenu">
+   <button mat-menu-item [matMenuTriggerFor]="min">Min</button>
+   <button mat-menu-item [matMenuTriggerFor]="max">Max</button>
+ </mat-menu>
+ <mat-menu #min="matMenu">
+   <button mat-menu-item>1 año</button>
+   <button mat-menu-item>5 años</button>
+ </mat-menu>
+
+ <mat-menu #max="matMenu">
+   <button mat-menu-item>5 años</button>
+   <button mat-menu-item>10 años</button>
+ </mat-menu>
+ 
     
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Min</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
+    <button mat-button [matMenuTriggerFor]="contract">  <b>Contrato</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #contract="matMenu" >
+      <button mat-menu-item>Termino indefinido</button>
+      <button mat-menu-item>Prestación de servicios</button>
+      <button mat-menu-item>Obra labor</button>
     </mat-menu>
     
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Max</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Contrato</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    
-    <div class="example-raised-button-row">
-      <div class="example-flex-container">
-        <div class="example-raised-button-container">
-          <button mat-fab style="background-color: #61a7e9;" aria-label="Example icon button with a delete icon">
-            <mat-icon>search</mat-icon>
-          </button>
-        </div>
-      </div>
-    </div>
+    <button mat-button  style=" background-color: black;color: whitesmoke; "> 
+      <mat-label> <b >Buscar</b> </mat-label>       
+    </button>
     
     
     </div>
@@ -100,7 +99,7 @@
              
                      <div fxFlex="60" fxLayoutAlign="end start" style=" margin-top: 1em;">
                      
-                          <button  mat-raised-button  appearance="outline" type="submit"
+                          <button  mat-button  appearance="outline" type="submit"
                            style="background-color: #61a7e9;border-radius: 15px; line-height: 20px; margin-right: 1em;"
                            >Aplicar</button>
          

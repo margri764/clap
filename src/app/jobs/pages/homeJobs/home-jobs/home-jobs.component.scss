@@ -45,17 +45,27 @@ img{
     border: 2px solid;
     border-radius: 20px;
     border-color: rgb(211, 211, 211);
+    font-size: 1.2vw;
 }
 
 
 
 .mat-form-field{
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
-// .custom-modalbox {
-//     mat-dialog-container {
-//         padding: 0;
-//         background-color: aqua;
-//     }
-// }
+
+
+mat-label{
+    
+    b{
+        font-size: 0.9vw;
+    }
+}
+
+
+mat-option{
+    label{
+        font-size: 1.1vw;
+    }
+}

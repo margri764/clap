@@ -1,90 +1,90 @@
 
 
-
-
-
-
 <!-- se muestran cuando se presiona EMPLEOS -->
-<div fxLayout="row wrap"   fxLayoutAlign="space-evenly center" fxLayoutGap="2px" style="height: 80px;" *ngIf="showJobs">
+<div fxLayout="row wrap"   fxLayoutAlign="space-between center"  fxLayoutGap="2px" style="height: 180px;margin-left: 20px; margin-right: 20px; " *ngIf="showJobs">
   
-    <button mat-button style="cursor:auto"> <b>FILTROS</b></button>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu" appearance="outline" >  <b>Categoría</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Modalidad</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Salario</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>$</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button> <b>Experiencia</b></button>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Min</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Max</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <button mat-raised-button >  <b (click)="picker.open()">Fecha de Inicio</b> 
-        
-         <input matInput [matDatepicker]="picker" style="width:0px; height: 0px;">
-      <mat-datepicker-toggle matSuffix [for]="picker">
-      </mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>    
-        
-    </button>
+  <button mat-button  style=" background-color: black;color: whitesmoke; cursor:text; "> 
+   <mat-label> <b >FILTROS</b> </mat-label>       
+ </button>
+ 
+ <button mat-button [matMenuTriggerFor]="aboveMenu" appearance="outline" >  <b>Categoría</b>  <mat-icon >expand_more</mat-icon></button>
+ <mat-menu #aboveMenu="matMenu" >
+   <button mat-menu-item>Item 1</button>
+   <button mat-menu-item>Item 2</button>
+ </mat-menu>
+ 
+ <button mat-button [matMenuTriggerFor]="modo">  <b>Modalidad</b>  <mat-icon >expand_more</mat-icon></button>
+ <mat-menu #modo="matMenu" >
+   <button mat-menu-item>Virtual</button>
+   <button mat-menu-item>Presencial</button>
+ </mat-menu>
+ 
+ <button mat-button [matMenuTriggerFor]="salary">  <b>Salario</b>  <mat-icon >expand_more</mat-icon></button>
+ <mat-menu #salary="matMenu" >
+   <button mat-menu-item>Número</button>
+   <button mat-menu-item>Moneda</button>
+ </mat-menu>
+ 
 
-    <!-- <mat-form-field appearance="outline" style="margin-top: 15px; font-size: 0.8em; width: 140px;">
-        <mat-label style="font-size: 1.2em;"> <b> Fecha de inicio </b></mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-datepicker-toggle matSuffix [for]="picker">
-          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-        </mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field> -->
+ <button mat-button >  <b (click)="picker.open()">Fecha de Inicio</b>
+   <input matInput [matDatepicker]="picker" style="width:0px; height: 0px;">
+   <mat-datepicker-toggle matSuffix [for]="picker">
+   </mat-datepicker-toggle>
+   <mat-datepicker #picker></mat-datepicker>    
+ </button>
 
-    <button mat-raised-button [matMenuTriggerFor]="aboveMenu">  <b>Contrato</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
-    
-    <div class="example-raised-button-row">
-      <div class="example-flex-container">
-        <div class="example-raised-button-container">
-          <button mat-fab style="background-color: #e961aa;" aria-label="Example icon button with a delete icon">
-            <mat-icon>search</mat-icon>
-          </button>
-        </div>
-      </div>
-    </div>
+ 
+ <button mat-button [matMenuTriggerFor]="expertise"> <b>Experiencia</b> <mat-icon >expand_more</mat-icon></button>
+ <mat-menu #expertise="matMenu">
+   <button mat-menu-item [matMenuTriggerFor]="min">Min</button>
+   <button mat-menu-item [matMenuTriggerFor]="max">Max</button>
+ </mat-menu>
+ <mat-menu #min="matMenu">
+   <button mat-menu-item>1 año</button>
+   <button mat-menu-item>5 años</button>
+ </mat-menu>
+
+ <mat-menu #max="matMenu">
+   <button mat-menu-item>5 año</button>
+   <button mat-menu-item>10 años</button>
+ </mat-menu>
+ 
 
 
-    
-    </div >
-  <!-- EMPLEOS end -->
+
+ <button mat-button [matMenuTriggerFor]="contract"> <b>Contrato</b> <mat-icon >expand_more</mat-icon></button>
+ <mat-menu #contract="matMenu">
+   <button mat-menu-item >Termino indefinido</button>
+   <button mat-menu-item >Prestación de servicios</button>
+   <button mat-menu-item >Obra labor</button>
+   </mat-menu>
+
+
+   <button mat-button  style=" background-color: black;color: whitesmoke; "> 
+     <mat-label> <b >Buscar</b> </mat-label>       
+   </button>
+ 
+ <!-- <div class="example-button-row">
+   <div class="example-flex-container">
+     <div class="example-button-container">
+       <button mat-fab style="background-color: #e961aa;" aria-label="Example icon button with a delete icon">
+         <mat-icon>search</mat-icon>
+       </button>
+     </div>
+   </div>
+ </div> -->
+
+
+ 
+ </div > 
+<!-- EMPLEOS end -->
+
+
+
+
+
+
+
 
 
   <!-- <button mat-button (click)="openDialogJob()">Empleos</button>  -->
@@ -124,7 +124,7 @@
                 
                         <div fxFlex="60" fxLayoutAlign="end start" style=" margin-top: 1em;">
                         
-                             <button  mat-raised-button  appearance="outline" type="submit" (click)="openDialogJob()"
+                             <button  mat-button  appearance="outline" type="submit" (click)="openDialogJob()"
                               style="background-color: #e961aa;border-radius: 15px; line-height: 20px; margin-right: 1em;"
                               >Aplicar</button>
             
@@ -146,4 +146,124 @@
     </div>
 </div>
 <!-- card end -->
+
+
+
+
+<!-- se muestran cuando se presiona EMPLEOS -->
+<!-- <div fxLayout="row wrap"  fxLayoutAlign="space-between center" fxLayoutGap="1px" style="height: 30%;" *ngIf="showJobs">
+  
+  <div style="height:180px; padding: 1vw;"  >
+    <button mat-button  style="margin-top: 62px; background-color: black;color: whitesmoke; "> 
+      <mat-label> <b >FILTROS</b> </mat-label>       
+    </button>
+ </div>
+    
+
+    <mat-form-field  appearance="outline" fxFlex.gt-lg="20" fxFlex.gt-md="7" >
+      <mat-label> <b >Categoría</b></mat-label>
+      <mat-select >
+        <mat-option >None</mat-option>
+        <mat-option *ngFor="let con of contract" [value]="con"> <label>{{con}}</label></mat-option>
+      </mat-select>
+     </mat-form-field>  
+    
+
+    <mat-form-field appearance="outline" fxFlex.gt-lg="20" fxFlex.gt-md="9"  >
+      <mat-label> <b style="margin-left: 20px;">Modalidad</b></mat-label>
+      <mat-select>
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let mod of modo" [value]="mod"> <label>{{mod}}</label></mat-option>
+      </mat-select>
+     </mat-form-field>  
+    
+
+    <mat-form-field appearance="outline" fxFlex.gt-lg="20" fxFlex.gt-md="8"   >
+      <mat-label> <b style="margin-left: 20px;">Salario</b></mat-label>
+      <mat-select>
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let sal of salary " [value]=""><label>{{sal}}</label></mat-option>
+      </mat-select>
+     </mat-form-field>  
+    
+
+     <mat-form-field appearance="outline" fxFlex.gt-lg="20" fxFlex.gt-md="10"  >
+      <mat-label> <b (click)="picker.open()">Fecha de Inicio</b></mat-label>
+     <input matInput [matDatepicker]="picker" style="width:0px; height: 0px;">
+     <mat-datepicker-toggle matSuffix [for]="picker">
+     </mat-datepicker-toggle>
+     <mat-datepicker #picker></mat-datepicker>    
+   </mat-form-field>
+
+
+   <button mat-button [matMenuTriggerFor]="expertise">Experiencia<mat-icon >expand_more</mat-icon></button>
+
+    <mat-menu #expertise="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="min">Min</button>
+      <button mat-menu-item [matMenuTriggerFor]="max">Max</button>
+    </mat-menu>
+
+    <mat-menu #min="matMenu">
+      <button mat-menu-item>1 año</button>
+      <button mat-menu-item>5 años</button>
+    </mat-menu>
+
+    <mat-menu #max="matMenu">
+      <button mat-menu-item>5 años</button>
+      <button mat-menu-item>10 años</button>
+    </mat-menu>
+
+   
+
+    
+
+
+    <mat-form-field appearance="outline" fxFlex.gt-lg="20" fxFlex.gt-md="8"   >
+      <mat-label> <b style="margin-left: 20px;">Contrato</b></mat-label>
+      <mat-select>
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let con of contract" [value]="con"><label>{{con}}</label></mat-option>
+      </mat-select>
+     </mat-form-field>  
+
+
+    <div style="height:180px; padding: 1vw" >
+              <button mat-button  style="margin-top: 62px; background-color: black;color: whitesmoke; "> 
+                <mat-label> <b >Buscar</b> </mat-label>       
+              </button>
+    </div>
+    
+
+
+
+    
+    </div > -->
+   <!--EMPLEOS end -->
+
+
+
+
+
+    <!-- <mat-form-field appearance="outline" fxFlex.gt-lg="20" fxFlex.gt-md="7"   >
+      <mat-label> <b style="margin-left: 20px;">Min</b></mat-label>
+      <mat-select>
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let con of contract" [value]="con"><label>{{con}}</label></mat-option>
+      </mat-select>
+     </mat-form-field>  
+    
+
+    <mat-form-field appearance="outline" fxFlex.gt-lg="20" fxFlex.gt-md="7"   >
+      <mat-label> <b style="margin-left: 20px;">Max</b></mat-label>
+      <mat-select>
+        <mat-option>None</mat-option>
+        <mat-option *ngFor="let con of contract" [value]="con"><label>{{con}}</label></mat-option>
+      </mat-select>
+     </mat-form-field>   -->
+
+
+
+
+
+
 

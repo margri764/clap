@@ -49,8 +49,8 @@ gt-xs = screen and (min-width: 600px) -->
 
   <div  fxFlex.gt-xs="17"  fxFlex.md="20"  fxFlex.lg="20" >
 
-    <button mat-button class="industrias" appearance="outline"  [matMenuTriggerFor]="aboveMenu" style="margin-left: 2em;">  <b>Industrias</b>  <mat-icon >expand_more</mat-icon></button>
-    <mat-menu #aboveMenu="matMenu" >
+    <button mat-button class="industrias" appearance="outline"  [matMenuTriggerFor]="industries" style="margin-left: 2em;">  <b>Industrias</b>  <mat-icon >expand_more</mat-icon></button>
+    <mat-menu #industries="matMenu" >
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>
     </mat-menu>
@@ -59,13 +59,16 @@ gt-xs = screen and (min-width: 600px) -->
 <div fxFlex.gt-xs="65"  fxFlex.md="60" fxFlex.lg="60">
 
     <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-around center" class="mat-elevation-z10"
-      fxLayoutGap.lg="55px" [ngStyle]="styleObject()" >
+    fxLayoutGap.md="30px" fxLayoutGap.lg="0px" [ngStyle]="styleObject()" >
  
-        <button mat-button (click)="getPeople()" routerLink="../personas"> Personas</button>        
-        <button mat-button (click)="getJobs()"   routerLink="../empleos">Empleos</button>
+        <button mat-button (click)="getPeople()"   routerLink="../personas"> Personas</button>        
+        <button mat-button (click)="getJobs()"     routerLink="../empleos">  Empleos</button>
+        <button mat-button (click)="getBusiness()" routerLink="../empresas"> Empresas</button>
+        <button mat-button (click)="getSchools()"  routerLink="../escuelas"> Escuelas</button>
+
+
         <!-- <button mat-button (click)="getJobs()" routerLink="../empleos">Empleos</button> -->
 
-        <button mat-button   >Empresas</button>
         <button mat-button   >Eventos</button>
         <button mat-button   >Concursos</button>       
         

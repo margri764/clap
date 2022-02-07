@@ -8,6 +8,8 @@ import { EducationComponent } from '../../education/education/education.componen
 import { CardJobCreatorComponent } from 'src/app/jobs/pages/cardJobCreator/card-job-creator/card-job-creator.component';
 import { HomeJobsComponent } from 'src/app/jobs/pages/homeJobs/home-jobs/home-jobs.component';
 import { HomePeoplesComponent } from 'src/app/peoples/pages/homePeoples/home-peoples.component';
+import { HomeBusinessComponent } from 'src/app/business/pages/homeBusiness/home-business/home-business.component';
+import { HomeSchoolComponent } from 'src/app/school/pages/homeSchool/home-school/home-school.component';
 
 export interface Fruit {
   name: string;
@@ -51,6 +53,8 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
               public dialog: MatDialog,  
               private compJobs : HomeJobsComponent,
               private compPeoples : HomePeoplesComponent,
+              private compBusiness : HomeBusinessComponent,
+              private compSchool : HomeSchoolComponent,
               private cdRef:ChangeDetectorRef
               
               ) {
@@ -67,10 +71,21 @@ styleObject() {
 
      return  { "background":"#e961aa" }
   };
+
   if(window.location.pathname.includes('personas')){ 
 
     return  { "background":"#61a7e9" }
  }
+
+ if(window.location.pathname.includes('empresas')){ 
+
+  return  { "background":"#7ff36a"}
+}
+
+if(window.location.pathname.includes('escuelas')){ 
+
+  return  { "background":"#FF8066"}
+}
   return {}
 
 
@@ -83,9 +98,15 @@ getPeople(){
 }
 
 getJobs(){
-  this.compJobs.getJobs();
+  this.compJobs.getJobs();  
+}
 
-  
+getBusiness(){
+  this.compBusiness.getBusiness();  
+}
+
+getSchools(){
+  this.compSchool.getSchool();
 }
 
   ngOnInit(): void {

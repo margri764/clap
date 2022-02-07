@@ -7,9 +7,9 @@ import { CardJobCreatorComponent } from '../jobs/pages/cardJobCreator/card-job-c
 const routes : Routes =[
 
 
-  {
-    path: "jobs", component: CardJobCreatorComponent
-  },
+  // {
+  //   path: "jobs", component: CardJobCreatorComponent
+  // },
   // {
   //   path: "", redirectTo: "dashboard", pathMatch: 'full'
   // },

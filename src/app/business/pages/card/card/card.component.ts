@@ -19,7 +19,7 @@ export class CardComponent implements OnInit {
       nombre: "juan"
     }
   ]
-  
+
   constructor() { }
 
   ngOnInit(): void {

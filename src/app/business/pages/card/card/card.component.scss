@@ -2,7 +2,8 @@
 img{
     width: 90%;
     height: 90%;
-    border-radius: 13px;
+    border-radius: 10px;
+    margin-top: 13px;
      
 }
 
@@ -21,27 +22,34 @@ img{
 
 .card{
 
-     border: 2px solid #61a7e9;
-     border-radius: 20px;
+     border-radius: 13px;
      box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
-    margin-top: 15px;
+     margin-top: 25px;
+     margin-left: 20px;
+    background-color: white;
 
 
+}
+
+.mat-raised-button{
+    border: 2px solid;
+    border-radius: 20px;
+    border-color: rgb(211, 211, 211);
+}
+
+.mat-raised-button:active{
+    background-color:#e961aa ;
 }
 
 .mat-button{
     border: 2px solid;
     border-radius: 20px;
     border-color: rgb(211, 211, 211);
-    font-size: 1.2vw;
 }
 
 
-.mat-raised-button:active{
-    background-color:#61a7e9 ;
-}
 
 .mat-form-field{
     font-size: 1em;

@@ -9,7 +9,7 @@ export class CardJobProposalComponent implements OnInit {
 
   public clicked : boolean= false
   public push : boolean= false;
-  showFiller = true;
+  public showFiller : boolean = true;
 
   heroes =[
     {
