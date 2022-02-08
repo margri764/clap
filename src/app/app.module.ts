@@ -13,6 +13,7 @@ import { BusinessModule } from './business/business.module';
 import { SchoolModule } from './school/school.module';
 import { EventsModule } from './events/events.module';
 import { CompetitionModule } from './competition/competition.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CompetitionModule } from './competition/competition.module';
     BusinessModule,
     SchoolModule,
     EventsModule,
-    CompetitionModule
+    CompetitionModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
