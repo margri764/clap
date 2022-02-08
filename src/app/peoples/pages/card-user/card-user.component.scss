@@ -22,3 +22,57 @@ img{
   mat-label{
       font-size: 1.3em;
   }
+
+  .mat-raised-button{
+
+    border-radius: 30px;
+    background-color:#61a7e9;
+
+}
+
+.buttonGroup{
+     background-color: #61a7e9;
+     height: 5em; 
+     border-radius: 15px;
+     box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
+    -webkit-box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
+    -moz-box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
+    margin-bottom: 25px;
+
+}
+
+//input outline color
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #61a7e9;
+  opacity: 1!important;
+}
+
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+color: #61a7e9!important;
+}
+
+
+// mat-label error style
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+color: red!important;
+}
+
+
+// mat-label focused style
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+color: #61a7e9!important;
+}
+
+hr{
+    height: 2px;
+    width: 70%;
+    background-color: rgb(173, 173, 173);
+    box-shadow: 10px 10px 29px -1px rgba(87,87,87,1);
+    -webkit-box-shadow: 10px 10px 29px -1px rgba(87,87,87,1);
+    -moz-box-shadow: 10px 10px 29px -1px rgba(87,87,87,1);
+    margin-bottom: 30px;
+    opacity: 0.5;
+}

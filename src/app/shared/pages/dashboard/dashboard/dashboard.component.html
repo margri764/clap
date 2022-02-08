@@ -61,16 +61,12 @@ gt-xs = screen and (min-width: 600px) -->
     <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-around center" class="mat-elevation-z10"
     fxLayoutGap.md="30px" fxLayoutGap.lg="0px" [ngStyle]="styleObject()" >
  
-        <button mat-button (click)="getPeople()"   routerLink="../personas"> Personas</button>        
-        <button mat-button (click)="getJobs()"     routerLink="../empleos">  Empleos</button>
-        <button mat-button (click)="getBusiness()" routerLink="../empresas"> Empresas</button>
-        <button mat-button (click)="getSchools()"  routerLink="../escuelas"> Escuelas</button>
-
-
-        <!-- <button mat-button (click)="getJobs()" routerLink="../empleos">Empleos</button> -->
-
-        <button mat-button   >Eventos</button>
-        <button mat-button   >Concursos</button>       
+        <button mat-button (click)="getPeople()"       routerLink="../personas"> Personas</button>        
+        <button mat-button (click)="getJobs()"         routerLink="../empleos">  Empleos</button>
+        <button mat-button (click)="getBusiness()"     routerLink="../empresas"> Empresas</button>
+        <button mat-button (click)="getSchools()"      routerLink="../escuelas"> Escuelas</button>
+        <button mat-button (click)="getEvents()"       routerLink="../eventos"  >Eventos</button>
+        <button mat-button (click)="getCompetitions()" routerLink="../concursos"  >Concursos</button>       
         
     </mat-toolbar>
 </div>

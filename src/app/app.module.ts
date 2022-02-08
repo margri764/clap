@@ -11,6 +11,8 @@ import { JobsModule } from './jobs/jobs.module';
 import { PeoplesModule } from './peoples/peoples.module';
 import { BusinessModule } from './business/business.module';
 import { SchoolModule } from './school/school.module';
+import { EventsModule } from './events/events.module';
+import { CompetitionModule } from './competition/competition.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SchoolModule } from './school/school.module';
     JobsModule,
     PeoplesModule,
     BusinessModule,
-    SchoolModule
+    SchoolModule,
+    EventsModule,
+    CompetitionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,8 @@ import { HomeJobsComponent } from 'src/app/jobs/pages/homeJobs/home-jobs/home-jo
 import { HomePeoplesComponent } from 'src/app/peoples/pages/homePeoples/home-peoples.component';
 import { HomeBusinessComponent } from 'src/app/business/pages/homeBusiness/home-business/home-business.component';
 import { HomeSchoolComponent } from 'src/app/school/pages/homeSchool/home-school/home-school.component';
+import { HomeEventsComponent } from 'src/app/events/pages/homeEvents/home-events/home-events.component';
+import { HomeCompetitionComponent } from 'src/app/competition/pages/homeCompetition/home-competition/home-competition.component';
 
 export interface Fruit {
   name: string;
@@ -51,10 +53,12 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
 
   constructor(
               public dialog: MatDialog,  
-              private compJobs : HomeJobsComponent,
-              private compPeoples : HomePeoplesComponent,
+              private compJob : HomeJobsComponent,
+              private compPeople : HomePeoplesComponent,
               private compBusiness : HomeBusinessComponent,
               private compSchool : HomeSchoolComponent,
+              private compEvent : HomeEventsComponent,
+              private compCompetition : HomeCompetitionComponent,
               private cdRef:ChangeDetectorRef
               
               ) {
@@ -86,6 +90,17 @@ if(window.location.pathname.includes('escuelas')){
 
   return  { "background":"#FF8066"}
 }
+
+if(window.location.pathname.includes('eventos')){ 
+
+  return  { "background":"yellow"}
+}
+
+if(window.location.pathname.includes('concursos')){ 
+
+  return  { "background":"#B29DD5"}
+}
+
   return {}
 
 
@@ -94,11 +109,11 @@ if(window.location.pathname.includes('escuelas')){
 getPeople(){
   // (this.showJobs = true) ? this.showJobs = false : this.showJobs= true;
   // this.showPeople = !this.showPeople;
-  this.compPeoples.getPeoples()
+  this.compPeople.getPeoples()
 }
 
 getJobs(){
-  this.compJobs.getJobs();  
+  this.compJob.getJobs();  
 }
 
 getBusiness(){
@@ -108,6 +123,15 @@ getBusiness(){
 getSchools(){
   this.compSchool.getSchool();
 }
+
+getEvents(){
+  this.compEvent.getEvents();
+}
+
+getCompetitions(){
+  this.compCompetition.getCompetitions();
+}
+
 
   ngOnInit(): void {
 
@@ -135,11 +159,11 @@ getSchools(){
     });  
   }
 
-openDialogJob(){
-  const dialogRef = this.dialog.open(CardJobCreatorComponent, {
-    width: '800px',
-    panelClass:"custom",
-  });  
+  openDialogJob(){
+    const dialogRef = this.dialog.open(CardJobCreatorComponent, {
+      width: '800px',
+      panelClass:"custom",
+    });  
 
 }
 

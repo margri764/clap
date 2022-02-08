@@ -3,7 +3,7 @@
 
 
 
-<div class="mat-dialog-container" style="border: 5px solid #61a7e9;">
+<div class="mat-dialog-container">
 
     <div >
   
@@ -15,7 +15,7 @@
           </mat-dialog-actions>
   </div>
   <br>
-  <h1 mat-dialog-title style="color: #61a7e9;">Añade tu educación </h1>
+  <h1 mat-dialog-title style="color: #B29DD5;">Crea tu concurso </h1>
   <!-- <mat-label style="font-size: 0.9em;">*campos obligatorios</mat-label> -->
   <br>
   
@@ -37,11 +37,11 @@
           
             <mat-form-field appearance="outline" fxFlex="49" > 
               
-            <mat-label>Disciplina académica*</mat-label>
+            <mat-label>Nombre del concurso*</mat-label>
                     <input matInput type="text" required formControlName="education">
-                    <mat-error  *ngIf ="validField ('education')">
+                    <!-- <mat-error  *ngIf ="validField ('education')">
                       completa este dato
-                    </mat-error> 
+                    </mat-error>  -->
             </mat-form-field>
            
        
@@ -49,11 +49,11 @@
   
           <mat-form-field appearance="outline" fxFlex="49">		
           
-            <mat-label >Título</mat-label>
+            <mat-label >Modalidad</mat-label>
             <input matInput type="text" required formControlName="degree">
-             <mat-error  *ngIf ="validField ('degree')">
+             <!-- <mat-error  *ngIf ="validField ('degree')">
                 completa este dato / no es un formato de email valido
-            </mat-error> 
+            </mat-error>  -->
 
           </mat-form-field> 
           
@@ -64,8 +64,7 @@
         <div fxLayoutAlign="space-between center" >
         
           <mat-form-field appearance="outline" fxFlex="49" >
-            
-            <mat-label>Institución académica*</mat-label>
+             <mat-label>Categoría*</mat-label>
                 <mat-select>
                   <mat-option>None</mat-option>
                   <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
@@ -76,16 +75,75 @@
         </mat-form-field>
        
 
-          <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
-            <mat-label>Fecha de inicio</mat-label>
+        <mat-form-field appearance="outline" fxFlex="49" >
+            <mat-label>Link para aplicar*</mat-label>
+               <mat-select>
+                 <mat-option>None</mat-option>
+                 <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+               </mat-select>
+               <!-- <mat-error  *ngIf ="validField ('titular')">
+                 completa este dato
+             </mat-error>  -->
+         </mat-form-field>
+          
+    </div>
+    
+    <div fxLayoutAlign="space-between center" >
+
+        <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
+            <mat-label>Fecha de inscripción</mat-label>
             <input matInput [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix [for]="picker">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-        </div>
+          </mat-form-field> 
+      
+            
+            <mat-form-field appearance="outline" fxFlex="49" >
+
+                <mat-label>Costo del concurso*</mat-label>
+                <input matInput type="text" required formControlName="education">
+                <!-- <mat-error  *ngIf ="validField ('education')">
+                  completa este dato
+                </mat-error>  -->
+             
           
+            </mat-form-field>  
+       
+    
+        
+        </div>  
+
+                  
+        <div fxLayoutAlign="space-between center">  
+
+          
+            <mat-form-field appearance="outline" fxFlex="49" > 
+              
+            <mat-label>Cantidad de aplicantes*</mat-label>
+                    <input matInput type="text" required formControlName="education">
+                    <!-- <mat-error  *ngIf ="validField ('education')">
+                      completa este dato
+                    </mat-error>  -->
+            </mat-form-field>
+           
+       
+            
+  
+          <mat-form-field appearance="outline" fxFlex="49">		
+          
+            <mat-label >Idioma</mat-label>
+            <input matInput type="text" required formControlName="degree">
+             <!-- <mat-error  *ngIf ="validField ('degree')">
+                completa este dato / no es un formato de email valido
+            </mat-error>  -->
+
+          </mat-form-field> 
+          
+   
+        </div>
+
         <div fxLayoutAlign="space-between center" >
         
             <mat-form-field appearance="outline" fxFlex="24" >
@@ -108,7 +166,7 @@
             </mat-form-field>  
        
           <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
-            <mat-label>Fecha de finalización</mat-label>
+            <mat-label>Software</mat-label>
             <input matInput [matDatepicker]="picker">
             <mat-datepicker-toggle matSuffix [for]="picker">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -118,39 +176,38 @@
         
         </div>  
 
-        <div fxLayoutAlign="space-between center" >
-
-            <mat-form-field appearance="outline" fxFlex="49" >
-              
-                <mat-label>Modalidad*</mat-label>
-                    <mat-select>
-                      <mat-option>None</mat-option>
-                      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
-                    </mat-select>
-            </mat-form-field>  
-
-            <section class="example-section" fxFlex="49" >
+     <div fxLayoutAlign="space-between center" >
+        <section class="example-section" fxFlex="49" >
                
-                    <mat-radio-button class="example-margin" value="after">Estudio actualmente acá</mat-radio-button>
-             
-                <!-- <mat-label style="font-size: 1em;"></mat-label> -->
-
-            </section>
-            
-
-        </div>
-
+        <mat-radio-button class="example-margin" value="after">Incluir descripción de la empresa</mat-radio-button>
+        </section>
        
+    </div>
+<br>
+    <div fxLayoutAlign="center"  >
+
+        <mat-form-field appearance="outline" fxFlex="100" >
+            <mat-label>Descripcion del premio</mat-label>
+            <textarea matInput 
+            rows="7" 
+             formControlName="comment" 
+            (change)="onCommentChange()">          
+            </textarea>
+        </mat-form-field> 
+        
+    </div>
+
+    
         <div class="buttonGroup" fxLayoutAlign="center center" fxLayoutGap="20px"  >
           <button  fxFlex="30" mat-raised-button  appearance="outline" type="submit"><mat-label >Guardar</mat-label></button>
           <button  fxFlex="30" mat-raised-button  appearance="outline" type="submit" ><mat-label >Previsualizar</mat-label></button>
           <button  fxFlex="30" mat-raised-button  appearance="outline" type="submit" style="background-color: black;;"><mat-label style="color: blanchedalmond;">Publicar</mat-label></button>
         </div> 
-    
-    
+
         </form>
+      
    </div>
-  
+
   </mat-dialog-content>
   
   
