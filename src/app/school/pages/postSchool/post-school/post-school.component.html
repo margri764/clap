@@ -1,0 +1,94 @@
+
+
+
+<div   style="width:100%; height: 100%; background-color: rgb(53, 53, 53);" fxLayoutAlign="center center">
+
+<div class="mat-dialog-container" fxLayout="row wrap"  fxFlex="50" >
+
+    <div fxFlex="100"> 
+      
+    <div fxLayout="row" fxLayoutAlign="space-between center" >
+        
+                <div fxFlex="40" >
+                <div>
+                    <mat-icon  mat-button routerLink="/escuelas/lista" style="cursor: pointer;">arrow_back</mat-icon>
+                </div>
+
+              </div>
+                <div fxLayout="row" fxFlex="60"  fxFlexOffset="10"  fxLayoutAlign="space-between center">
+                <div>
+                    <button   mat-raised-button  appearance="outline" type="submit" style="background-color: #FF8066;border-radius: 30px; line-height: 2vw ;"><mat-label >Publicado por Lorenzo Franco</mat-label></button>
+                </div>
+                <div>
+                    <mat-icon style="font-size: 2em; margin-right: 0.5em; color: rgb(185, 185, 185);">bookmark_border</mat-icon>
+                    <mat-icon style="font-size: 2em; margin-right: 0.5em; color: rgb(185, 185, 185); cursor: pointer;">more_vert</mat-icon>
+                </div>   
+             </div> 
+    
+        </div>
+    
+      <br>
+    <div >  
+      <mat-card-title>Jorge Tadeo Lozano</mat-card-title>
+      <br>
+      <h4 mat-dialog-title><b>Universidad Tadeo Lozano</b></h4>
+      <mat-card-subtitle>Bogota- Colombia</mat-card-subtitle>
+     
+    
+    </div>
+    <br><br>
+
+      <div  fxLayoutAlign="center center"   > 
+         <p fxFlex="90" >Esta escuela fue publicada por un clapper de la comunidad. si conoces el encargado de esta escuela, invitalo para que tambien pueda hacer parte de Clap y finalice el registro.</p>
+     </div>
+      
+      
+<form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form">     
+
+
+    <div fxLayoutAlign="center center"> 
+
+            <mat-form-field appearance="outline" fxFlex="80" >		
+            <mat-label fxLayoutAlign="center">Correo electronico</mat-label>
+            <input matInput type="text" required formControlName="web">
+        </mat-form-field> 
+        <!-- <mat-error  *ngIf ="validField ('web')">
+            completa este dato
+        </mat-error> 
+        </div>  -->
+    </div>
+        
+        
+        <div fxLayoutAlign="center center" style="margin-top: 10px;"  >
+        
+            <button  fxFlex="80" mat-raised-button  appearance="outline" type="submit" style="background-color: black;border-radius: 30px; line-height: 3.3vw ;"><mat-label style="color: blanchedalmond;">Enviar</mat-label></button>
+            
+            </div> 
+            <br>
+        <div fxLayout="row wrap" fxLayoutAlign="center center"  >
+            <p>Si eres el encargado de este evento, <a><b>haz click aquí</b></a></p>
+        </div>  
+    
+</form>
+    
+      
+    
+     
+    
+    
+    
+      <!-- <div fxLayoutAlign="center center" style="" >
+           
+        <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: #FF8066;border-radius: 30px;">Inscribirse</button>
+       
+      </div> 
+    
+    </div>
+     -->
+    
+     
+</div>    
+
+</div>    
+    
+    

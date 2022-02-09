@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-invitation',
+  templateUrl: './invitation.component.html',
+  styleUrls: ['./invitation.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class InvitationComponent implements OnInit {
 
   myForm:FormGroup = this.fb.group({
     name:    ['', [Validators.required] ],

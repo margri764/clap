@@ -5,12 +5,16 @@ import { MaterialModule } from '../material/material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeSchoolComponent } from './pages/homeSchool/home-school/home-school.component';
+import { PostSchoolComponent } from './pages/postSchool/post-school/post-school.component';
+import { TagSchoolComponent } from './pages/tagSchool/tag-school/tag-school.component';
 
 
 
 @NgModule({
   declarations: [
-    HomeSchoolComponent
+    HomeSchoolComponent,
+    PostSchoolComponent,
+    TagSchoolComponent
   ],
   imports: [
     CommonModule,
@@ -20,9 +24,15 @@ import { HomeSchoolComponent } from './pages/homeSchool/home-school/home-school.
     ReactiveFormsModule,
   ],
   exports:[
-    HomeSchoolComponent
+    HomeSchoolComponent,
+    PostSchoolComponent,
+    TagSchoolComponent
+
+
 
   ],
-  providers:[ HomeSchoolComponent]
+  // providers:[ HomeSchoolComponent]
+  providers:[ ]
+
 })
 export class SchoolModule { }

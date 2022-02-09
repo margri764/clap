@@ -1,0 +1,63 @@
+
+
+<div  class="backPage" fxLayoutAlign="center center">
+
+
+    
+
+         <div class="container" fxLayout="row rwap" fxLayoutAlign="space-between start" style="padding: 20px;" >
+      
+      
+               
+                 <div  fxFlex="90"  fxLayoutAlign="end center"  >
+                    
+                 
+              
+                        <mat-icon routerLink="/home" style="font-size: 2.2vw; cursor: pointer;">close </mat-icon>
+                
+                </div>    
+            
+                <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center"  style="margin-top: 50px; ">
+
+                    <h1><b>¿A quién quieres invitar?</b></h1>
+
+<form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form"  fxFlex="80" >     
+
+
+    <div fxLayoutAlign="center center"> 
+
+            <mat-form-field appearance="outline" fxFlex="100" >		
+            <mat-label fxLayoutAlign="center">Correo </mat-label>
+            <input matInput type="text" required formControlName="web">
+        </mat-form-field> 
+        <!-- <mat-error  *ngIf ="validField ('web')">
+            completa este dato
+        </mat-error> 
+        </div>  -->
+    </div>
+
+                           
+        
+        
+        <div fxLayoutAlign="center center" style="margin-top: 30px;"  >
+        
+            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: black;border-radius: 30px;"><mat-label style="color: blanchedalmond;">Enviar</mat-label></button>
+            
+            </div> 
+   
+
+                          </form>
+
+                </div>
+
+
+              
+
+
+       
+        </div>    
+    
+    
+  
+
+</div>

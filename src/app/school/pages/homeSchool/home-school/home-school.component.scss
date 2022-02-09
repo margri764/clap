@@ -1,0 +1,48 @@
+
+img{
+    width: 90%;
+    height: 90%;
+    border-radius: 13px;
+     
+}
+
+
+
+.spacer {
+ 
+    flex: 1 1 auto;  //eso le dice al span que cubra el espacio disponible entre los botones
+}
+
+.mat-divider{
+    border-top-width: 1px;
+    display: block;
+    // width: 3px;
+}
+
+.card{
+
+     border: 2px solid #FF8066;
+     border-radius: 20px;
+     box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    margin-top: 15px;
+
+
+}
+
+.mat-button{
+    border: 2px solid;
+    border-radius: 20px;
+    border-color: rgb(211, 211, 211);
+    font-size: 1.2vw;
+}
+
+
+.mat-raised-button:active{
+    background-color:#FF8066 ;
+}
+
+.mat-form-field{
+    font-size: 1em;
+}

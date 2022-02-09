@@ -10,11 +10,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
 import { WorkExperienceComponent } from './pages/workExperience/work-experience/work-experience.component';
 import { EducationComponent } from './pages/education/education/education.component';
-import { JobViewMoreComponent } from '../jobs/pages/jobViewMore/job-view-more/job-view-more.component';
-import { HomeJobsComponent } from '../jobs/pages/homeJobs/home-jobs/home-jobs.component';
 import { FooterComponent } from './pages/footer/footer/footer.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { Page404Component } from './pages/page404/page404/page404.component';
+import { InvitationComponent } from './pages/invitation/invitation/invitation.component';
+import { PostExperienceComponent } from './pages/postExperience/post-experience/post-experience.component';
 
 
 
@@ -26,6 +26,8 @@ import { Page404Component } from './pages/page404/page404/page404.component';
     Page404Component,
     WorkExperienceComponent,
     EducationComponent,
+    InvitationComponent,
+    PostExperienceComponent,
 
     
   ],
@@ -44,6 +46,10 @@ import { Page404Component } from './pages/page404/page404/page404.component';
     Page404Component,
     EducationComponent,
     WorkExperienceComponent,
+    InvitationComponent,
+    PostExperienceComponent,
+
+
 
   ],
   // providers: [JobViewMoreComponent,HomeJobsComponent],

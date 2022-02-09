@@ -28,9 +28,9 @@
     <div class="" fxLayout="wrap" fxFlex="33" fxLayoutAlign="end start" style=" "> 
  
       
-          <button  mat-raised-button fxShow="" appearance="outline" type="submit" style="margin-right: 2em;">Registrarse</button>
+          <button  mat-raised-button fxShow="" appearance="outline" type="submit" routerLink="../auth/registro" style="margin-right: 2em;">Registrarse</button>
 
-          <button  mat-raised-button  appearance="outline" type="submit" routerLink="../login" style="margin-right: 2em;">Iniciar Sesion</button>
+          <button  mat-raised-button  appearance="outline" type="submit" routerLink="../auth/login" style="margin-right: 2em;">Iniciar Sesion</button>
         
   </div>
 
@@ -64,9 +64,11 @@ gt-xs = screen and (min-width: 600px) -->
         <button mat-button (click)="getPeople()"       routerLink="../personas"> Personas</button>        
         <button mat-button (click)="getJobs()"         routerLink="../empleos">  Empleos</button>
         <button mat-button (click)="getBusiness()"     routerLink="../empresas"> Empresas</button>
-        <button mat-button (click)="getSchools()"      routerLink="../escuelas"> Escuelas</button>
+        <button mat-button (click)="getSchools()"      routerLink="../escuelas/lista"> Escuelas</button>
         <button mat-button (click)="getEvents()"       routerLink="../eventos"  >Eventos</button>
-        <button mat-button (click)="getCompetitions()" routerLink="../concursos"  >Concursos</button>       
+        <button mat-button (click)="getCompetitions()" routerLink="../concursos"  >Concursos</button>  
+          
+
         
     </mat-toolbar>
 </div>

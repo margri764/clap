@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CardJobCreatorComponent } from '../jobs/pages/cardJobCreator/card-job-creator/card-job-creator.component';
+import { InvitationComponent } from './pages/invitation/invitation/invitation.component';
+import { PostExperienceComponent } from './pages/postExperience/post-experience/post-experience.component';
 
 
 const routes : Routes =[
 
+  {
+    path: 'invitacion',   component: InvitationComponent
+  },
+  
+  {
+    path: 'publicacion',   component: PostExperienceComponent
+  },
 
-  // {
-  //   path: "jobs", component: CardJobCreatorComponent
-  // },
   // {
   //   path: "", redirectTo: "dashboard", pathMatch: 'full'
   // },
-  // {
-  //   path: 'page404',   component: Page404Component
-  // },
+
   // {
   //   path: '**',
   //   redirectTo: 'Page404'

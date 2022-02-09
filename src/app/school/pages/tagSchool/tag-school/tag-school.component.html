@@ -1,0 +1,95 @@
+
+
+
+<div   style="width:100%; height: 100%; background-color: rgb(53, 53, 53);" fxLayoutAlign="center center">
+
+    <div class="mat-dialog-container" fxLayout="row wrap"  fxFlex="35" >
+    
+        <div fxFlex="100"> 
+          
+        <div  fxLayoutAlign="end center" >
+            <mat-icon routerLink="/escuelas/lista" style="font-size: 2.2vw; cursor: pointer;">close </mat-icon>
+        </div>
+          <br>
+        <div  fxLayoutAlign="center center">  
+          <mat-card-title style="word-spacing: 30px; letter-spacing: 1px;">¿Conoces alguna Escuela?</mat-card-title>
+        
+        </div>
+         
+        
+        </div>
+        
+    
+          <div  fxLayoutAlign="center center"   > 
+             <p fxFlex="90" >Ingrese la información que conoces y así avisaremos del evento a nuestra comunidad.</p>
+         </div>
+          
+    <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100"
+        style="margin-bottom: 20px;">     
+    
+    
+
+  
+          <mat-form-field appearance="outline" fxFlex="80">		
+            <mat-label >Título</mat-label>
+            <input matInput type="text" required formControlName="name">
+             <!-- <mat-error  *ngIf ="validField ('degree')">
+                completa este dato / no es un formato de email valido
+            </mat-error>  -->
+          </mat-form-field> 
+
+
+          <mat-form-field appearance="outline" fxFlex="80" >
+              
+            <mat-label>Pais*</mat-label>
+                <mat-select>
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                </mat-select>
+        </mat-form-field> 
+
+
+        <mat-form-field appearance="outline" fxFlex="80" >
+        <mat-label>Ciudad*</mat-label>
+        <mat-select>
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+        </mat-select>
+        </mat-form-field> 
+
+        
+        <mat-form-field appearance="outline" fxFlex="80">		
+            <mat-label >Email de contacto</mat-label>
+            <input matInput type="text" required >
+             <!-- <mat-error  *ngIf ="validField ('degree')">
+                completa este dato / no es un formato de email valido
+            </mat-error>  -->
+          </mat-form-field> 
+
+          
+          <mat-form-field appearance="outline" fxFlex="80">		
+            <mat-label> Link pagina web</mat-label>
+            <input matInput type="text" required formControlName="alias">
+             <!-- <mat-error  *ngIf ="validField ('degree')">
+                completa este dato / no es un formato de email valido
+            </mat-error>  -->
+          </mat-form-field> 
+
+       
+       
+        <div fxFlex="100" fxLayoutAlign="center" >
+
+          <button fxFlex="80"  mat-raised-button  appearance="outline" type="submit" style="background-color: black;;"><mat-label style="color: blanchedalmond;">Sugerir</mat-label></button>
+        </div> 
+
+        
+    
+    </form>
+   
+</div>
+ </div>
+
+    
+
+        
+    

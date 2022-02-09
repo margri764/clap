@@ -8,6 +8,7 @@ import { RegistrationComponent } from './pages/registration/registration/registr
 const routes: Routes = [
   {
     path: '',
+
     children: [
       {
         path: 'login',

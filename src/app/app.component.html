@@ -11,7 +11,8 @@
         
             <div class="content">
        
-              <app-dashboard *ngIf="!(router.url === '/login')"></app-dashboard>
+              <app-dashboard *ngIf="!(router.url === '/auth/login' || router.url === '/auth/registro'|| router.url === '/invitacion' 
+              || router.url === '/escuelas/posteo' || router.url === '/escuelas/sugerir')"></app-dashboard>
               <!-- <app-header></app-header>
   
               <app-slide-up *ngIf="!(router.url === '/contact-us')"></app-slide-up> -->
@@ -25,7 +26,8 @@
             </div>
   
             <div class="footer">
-              <app-footer *ngIf="!(router.url === '/login')"></app-footer>
+              <app-footer *ngIf="!(router.url === '/login'|| router.url === '/auth/registro' || router.url === '/invitacion'
+               || router.url === '/escuelas/posteo' || router.url === '/escuelas/sugerir')"></app-footer>
             </div> 
         </div> 
     </div>

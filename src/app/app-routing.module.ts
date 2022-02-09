@@ -4,11 +4,22 @@ import { HomeComponent } from './shared/pages/home/home/home.component';
 import { Page404Component } from './shared/pages/page404/page404/page404.component';
 
 const routes: Routes = [
+
   {
-    path: "", redirectTo: "home", pathMatch: 'full'
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule )
   },
+
+  {
+    path: 'escuelas',
+    loadChildren: () => import('./school/school.module').then( m => m.SchoolModule )
+  },
+
   {
     path: "home", component: HomeComponent
+  },
+    {
+    path: "", redirectTo: "home", pathMatch: 'full'
   },
  
   {

@@ -1,1 +1,104 @@
-<p>registration works!</p>
+
+
+<div   style="width:100%; height: 100%; background-color: rgb(53, 53, 53);">
+
+
+    <div  fxLayoutAlign="end center" fxFlex="50" >
+
+         <div class="container" fxLayout="row rwap" fxLayoutAlign="space-between start" style="padding: 20px;" >
+      
+      
+               
+                 <div  fxFlex="90"  fxLayoutAlign="end center"  >
+                    
+                 
+              
+                        <mat-icon routerLink="/home" style="font-size: 2.2vw; cursor: pointer;">close </mat-icon>
+                
+                </div>    
+            
+                <div fxFlex="100"  style="margin-top: 50px; padding:10px;">
+                    <h1><b>Crea tu cuenta</b></h1>
+                    <h2>¿No tienes una cuenta? <a routerLink=""> <b>Inicia Sesión</b></a></h2>
+
+<form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form">     
+
+
+    <div fxLayoutAlign="center center"> 
+
+            <mat-form-field appearance="outline" fxFlex="100" >		
+            <mat-label fxLayoutAlign="center">Correo electronico</mat-label>
+            <input matInput type="text" required formControlName="web">
+        </mat-form-field> 
+        <!-- <mat-error  *ngIf ="validField ('web')">
+            completa este dato
+        </mat-error> 
+        </div>  -->
+    </div>
+
+    <div fxLayoutAlign="center">
+        <mat-form-field appearance="outline" fxFlex="100">		
+            <mat-label fxLayoutAlign="center" >Contraseña</mat-label>
+            <input matInput type="text" required formControlName="titular">
+        </mat-form-field> 
+        <!-- <mat-error  *ngIf ="validField ('titular')">
+            completa este dato
+        </mat-error> 
+        </div> -->
+        </div>
+            
+                
+
+   
+
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center"  >
+
+             <div>
+                <section class="example-section" fxFlex="100"  >
+                    <mat-radio-button class="example-margin" value="after">He leido y acepto los<a> <b>términos y condiciones</b></a></mat-radio-button>
+                </section>  
+            </div>
+
+        </div>  
+          
+        
+        
+        <div fxLayoutAlign="center center" style="margin-top: 10px;"  >
+        
+            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: black;border-radius: 30px;"><mat-label style="color: blanchedalmond;">Crear cuneta</mat-label></button>
+            
+            </div> 
+    <hr>
+
+    <div fxLayoutAlign="center center"  >
+        
+        <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: rgb(42, 111, 175);border-radius: 30px;"><mat-label style="color: blanchedalmond;">Conectar con Linkedin</mat-label></button>
+        
+        </div> 
+        <div fxLayout="row" fxLayoutAlign="start center" style="margin-top: 40px" >
+        
+            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit"  style="background-color: whitesmoke;border-radius: 30px;"><img src="assets/google.png" fxFlex="10" fxFlexOffset="18" > <mat-label> &nbsp; Conectar con Google</mat-label></button>
+            
+            </div>     
+
+                          </form>
+
+                </div>
+
+
+              
+
+
+       
+        </div>    
+    
+    </div>      
+
+
+  
+
+    <div fxFlex="50" fxLayoutAlign="end center">
+        <img src="assets/clapLetter.png" alt="">
+    </div>
+
+</div>

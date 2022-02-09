@@ -14,7 +14,7 @@ import { CardEventsProposalComponent } from './pages/cardEventsProposal/card-eve
   declarations: [
     HomeEventsComponent,
     CardComponent,
-    CardEventsProposalComponent
+    CardEventsProposalComponent,
  
 
   ],
@@ -28,7 +28,7 @@ import { CardEventsProposalComponent } from './pages/cardEventsProposal/card-eve
   exports:[
     HomeEventsComponent,
     CardComponent,
-    CardEventsProposalComponent
+    CardEventsProposalComponent,
   ],
     providers:[ HomeEventsComponent]
 })

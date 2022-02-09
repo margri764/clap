@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LoginComponent } from './pages/login/login/login.component';
-import { RegistrationComponent } from './pages/registration/registration/registration.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { MaterialModule } from '../material/material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegistrationComponent } from './pages/registration/registration/registration.component';
 
 
 
@@ -14,7 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+  
+    
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   exports:[
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+
   ]
 })
 export class AuthModule { }

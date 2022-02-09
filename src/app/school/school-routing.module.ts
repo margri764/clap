@@ -1,15 +1,39 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeSchoolComponent } from './pages/homeSchool/home-school/home-school.component';
 import { RouterModule, Routes } from '@angular/router';
 
+import { PostSchoolComponent } from './pages/postSchool/post-school/post-school.component';
+import { HomeSchoolComponent } from './pages/homeSchool/home-school/home-school.component';
+import { TagSchoolComponent } from './pages/tagSchool/tag-school/tag-school.component';
 
 
 const routes : Routes =[
 
-  {    
-    path: "escuelas", component: HomeSchoolComponent   
-  },
+  {
+    path: '',
+
+    children: [
+      {    
+        path: "lista", component: HomeSchoolComponent   
+      },
+    
+      {    
+        path: "posteo", component: PostSchoolComponent   
+      },
+     
+      {    
+        path: "sugerir", component: TagSchoolComponent   
+      },
+
+      {
+        path: '**',
+        redirectTo: 'lista'
+      }
+
+    ]
+  }
+
+
 
 ]
 

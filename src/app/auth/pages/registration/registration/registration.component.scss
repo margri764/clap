@@ -1,0 +1,62 @@
+
+img{
+    width: 100%;
+}
+
+.container{
+    background-color: white;
+    width: 500px;
+    height: 600px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+
+
+  .mat-dialog-container {
+    border-radius: 40px !important;
+    flex:1 1 auto;
+  }
+
+  mat-form-field{
+      font-size: 0.8em;
+  }
+
+  mat-label{
+      font-size: 1.3em;
+  }
+
+  .mat-raised-button{
+
+    border-radius: 30px;
+    background-color:#b6b6b6;
+
+}
+
+.buttonGroup{
+     background-color: #b6b6b6;
+     height: 5em; 
+     border-radius: 15px;
+     box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
+    -webkit-box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
+    -moz-box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
+    margin-bottom: 25px;
+
+}
+
+
+
+
+hr{
+    height: 1px;
+    width: 100%;
+    background-color: rgb(173, 173, 173);
+    box-shadow: 10px 10px 29px -1px rgba(87,87,87,1);
+    -webkit-box-shadow: 10px 10px 29px -1px rgba(87,87,87,1);
+    -moz-box-shadow: 10px 10px 29px -1px rgba(87,87,87,1);
+    margin-top: 20px;
+    margin-bottom: 20px;;
+    opacity: 0.5;
+}
+

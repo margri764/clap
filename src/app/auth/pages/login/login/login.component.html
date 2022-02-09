@@ -1,25 +1,25 @@
 
 
-<div   style="width:100%; height: 100%; background-color: black;">
+<div   style="width:100%; height: 100%; background-color: rgb(53, 53, 53);">
 
 
-    <div  fxLayoutAlign="end center" fxFlex="50" style="border: 2px solid green;">
+    <div  fxLayoutAlign="end center" fxFlex="50" >
 
-         <div class="container" fxLayout="row rwap" fxLayoutAlign="space-between start" style="border: 2px solid red; padding: 40px;" >
+         <div class="container" fxLayout="row rwap" fxLayoutAlign="space-between start" style="padding: 20px;" >
       
       
                
-                 <div  fxFlex="100"  fxLayoutAlign="end center" style="border: 2px solid green;" >
+                 <div  fxFlex="90"  fxLayoutAlign="end center"  >
                     
                  
               
-                        <mat-icon routerLink="../home" style="font-size: 4vw; cursor: pointer;">close </mat-icon>
+                        <mat-icon routerLink="/home" style="font-size: 2.2vw; cursor: pointer;">close </mat-icon>
                 
                 </div>    
             
-                <div fxFlex="100"  style="margin-top: 50px; border: 2px solid green;">
+                <div fxFlex="100"  style="margin-top: 50px; padding:10px;">
                     <h1><b>Iniciar Sesión</b></h1>
-                    <h2>¿No tienes una cuenta? <a routerLink=""> Registrate </a></h2>
+                    <h2>¿No tienes una cuenta? <a routerLink=""> <b>Registrate</b></a></h2>
 
 <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form">     
 
@@ -51,19 +51,19 @@
 
    
 
-        <div fxLayoutAlign="space-between center"  >
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center"  >
 
             <div>
-        <section class="example-section" fxFlex="49" >
+        <section class="example-section" fxFlex="100"  >
 
          <mat-radio-button class="example-margin" value="after">Mantener sesión iniciada</mat-radio-button>
     
 
         </section>  
     </div>
-    <div>
+          <div>
 
-        <section class="example-section" fxFlex="49" >
+        <section class="example-section" fxFlex="100" >
 
             <a>Olvidé mi Contraseña</a>
    
@@ -72,7 +72,7 @@
         </div>     
         
         
-        <div fxLayoutAlign="center center"  >
+        <div fxLayoutAlign="center center" style="margin-top: 10px;"  >
         
             <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: black;border-radius: 30px;"><mat-label style="color: blanchedalmond;">Iniciar Sesión</mat-label></button>
             
@@ -84,9 +84,9 @@
         <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: rgb(42, 111, 175);border-radius: 30px;"><mat-label style="color: blanchedalmond;">Conectar con Linkedin</mat-label></button>
         
         </div> 
-        <div fxLayoutAlign="center center"  >
+        <div fxLayout="row" fxLayoutAlign="start center" style="margin-top: 40px" >
         
-            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: rgb(255, 255, 255);border-radius: 30px;"><mat-label>Conectar con Google</mat-label></button>
+            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit"  style="background-color: whitesmoke;border-radius: 30px;"><img src="assets/google.png" fxFlex="10" fxFlexOffset="18" > <mat-label> &nbsp; Conectar con Google</mat-label></button>
             
             </div>     
 
@@ -106,7 +106,7 @@
 
   
 
-    <div fxFlex="50" fxLayoutAlign="end center" style="border: 2px solid blue;">
+    <div fxFlex="50" fxLayoutAlign="end center">
         <img src="assets/clapLetter.png" alt="">
     </div>
 

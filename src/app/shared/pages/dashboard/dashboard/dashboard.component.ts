@@ -9,7 +9,7 @@ import { CardJobCreatorComponent } from 'src/app/jobs/pages/cardJobCreator/card-
 import { HomeJobsComponent } from 'src/app/jobs/pages/homeJobs/home-jobs/home-jobs.component';
 import { HomePeoplesComponent } from 'src/app/peoples/pages/homePeoples/home-peoples.component';
 import { HomeBusinessComponent } from 'src/app/business/pages/homeBusiness/home-business/home-business.component';
-import { HomeSchoolComponent } from 'src/app/school/pages/homeSchool/home-school/home-school.component';
+// import { HomeSchoolComponent } from 'src/app/school/pages/homeSchool/home-school/home-school.component';
 import { HomeEventsComponent } from 'src/app/events/pages/homeEvents/home-events/home-events.component';
 import { HomeCompetitionComponent } from 'src/app/competition/pages/homeCompetition/home-competition/home-competition.component';
 
@@ -56,7 +56,7 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
               private compJob : HomeJobsComponent,
               private compPeople : HomePeoplesComponent,
               private compBusiness : HomeBusinessComponent,
-              private compSchool : HomeSchoolComponent,
+              // private compSchool : HomeSchoolComponent,
               private compEvent : HomeEventsComponent,
               private compCompetition : HomeCompetitionComponent,
               private cdRef:ChangeDetectorRef
@@ -121,7 +121,7 @@ getBusiness(){
 }
 
 getSchools(){
-  this.compSchool.getSchool();
+  // this.compSchool.getSchool();
 }
 
 getEvents(){
