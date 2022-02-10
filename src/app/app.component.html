@@ -12,7 +12,7 @@
             <div class="content">
        
               <app-dashboard *ngIf="!(router.url === '/auth/login' || router.url === '/auth/registro'|| router.url === '/invitacion' 
-              || router.url === '/escuelas/posteo' || router.url === '/escuelas/sugerir')"></app-dashboard>
+              || router.url === '/escuelas/posteo' || router.url === '/escuelas/sugerir' || router.url === '/eliminar')"></app-dashboard>
               <!-- <app-header></app-header>
   
               <app-slide-up *ngIf="!(router.url === '/contact-us')"></app-slide-up> -->
@@ -27,7 +27,7 @@
   
             <div class="footer">
               <app-footer *ngIf="!(router.url === '/login'|| router.url === '/auth/registro' || router.url === '/invitacion'
-               || router.url === '/escuelas/posteo' || router.url === '/escuelas/sugerir')"></app-footer>
+               || router.url === '/escuelas/posteo' || router.url === '/escuelas/sugerir' || router.url === '/eliminar')"></app-footer>
             </div> 
         </div> 
     </div>

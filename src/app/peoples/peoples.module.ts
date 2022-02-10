@@ -6,13 +6,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CardUserComponent } from './pages/card-user/card-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PeoplesRoutingModule } from './peoples-routing.module';
+import { ProfileComponent } from './pages/profile/profile/profile.component';
 
 
 
 @NgModule({
   declarations: [
     HomePeoplesComponent,
-    CardUserComponent
+    CardUserComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,9 @@ import { PeoplesRoutingModule } from './peoples-routing.module';
   ],
   exports:[
     HomePeoplesComponent,
-    CardUserComponent
+    CardUserComponent,
+    ProfileComponent
+
 
   ],
   providers: [HomePeoplesComponent],

@@ -30,6 +30,9 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
   fruits: Fruit[] = [{name: 'Lemon'}, {name: 'Lime'}, {name: 'Apple'}];
   
   public showPeople : boolean = false;
+  public showMainDashboard : boolean = true;
+  public showProfileDashboard : boolean = true;
+
 
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
@@ -54,7 +57,7 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
   constructor(
               public dialog: MatDialog,  
               private compJob : HomeJobsComponent,
-              private compPeople : HomePeoplesComponent,
+              // private compPeople : HomePeoplesComponent,
               private compBusiness : HomeBusinessComponent,
               // private compSchool : HomeSchoolComponent,
               private compEvent : HomeEventsComponent,
@@ -71,34 +74,59 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
   }
 styleObject() {
 
+  if(window.location.pathname.includes('home')){ 
+    this.showMainDashboard = true;
+    this.showProfileDashboard = false;
+
+   
+ }
+
   if(window.location.pathname.includes('empleos')){ 
 
      return  { "background":"#e961aa" }
   };
 
-  if(window.location.pathname.includes('personas')){ 
+  if(window.location.pathname.includes('artistas/lista')){ 
+    this.showMainDashboard = true;
+    this.showProfileDashboard = false;
 
     return  { "background":"#61a7e9" }
  }
 
  if(window.location.pathname.includes('empresas')){ 
+  this.showMainDashboard = true;
+  this.showProfileDashboard = false;
 
   return  { "background":"#7ff36a"}
 }
 
 if(window.location.pathname.includes('escuelas')){ 
+  this.showMainDashboard = true;
+  this.showProfileDashboard = false;
 
   return  { "background":"#FF8066"}
 }
 
 if(window.location.pathname.includes('eventos')){ 
+  this.showMainDashboard = true;
+  this.showProfileDashboard = false;
 
   return  { "background":"yellow"}
 }
 
 if(window.location.pathname.includes('concursos')){ 
+  this.showMainDashboard = true;
+  this.showProfileDashboard = false;
 
   return  { "background":"#B29DD5"}
+}
+
+if(window.location.pathname.includes('artistas/perfil')){ 
+  
+  this.showMainDashboard = false;
+  this.showProfileDashboard = true;
+
+  return  { "background":"#61a7e9"}
 }
 
   return {}
@@ -109,7 +137,7 @@ if(window.location.pathname.includes('concursos')){
 getPeople(){
   // (this.showJobs = true) ? this.showJobs = false : this.showJobs= true;
   // this.showPeople = !this.showPeople;
-  this.compPeople.getPeoples()
+  // this.compPeople.getPeoples()
 }
 
 getJobs(){
@@ -120,9 +148,7 @@ getBusiness(){
   this.compBusiness.getBusiness();  
 }
 
-getSchools(){
-  // this.compSchool.getSchool();
-}
+
 
 getEvents(){
   this.compEvent.getEvents();

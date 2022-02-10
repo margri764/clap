@@ -69,14 +69,16 @@
     <button mat-button (click)="openDialogCompetition()">Concurso</button> 
     <button mat-button  routerLink="../invitacion"  >Invitacion</button>  
     <button mat-button  routerLink="../publicacion"  >Experiencia publicada</button>  
+    <button mat-button  routerLink="../eliminar"  >Eliminar</button>  
 
 
 
     
-   <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign="space-between center" fxLayoutGap="10px" style="padding: 20px;" >
+   <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign="space-between center" fxLayoutGap="10px"
+       style="padding: 20px;" >
 
 
-    <div  class="card" *ngFor="let heroe of heroes" fxFlex="49">
+    <div  class="card" *ngFor="let heroe of heroes" fxFlex="49"   routerLink="../../artistas/perfil" style="cursor: pointer;">
   
 
          <div fxLayout="row" fxLayoutAlign=" center" fxFlex="30" >
@@ -90,7 +92,7 @@
 
           <div  fxLayout="column" fxFlex="70"  >
 
-             <div fxLayout="row"  fxLayoutAlign="space-between start" fxFlex="100">
+             <div class="text" fxLayout="row"  fxLayoutAlign="space-between start" fxFlex="100">
 
                      <div fxFlex="40" style="">
 
@@ -103,18 +105,17 @@
              
                      <div fxFlex="60" fxLayoutAlign="end start" style=" margin-top: 1em;">
                      
-                          <button  mat-button  appearance="outline" type="submit"
-                           style="background-color: #61a7e9;border-radius: 15px; line-height: 20px; margin-right: 1em;"
-                           >Aplicar</button>
+                          <button  mat-button  appearance="outline" type="submit" class="follow"style="color: black"
+                           >Seguir</button>
          
-                           <mat-icon style="font-size: 2em; margin-right: 0.5em; color: rgb(185, 185, 185);">bookmark_border</mat-icon>
+                           <mat-icon class="bookmark" >bookmark_border</mat-icon>
                    
                  </div>
               
              </div>
                  
          
-         <div fxLayout="row" fxLayoutAlign="space-between" >
+         <div class="text" fxLayout="row" fxLayoutAlign="space-between" >
              <!-- <mat-divider [inset]="true"></mat-divider> -->
              <h4 style="">vdrtrtt</h4>
              <h4 style="margin-right: 1em;">vence en 30 dias</h4>

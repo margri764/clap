@@ -9,10 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from './shared/shared.module';
 import { JobsModule } from './jobs/jobs.module';
-import { PeoplesModule } from './peoples/peoples.module';
 import { BusinessModule } from './business/business.module';
 import { EventsModule } from './events/events.module';
 import { CompetitionModule } from './competition/competition.module';
+import { MessagesModule } from './messages/messages.module';
 
 
 @NgModule({
@@ -27,12 +27,11 @@ import { CompetitionModule } from './competition/competition.module';
     BrowserAnimationsModule,
     SharedModule,
     JobsModule,
-    PeoplesModule,
     BusinessModule,
-    // SchoolModule,
     EventsModule,
     CompetitionModule,
-    // AuthModule
+    MessagesModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

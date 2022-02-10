@@ -1,9 +1,12 @@
 
+.container{
+    width: 100%;
+}
+
+
 img{
-    width: 90%;
-    height: 90%;
-    border-radius: 13px;
-     
+    width: 80%;
+    height: 80%;
 }
 
 
@@ -26,24 +29,24 @@ img{
      box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
-    margin-top: 15px;
+    //  margin-top: 15px;
 
 
 }
 
-.card:hover {
-    background-color:  #8cbce9;
-    .follow{
-        background-color: whitesmoke;
-    }
-    .bookmark{
-        color: whitesmoke;
-    }
-    .text{
-        color: white;
-    }
+// .card:hover {
+//     background-color:  #8cbce9;
+//     .follow{
+//         background-color: whitesmoke;
+//     }
+//     .bookmark{
+//         color: whitesmoke;
+//     }
+//     .text{
+//         color: white;
+//     }
 
-}
+// }
 .bookmark{
     font-size: 2em;
     margin-right: 0.5em;
