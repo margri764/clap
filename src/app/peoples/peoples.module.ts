@@ -7,6 +7,7 @@ import { CardUserComponent } from './pages/card-user/card-user.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PeoplesRoutingModule } from './peoples-routing.module';
 import { ProfileComponent } from './pages/profile/profile/profile.component';
+import { ResumeComponent } from './pages/resume/resume/resume.component';
 
 
 
@@ -15,6 +16,7 @@ import { ProfileComponent } from './pages/profile/profile/profile.component';
     HomePeoplesComponent,
     CardUserComponent,
     ProfileComponent,
+    ResumeComponent,
   ],
   imports: [
     CommonModule,

@@ -24,14 +24,49 @@ img{
 
 .card{
 
-     border: 2px solid #61a7e9;
      border-radius: 20px;
+     margin-bottom: 0px;
+     
+     border-top: 4px solid #61a7e9;
+     border-right: 6px solid #61a7e9;
+     border-bottom: 10px solid #61a7e9;
+     border-left: 6px solid #61a7e9;
+
      box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     //  margin-top: 15px;
 
 
+}
+
+.btnHeader{
+     background-color: #61a7e9;
+     height: 50px;
+
+
+    //  border: 5px solid #050505;
+     
+}
+
+.whiteBorder{
+     border: 4px solid rgb(240, 240, 240);
+     margin-top: 30px;
+     border-radius: 20px; 
+     box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+    -moz-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+}
+
+.about{
+    border:4px solid #61a7e9;
+    height: 300px; 
+    margin-top: 30px;
+    border-radius: 15px;
+}
+
+.text{
+    padding: 20px;
 }
 
 // .card:hover {

@@ -4,27 +4,26 @@
 <div class="container" fxLayoutAlign="center" style="border: 6px solid yellow;">
 
 
-    <!-- start profile -->
-    <div fxFlex="70"  fxLayoutAlign="center" style="">
-      
-    <!-- start container (border) profile -->
-       <div fxFlex="90" fxLayout="row wrap" fxLayoutAlign="center center" 
-       style="border: 4px solid rgb(240, 240, 240); margin-top: 30px; border-radius: 10px;" > 
+<!-- start profile -->
+<div fxFlex="70"  fxLayoutAlign="center" >
+    
+<!-- start container (border) profile -->
+    <div class="whiteBorder" fxFlex="90" fxLayout="row wrap" fxLayoutAlign="center center"> 
       
     
-        <!-- start header profile -->
-        <div fxFlex="100" style="height: 300px; margin-top: 30px;">
+<!-- start header profile -->
+<div fxFlex="100" style="height: 300px;">
 
 
 
 
-    <div  class="card" *ngFor="let heroe of heroes"   routerLink="../../artistas/perfil" style="">
+    <div  class="card" *ngFor="let heroe of heroes"   routerLink="../../artistas/perfil" >
   
       <div fxLayout="row wrap" style="height: 80%;">
 
   
 
-        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="30" style="border: 3px solid brown; ;" >
+        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="25" >
 
                  <div fxFlex="80"  >
                      <img  src="assets/carwash3.png">   			
@@ -33,27 +32,28 @@
      
          </div>
 
-          <div  fxLayout="column" fxFlex="70" style="border: 5px solid brown;"  >
+          <div  fxLayout="column" fxFlex="75">
 
             <div>
 
-             <div class="text" fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100">
+             <div class="text" fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100" >
 
-                     <div fxFlex="40" style="border: 2px solid; margin-top: 30px;">
+                     <div fxFlex="40" style="margin-top: 30px; padding: 20px;">
 
-                         <h3 style="margin-top: 0.5em;"> Diseñador digital</h3>
-                         <h4>{{heroe.nombre}}</h4>
-                         <h4>2 años de Experiencia</h4>
-                         <h4>2 años de Experiencia</h4>
-                         <h4>2 años de Experiencia</h4>
+                        <mat-label style="font-size: 2vw;"> <b> Jeison Mayorga</b></mat-label> <br>
+                            <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
+                         <mat-label>{{heroe.nombre}}</mat-label> <br>
+                         <mat-label>Bogota - Colombia</mat-label> <br>
+                         <mat-label>2 años de Experiencia</mat-label> <br>
+                         <mat-label>Ingles - Español</mat-label>
 
                          
                      </div>
                      
              
-                     <div fxFlex="60" fxLayout="row wrap" fxLayoutAlign="center space-between" style="border: 5px solid green; margin-top: 30px;">
+                     <div fxFlex="60" fxLayout="row wrap" fxLayoutAlign="end space-between" style="margin-top: 30px;">
                        
-                        <div fxFlex="100" fxLayoutAlign="end end" style="border: 5px solid rgb(221, 39, 39);">
+                        <div fxFlex="100" fxLayoutAlign="end end" >
                           <button  mat-button  appearance="outline" type="submit" class="follow"style="color: black"
                            >Seguir</button>
          
@@ -62,7 +62,10 @@
                        
                         </div>
 
-                        <div fxFlex="100" fxLayoutAlign="end center" style="border: 5px solid rgb(221, 39, 39);">
+                        <div style="margin-right: 1em"> <mat-label style="font-size: 1.8vw;"> 43  </mat-label>Seguidores</div>
+
+                        <div  fxLayoutAlign="end center" style="padding: 10px;">
+                            
                             <div fxLayoutAlign="center center"  style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon"  >bookmark_border</mat-icon> </div>
                             <div fxLayoutAlign="center center" style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon" >more_vert</mat-icon> </div>
                             <div fxLayoutAlign="center center"  style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon"  >person</mat-icon> </div>
@@ -72,7 +75,6 @@
 
                      </div>           
                  </div>
-                 <!-- <div fxFlex="100" style="border: 5px solid rgb(76, 165, 76)"></div> -->
               
                
     
@@ -82,12 +84,12 @@
     </div>
   </div>
   
-  <div fxLayout="row wrap"  style=" background-color: #61a7e9; border-radius: 3px; height: 20%;" >
+  <div class="btnHeader" fxLayout="row wrap">
    
-    <div fxFlex="30" fxFlexOffset="8" >
+    <div fxFlex="30" fxFlexOffset="8" fxLayoutAlign="none end" >
         <button  mat-button  appearance="outline" >Industrias</button>
     </div>
-    <div fxFlex="62" fxLayoutAlign="start" fxLayoutGap="10">
+    <div fxFlex="62" fxLayoutAlign="start end" fxLayoutGap="10">
 
         <button  mat-button  appearance="outline" >Diseño Grafico</button>
         <button  mat-button  appearance="outline" >Animación</button>
@@ -104,10 +106,20 @@
         
         </div>
         <!-- end header profile -->
-       
-        <!-- start "about" -->
-        <div fxFlex="90" style="border:4px solid red;height: 300px; margin-top: 30px;">
+      
         
+        <!-- start "about" -->
+        <div class="about" fxFlex="95"fxlayoutAlign="center center"  style="padding: 30px; margin-top: 50px;" >
+
+            <mat-label> Acerca de </mat-label>
+            
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            
+            <mat-label>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem tempore dicta laudantium harum ducimus distinctio consequuntur esse recusandae nesciunt accusamus perspiciatis eum exercitationem, possimus expedita cumque deserunt iure necessitatibus non.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus neque aliquam error eligendi! Magni id aut est illo eveniet, necessitatibus ipsum consectetur, voluptates exercitationem tempora laboriosam fuga dignissimos molestiae qui!
+            </mat-label>
 
         </div>
         <!-- end about -->
