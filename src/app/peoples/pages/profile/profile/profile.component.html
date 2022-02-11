@@ -109,7 +109,7 @@
       
         
         <!-- start "about" -->
-        <div class="about" fxFlex="95"fxlayoutAlign="center center"  style="padding: 30px; margin-top: 50px;" >
+        <div class="about" fxFlex="95"fxlayoutAlign="center center"   style="padding: 30px; margin-top: 50px;" >
 
             <mat-label> Acerca de </mat-label>
             
@@ -126,17 +126,18 @@
 
     
         <!-- start container "life" & "portfolio" -->
-        <div fxLayout="row wrap" fxLayoutAlign="space-between" fxFlex="90" fxLayoutGap="10" style="border:4px solid ;height: 200px; margin-top: 30px;">
+        <div fxLayout="row wrap" fxLayoutAlign="space-between" fxFlex="90" fxLayoutGap="7" (click)="openDialog()" style="height: 220px; margin-top: 30px;">
             
             <!-- start life         -->
-                <div fxFlex="40" style="border: 4px solid yellow;height: 200px; ">
+                <div class="life" fxFlex="40"  fxLayoutAlign="center">
+                    <div fxFlex="70" class="resumeImg"></div>
 
                 </div>
             <!-- end life     -->
 
             <!-- start portfolio  -->
-                <div fxFlex="55" style="border: 4px solid brown;height: 200px; ">
-
+                <div class="portfolio" fxFlex="58" >
+                    <div fxFlex="100" class="portfolioImg"></div>
                 </div>
             <!-- end portfolio -->
     
@@ -146,27 +147,43 @@
 
 
         <!-- start experience -->
-        <div fxLayout="row wrap" fxLayoutAlign="center" fxFlex="90"  style="border:4px solid ;height:40px; margin-top: 30px;">
-            <h1>experiencia</h1>
+        <div class="experience" fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="95"  style="height:40px; margin-top: 30px;">
+            <mat-label style="margin-left: 20px;">  Experiencia</mat-label>
         </div>
         <!-- end experience -->
         
         <!-- start experience -->
-        <div fxLayout="row wrap" fxLayoutAlign="center" fxFlex="90"  style="border:4px solid ;height:200px; margin-top: 30px;">
-            <h1>experiencia</h1>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxFlex="95"  style="height:500px; margin-top: 30px;">
+            
+            <div fxFlex="49" style="border: 4px solid #61a7e9; height: 50%; border-radius: 15px;">
+
+            </div>
+            <div fxFlex="49" style="border: 4px solid #61a7e9; height: 50%; border-radius: 15px;">
+
+            </div> 
+            <div fxFlex="49" style="border: 4px solid #61a7e9; height: 50%; border-radius: 15px;">
+
+            </div>
+            <div fxFlex="49" style="border: 4px solid #61a7e9; height: 50%; border-radius: 15px;">
+
+            </div>
+            
+          
+
+
         </div>
         <!-- end experience -->
         
   
 
         <!-- start education -->
-        <div fxLayout="row " fxLayoutAlign="center" fxFlex="90"  style="border:4px solid ;height:40px; margin-top: 30px;">
-            <h1>educacion</h1>
+        <div class="experience" fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="95"  style="height:40px; margin-top: 30px;">
+            <mat-label style="margin-left: 20px;">  Educacion</mat-label>
         </div>
         <!-- end education-->
     
         <!-- start card education -->
-        <div fxLayout="row " fxLayoutAlign="center " fxFlex="90"  style="border:4px solid red ;height:200px; margin-top: 30px;">
+        <div fxLayout="row " fxLayoutAlign="center " fxFlex="95"  style="border:4px solid red ;height:200px; margin-top: 30px;">
             <h1>card educacion</h1>
         </div>
         <!-- end card education -->

@@ -28,7 +28,9 @@ import { ResumeComponent } from './pages/resume/resume/resume.component';
   exports:[
     HomePeoplesComponent,
     CardUserComponent,
-    ProfileComponent
+    ProfileComponent,
+    ResumeComponent,
+
 
 
   ],

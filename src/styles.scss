@@ -4,16 +4,33 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-  .mat-dialog-container {
-    border-radius: 40px !important;
-  }
+
 
   .custom-modalbox {
     mat-dialog-container {
         padding: 0;
-        width: 920px;
+        width: 1200px;
         height: 100%;
-  
+   
 
     }
 }
+
+.mat-dialog-container {
+  border-radius: 40px !important;
+
+
+}
+
+.custom-modalbox-opacity {
+  mat-dialog-container {
+      padding: 0px;
+      width: 900px;
+      height: 700px;
+      opacity: 0.97;
+  
+    }
+
+  }
+   
+    
