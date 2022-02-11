@@ -90,7 +90,7 @@ styleObject() {
     this.showMainDashboard = true;
     this.showProfileDashboard = false;
 
-    return  { "background":"#61a7e9" }
+    return  { "background":"#b0bcec" }
  }
 
  if(window.location.pathname.includes('empresas')){ 
@@ -126,7 +126,7 @@ if(window.location.pathname.includes('artistas/perfil')){
   this.showMainDashboard = false;
   this.showProfileDashboard = true;
 
-  return  { "background":"#61a7e9"}
+  return  { "background":"#b0bcec"}
 }
 
   return {}

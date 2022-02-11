@@ -1,11 +1,11 @@
 
 
 
-<div class="container" fxLayoutAlign="center" style="border: 6px solid yellow;">
+<div class="container" fxLayoutAlign="center">
 
 
 <!-- start profile -->
-<div fxFlex="70"  fxLayoutAlign="center" >
+<div fxFlex="65"  fxLayoutAlign="center" >
     
 <!-- start container (border) profile -->
     <div class="whiteBorder" fxFlex="90" fxLayout="row wrap" fxLayoutAlign="center center"> 
@@ -17,7 +17,7 @@
 
 
 
-    <div  class="card" *ngFor="let heroe of heroes"   routerLink="../../artistas/perfil" >
+    <div  class="card" *ngFor="let heroe of heroeHeader"   routerLink="../../artistas/perfil" >
   
       <div fxLayout="row wrap" style="height: 80%;">
 
@@ -41,7 +41,7 @@
                      <div fxFlex="40" style="margin-top: 30px; padding: 20px;">
 
                         <mat-label style="font-size: 2vw;"> <b> Jeison Mayorga</b></mat-label> <br>
-                            <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
+                        <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
                          <mat-label>{{heroe.nombre}}</mat-label> <br>
                          <mat-label>Bogota - Colombia</mat-label> <br>
                          <mat-label>2 años de Experiencia</mat-label> <br>
@@ -54,7 +54,7 @@
                      <div fxFlex="60" fxLayout="row wrap" fxLayoutAlign="end space-between" style="margin-top: 30px;">
                        
                         <div fxFlex="100" fxLayoutAlign="end end" >
-                          <button  mat-button  appearance="outline" type="submit" class="follow"style="color: black"
+                          <button  mat-button  appearance="outline" type="submit" class="follow"
                            >Seguir</button>
          
                            <mat-icon class="bookmark" >bookmark_border</mat-icon>
@@ -155,16 +155,16 @@
         <!-- start experience -->
         <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxFlex="95"  style="height:500px; margin-top: 30px;">
             
-            <div fxFlex="49" style="border: 4px solid #61a7e9; height: 50%; border-radius: 15px;">
+            <div fxFlex="49" style="border: 4px solid #b0bcec; height: 50%; border-radius: 15px;">
 
             </div>
-            <div fxFlex="49" style="border: 4px solid #61a7e9; height: 50%; border-radius: 15px;">
+            <div fxFlex="49" style="border: 4px solid #b0bcec; height: 50%; border-radius: 15px;">
 
             </div> 
-            <div fxFlex="49" style="border: 4px solid #61a7e9; height: 50%; border-radius: 15px;">
+            <div fxFlex="49" style="border: 4px solid #b0bcec; height: 50%; border-radius: 15px;">
 
             </div>
-            <div fxFlex="49" style="border: 4px solid #61a7e9; height: 50%; border-radius: 15px;">
+            <div fxFlex="49" style="border: 4px solid #b0bcec; height: 50%; border-radius: 15px;">
 
             </div>
             
@@ -174,7 +174,8 @@
         </div>
         <!-- end experience -->
         
-  
+        <div fxFlex="95" class="divider"></div>
+
 
         <!-- start education -->
         <div class="experience" fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="95"  style="height:40px; margin-top: 30px;">
@@ -182,25 +183,19 @@
         </div>
         <!-- end education-->
     
+
         <!-- start card education -->
-        <div fxLayout="row " fxLayoutAlign="center " fxFlex="95"  style="border:4px solid red ;height:200px; margin-top: 30px;">
-            <h1>card educacion</h1>
+        <div fxFlex="95">
+            <app-card-education></app-card-education>
         </div>
         <!-- end card education -->
 
+        <div fxFlex="95" class="divider"></div>
+
 
     <!-- start container skills -->
-        <div fxLayout="row wrap " fxLayoutAlign="space-around center " fxFlex="100"  style="border:4px solid yellow ;height:400px; margin-top: 60px;">
-        
-            <div fxLayoutAlign="center" fxFlex="25"  style="border:4px solid ;height:300px">
-                <h1>card habilidades</h1>
-            </div>
-            <div fxLayoutAlign="center" fxFlex="25"  style="border:4px solid  ;height:300px">
-                <h1>card software</h1>
-            </div>
-            <div fxLayoutAlign="center" fxFlex="25"  style="border:4px solid ;height:300px">
-                <h1>card idiomas</h1>
-            </div>
+        <div fxFlex="95">
+        <app-card-skills></app-card-skills>
         
         </div>
     <!-- end container skills -->
@@ -216,8 +211,54 @@
 
 
     <!-- start similar Artits (right page) -->
-    <div fxFlex="30" fxLayoutAlign="center center" style="background-color: green;">
-        <div style="border:4px solid; height: 800px;" fxFlex="80"></div>
+    <div fxFlex="35" fxLayout="row wrap" fxLayoutAlign="start start" >
+       
+        <div fxFlex="70"  style=" margin-top: 35px; " >
+        <button mat-button  fxFlex="100" style="background-color: #b0bcec;"> <mat-label fxFlex="60"  fxLayoutAlign="start">Artistas Similares</mat-label> <mat-label fxFlex="40"  fxLayoutAlign="end" >Ver mas</mat-label> </button>
+        </div>
+
+
+    <!-- start card         -->
+    <div  class="cardSimilar" *ngFor="let heroe of heroes" fxFlex="70" style=" margin-top: 35px; "  >
+  
+          <div fxLayout="row" fxLayoutAlign="center center" fxFlex="25" >
+  
+                   <div fxFlex="100"  >
+                       <img  src="assets/carwash3.png" style="margin-left: 10px;">   			
+                   </div>
+                   
+       
+           </div>
+  
+            <div  fxLayout="column" fxFlex="75">
+  
+            
+  
+               <div  fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100" >
+  
+                       <div fxFlex="80" style=" padding: 10px;">
+  
+                          <mat-label style="font-size: 1vw;"> <b> Jeison Mayorga</b></mat-label> <br>
+                          <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
+                           <mat-label>{{heroe.nombre}}</mat-label> <br>
+                           <mat-label>Bogota - Colombia</mat-label> <br>
+                    
+  
+                           
+                       </div>
+
+                <mat-icon  mat-button  style="cursor: pointer; margin-right: 10px;">close</mat-icon>
+                       
+                                        
+                   </div>
+                
+      </div>
+ 
+    
+   
+      </div>
+      <!-- end card -->
+  
 
     </div>
     <!-- end similar Artits -->

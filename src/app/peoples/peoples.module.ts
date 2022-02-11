@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PeoplesRoutingModule } from './peoples-routing.module';
 import { ProfileComponent } from './pages/profile/profile/profile.component';
 import { ResumeComponent } from './pages/resume/resume/resume.component';
+import { CardEducationComponent } from './pages/cardEducation/card-education/card-education.component';
+import { CardSkillsComponent } from './pages/cardSkills/card-skills/card-skills.component';
 
 
 
@@ -17,6 +19,8 @@ import { ResumeComponent } from './pages/resume/resume/resume.component';
     CardUserComponent,
     ProfileComponent,
     ResumeComponent,
+    CardEducationComponent,
+    CardSkillsComponent,
   ],
   imports: [
     CommonModule,

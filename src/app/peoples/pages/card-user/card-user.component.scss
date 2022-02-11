@@ -26,12 +26,12 @@ img{
   .mat-raised-button{
 
     border-radius: 30px;
-    background-color:#61a7e9;
+    background-color:#b0bcec;
 
 }
 
 .buttonGroup{
-     background-color: #61a7e9;
+     background-color: #b0bcec;
      height: 5em; 
      border-radius: 15px;
      box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
@@ -44,14 +44,14 @@ img{
 //input outline color
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: #61a7e9;
+  color: #b0bcec;
   opacity: 1!important;
 }
 
 
 //mat-input focused color
 ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-color: #61a7e9!important;
+color: #b0bcec!important;
 }
 
 
@@ -63,7 +63,7 @@ color: red!important;
 
 // mat-label focused style
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-color: #61a7e9!important;
+color: #b0bcec!important;
 }
 
 hr{

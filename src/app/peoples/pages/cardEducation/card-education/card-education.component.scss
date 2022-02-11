@@ -21,29 +21,30 @@ img{
 
 .card{
 
-     border: 2px solid #b0bcec;
+     border: 4px solid #b0bcec;
      border-radius: 20px;
+    // margin-top: 15px;
+
      box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
-    margin-top: 15px;
 
 
 }
 
-.card:hover {
-    background-color:  #a0acda;
-    .follow{
-        background-color: whitesmoke;
-    }
-    .bookmark{
-        color: whitesmoke;
-    }
-    .text{
-        color: white;
-    }
+// .card:hover {
+//     background-color:  #8cbce9;
+//     .follow{
+//         background-color: whitesmoke;
+//     }
+//     .bookmark{
+//         color: whitesmoke;
+//     }
+//     .text{
+//         color: white;
+//     }
 
-}
+// }
 .bookmark{
     font-size: 2em;
     margin-right: 0.5em;

@@ -13,13 +13,11 @@ import { BusinessModule } from './business/business.module';
 import { EventsModule } from './events/events.module';
 import { CompetitionModule } from './competition/competition.module';
 import { MessagesModule } from './messages/messages.module';
-import { CardEducationComponent } from './profile/pages/cardEducation/card-education/card-education.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardEducationComponent,
   ],
 
   imports: [

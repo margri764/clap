@@ -10,7 +10,22 @@ import { ResumeComponent } from '../../resume/resume/resume.component';
 })
 export class ProfileComponent implements OnInit {
 
+  heroeHeader =[
+    {
+      nombre: "marcelo"
+    }
+  ]
+
   heroes =[
+    {
+      nombre: "marcelo"
+    },
+    {
+      nombre: "marcelo"
+    },
+    {
+      nombre: "marcelo"
+    },
     {
       nombre: "marcelo"
     }

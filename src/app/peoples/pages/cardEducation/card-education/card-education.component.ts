@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardEducationComponent implements OnInit {
 
+
+  heroes =[
+    {
+      nombre: "marcelo"
+    },
+    {
+      nombre: "fenando"
+    }
+  ]
   constructor() { }
 
   ngOnInit(): void {
