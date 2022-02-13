@@ -10,6 +10,10 @@ import { ResumeComponent } from '../../resume/resume/resume.component';
 })
 export class ProfileComponent implements OnInit {
 
+public graphic : boolean = false;
+public photo : boolean = false;
+public animation : boolean = false;
+
   heroeHeader =[
     {
       nombre: "marcelo"
@@ -40,18 +44,50 @@ export class ProfileComponent implements OnInit {
   openDialog() {
     const dialogRef = this.dialog.open(ResumeComponent, {
       width: '800px',
+
       panelClass:"custom-modalbox-opacity",
       // scrollStrategy: new NoopScrollStrategy()
     });
   }
 
-  quantity:any;
-  array: any []=[] 
-  string:any;
-  clicked:boolean= false;
-  hidden: boolean = false;
-  showSpinner : boolean = false;
+   btnPressed(pressed : string){
     
+    switch( pressed ){ 
+      case 'graphic' :
+            this.graphic = true;
+            this.photo = false;
+            this.animation = false;
+      break;
+      
+      case 'photo': 
+            this.graphic = false;
+            this.photo = true;
+            this.animation = false;
+
+      break;
+
+      case 'animation': 
+            this.graphic = false;
+            this.photo = false;
+            this.animation = true;
+
+      break;
+     
+  
+    }
+}
+
+
+    
+
+    
+   btnPressedOut(){
+
+            this.graphic = false;
+            this.photo = false;
+            this.animation = false;
+    
+  }
 
   
 

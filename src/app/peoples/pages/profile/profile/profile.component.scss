@@ -54,8 +54,26 @@ img{
      -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
 
 
-    //  border: 5px solid #050505;
      
+}
+
+.conditionalHeader{
+    height: 100px;
+    margin-top: 10px;
+
+    box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+
+    border-radius: 0px 0px 25px 23px;
+    -webkit-border-radius: 0px 0px 25px 23px;
+    -moz-border-radius: 0px 0px 25px 23px;
+
+    border-top: 10px none #b0bcec;
+    border-right: 4px solid #b0bcec;
+    border-bottom: 4px solid #b0bcec;
+    border-left: 4px solid #b0bcec;
+    
 }
 
 .whiteBorder{

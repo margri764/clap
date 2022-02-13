@@ -14,7 +14,7 @@ export class HomePeoplesComponent implements OnInit {
 
   heroes =[
     {
-      nombre: "marcelo"
+      nombre: "Santiago Reyes"
     },
     {
       nombre: "fenando"

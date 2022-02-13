@@ -10,6 +10,7 @@ import { ProfileComponent } from './pages/profile/profile/profile.component';
 import { ResumeComponent } from './pages/resume/resume/resume.component';
 import { CardEducationComponent } from './pages/cardEducation/card-education/card-education.component';
 import { CardSkillsComponent } from './pages/cardSkills/card-skills/card-skills.component';
+import { MyapplyComponent } from './pages/myapply/myapply/myapply.component';
 
 
 
@@ -21,6 +22,7 @@ import { CardSkillsComponent } from './pages/cardSkills/card-skills/card-skills.
     ResumeComponent,
     CardEducationComponent,
     CardSkillsComponent,
+    MyapplyComponent,
   ],
   imports: [
     CommonModule,

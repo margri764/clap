@@ -1,0 +1,228 @@
+
+.container{
+    width: 100%;
+}
+
+
+img{
+    width: 90%;
+    height: 90%;
+}
+
+
+
+.mat-divider{
+    border-top-width: 1px;
+    display: block;
+    // width: 3px;
+}
+
+.category{
+    border: 2px solid;
+    border-radius: 20px;
+    height: 3vw;
+}
+
+.mat-flat-button{
+    font-size: 1vw;
+}
+// .card{
+
+//      border-radius: 20px;
+//      margin-bottom: 0px;
+     
+//      border-top: 4px solid #fff1b9;
+//      border-right: 6px solid #fff1b9;
+//      border-bottom: 10px solid #fff1b9;
+//      border-left: 6px solid #fff1b9;
+
+//      box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+//     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+//     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+//     //  margin-top: 15px;
+
+
+// }
+
+.cardSimilar{
+
+    border-radius: 20px;
+    border: 4px solid #fff1b9;
+
+    box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+}
+
+.cardSimilar:hover{
+    background-color: #fff1b9;
+    cursor: pointer;
+}
+
+.btnHeader{
+     height: 6vw;
+     border-radius: 20px;
+     border: 4px solid #fface0;
+     margin-top: 20px;
+
+     box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+}
+
+.cardApply{
+
+    border-radius: 25px;
+    height: 12vw;
+    background-color: #fface0;
+
+    box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+}
+
+// .conditionalHeader{
+//     height: 100px;
+//     margin-top: 10px;
+
+//     box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+//     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+//     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+
+//     border-radius: 0px 0px 25px 23px;
+//     -webkit-border-radius: 0px 0px 25px 23px;
+//     -moz-border-radius: 0px 0px 25px 23px;
+
+//     border-top: 10px none #fff1b9;
+//     border-right: 4px solid #fff1b9;
+//     border-bottom: 4px solid #fff1b9;
+//     border-left: 4px solid #fff1b9;
+    
+// }
+
+.whiteBorder{
+     border: 4px solid rgb(240, 240, 240);
+     margin-top: 30px;
+
+     border-radius: 20px; 
+     box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+
+    -webkit-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+    -moz-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+}
+
+// .about{
+//     border:4px solid #fff1b9;
+//     height: 300px; 
+//     margin-top: 30px;
+//     border-radius: 15px;
+// }
+
+// .text{
+    //     padding: 20px;
+    // }
+    
+    .mat-button{
+        border: 2px solid;
+        border-radius: 20px;
+        border-color: rgb(211, 211, 211);
+        font-size: 1.2vw;
+    }
+    
+    
+    .mat-raised-button:active{
+        background-color:#fff1b9 ;
+    }
+    
+    .mat-form-field{
+        font-size: 1em;
+    }
+
+// .life{
+//     height: 220px;
+//     padding: 15px;
+
+//     background: #b4b2b2;
+//     background: linear-gradient(180deg,#b4b2b2 0%, #ffffff 50%);
+//     background: -webkit-linear-gradient(180deg,#b4b2b2 0%, #ffffff 50%);
+//     background: -moz-linear-gradient(180deg,#b4b2b2 0%, #ffffff 50%);;
+
+//     border-radius: 20px; 
+//     box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+    
+//    -webkit-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+//    -moz-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);   
+// }
+
+
+
+// .resumeImg{
+//    background-image: url(../../../../../assets/resume.png);
+//    background-position: center;
+//    background-size:contain;
+//    background-repeat: no-repeat;
+
+
+// }
+
+// .resumeImg:hover{
+//     transform: scale(0.99);
+// }
+
+// .portfolio{
+//     height: 220px;
+
+//     background: #b4b2b2;
+//     background: linear-gradient(180deg,#b4b2b2 0%, #ffffff 50%);
+//     background: -webkit-linear-gradient(180deg,#b4b2b2 0%, #ffffff 50%);
+//     background: -moz-linear-gradient(180deg,#b4b2b2 0%, #ffffff 50%);;
+
+//     border-radius: 20px; 
+//     box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+    
+//    -webkit-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+//    -moz-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);   
+// }
+
+// .portfolioImg{
+//     border-radius: 20px; 
+//     background-image: url(../../../../../assets/faro.jpg);
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+// }
+
+// .experience{
+//     border: 4px solid #fff1b9;
+//     border-radius: 10px;
+// }
+
+.divider{
+    height: 1px;
+    background-color:rgb(112, 112, 112); 
+    margin: auto;
+}
+
+
+
+
+// .bookmark{
+//     font-size: 2em;
+//     margin-right: 0.5em;
+//     color: rgb(185, 185, 185);
+// }
+
+// .follow{
+//      border-radius: 15px;
+//      line-height: 25px;
+//      margin-right: 1em;
+//      border: 4px solid #fff1b9
+// }
+
+// .follow:hover{
+//     background-color: #fff1b9;
+//     // border-radius: 15px;
+//     // line-height: 20px;
+//     //  margin-right: 1em;
+// }
+

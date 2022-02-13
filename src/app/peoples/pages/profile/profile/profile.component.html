@@ -17,9 +17,9 @@
 
 
 
-    <div  class="card" *ngFor="let heroe of heroeHeader"   routerLink="../../artistas/perfil" >
+    <div  class="card" *ngFor="let heroe of heroeHeader"  >
   
-      <div fxLayout="row wrap" style="height: 80%;">
+      <div fxLayout="row wrap" style="height: 80%;" (mouseover)="btnPressedOut()">
 
   
 
@@ -91,9 +91,9 @@
     </div>
     <div fxFlex="62" fxLayoutAlign="start end" fxLayoutGap="10">
 
-        <button  mat-button  appearance="outline" >Diseño Grafico</button>
-        <button  mat-button  appearance="outline" >Animación</button>
-        <button  mat-button  appearance="outline" >Fotografía</button>
+        <button  mat-button  appearance="outline" (mouseover)="btnPressed('graphic')"#graphic >Diseño Grafico</button>
+        <button  mat-button  appearance="outline"  (mouseover)="btnPressed('animation')" #animation >Animación</button>
+        <button  mat-button  appearance="outline" (mouseover)="btnPressed('photo')" #photo>Fotografía</button>
     </div>
 
 
@@ -107,7 +107,63 @@
         </div>
         <!-- end header profile -->
       
-        
+
+<!-- start conditional "Diseño grafico" -->
+    
+    <div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center"
+     *ngIf="graphic" (mouseleave)="btnPressedOut()" > 
+   
+  
+        <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
+    
+            <button  mat-button  appearance="outline" >Branding</button>
+            <button  mat-button  appearance="outline" >Editorial</button>
+            <button  mat-button  appearance="outline" >Empaques</button>
+            <button  mat-button  appearance="outline" >Empaques</button>
+            
+        </div>
+    
+    
+      </div>
+<!-- end conditional "diseño grafico" -->
+
+
+<!-- start conditional "animacion" -->
+<div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center"
+*ngIf="animation" (mouseleave)="btnPressedOut()" > 
+
+   <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
+
+       <button  mat-button  appearance="outline" >animacion</button>
+       <button  mat-button  appearance="outline" >animacion</button>
+       <button  mat-button  appearance="outline" >animacion</button>
+       <button  mat-button  appearance="outline" >animacion</button>
+       
+   </div>
+
+
+ </div>
+<!-- end conditional "animacion" -->
+
+<!-- start conditional "animacion" -->
+<div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center"
+*ngIf="photo" (mouseleave)="btnPressedOut()" > 
+
+   <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
+
+       <button  mat-button  appearance="outline" >photo</button>
+       <button  mat-button  appearance="outline" >photo</button>
+       <button  mat-button  appearance="outline" >photo</button>
+       <button  mat-button  appearance="outline" >PHOTO</button>
+       
+   </div>
+
+
+ </div>
+<!-- end conditional "animacion" -->
+
+
+
         <!-- start "about" -->
         <div class="about" fxFlex="95"fxlayoutAlign="center center"   style="padding: 30px; margin-top: 50px;" >
 

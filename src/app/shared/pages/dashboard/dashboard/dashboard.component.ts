@@ -83,7 +83,7 @@ styleObject() {
 
   if(window.location.pathname.includes('empleos')){ 
 
-     return  { "background":"#e961aa" }
+     return  { "background":"#fface0" }
   };
 
   if(window.location.pathname.includes('artistas/lista')){ 
@@ -92,6 +92,13 @@ styleObject() {
 
     return  { "background":"#b0bcec" }
  }
+
+ if(window.location.pathname.includes('artistas/mis-aplicaciones')){ 
+  this.showMainDashboard = false;
+  this.showProfileDashboard = true;
+
+  return  { "background":"#fface0" }
+}
 
  if(window.location.pathname.includes('empresas')){ 
   this.showMainDashboard = true;
@@ -111,7 +118,7 @@ if(window.location.pathname.includes('eventos')){
   this.showMainDashboard = true;
   this.showProfileDashboard = false;
 
-  return  { "background":"yellow"}
+  return  { "background":"#fff1b9"}
 }
 
 if(window.location.pathname.includes('concursos')){ 
