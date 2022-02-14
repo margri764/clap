@@ -100,7 +100,14 @@ styleObject() {
   return  { "background":"#fface0" }
 }
 
- if(window.location.pathname.includes('empresas')){ 
+if(window.location.pathname.includes('artistas/guardados')){ 
+  this.showMainDashboard = false;
+  this.showProfileDashboard = false;
+
+}
+
+
+if(window.location.pathname.includes('empresas')){ 
   this.showMainDashboard = true;
   this.showProfileDashboard = false;
 

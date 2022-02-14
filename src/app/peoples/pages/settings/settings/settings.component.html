@@ -1,0 +1,222 @@
+
+
+<div class="container" fxLayoutAlign="center">
+
+
+   <!-- start menu -->
+    <div fxFlex="20"  fxLayoutAlign="start start" style="margin-top: 30px;">
+        
+        <ul >
+            <li><b style="font-size: 1.5vw;">Ajustes</b></li>
+            <br>
+            <li> <button mat-button appearance="outline" >General</button> </li>
+            <li> <button mat-button appearance="outline">Preferencias</button> </li>
+            <li> <button mat-button appearance="outline"> Pagos</button></li>
+            <li> <button mat-button appearance="outline">Notificaciones</button></li>
+            <li> <button mat-button appearance="outline">Privacidad</button></li>
+        </ul>
+       
+       
+    </div>
+<!-- end menu -->
+    
+    
+
+
+
+
+<!-- start show items -->
+<div fxFlex="35" fxLayout="row wrap" fxLayoutAlign="start start" style="border: 4px solid green; ">
+   
+    <!-- start container (border) profile -->
+    <div class="whiteBorder" fxFlex="90" fxLayout="row wrap" fxLayoutAlign="center" style="padding: 20px;"> 
+          
+
+    
+        <!-- start account -->
+  <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center" style="border: 4px solid rgba(231, 231, 231, 0.678); 
+  border-radius: 23px; padding: 10px;">
+
+    <div  fxFlex="100" fxLayoutAlign="start" style="margin-top: 30px;">
+        
+        <mat-label style="font-size: 1.3vw;">Cuenta</mat-label>
+    </div>
+    
+    <div fxFlex="90" class="divider"></div>    
+    
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="star">    
+
+        <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between">
+            <mat-list><b style="font-size: 1vw;">Información de acceso</b></mat-list>
+            <button mat-button appearance="outline"><b>Editar</b></button>
+        </div>
+
+        <div fxLayoutAlign="center" style="margin-top: 30px;">
+           
+        <div fxFlex="40" fxLayout="row wrap" fxLayoutAlign="end"  >
+            <p  style="font-size: 1vw;"><b>Nombre de usuario:</b></p>
+            <p ><b>Correo electrónico:</b></p>
+            <p ><b>Telefono movil:</b></p>
+
+        </div>
+        <div fxFlex="2"></div>
+
+        <div fxFlex="40" fxLayout="row wrap" fxLayoutAlign="start"  >
+            <p >Santiago Reyes</p>
+            <p >santiago@gmail.com</p>
+            <p >+57 545 3232323</p>
+            
+        </div>
+
+        </div>
+
+    <div fxFlex="90" class="divider"></div>
+
+    <div  fxFlex="100" fxLayoutAlign="start" style="margin-top: 30px;">
+        
+        <mat-label style="font-size: 1.3vw;">Cambiar contraseña</mat-label>
+    </div>
+    
+    
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center" style="margin-top: 30px;">
+           
+           
+        <div fxFlex="100"  >
+            
+            <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxLayout="row wrap" >   
+               
+               
+                <div fxFlex="100" fxLayoutAlign="center center" >
+               
+                    <mat-label fxFlex="40" fxLayoutAlign="end" style="font-size: 1vw;"><b>Contraseña actual:</b></mat-label>
+                    &nbsp;&nbsp;&nbsp;
+
+                    <mat-form-field appearance="outline" fxFlex="40" fxLayoutAlign="start" style="font-size: 0.4vw; ">	
+                        <input matInput type="text" required formControlName="password" style="margin-top: 2em;" >
+                    </mat-form-field> 
+           
+                  </div> 
+                  <div fxFlex="100" fxLayoutAlign="center center" >
+               
+                    <mat-label fxFlex="40" fxLayoutAlign="end" style="font-size: 1vw;"><b>Nueva contraseña:</b></mat-label>
+                    &nbsp;&nbsp;&nbsp;
+
+                    <mat-form-field appearance="outline" fxFlex="40" fxLayoutAlign="start" style="font-size: 0.4vw; ">	
+                        <input matInput type="text" required formControlName="password" style="margin-top: 2em;" >
+                    </mat-form-field> 
+           
+                  </div> 
+
+                  <!-- <div fxFlex="100" fxLayoutAlign="center" fxLayout="row wrap" >
+                    <mat-form-field appearance="outline" fxFlex="100">		
+                        <input matInput type="text" required formControlName="newpassword">
+                    </mat-form-field> 
+                  </div> -->
+            </form>      
+    
+        </div>
+    
+     
+    
+    </div>
+
+
+    </div>
+
+   </div>
+ <!-- end account -->
+ 
+<!-- start preferences -->
+ <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center" style="margin-top: 30px; border: 4px solid rgba(231, 231, 231, 0.678);border-radius: 23px; padding: 10px;">
+
+    <div  fxFlex="100" fxLayoutAlign="start" style="margin-top: 30px;">
+        
+        <mat-label style="font-size: 1.3vw;">Preferencias</mat-label>
+    </div>
+    
+    <div fxFlex="90" class="divider"></div>
+
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center" style="margin-top: 30px; ">
+           
+           
+            
+            <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxLayout="row wrap" >   
+               
+               
+                <div fxFlex="100" fxLayoutAlign="center center"  >
+               
+                    <mat-label fxFlex="40" fxLayoutAlign="end" style="font-size: 1vw;"><b>Idioma:</b></mat-label>
+                    &nbsp;&nbsp;&nbsp;
+
+                    <mat-form-field appearance="outline" fxFlex="40" fxLayoutAlign="start" style="font-size: 0.6vw;">
+                        <mat-select >
+                          <mat-option>None</mat-option>
+                          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+           
+                  </div> 
+
+
+
+                  <div fxFlex="100" fxLayoutAlign="center center"  >
+               
+                    <mat-label fxFlex="40" fxLayoutAlign="end" style="font-size: 1vw;"><b>Zona horaria:</b></mat-label>
+                    &nbsp;&nbsp;&nbsp;
+
+                    <mat-form-field appearance="outline" fxFlex="40" fxLayoutAlign="start" style="font-size: 0.6vw;">
+                        <mat-select >
+                          <mat-option>None</mat-option>
+                          <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+           
+                  </div> 
+
+                  <div  fxFlex="100" fxLayoutAlign="center center"  >
+                  
+                    
+                    <mat-label fxFlex="60" fxLayoutAlign="end" style="font-size: 1vw;"><b>Formato de Tiempo:</b></mat-label>
+                    &nbsp;&nbsp;&nbsp;
+
+                    <div fxLayout="row " fxFlex="48" fxLayoutAlign="center center" s>
+
+                        <mat-label  fxFlex="50" fxLayoutAlign="center center" style="font-size: 1vw;height: 2vw; border: 2px solid; border-radius: 23px;"><b>12 hs</b></mat-label>
+                        &nbsp;&nbsp;&nbsp;
+
+                        <mat-label  fxFlex="50" fxLayoutAlign="center center" style="font-size: 1vw; height: 2vw;border: 2px solid; border-radius: 23px;"><b>24 hs</b></mat-label>
+                        &nbsp;&nbsp;&nbsp; 
+
+                   </div>
+                </div>
+
+               
+            </form>      
+    
+    
+     
+    
+    </div>
+
+</div>
+<!-- end preferences -->
+
+    </div>
+<!-- end container (border) profile -->
+
+
+</div>
+<!-- end show itmes -->
+
+<!-- start gray frame -->
+<div fxFlex="45" fxLayout="row wrap" fxLayoutAlign="start start" style="border: 4px solid gray;" >
+
+
+</div>
+<!-- end gray frame -->
+        
+        
+    
+    </div>
+<!-- end container -->
+    

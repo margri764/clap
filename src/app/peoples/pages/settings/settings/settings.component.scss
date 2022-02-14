@@ -1,0 +1,39 @@
+    
+.container{
+    width: 100%;
+}
+
+.divider{
+    height: 2px;
+    background-color:rgb(209, 209, 209); 
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+    
+    
+.whiteBorder{
+    border: 4px solid rgb(240, 240, 240);
+    margin-top: 30px;
+
+    border-radius: 20px; 
+    box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+
+   -webkit-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+   -moz-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
+}
+
+.cardSimilar{
+
+    border-radius: 20px;
+    border: 4px solid #b0bcec;
+
+    box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+}
+
+.mat-button {
+    font-size: 1.2vw;
+    border-radius: 28px !important;
+  }

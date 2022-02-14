@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePeoplesComponent } from './pages/homePeoples/home-peoples.component';
 import { ProfileComponent } from './pages/profile/profile/profile.component';
 import { MyapplyComponent } from './pages/myapply/myapply/myapply.component';
+import { SettingsComponent } from './pages/settings/settings/settings.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
 
       {    
         path: "mis-aplicaciones", component: MyapplyComponent 
+      },
+
+      {    
+        path: "guardados", component: SettingsComponent 
       },
       {
         path: '**',
