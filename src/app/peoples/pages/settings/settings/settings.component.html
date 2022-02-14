@@ -1,11 +1,11 @@
 
 
-<div class="container" fxLayoutAlign="center">
+<div class="container " fxLayoutAlign="center" style="border: 4px solid red; ">
 
 
    <!-- start menu -->
-    <div fxFlex="20"  fxLayoutAlign="start start" style="margin-top: 30px;">
-        
+    <div fxLayout="row wrap" fxFlex="15"  fxLayoutAlign="start space-between" style="margin-top: 30px; ">
+      <div fxFlex="100" style="position: fixed;">
         <ul >
             <li><b style="font-size: 1.5vw;">Ajustes</b></li>
             <br>
@@ -15,7 +15,16 @@
             <li> <button mat-button appearance="outline">Notificaciones</button></li>
             <li> <button mat-button appearance="outline">Privacidad</button></li>
         </ul>
-       
+      </div>
+      <div fxLayout="row wrap" fxFlex="100" style="position: fixed; margin-top: 1000px;">
+
+        <ul>
+            <li><a >Terminos y condiciones</a></li>
+            <li><a >Aviso de privacidad</a></li>
+            <li><a > <p>Politica de tratamientos de</p><p> datos personales</p></a></li>
+            
+        </ul>
+      </div>
        
     </div>
 <!-- end menu -->
@@ -26,10 +35,10 @@
 
 
 <!-- start show items -->
-<div fxFlex="35" fxLayout="row wrap" fxLayoutAlign="start start" style="border: 4px solid green; ">
+<div fxFlex="40" fxLayout="row wrap" fxLayoutAlign="center start" style="border: 4px solid green; overflow-y: scroll;">
    
     <!-- start container (border) profile -->
-    <div class="whiteBorder" fxFlex="90" fxLayout="row wrap" fxLayoutAlign="center" style="padding: 20px;"> 
+    <div class="whiteBorder" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center" style="padding: 20px;"> 
           
 
     
@@ -201,7 +210,205 @@
 </div>
 <!-- end preferences -->
 
+
+
+<!-- start payments -->
+<div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center" style="margin-top: 30px; border: 4px solid rgba(231, 231, 231, 0.678);border-radius: 23px; padding: 10px;">
+
+    <div  fxFlex="100" fxLayoutAlign="start" style="margin-top: 30px;">
+        
+        <mat-label style="font-size: 1.3vw;">Pagos</mat-label>
     </div>
+    
+    <div fxFlex="90" class="divider"></div>
+
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between">
+        <mat-list><b style="font-size: 1vw;">Mis metodos de pago</b></mat-list>
+        <button mat-raised-button appearance="outline" (click)="showNewPayment()"><b>Agregar metodo de pago</b> <mat-icon class="material-icons-outlined">add_circle</mat-icon> </button>
+    </div>
+
+<!-- start new payments method (only shows if plus button in hited) -->
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center" style="margin-top: 20px; border: 3px solid rgba(231, 231, 231, 0.678);border-radius: 23px; padding: 10px;">
+
+        <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center" 
+        *ngIf="pressed" style="margin-top: 20px;">     
+        
+        <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between">
+            <mat-list><b style="font-size: 1vw;">Tarjeta de credito o debito</b></mat-list>
+            <mat-icon class="material-icons-outlined" (click)="showNewPayment()">expand_less</mat-icon>
+        </div>   
+
+            <mat-form-field appearance="outline" fxFlex="80"> 
+                <mat-label>Nombre en la tarjeta</mat-label>
+                <input matInput type="text" required formControlName="password">
+            </mat-form-field> 
+            <!-- <mat-error  *ngIf ="validField ('name')">
+              completa este dato
+              </mat-error>  -->
+                 
+    
+            <mat-form-field appearance="outline" fxFlex="80">		
+                <mat-label >Numero de la tarjeta</mat-label>
+                <input matInput type="text" required formControlName="password">
+            </mat-form-field> 
+
+            <div fxFlex="80" fxLayout="row" fxLayoutAlign="space-between" >
+
+                <mat-form-field appearance="outline" fxFlex="40"> 
+                    <mat-label>MM/AA</mat-label>
+                    <input matInput type="text" required formControlName="password">
+                </mat-form-field> 
+                <!-- <mat-error  *ngIf ="validField ('name')">
+                  completa este dato
+                  </mat-error>  -->
+                     
+        
+                <mat-form-field appearance="outline" fxFlex="40">		
+                    <mat-label >CCV</mat-label>
+                    <input matInput type="text" required formControlName="password">
+                </mat-form-field> 
+
+            </div>
+        </form>   
+
+        <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between">
+            <mat-list><b style="font-size: 1vw;">Actividad de pagos</b></mat-list>
+        </div>   
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" fxFlex="100" style="margin-top: 30px;">
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="fecha">
+              <th mat-header-cell *matHeaderCellDef> Fecha </th>
+              <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="tipo">
+              <th mat-header-cell *matHeaderCellDef> tipo </th>
+              <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="pedido">
+              <th mat-header-cell *matHeaderCellDef> N° de pedido </th>
+              <td mat-cell *matCellDef="let element"> {{element.pedido}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="pdf">
+              <th mat-header-cell *matHeaderCellDef> Costo </th>
+              <td mat-cell *matCellDef="let element"> {{element.pdf}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> PDF </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+          
+
+    </div>
+<!-- end new payments method (only shows if plus button in hited) -->
+
+</div>
+<!-- end payments -->
+
+
+<!-- start notification -->
+<div fxFlex="100" fxLayout="row wrap" style="margin-top: 20px; border: 3px solid rgba(231, 231, 231, 0.678);border-radius: 23px; padding: 10px;">
+
+    <div  fxFlex="100" fxLayoutAlign="start" style="margin-top: 30px;">
+        
+        <mat-label style="font-size: 1.3vw;">Notificaciones</mat-label>
+    </div>
+    
+    <div fxFlex="90" class="divider"></div>
+
+
+
+    <form class="example-form" [formGroup]="myForm2" (ngSubmit)="onFormSubmit()" ngNativeValidate  fxFlex="100"  fxLayoutAlign="center">
+
+
+        <table fxFlex="70" >
+            <thead>
+            <tr>
+                <th> </th>
+                <th>Email</th>
+                <th>Web</th>
+                <th>Escritorio</th>
+            
+            </tr>
+            </thead>
+
+            <tbody >
+                <tr>
+                <th  fxLayoutAlign="start">Mensajes</th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+                </tr>
+            
+                <tr>
+                <th fxLayoutAlign="start">Gente que quizas conocza</th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+                </tr>
+            
+                <tr>
+                <th fxLayoutAlign="start">Nuevas ofertas laborales</th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+            
+                <tr>
+                <th fxLayoutAlign="start">Empresas que te buscan</th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+                <th><mat-slide-toggle formControlName="enableWifi"></mat-slide-toggle></th>
+            </tbody>
+            </table> 
+    
+        <!-- <p>Form Group Status: {{myForm2.status}}</p> -->
+            
+        <!-- <button mat-raised-button type="submit">Save Settings</button> -->
+    </form>    
+  
+</div>
+<!-- end notification -->
+
+<!-- start privacy -->
+<div fxFlex="100" fxLayout="row wrap" style="margin-top: 20px; border: 3px solid rgba(231, 231, 231, 0.678);border-radius: 23px; padding: 10px;">
+
+    <div  fxFlex="100" fxLayoutAlign="start" style="margin-top: 30px;">
+        
+        <mat-label style="font-size: 1.3vw;">Privacidad</mat-label>
+    </div>
+    
+    <div fxFlex="90" class="divider"></div>
+
+    <div  fxFlex="30" fxLayout="row wrap" fxLayoutAlign="start center" style="margin-top: 10px;">
+        
+        <p> Quien puede ver</p> 
+        <p> <b>Mis cuentas seguidas</b></p> 
+        <p> <b>Guardados</b></p>
+
+
+    </div>
+</div>
+<!-- end privacy -->
+       
+           
+ </div>
 <!-- end container (border) profile -->
 
 
@@ -209,7 +416,7 @@
 <!-- end show itmes -->
 
 <!-- start gray frame -->
-<div fxFlex="45" fxLayout="row wrap" fxLayoutAlign="start start" style="border: 4px solid gray;" >
+<div fxFlex="45" fxLayout="row wrap" fxLayoutAlign="start start" style="border: 4px solid gray; " >
 
 
 </div>
