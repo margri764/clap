@@ -13,7 +13,6 @@ import { EducationComponent } from './pages/education/education/education.compon
 import { FooterComponent } from './pages/footer/footer/footer.component';
 import { HomeComponent } from './pages/home/home/home.component';
 import { Page404Component } from './pages/page404/page404/page404.component';
-import { InvitationComponent } from './pages/invitation/invitation/invitation.component';
 import { PostExperienceComponent } from './pages/postExperience/post-experience/post-experience.component';
 
 
@@ -26,7 +25,6 @@ import { PostExperienceComponent } from './pages/postExperience/post-experience/
     Page404Component,
     WorkExperienceComponent,
     EducationComponent,
-    InvitationComponent,
     PostExperienceComponent,
 
     
@@ -46,7 +44,6 @@ import { PostExperienceComponent } from './pages/postExperience/post-experience/
     Page404Component,
     EducationComponent,
     WorkExperienceComponent,
-    InvitationComponent,
     PostExperienceComponent,
 
 

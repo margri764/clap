@@ -9,6 +9,7 @@ import { HomeJobsComponent } from './pages/homeJobs/home-jobs/home-jobs.componen
 import { JobViewMoreComponent } from './pages/jobViewMore/job-view-more/job-view-more.component';
 import { CardJobProposalComponent } from './pages/cardJobProposal/card-job-proposal/card-job-proposal.component';
 import { CardComponent } from './pages/card/card/card.component';
+import { ApplicantManagementComponent } from './pages/applicantManagement/applicant-management/applicant-management.component';
 
 
 
@@ -18,7 +19,8 @@ import { CardComponent } from './pages/card/card/card.component';
     HomeJobsComponent,
     JobViewMoreComponent,
     CardJobProposalComponent,
-    CardComponent
+    CardComponent,
+    ApplicantManagementComponent
   ],
   imports: [
     CommonModule,

@@ -32,6 +32,11 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
   public showPeople : boolean = false;
   public showMainDashboard : boolean = true;
   public showProfileDashboard : boolean = true;
+  public showProfileBookmarksDashboard : boolean = true;
+
+
+
+
 
 
   add(event: MatChipInputEvent): void {
@@ -77,6 +82,8 @@ styleObject() {
   if(window.location.pathname.includes('home')){ 
     this.showMainDashboard = true;
     this.showProfileDashboard = false;
+    this.showProfileBookmarksDashboard= false;
+
 
    
  }
@@ -89,6 +96,8 @@ styleObject() {
   if(window.location.pathname.includes('artistas/lista')){ 
     this.showMainDashboard = true;
     this.showProfileDashboard = false;
+    this.showProfileBookmarksDashboard= false;
+
 
     return  { "background":"#b0bcec" }
  }
@@ -96,40 +105,54 @@ styleObject() {
  if(window.location.pathname.includes('artistas/mis-aplicaciones')){ 
   this.showMainDashboard = false;
   this.showProfileDashboard = true;
+  this.showProfileBookmarksDashboard= false;
 
   return  { "background":"#fface0" }
+}
+
+if(window.location.pathname.includes('artistas/ajustes')){ 
+  this.showMainDashboard = false;
+  this.showProfileDashboard = false;
+  this.showProfileBookmarksDashboard= false;
+
 }
 
 if(window.location.pathname.includes('artistas/guardados')){ 
   this.showMainDashboard = false;
   this.showProfileDashboard = false;
+  this.showProfileBookmarksDashboard= true
 
 }
+
 
 
 if(window.location.pathname.includes('empresas')){ 
   this.showMainDashboard = true;
   this.showProfileDashboard = false;
+  this.showProfileBookmarksDashboard= false;
 
-  return  { "background":"#7ff36a"}
+  return  { "background":"#aae8b9"}
 }
 
 if(window.location.pathname.includes('escuelas')){ 
   this.showMainDashboard = true;
   this.showProfileDashboard = false;
+  this.showProfileBookmarksDashboard= false;
 
-  return  { "background":"#FF8066"}
+  return  { "background":"#ffa076"}
 }
 
 if(window.location.pathname.includes('eventos')){ 
   this.showMainDashboard = true;
   this.showProfileDashboard = false;
+  this.showProfileBookmarksDashboard= false;
 
   return  { "background":"#fff1b9"}
 }
 
 if(window.location.pathname.includes('concursos')){ 
   this.showMainDashboard = true;
+  this.showProfileBookmarksDashboard= false;
   this.showProfileDashboard = false;
 
   return  { "background":"#B29DD5"}
@@ -139,14 +162,26 @@ if(window.location.pathname.includes('artistas/perfil')){
   
   this.showMainDashboard = false;
   this.showProfileDashboard = true;
+  this.showProfileBookmarksDashboard= false;
+
 
   return  { "background":"#b0bcec"}
+}
+
+if(window.location.pathname.includes('gestion-aplicantes')){ 
+  
+  this.showMainDashboard = true;
+  this.showProfileDashboard = false;
+  this.showProfileBookmarksDashboard= false;
+ 
 }
 
   return {}
 
 
 }  
+
+
 
 getPeople(){
   // (this.showJobs = true) ? this.showJobs = false : this.showJobs= true;

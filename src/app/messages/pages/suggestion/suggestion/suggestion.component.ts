@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-invitation',
-  templateUrl: './invitation.component.html',
-  styleUrls: ['./invitation.component.scss']
+  selector: 'app-suggestion',
+  templateUrl: './suggestion.component.html',
+  styleUrls: ['./suggestion.component.scss']
 })
-export class InvitationComponent implements OnInit {
+export class SuggestionComponent implements OnInit {
 
   myForm:FormGroup = this.fb.group({
     name:    ['', [Validators.required] ],
@@ -40,4 +40,3 @@ export class InvitationComponent implements OnInit {
   
   
   }
-  

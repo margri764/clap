@@ -1,0 +1,214 @@
+
+<div class="container" fxLayoutAlign="center">
+
+
+<!-- start profile -->
+    <div fxFlex="65"  fxLayoutAlign="center" >
+            
+    <!-- start container (border) profile -->
+    <div class="whiteBorder" fxFlex="90" fxLayout="row wrap" fxLayoutAlign="center start" > 
+                
+    <div fxFlexOffset="4" fxFlex="100" style="margin-top: 30px;" >
+        <mat-label style="font-size: 1.3vw;"><b> Guardados</b></mat-label>        
+    </div>        
+
+<!-- start header menu -->
+<div fxFlex="90"  fxLayoutAlign="space-around center" style="margin-top: 35px;">
+
+    <button mat-button (mouseover)="btnPressed('artist')">Artistas</button> <div class="separator"></div>
+    <button mat-button (mouseover)="btnPressed('job')">Empleos</button>  <div class="separator"></div>
+    <button mat-button (mouseover)="btnPressed('business')">Empresas</button> <div class="separator"></div>
+    <button mat-button (mouseover)="btnPressed('school')">Escuelas</button> <div class="separator"></div>
+    <button mat-button (mouseover)="btnPressed('event')">Eventos</button> <div class="separator"></div>
+    <button mat-button (mouseover)="btnPressed('awards')">Premios</button>
+
+
+
+
+
+
+</div>
+<!-- end header menu -->
+
+
+    
+    <!-- start header profile -->
+       
+    <div class="btnHeader" fxLayout="row wrap" fxFlex="95" fxLayoutAlign="space-around center" [ngStyle]="styleObject()" style="margin-top: 45px;">
+           
+            <div fxFlex="10" fxFlexOffset="3" fxLayoutAlign="center center" >
+                <button  mat-flat-button  appearance="outline" style="font-size: 1.3vw;" >Filtros</button>
+            </div>
+    
+            <div fxFlex="30" fxLayoutAlign="start end" fxLayoutGap="10">
+        
+                <div fxLayoutAlign="center" fxFlex="33" > 
+                    <form class="example-form" fxFlex="60" >
+                      <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label> &nbsp; Buscar nombre... </mat-label>
+                        <!-- <span matPrefix>+1 &nbsp;</span> -->
+                        <input type="text" matInput>
+                        <mat-icon matSuffix>search</mat-icon>
+                      </mat-form-field>
+                    </form>
+                </div>
+    
+            
+            </div>
+    
+            <div   fxFlex="50" fxLayoutAlign="center center" >    
+                <div class="category" fxLayout="row wrap" fxFlex="100" fxLayoutGap="25" fxLayoutAlign="center center">
+                
+                <button mat-button fxFlex="25" [matMenuTriggerFor]="field"> Cargo <mat-icon >expand_more</mat-icon></button>
+                <mat-menu #field="matMenu" >
+                  <button mat-menu-item>Item 1</button>
+                  <button mat-menu-item>Item 2</button>
+                </mat-menu>
+
+                <button mat-button fxFlex="25" [matMenuTriggerFor]="field"> Cargo <mat-icon >expand_more</mat-icon></button>
+                <mat-menu #field="matMenu" >
+                  <button mat-menu-item>Item 1</button>
+                  <button mat-menu-item>Item 2</button>
+                </mat-menu>
+
+                <button mat-button fxFlex="25" [matMenuTriggerFor]="field"> Cargo <mat-icon >expand_more</mat-icon></button>
+                <mat-menu #field="matMenu" >
+                  <button mat-menu-item>Item 1</button>
+                  <button mat-menu-item>Item 2</button>
+                </mat-menu>
+
+           
+                </div>
+            </div>   
+    
+            
+     </div>
+     <!-- end header profile -->
+              
+        
+             
+    
+    <!-- start container cards -->
+     <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center"> 
+         
+    <br><br><br><br>
+    <div fxLayout="row" fxLayoutAlign="start center" fxFlex="95" > 
+        <mat-label style="font-size: 1vw; margin-left: 10px;"> Hoy</mat-label>
+    </div>    
+    
+    
+
+
+
+      <div  class="cardApply" fxLayout="row wrap" *ngFor="let heroe of heroes" fxFlex="32" style=" margin-top: 35px; "  >
+          
+        <div fxFlex="100" style="height: 9vw;">
+    
+        <div fxLayout="row" fxLayoutAlign="center start" fxFlex="25" fxFlexOffset="5" style="margin-top: 1vw; " >
+    
+                 <div fxFlex="100" >
+                     <img  src="assets/carwash3.png" style="margin-left: 10px;">   			
+                 </div>
+         </div>
+    
+          <div fxLayout="column" fxLayoutAlign="center center" fxFlex="75"  style="line-height : 8px; margin-top: 10px;"     >
+    
+                        <p style="font-size: 1.3vw;"> <b> Diseñador Digital</b></p> 
+                        <p> <b>Nikelodeon</b> </p>
+                        <p>{{heroe.nombre}}</p> 
+                        <p>Experiencia 2 años</p> 
+                        <p>Salario 20</p> 
+                        <p>Bogota - Colombia</p> 
+        </div>
+       </div>
+    
+       <div  fxFlex="90" class="divider"></div>
+    
+       <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-around center"  style=" height: 3vw;">
+            <div>
+                <mat-label>Vence 21/65/90</mat-label>
+            </div>
+            <div>
+                <button mat-button style="font-size: 1em;"> Solicitud vista </button>
+            </div>
+    
+        </div>
+    
+    </div>
+    <!-- end card -->
+    
+    </div>
+    <!-- end card today -->
+    
+    
+    
+    </div>
+  <!-- end container (border) profile -->
+    
+        
+        
+    </div>
+<!-- end profile -->
+
+           
+    <!-- start similar Artits (right page) -->
+    <div fxFlex="35" fxLayout="row wrap" fxLayoutAlign="start start" >
+       
+        <div fxFlex="70"  style=" margin-top: 35px; " >
+        <button mat-button  fxFlex="100" style="background-color: #b0bcec;"> <mat-label fxFlex="60"  fxLayoutAlign="start">Artistas Similares</mat-label> <mat-label fxFlex="40"  fxLayoutAlign="end" >Ver mas</mat-label> </button>
+        </div>
+
+
+    <!-- start card         -->
+    <div  class="cardSimilar" *ngFor="let heroe of heroes" fxFlex="70" style=" margin-top: 35px; "  >
+  
+          <div fxLayout="row" fxLayoutAlign="center center" fxFlex="25" >
+  
+                   <div fxFlex="100"  >
+                       <img  src="assets/carwash3.png" style="margin-left: 10px;">   			
+                   </div>
+                   
+       
+           </div>
+  
+            <div  fxLayout="column" fxFlex="75">
+  
+            
+  
+               <div  fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100" >
+  
+                       <div fxFlex="80" style=" padding: 10px;">
+  
+                          <mat-label style="font-size: 1vw;"> <b> Jeison Mayorga</b></mat-label> <br>
+                          <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
+                           <mat-label>{{heroe.nombre}}</mat-label> <br>
+                           <mat-label>Bogota - Colombia</mat-label> <br>
+                    
+  
+                           
+                       </div>
+
+                <mat-icon  mat-button  style="cursor: pointer; margin-right: 10px;">close</mat-icon>
+                       
+                                        
+                   </div>
+                
+      </div>
+ 
+    
+   
+      </div>
+      <!-- end card -->
+  
+
+    </div>
+    <!-- end similar Artits -->
+           
+</div>
+<!-- end container -->
+        
+        
+   
+        
+      
+    

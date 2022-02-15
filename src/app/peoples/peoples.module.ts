@@ -12,6 +12,7 @@ import { CardEducationComponent } from './pages/cardEducation/card-education/car
 import { CardSkillsComponent } from './pages/cardSkills/card-skills/card-skills.component';
 import { MyapplyComponent } from './pages/myapply/myapply/myapply.component';
 import { SettingsComponent } from './pages/settings/settings/settings.component';
+import { BookmarksComponent } from './pages/bookmarks/bookmarks/bookmarks.component';
 
 
 
@@ -25,6 +26,7 @@ import { SettingsComponent } from './pages/settings/settings/settings.component'
     CardSkillsComponent,
     MyapplyComponent,
     SettingsComponent,
+    BookmarksComponent,
   ],
   imports: [
     CommonModule,

@@ -16,6 +16,21 @@ export interface PeriodicElement {
 export class SettingsComponent implements OnInit {
 
   public pressed : boolean = false;
+  panelOpenState = false;
+  step = 0;
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
+
   states: string[] = [
     'Alabama',
     'Alaska',
@@ -105,6 +120,8 @@ export class SettingsComponent implements OnInit {
      { }
   
     ngOnInit(): void {
+
+      
 
       
     }

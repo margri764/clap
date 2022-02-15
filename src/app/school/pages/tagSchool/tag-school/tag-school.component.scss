@@ -2,7 +2,7 @@
 .mat-dialog-container{
     height: 600px;
     border-radius: 20px !important;
-    border: 4px solid #FF8066;
+    border: 4px solid #ffa076;
     padding: 25px;
     margin-top: 15px;
 }
@@ -29,12 +29,12 @@
   .mat-raised-button{
 
     border-radius: 30px;
-    background-color:#61a7e9;
+    background-color:#ffa076;
 
 }
 
 .buttonGroup{
-     background-color: #61a7e9;
+     background-color: #ffa076;
      height: 5em; 
      border-radius: 15px;
      box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
@@ -47,14 +47,14 @@
 //input outline color
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: #61a7e9;
+  color: #ffa076;
   opacity: 1!important;
 }
 
 
 //mat-input focused color
 ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-color: #61a7e9!important;
+color: #ffa076!important;
 }
 
 
@@ -66,5 +66,5 @@ color: red!important;
 
 // mat-label focused style
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-color: #61a7e9!important;
+color: #ffa076!important;
 }

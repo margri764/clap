@@ -5,6 +5,7 @@ import { HomePeoplesComponent } from './pages/homePeoples/home-peoples.component
 import { ProfileComponent } from './pages/profile/profile/profile.component';
 import { MyapplyComponent } from './pages/myapply/myapply/myapply.component';
 import { SettingsComponent } from './pages/settings/settings/settings.component';
+import { BookmarksComponent } from './pages/bookmarks/bookmarks/bookmarks.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,11 @@ const routes: Routes = [
       },
 
       {    
-        path: "guardados", component: SettingsComponent 
+        path: "guardados", component: BookmarksComponent 
+      },
+
+      {    
+        path: "ajustes", component: SettingsComponent 
       },
       {
         path: '**',

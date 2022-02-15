@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { InvitationComponent } from './pages/invitation/invitation/invitation.component';
 import { PostExperienceComponent } from './pages/postExperience/post-experience/post-experience.component';
 
 
 const routes : Routes =[
 
-  {
-    path: 'invitacion',   component: InvitationComponent
-  },
+
   
   {
     path: 'publicacion',   component: PostExperienceComponent

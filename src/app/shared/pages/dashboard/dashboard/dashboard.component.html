@@ -1,7 +1,7 @@
 
 
 
-<div class="header" fxLayout="row wrap" >
+<div class="header" fxLayout="row wrap" style="">
 
   
 
@@ -57,11 +57,15 @@
               <button mat-menu-item routerLink="../../artistas/guardados">
                 <mat-label>Guardados</mat-label>
               </button>
-              <button mat-menu-item>
+              <button mat-menu-item  routerLink="../../artistas/ajustes">
                 <span>Ajustes</span>
               </button>
+
               <mat-divider></mat-divider>
-              <span>Cerrar Sesion</span>
+
+              <button mat-menu-item  routerLink="../../cerrar-sesion">
+              <span >Cerrar Sesion</span>
+             </button>
             
             </mat-menu>
 
@@ -88,7 +92,7 @@
 </div>
 
 
-<div fxFlex.gt-xs="65"  fxFlex.md="60" fxFlex.lg="60" >
+<div fxFlex.gt-xs="65"  fxFlex.md="60" fxFlex.lg="60"  >
 
     <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-around center" class="mat-elevation-z10"
     fxLayoutGap.md="30px" fxLayoutGap.lg="0px" [ngStyle]="styleObject()"  >
@@ -98,7 +102,9 @@
         <button mat-button (click)="getBusiness()"     routerLink="../empresas"> Empresas</button>
         <button mat-button routerLink="../escuelas/lista"> Escuelas</button>
         <button mat-button (click)="getEvents()"       routerLink="../eventos"  >Eventos</button>
-        <button mat-button (click)="getCompetitions()" routerLink="../concursos"  >Concursos</button>  
+        <!-- <button mat-button (click)="getCompetitions()" routerLink="../concursos"  >Concursos</button>  -->
+        <button mat-button  routerLink="../gestion-aplicantes"  >Concursos</button>  
+
           
 
         
@@ -139,6 +145,51 @@
 </div>
 </div>
 <!-- Profile Menu End -->
+
+<!-- Profile-Bookmarks Menu start-->
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center" *ngIf="showProfileBookmarksDashboard">
+  
+  <div  fxFlex.gt-xs="17"  fxFlex.md="20"  fxFlex.lg="40" >
+
+    <button mat-button class="perfil" appearance="outline" fxFlex="25"> <b>Perfil</b> </button>
+
+</div>
+  
+  <div fxFlex.gt-xs="65"  fxFlex.md="60" fxFlex.lg="30"  >
+    
+    <mat-toolbar class="toolbarProfile" fxLayout="row wrap" fxLayoutAlign="space-around center" class="mat-elevation-z10" 
+          >
+
+        <button mat-button  [matMenuTriggerFor]="jobs" >  Empleos</button>
+        <mat-menu #jobs="matMenu"  >
+          <button mat-menu-item fxLayoutAlign="center">Crear</button>
+          <button mat-menu-item fxLayoutAlign="center">Creados</button>
+          <button mat-menu-item fxLayoutAlign="center">Mis aplicaciones</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="events"  >Eventos</button>
+        <mat-menu #events="matMenu"  >
+          <button mat-menu-item fxLayoutAlign="center">Crear</button>
+          <button mat-menu-item fxLayoutAlign="center">Creados</button>
+          <button mat-menu-item fxLayoutAlign="center">Mis aplicaciones</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="competition" >Concursos</button>  
+        <mat-menu #competition="matMenu"  >
+          <button mat-menu-item fxLayoutAlign="center">Crear</button>
+          <button mat-menu-item fxLayoutAlign="center">Creados</button>
+          <button mat-menu-item fxLayoutAlign="center">Mis aplicaciones</button>
+        </mat-menu>
+
+    </mat-toolbar>
+
+  </div>
+
+      
+<div fxFlex.gt-xs="17" fxFlex.md="20" fxFlex.lg="10"></div>
+
+</div>
+<!-- Profile-Bookmarks Menu End -->
 
 
 </div>

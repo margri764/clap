@@ -223,28 +223,49 @@
     <div fxFlex="90" class="divider"></div>
 
     <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between">
-        <mat-list><b style="font-size: 1vw;">Mis metodos de pago</b></mat-list>
-        <button mat-raised-button appearance="outline" (click)="showNewPayment()"><b>Agregar metodo de pago</b> <mat-icon class="material-icons-outlined">add_circle</mat-icon> </button>
+       <!-- <button mat-raised-button appearance="outline" (click)="showNewPayment()"><b>Agregar metodo de pago</b> <mat-icon class="material-icons-outlined">add_circle</mat-icon> </button> -->
     </div>
 
 <!-- start new payments method (only shows if plus button in hited) -->
-    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center" style="margin-top: 20px; border: 3px solid rgba(231, 231, 231, 0.678);border-radius: 23px; padding: 10px;">
+    <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="start" style="margin-top: 20px; border: 3px solid rgba(231, 231, 231, 0.678);border-radius: 23px; padding: 10px;">
 
-        <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center" 
-        *ngIf="pressed" style="margin-top: 20px;">     
+            <mat-list><b style="font-size: 1vw;">Mis metodos de pago</b></mat-list>
+
+  
         
-        <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between">
-            <mat-list><b style="font-size: 1vw;">Tarjeta de credito o debito</b></mat-list>
-            <mat-icon class="material-icons-outlined" (click)="showNewPayment()">expand_less</mat-icon>
-        </div>   
+ 
+        <mat-accordion fxFlex="100" style="margin-top: 25px;">
+      
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
 
-            <mat-form-field appearance="outline" fxFlex="80"> 
+                <mat-panel-title fxLayoutAlign="space-between">
+              
+                  <button mat-raised-button appearance="outline" ><b>Agregar metodo de pago</b> <mat-icon class="material-icons-outlined">add_circle</mat-icon> </button>
+                  
+                </mat-panel-title>
+     
+              </mat-expansion-panel-header>
+
+    
+        <div fxLayout="row wrap" fxFlex="100">
+              
+          <div fxLayout="row wrap" fxFlex="100">
+
+            <mat-list style="margin-left: 0px;"><b style="font-size: 1vw;">Tarjeta de credito o debito</b></mat-list>
+           </div>
+           
+           <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxFlex="100" fxLayout="row wrap"
+           fxLayoutAlign="center" style="margin-top: 20px;border: 3px solid rgba(231, 231, 231, 0.678);border-radius: 23px; padding: 10px;" >       
+       
+
+
+              <mat-form-field appearance="outline" fxFlex="80"> 
                 <mat-label>Nombre en la tarjeta</mat-label>
                 <input matInput type="text" required formControlName="password">
             </mat-form-field> 
-            <!-- <mat-error  *ngIf ="validField ('name')">
-              completa este dato
-              </mat-error>  -->
+  
                  
     
             <mat-form-field appearance="outline" fxFlex="80">		
@@ -258,9 +279,7 @@
                     <mat-label>MM/AA</mat-label>
                     <input matInput type="text" required formControlName="password">
                 </mat-form-field> 
-                <!-- <mat-error  *ngIf ="validField ('name')">
-                  completa este dato
-                  </mat-error>  -->
+  
                      
         
                 <mat-form-field appearance="outline" fxFlex="40">		
@@ -268,10 +287,22 @@
                     <input matInput type="text" required formControlName="password">
                 </mat-form-field> 
 
-            </div>
-        </form>   
+        </div>
+       </form>
+    </div>
 
-        <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between">
+            </mat-expansion-panel>
+          </mat-accordion>
+          
+      
+         
+      
+                 
+           
+      
+  
+    
+        <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between" style="margin-top: 20px;">
             <mat-list><b style="font-size: 1vw;">Actividad de pagos</b></mat-list>
         </div>   
 

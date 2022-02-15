@@ -5,12 +5,16 @@ import { MaterialModule } from '../material/material/material.module';
 import { MessagesRoutingModule } from './messages-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LogoutComponent } from './pages/logout/logout/logout.component';
+import { SuggestionComponent } from './pages/suggestion/suggestion/suggestion.component';
 
 
 
 @NgModule({
   declarations: [
-    DeletePopupComponent
+    DeletePopupComponent,
+    LogoutComponent,
+    SuggestionComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
   exports:[
-    DeletePopupComponent
+    DeletePopupComponent,
+    LogoutComponent,
+    SuggestionComponent
+
 
   ]
 })

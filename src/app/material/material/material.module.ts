@@ -22,6 +22,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatTableModule} from '@angular/material/table';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatCheckboxModule,
     MatRadioModule,
     MatTableModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatExpansionModule,
+    MatTooltipModule
 
   ]
 })
