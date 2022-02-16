@@ -17,6 +17,15 @@ export class CardComponent implements OnInit {
     },
     {
       nombre: "juan"
+    },
+    {
+      nombre: "marcelo"
+    },
+    {
+      nombre: "fenando"
+    },
+    {
+      nombre: "juan"
     }
   ]
   

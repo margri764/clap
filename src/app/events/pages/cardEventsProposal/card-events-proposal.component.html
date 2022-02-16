@@ -2,98 +2,106 @@
 
 
 
+<div class="mat-dialog-container"  >
 
-
-<div class="mat-dialog-container">
-
-    <div fxFlex="94"> 
-      
-            <div fxLayoutAlign="space-between center">
-                        <div>
-                            <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">arrow_back</mat-icon>
-                        </div>
-                        <div>
-                            <mat-icon style="font-size: 2em; margin-right: 0.5em; color: rgb(185, 185, 185);">bookmark_border</mat-icon>
-                            <mat-icon style="font-size: 2em; margin-right: 0.5em; color: rgb(185, 185, 185); cursor: pointer;">more_vert</mat-icon>
-                        </div>    
-            
-              </div>
+  <div fxFlex="94"> 
     
-      <br>
-      <h1 mat-dialog-title>Anima Mundi </h1>
-      <mat-card-title>Banco Falabella</mat-card-title>
-      <br>
-      <mat-card-subtitle>www.bancofalabvell.com</mat-card-subtitle>
-      <br>
-      <h4 mat-dialog-title>Modalidad Virtual</h4>
-      <p>3 años de Experiencia</p>
-      <p><b>Remuneracion salarial 2.000.000</b></p>
-      <p>Bogota - Colombia</p>
-      
-      <mat-dialog-content>
-    
-     <h4><b>Descripcion de la empresa</b></h4>
-     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, harum ipsam fugiat molestiae nam nostrum expedita pariatur culpa illo cum sunt quidem hic sed, minus inventore velit consectetur amet? Consequuntur?</p>
-    
-     <h4><b>Descripcion del cargo</b></h4>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cum explicabo est impedit ex, eaque odio debitis assumenda itaque id saepe eligendi eius voluptatum deleniti facere mollitia velit aspernatur quaerat.</p>
-    
-     <h4><b>Requisitos parael cargo</b></h4>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cum explicabo est impedit ex, eaque odio debitis assumenda itaque id saepe eligendi eius voluptatum deleniti facere mollitia velit aspernatur quaerat.</p>
-    
-     
-    </mat-dialog-content> 
-    
-    
-      
-    
-     
-    
-    
-    
-      <div fxLayoutAlign="center center" style="margin-top: 10px;" >
-           
-        <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: #fff1b9;border-radius: 30px;">Inscribirse</button>
-       
-      </div> 
-    
-    </div>
-    
-    
-    
-    
-    
-      <div fxFlex="6" class="mat-elevation-z20" fxLayout="column"  style="background-color: #fff1b9; border-radius: 30px; cursor:pointer;" (click)="drawer.toggle();test();" [ngStyle]="(push) ? {'display': 'none'} : {'display': 'block'}" >
-            <div fxLayoutAlign="center">
-                 <mat-icon style="font-size: 2vw; margin-top: 2em; margin-right: 10px; ">keyboard_arrow_right</mat-icon>
+          <div fxLayoutAlign="space-between center">
+                      <div>
+                          <mat-icon  mat-button mat-dialog-close style="cursor: pointer; font-size: 2vw;">arrow_back</mat-icon>
+                      </div>
+                      <div>
+                          <mat-icon style="font-size: 2vw; margin-right: 0.5em; color: rgb(185, 185, 185);">bookmark_border</mat-icon>
+                          <mat-icon style="font-size: 2vw; margin-right: 0.5em; color: rgb(185, 185, 185); cursor: pointer;">more_vert</mat-icon>
+                      </div>    
+          
             </div>
-            <div fxLayoutAlign="center center">
-                <mat-label   style="writing-mode: vertical-lr ;transform: rotate(180deg); margin-top: 2em; font-size: 1.4em;"><b> Eventos Similares</b> &nbsp;&nbsp;
-           
-                </mat-label>
-           
-            </div>    
-      
-        
-    </div>
+  <br><br>
+    <mat-label style="font-size: 1.6vw; margin-top: 30px;"> <b>Anima Mundi</b></mat-label>
+  
+    <div fxLayoutAlign="center start" style=" margin-top: 20px;">
+  
+        <div fxFlex="15" fxLayoutAlign="start start">
+            <img src="assets/carwash3.png">
+        </div>
+  
+        <div fxFlex="85" style="margin-left: 10px; line-height: 10px;" >  
+            <h1><b>Banco Falabella</b></h1>
+            <p><b>www.bancofalabella.com</b></p>
+            <p><b>Modalidad Virtual</b></p>
+            <p>3 años de Experiencia</p>
+            <p>Remuneracion salarial 2.000.000</p>
+            <p>Bogota - Colombia</p>
+      </div>
+  </div>
+    <mat-dialog-content class="mat-typography">
+  
+   <h4><b>Descripcion de la empresa</b></h4>
+   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis, harum ipsam fugiat molestiae nam nostrum expedita pariatur culpa illo cum sunt quidem hic sed, minus inventore velit consectetur amet? Consequuntur?</p>
+  
+   <h4><b>Descripcion del cargo</b></h4>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cum explicabo est impedit ex, eaque odio debitis assumenda itaque id saepe eligendi eius voluptatum deleniti facere mollitia velit aspernatur quaerat.</p>
+  
+   <h4><b>Requisitos parael cargo</b></h4>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim cum explicabo est impedit ex, eaque odio debitis assumenda itaque id saepe eligendi eius voluptatum deleniti facere mollitia velit aspernatur quaerat.</p>
+  
+   
+  </mat-dialog-content> 
+  
+  
     
-    <!-- [ngClass]="clicked ? 'openSidenav':' closeSidenav'" -->
-    
-    <mat-drawer-container style="padding: 20px;" fxFlex="grow"   [ngStyle]="(clicked) ? {'display': 'block'} : {'display': 'none'}"  >
-    
-      <mat-drawer #drawer class="example-sidenav" fxLayoutAlign="center center" mode="side" style="background-color: #fff1b9; border-radius: 13px;">
-        
-    
-    
-        <app-card *ngIf="showFiller"></app-card>
-        
-    
-      </mat-drawer>
-    </mat-drawer-container> 
-    
+  
+   
+  
+  
+  
+    <div fxLayoutAlign="center center" style="margin-top: 10px;" >
+         
+      <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: #fff1b9; border-radius: 30px; font-size: 1.2vw;">Inscribirse</button>
      
+    </div> 
+  
+  </div>
+  
+  
+  
+  
+  
+    <div fxFlex="6" class="mat-elevation-z20" fxLayout="column"  style="background-color: #fff1b9; border-radius: 30px; cursor:pointer;" (click)="drawer.toggle();test();test2()" [ngStyle]="(push) ? {'display': 'none'} : {'display': 'block'}" >
+          <div fxLayoutAlign="center">
+               <mat-icon style="font-size: 2vw; margin-top: 2em; margin-right: 10px; ">keyboard_arrow_right</mat-icon>
+          </div>
+          <div fxLayoutAlign="center center">
+              <mat-label   style="writing-mode: vertical-lr ;transform: rotate(180deg); margin-top: 2em; font-size: 1.4em;"><b> Eventos Similares</b> &nbsp;&nbsp;
+         
+              </mat-label>
+         
+          </div>    
     
-    
-    </div>    
-    
-    
+      
+  </div>
+  
+  
+  <mat-drawer-container style="padding: 10px;" fxFlex="grow"   [ngStyle]="(clicked) ? {'display': 'block'} : {'display': 'none'}"  >
+  
+      <mat-drawer #drawer class="example-sidenav" fxLayoutAlign="center center" mode="side" style="background-color: #fff1b9;  border-radius: 13px;">
+        
+  
+        <app-card *ngIf="showFiller"></app-card>
+  
+        <div class="keyboard_arrow_left" fxFlex="10"  fxLayout="column" fxLayoutAlign="center center"(click)="drawer.toggle();test();test2()"  >
+          <div fxLayoutAlign="center ">
+              <mat-icon style="font-size: 2vw; margin-top: 2em; margin-right: 10px; ">keyboard_arrow_left</mat-icon>
+          </div>
+        </div>
+  
+  
+      </mat-drawer>
+  </mat-drawer-container> 
+  
+   
+  
+  
+  </div>    
+  
+  

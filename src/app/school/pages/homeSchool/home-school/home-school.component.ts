@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CardSchoolProposalComponent } from '../../cardSchoolProposal/card-school-proposal/card-school-proposal.component';
 
 @Component({
   selector: 'app-home-school',
@@ -33,11 +34,11 @@ export class HomeSchoolComponent implements OnInit {
   getPeoples(){
     this.showPeople= true;
   }
-  openDialog() {
-    // const dialogRef = this.dialog.open(CardUserComponent, {
-    //   width: '800px',
-    //   panelClass:"custom-modalbox",
-    // });
+  openDialogSchool() {
+    const dialogRef = this.dialog.open(CardSchoolProposalComponent, {
+      width: '800px',
+      panelClass:"custom-modalbox",
+    });
   }
 
   

@@ -20,6 +20,15 @@ export class CardJobProposalComponent implements OnInit {
     },
     {
       nombre: "juan"
+    },
+    {
+      nombre: "marcelo"
+    },
+    {
+      nombre: "fenando"
+    },
+    {
+      nombre: "juan"
     }
   ]
 

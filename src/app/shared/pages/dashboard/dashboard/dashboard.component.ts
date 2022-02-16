@@ -90,6 +90,10 @@ styleObject() {
 
   if(window.location.pathname.includes('empleos')){ 
 
+    this.showMainDashboard = true;
+    this.showProfileDashboard = false;
+    this.showProfileBookmarksDashboard= false;
+
      return  { "background":"#fface0" }
   };
 

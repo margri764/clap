@@ -104,7 +104,7 @@ states: string[] = [
     this.showJobs = true;
   }
 
-  openDialogEvents() {
+  openDialogCompetition() {
     const dialogRef = this.dialog.open(CardCompetitionProposalComponent, {
       panelClass:"custom-modalbox",
     });

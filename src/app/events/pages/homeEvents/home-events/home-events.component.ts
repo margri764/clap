@@ -9,7 +9,7 @@ import { CardEventsProposalComponent } from 'src/app/events/pages/cardEventsProp
 })
 export class HomeEventsComponent implements OnInit {
 
-  public showJobs : boolean = false;
+public showEvents : boolean = false;
 public fullWidth = false;
 
 heroes =[
@@ -101,7 +101,7 @@ states: string[] = [
 
   getEvents(){
     // (this.showPeople = true) ? this.showPeople = false : this.showPeople= true;
-    this.showJobs = true;
+    this.showEvents = true;
   }
 
   openDialogEvents() {

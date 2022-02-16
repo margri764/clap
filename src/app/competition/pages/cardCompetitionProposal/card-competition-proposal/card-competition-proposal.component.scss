@@ -1,0 +1,42 @@
+
+.mat-dialog-container{
+
+    border: 5px solid #B29DD5;
+    padding: 30px;
+    // padding-bottom: 50px;
+    // border-radius: 25px;
+}
+
+img{
+    width: 80%;
+}
+
+
+
+.keyboard_arrow_left{
+    background-color: #B29DD5;
+     border-radius: 30px;
+     cursor: pointer; 
+   
+}
+
+.keyboard_arrow_left:hover{
+    background-color: #a684db;
+
+}
+
+
+
+.openSidenav{
+    display: block;
+    transition: all 3s ease 0s; 
+}
+
+
+
+.closeSidenav{
+    display: none;
+}
+mat-card{
+    overflow-x: scroll;
+}

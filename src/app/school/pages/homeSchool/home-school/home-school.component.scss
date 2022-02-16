@@ -1,9 +1,7 @@
 
 img{
-    width: 90%;
-    height: 90%;
-    border-radius: 13px;
-     
+    border-radius: 40px;
+    padding: 20px;
 }
 
 
@@ -21,14 +19,52 @@ img{
 
 .card{
 
-     border: 2px solid #ffa076;
+     border: 4px solid #ffa076;
      border-radius: 20px;
+     margin-top: 15px;
+
      box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
-    margin-top: 15px;
 
 
+}
+
+.card:hover {
+    background-color:  #ffa076;;
+    .follow{
+        background-color: whitesmoke;
+        color: black;
+    }
+    .bookmark{
+        color: whitesmoke;
+    }
+    .text{
+        color: white;
+    }
+
+}
+.bookmark{
+    font-size: 3vw;
+    margin-right: 0.5em;
+    color: rgb(185, 185, 185);
+    margin-top: 0;
+    margin-top: 0.3em;
+}
+
+.follow{
+    background-color: #ffa076;
+    border-radius: 15px;
+    line-height: 30px;
+    margin-right: 1em;
+    margin-top: 1em;
+
+}
+
+.separator{
+    border: 1px solid rgb(167, 167, 167);
+    margin-bottom: 10px;
+  
 }
 
 .mat-button{
@@ -40,9 +76,11 @@ img{
 
 
 .mat-raised-button:active{
-    background-color:#ffa076 ;
+    background-color:#ffa076; ;
 }
 
 .mat-form-field{
     font-size: 1em;
 }
+
+

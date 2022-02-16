@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CardCompetitionComponent } from 'src/app/competition/pages/cardCompetition/card-competition/card-competition.component';
 import { EducationComponent } from 'src/app/shared/pages/education/education/education.component';
 import { WorkExperienceComponent } from 'src/app/shared/pages/workExperience/work-experience/work-experience.component';
 import { CardUserComponent } from '../card-user/card-user.component';
@@ -58,11 +57,6 @@ export class HomePeoplesComponent implements OnInit {
     });
   }
 
-  openDialogCompetition() {
-    const dialogRef = this.dialog.open(CardCompetitionComponent, {
-      width: '800px',
-      panelClass:"custom-modalbox",
-    });
-  }
 
+  
 }

@@ -8,9 +8,10 @@
 <!-- se muestran cuando se presiona persona -->
 <div fxLayout="row wrap"  fxLayoutAlign="space-evenly center" fxLayoutGap="2px" style="height: 180px;" *ngIf="showPeople" >
 
-    <button mat-button  style=" background-color: black;color: whitesmoke; cursor:text; "> 
-      <mat-label> <b >FILTROS</b> </mat-label>       
-    </button>
+  <button mat-flat-button  style=" cursor:text; "> 
+    <mat-label style="font-size: 1.3vw;"> <b >FILTROS</b> </mat-label>       
+  </button>
+    
       
       <button mat-button [matMenuTriggerFor]="field">  <b>Campos</b>  <mat-icon >expand_more</mat-icon></button>
       <mat-menu #field="matMenu" >
@@ -73,58 +74,60 @@
 
   
   
+    <!-- card start -->
+
+    <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign="space-between center" fxLayoutGap="10px"
+    style="padding: 20px;" (click)="openDialogSchool()" >
   
+  
+  <div  class="card" *ngFor="let heroe of heroes" fxFlex="49" fxFlex.xs="100"  routerLink="../../escuelas/listas" style="cursor: pointer;">
+  
+  
+      <div fxLayout="row" fxLayoutAlign="center center" fxFlex="30"  >
+  
+                  <img  src="https://material.angular.io/assets/img/examples/shiba2.jpg" fxFlex="100">   			
+              
+  
+      </div>
+  
+       <div  fxLayout="column" fxFlex="70"  >
+  
+          <div class="text" fxLayout="row wrap"  style="height: 100%;" >
+  
+                  <div fxFlex="40" fxLayout="row wrap" fxLayoutAlign="start center" style="margin-top: 1em; line-height: 15px;">
+  
+                   <p style="font-size: 1.6vw;"> <b>U de los Andes</b></p> 
+                   <p style="font-size: 1vw;"> FACULTAD DE ARTES Y DISEÑO</p> 
+                   <p>www.uandes.com</p>
+                      
+                  </div>
+                  
+          
+                  <div fxFlex="60" fxLayoutAlign="end start">
+                  
+                       <button  mat-button  appearance="outline" type="submit" class="follow">Seguir</button>
       
-     <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign="space-between center" fxLayoutGap="10px" style="padding: 20px;" >
-  
-  
-      <div  class="card" *ngFor="let heroe of heroes" fxFlex="49">
-    
-  
-           <div fxLayout="row" fxLayoutAlign=" center" fxFlex="30" >
-  
-                   <div  fxLayoutAlign="center center">
-                       <img  src="https://material.angular.io/assets/img/examples/shiba2.jpg">   			
-                   </div>
-                   
-       
-           </div>
-  
-            <div  fxLayout="column" fxFlex="70"  >
-  
-               <div fxLayout="row"  fxLayoutAlign="space-between start" fxFlex="100">
-  
-                       <div fxFlex="40" style="">
-  
-                           <h3 style="margin-top: 0.5em;"> Diseñador digital</h3>
-                           <h4>{{heroe.nombre}}</h4>
-                           <h4>2 años de Experiencia</h4>
-                           
-                       </div>
-                       
-               
-                       <div fxFlex="60" fxLayoutAlign="end start" style=" margin-top: 1em;">
-                       
-                            <button  mat-button  appearance="outline" type="submit"
-                             style="background-color: #ffa076;border-radius: 15px; line-height: 20px; margin-right: 1em;"
-                             >Aplicar</button>
-           
-                             <mat-icon style="font-size: 2em; margin-right: 0.5em; color: rgb(185, 185, 185);">bookmark_border</mat-icon>
-                     
-                   </div>
+                        <mat-icon class="bookmark" >bookmark_border</mat-icon>
                 
-               </div>
-                   
+              </div>
            
-           <div fxLayout="row" fxLayoutAlign="space-between" >
-               <!-- <mat-divider [inset]="true"></mat-divider> -->
-               <h4 style="">vdrtrtt</h4>
-               <h4 style="margin-right: 1em;">vence en 30 dias</h4>
-           </div>  
+          </div>
+              <div class="separator"></div>
       
-        </div>
-     
-   </div>
-  </div>
+      <div class="text" fxLayout="row" fxLayoutAlign="space-between" >
+          <!-- <mat-divider [inset]="true"></mat-divider> -->
+          <h4 >Colombia - Bogota</h4>
+          <h4 style="margin-right: 1em;">15 años de trayectoria</h4>
+      </div>  
   
+   </div>
+  
+  </div>
+  </div>
+  <!-- card end -->
+  
+    
+      
+    
+
   

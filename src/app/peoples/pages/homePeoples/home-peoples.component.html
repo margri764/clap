@@ -4,9 +4,10 @@
 <!-- se muestran cuando se presiona persona -->
 <div fxLayout="row wrap"  fxLayoutAlign="space-evenly center" fxLayoutGap="2px" style="height: 180px;" *ngIf="showPeople" >
 
-  <button mat-button  style=" background-color: black;color: whitesmoke; cursor:text; "> 
-    <mat-label> <b >FILTROS</b> </mat-label>       
+  <button mat-flat-button  style=" cursor:text; "> 
+    <mat-label style="font-size: 1.3vw;"> <b >FILTROS</b> </mat-label>       
   </button>
+    
     
     <button mat-button [matMenuTriggerFor]="field">  <b>Campos</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #field="matMenu" >
@@ -66,7 +67,7 @@
     <button mat-button (click)="openDialog()">Personas</button> 
     <button mat-button (click)="openDialogEducation()">Educacion</button> 
     <button mat-button (click)="openDialogWork()">Experiencia</button> 
-    <button mat-button (click)="openDialogCompetition()">Concurso</button> 
+    <button mat-button  routerLink="../../concurso">Concurso</button> 
     <button mat-button  routerLink="../../invitacion"  >Invitacion</button>  
     <button mat-button  routerLink="../../publicacion"  >Experiencia publicada</button>  
     <button mat-button  routerLink="../../eliminar"  >Eliminar</button>  

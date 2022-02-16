@@ -1,9 +1,6 @@
-
 img{
-    width: 90%;
-    height: 90%;
-    border-radius: 13px;
-     
+    border-radius: 40px;
+    padding: 20px;
 }
 
 
@@ -21,24 +18,52 @@ img{
 
 .card{
 
-     border: 2px solid rgb(197, 52, 255);
+     border: 4px solid #B29DD5;
      border-radius: 20px;
+     margin-top: 15px;
+
      box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
-     margin-top: 15px;
 
 
 }
 
-.mat-raised-button{
-    border: 2px solid;
-    border-radius: 20px;
-    border-color: rgb(211, 211, 211);
+.card:hover {
+    background-color:  #B29DD5;
+    .signIn{
+        background-color: whitesmoke;
+        color: black;
+    }
+    .bookmark{
+        color: rgb(216, 216, 216);
+    }
+    .text{
+        color: rgb(82, 82, 82);
+    }
+
+}
+.bookmark{
+    font-size: 3vw;
+    margin-right: 0.5em;
+    color: rgb(185, 185, 185);
+    margin-top: 0;
+    margin-top: 0.3em;
 }
 
-.mat-raised-button:active{
-    background-color:rgb(197, 52, 255) ;
+.signIn{
+    background-color: #B29DD5;
+    border-radius: 15px;
+    line-height: 30px;
+    margin-right: 1em;
+    margin-top: 1em;
+
+}
+
+.separator{
+    border: 1px solid rgb(167, 167, 167);
+    margin-bottom: 10px;
+  
 }
 
 .mat-button{
@@ -49,23 +74,12 @@ img{
 }
 
 
+.mat-raised-button:active{
+    background-color:#B29DD5;
+}
 
 .mat-form-field{
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
 
-
-mat-label{
-    
-    b{
-        font-size: 0.9vw;
-    }
-}
-
-
-mat-option{
-    label{
-        font-size: 1.1vw;
-    }
-}

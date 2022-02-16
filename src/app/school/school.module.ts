@@ -7,6 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomeSchoolComponent } from './pages/homeSchool/home-school/home-school.component';
 import { PostSchoolComponent } from './pages/postSchool/post-school/post-school.component';
 import { TagSchoolComponent } from './pages/tagSchool/tag-school/tag-school.component';
+import { CardSchoolProposalComponent } from './pages/cardSchoolProposal/card-school-proposal/card-school-proposal.component';
+import { CardComponent } from './pages/card/card/card.component';
 
 
 
@@ -14,7 +16,9 @@ import { TagSchoolComponent } from './pages/tagSchool/tag-school/tag-school.comp
   declarations: [
     HomeSchoolComponent,
     PostSchoolComponent,
-    TagSchoolComponent
+    TagSchoolComponent,
+    CardSchoolProposalComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

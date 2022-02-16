@@ -108,9 +108,13 @@ states: string[] = [
 
   openDialogJob() {
     const dialogRef = this.dialog.open(CardJobProposalComponent, {
+  
       panelClass:"custom-modalbox",
+      // panelClass:"custom-modalbox",
+
     });
   }
+
   openDialogJob2() {
     const dialogRef = this.dialog.open(CardJobCreatorComponent, {
       width: '800px',
