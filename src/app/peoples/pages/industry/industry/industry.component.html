@@ -11,10 +11,10 @@
 
     <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="25px"  style="margin-top: 30px; line-height: 30px;">
         
-        <div  class="card" fxFlex="15" fxLayout="column wrap" fxLayoutAlign="center center" routerLink="../../bienvenida">
+        <div  class="cardPeople" fxFlex="15" fxLayout="column wrap" fxLayoutAlign="center center"  >
             <img src="assets/IndustPeople.png" alt="">
-            
-            <mat-label style="font-size: 2vw; margin-top: 15px;">Persona</mat-label>
+            <mat-label style="font-size: 2vw; margin-top: 15px; ">Persona</mat-label>
+            <mat-radio-button value="pople" (click)="openDialogCardUser()"></mat-radio-button>
         </div>
         
         <div class="card" fxFlex="15" fxLayoutAlign="center center" fxLayout="column wrap">

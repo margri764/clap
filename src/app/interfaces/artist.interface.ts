@@ -2,15 +2,15 @@
 
 
 export interface Artist{
-    id:         string;
+    _id:         string;
     name:       string;
     alias:      string;
     titular:    string;
     dateBirth:  Date;
-    country:    string;
-    city:       string;
+    // country:    string;
+    // city:       string;
     email:      string;
-    dateJob:    Date;
+    // dateJob:    Date;
     web:        string    
 
 }

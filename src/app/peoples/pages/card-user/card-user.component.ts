@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -42,7 +43,7 @@ myForm:FormGroup = this.fb.group({
 
   constructor(
             private fb : FormBuilder,
-            private service : ArtistService,
+            private artistService : ArtistService,
             private router: Router,
             private dialogRef: MatDialogRef<CardUserComponent>
   )
@@ -67,22 +68,35 @@ myForm:FormGroup = this.fb.group({
     });
   
   }
+
+
   sendFormArtist (){
     // alert(JSON.stringify(this.myForm.value));
 
-    this.service.dataArtistToBackend(this.myForm.value).subscribe(
-      res => { 
-        if(res){
-          this.confirmArtist();
-          this.dialogRef.close([]);
-          this.router.navigateByUrl('../artistas/lista');
+  //   this.artistService.dataArtistToBackend(this.myForm.value).subscribe( 
+  //     artist => { 
+  //       if(artist){
+  //         this.confirmArtist();
+  //         console.log(artist);
+       
+  //         this.artistService.getDataArtist('f').subscribe(
+  //           res=> alert(res._id)
+
+  //         // (artist) => 
+  //         //   this.router.navigateByUrl(`artistas/perfil/${artist.id}`)
+
+          
+          
+  //         );
+  //         this.dialogRef.close([]);
+  //         // this.router.navigateByUrl('../artistas/lista');
 
               
-          // this.myForm.reset(); 
-        }
-      }
-    )
+  //         // this.myForm.reset(); 
+  //       }
+  //     }
+  //   )
+  // }
+
   }
-
-
 }

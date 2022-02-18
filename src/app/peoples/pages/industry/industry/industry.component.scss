@@ -9,5 +9,32 @@
     border: 3px solid rgba(202, 202, 202, 0.829);
     border-radius: 20px;
     height: 20vw;
-    cursor: pointer;
+ 
 }
+
+.cardPeople{
+    border: 3px solid rgba(202, 202, 202, 0.829);
+    border-radius: 20px;
+    height: 20vw;
+ }
+
+ .cardPeople:hover{
+     border: 4px solid #b0bcec;
+ }
+
+
+  :host ::ng-deep .mat-radio-outer-circle{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+  :host ::ng-deep .mat-radio-outer-circle:hover{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    // color: aqua;
+    background-color: #b0bcec;
+  }
+
+
+  

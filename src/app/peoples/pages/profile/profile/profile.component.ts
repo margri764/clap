@@ -1,6 +1,8 @@
 import { NoopScrollStrategy } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
+import { ArtistService } from 'src/app/services/artist/artist.service';
 import { ResumeComponent } from '../../resume/resume/resume.component';
 
 @Component({
@@ -35,10 +37,26 @@ public animation : boolean = false;
     }
   ]
   constructor(
-              private dialog : MatDialog
+              private dialog : MatDialog,
+              private artistService : ArtistService,
+              private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
+
+    this.activatedRoute.params
+    .subscribe( ({id}) => {
+      console.log(id);
+
+      // this.artistService.getDataArtist("testId")
+      // .subscribe ( artist => {
+        // console.log(artist)
+      // })
+    } );
+
+
+
+
   }
 
   openDialog() {
