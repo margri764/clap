@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
 
 
@@ -16,6 +16,7 @@ import { EventsModule } from './events/events.module';
 import { CompetitionModule } from './competition/competition.module';
 import { MessagesModule } from './messages/messages.module';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { InterceptorService } from './interceptor/interceptor.service';
 
 
 @NgModule({
@@ -58,6 +59,11 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
           // }
         ]
       } as SocialAuthServiceConfig,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
     },
 
 

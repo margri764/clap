@@ -1,8 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, of } from 'rxjs';
 import { Artist } from 'src/app/interfaces/artist.interface';
-import { Usuario } from 'src/app/models/artist';
 import { environment } from 'src/environments/environment';
 
 
@@ -13,7 +12,11 @@ export class ArtistService {
 
   private baseUrl: string = environment.baseUrl; //ojo con el import xq puede ser prod!!
 
-  public artist =[];
+  get artists(){
+    return this.artist
+
+  }
+ private artist!: Artist;
  
 
   constructor( 
@@ -21,23 +24,22 @@ export class ArtistService {
     
      ) {    }
   
-  dataArtistToBackend( body : any )  {
-    return this.http.post<Artist>(`${this.baseUrl}api/artist`, body)
+  dataArtistToBackend( body : Artist ) {
+    return this.http.post<any>(`${this.baseUrl}api/artist`, body)
+  
     .pipe(
-      map( res =>{ 
-        this.artist.forEach( (item : any)=> item =res._id)
-        console.log(this.artist);
+      map( res   => { 
+           this.artist= res.user   
+        return {
+          user : this.artist
+         };
+        }),
+        // catchError( err => of(false) )
         
-        return res;
-    
-      } 
-      )
-    )
- 
-    
- 
- 
-  };
+        )
+      };
+
+
 
   getDataArtist (id: string) : Observable <Artist>{
 

@@ -1,8 +1,10 @@
-import { HttpParams } from '@angular/common/http';
+import { HttpErrorResponse, HttpParams } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Artist } from 'src/app/interfaces/artist.interface';
 import { ArtistService } from 'src/app/services/artist/artist.service';
 import Swal from 'sweetalert2';
 
@@ -20,6 +22,7 @@ string:any;
 clicked:boolean= false;
 hidden: boolean = false;
 showSpinner : boolean = false;
+private test! : any;
   
 states: string[] = [
   'Alabama',
@@ -29,12 +32,12 @@ states: string[] = [
 ];
 
 myForm:FormGroup = this.fb.group({
-  name:    ['marcelo griotti', [Validators.required] ],
-  alias:   ['bul', [Validators.required] ],
-  titular: ['no se q eso', [Validators.required]],
-  web :    ['www.feintdevs.com', [Validators.required]],
-  email:   ['margri@gmail.com', [Validators.required]],
-  dateBirth: ['2022-02-17T03:00:00.000+00:00', [Validators.required]],
+  name:    ['', [Validators.required] ],
+  alias:   ['', [Validators.required] ],
+  titular: ['', [Validators.required]],
+  web :    ['', [Validators.required]],
+  email:   ['', [Validators.required]],
+  dateBirth: ['', [Validators.required]],
 
 
 
@@ -71,32 +74,41 @@ myForm:FormGroup = this.fb.group({
 
 
   sendFormArtist (){
-    // alert(JSON.stringify(this.myForm.value));
 
-  //   this.artistService.dataArtistToBackend(this.myForm.value).subscribe( 
-  //     artist => { 
-  //       if(artist){
-  //         this.confirmArtist();
-  //         console.log(artist);
-       
-  //         this.artistService.getDataArtist('f').subscribe(
-  //           res=> alert(res._id)
+    this.artistService.dataArtistToBackend(this.myForm.value).subscribe( 
+       ({user}) => { 
+            this.confirmArtist();
+            this.dialogRef.close([]);
+            this.artistService.getDataArtist(user._id).subscribe(
+            res => 
+            this.router.navigateByUrl(`artistas/perfil/${user._id}`)
+          )
+        },(err: HttpErrorResponse)=> {
+            //error de desconexion con el back end
+            if(err.status === 0){
+              alert ('opps!!')
+              return
+            };
 
-  //         // (artist) => 
-  //         //   this.router.navigateByUrl(`artistas/perfil/${artist.id}`)
+            if(err.status === 400 || err.status === 403 || err.status === 500 
+              || err.status === 510 ){
+                alert(err.error.msg);
+                this.router.navigateByUrl('home');
+                this.dialogRef.close([]);
 
-          
-          
-  //         );
-  //         this.dialogRef.close([]);
-  //         // this.router.navigateByUrl('../artistas/lista');
+              }
+              
+          return
+
+        })
+    }
+
+
+
 
               
-  //         // this.myForm.reset(); 
-  //       }
-  //     }
-  //   )
-  // }
+          // this.myForm.reset(); 
 
-  }
+
+  
 }
