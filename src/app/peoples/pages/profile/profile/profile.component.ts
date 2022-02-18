@@ -50,7 +50,7 @@ public animation : boolean = false;
 
       // this.artistService.getDataArtist("testId")
       // .subscribe ( artist => {
-        // console.log(artist)
+      //   console.log(artist)
       // })
     } );
 

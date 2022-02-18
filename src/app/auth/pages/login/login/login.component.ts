@@ -64,25 +64,26 @@ export class LoginComponent implements OnInit {
     sendForm (){
       // console.log(this.myForm.value)
       // alert(JSON.stringify(this.user));
+      this.router.navigateByUrl(`/artistas/perfil/${"testUrl"}`)
  
-      this.authService.authState.subscribe(user => {
-        this.user = user;
-        this.router.navigateByUrl("home")
+      // this.authService.authState.subscribe(user => {
+      //   this.user = user;
+      //   this.router.navigateByUrl("home")
 
         
   
         
-      //   if(user!=null){
-      //     const {idToken} = user
-      //     this.employeeService.userLogin={
-      //       // name,
-      //       // email
-      //       idToken
-      //   }
+      // //   if(user!=null){
+      // //     const {idToken} = user
+      // //     this.employeeService.userLogin={
+      // //       // name,
+      // //       // email
+      // //       idToken
+      // //   }
    
   
-      // } 
-      });
+      // // } 
+      // });
       
     }
   
