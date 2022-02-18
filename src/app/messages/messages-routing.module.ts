@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DeletePopupComponent } from './pages/deletePopup/delete-popup/delete-popup.component';
 import { LogoutComponent } from './pages/logout/logout/logout.component';
 import { SuggestionComponent } from './pages/suggestion/suggestion/suggestion.component';
+import { WelcomeComponent } from './pages/welcome/welcome/welcome.component';
 
 
 
@@ -17,6 +17,10 @@ const routes: Routes = [
     },
     {
       path: 'invitar', component: SuggestionComponent
+    },
+
+    {
+      path: 'bienvenida', component: WelcomeComponent
     },
   ]
 

@@ -2,16 +2,19 @@ import { AfterViewChecked, ChangeDetectorRef, Component, OnInit } from '@angular
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
+import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
+
+
+
 import { CardUserComponent } from '../../../../peoples/pages/card-user/card-user.component';
 import { WorkExperienceComponent } from '../../workExperience/work-experience/work-experience.component';
 import { EducationComponent } from '../../education/education/education.component';
 import { CardJobCreatorComponent } from 'src/app/jobs/pages/cardJobCreator/card-job-creator/card-job-creator.component';
 import { HomeJobsComponent } from 'src/app/jobs/pages/homeJobs/home-jobs/home-jobs.component';
-import { HomePeoplesComponent } from 'src/app/peoples/pages/homePeoples/home-peoples.component';
 import { HomeBusinessComponent } from 'src/app/business/pages/homeBusiness/home-business/home-business.component';
-// import { HomeSchoolComponent } from 'src/app/school/pages/homeSchool/home-school/home-school.component';
 import { HomeEventsComponent } from 'src/app/events/pages/homeEvents/home-events/home-events.component';
 import { HomeCompetitionComponent } from 'src/app/competition/pages/homeCompetition/home-competition/home-competition.component';
+
 
 export interface Fruit {
   name: string;
@@ -33,6 +36,8 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
   public showMainDashboard : boolean = true;
   public showProfileDashboard : boolean = true;
   public showProfileBookmarksDashboard : boolean = true;
+  user!: SocialUser;
+  GoogleLoginProvider = GoogleLoginProvider;
 
 
 
@@ -67,7 +72,9 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
               // private compSchool : HomeSchoolComponent,
               private compEvent : HomeEventsComponent,
               private compCompetition : HomeCompetitionComponent,
-              private cdRef:ChangeDetectorRef
+              private cdRef:ChangeDetectorRef,
+              private authService: SocialAuthService,
+
               
               ) {
  
@@ -118,14 +125,14 @@ if(window.location.pathname.includes('artistas/ajustes')){
   this.showMainDashboard = false;
   this.showProfileDashboard = false;
   this.showProfileBookmarksDashboard= false;
-
+  
 }
 
 if(window.location.pathname.includes('artistas/guardados')){ 
   this.showMainDashboard = false;
   this.showProfileDashboard = false;
   this.showProfileBookmarksDashboard= true
-
+  
 }
 
 
@@ -180,6 +187,7 @@ if(window.location.pathname.includes('gestion-aplicantes')){
  
 }
 
+
   return {}
 
 
@@ -213,6 +221,22 @@ getCompetitions(){
 
 
   ngOnInit(): void {
+    this.authService.authState.subscribe(user => {
+      this.user = user;
+
+      
+    //   if(user!=null){
+    //     const {idToken} = user
+    //     this.employeeService.userLogin={
+    //       // name,
+    //       // email
+    //       idToken
+    //   }
+ 
+
+    // } 
+    });
+
 
   }
 

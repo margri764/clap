@@ -13,6 +13,7 @@ import { CardSkillsComponent } from './pages/cardSkills/card-skills/card-skills.
 import { MyapplyComponent } from './pages/myapply/myapply/myapply.component';
 import { SettingsComponent } from './pages/settings/settings/settings.component';
 import { BookmarksComponent } from './pages/bookmarks/bookmarks/bookmarks.component';
+import { IndustryComponent } from './pages/industry/industry/industry.component';
 
 
 
@@ -27,6 +28,7 @@ import { BookmarksComponent } from './pages/bookmarks/bookmarks/bookmarks.compon
     MyapplyComponent,
     SettingsComponent,
     BookmarksComponent,
+    IndustryComponent,
   ],
   imports: [
     CommonModule,

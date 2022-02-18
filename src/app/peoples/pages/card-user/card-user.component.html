@@ -1,9 +1,9 @@
 
-<div class="mat-dialog-container" style="border: 5px solid #61a7e9;">
+<div class="mat-dialog-container" >
 
   <div fxLayoutAlign="space-between center">
 
-        <h1 mat-dialog-title style="color: #61a7e9;">Mi Perfil </h1>
+        <h1 mat-dialog-title style="color: #b0bcec;">Mi Perfil </h1>
 
         <mat-dialog-actions align="end">
           <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">close</mat-icon>
@@ -15,7 +15,7 @@
 <div  fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px" fxFlex="100">
 
 
-    <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form">     
+    <form  [formGroup]="myForm" (ngSubmit)="sendFormArtist()" id="form">     
 
        
         
@@ -25,11 +25,10 @@
         
         <div fxLayoutAlign="space-between center" >  
 
-          <mat-label>fefef</mat-label>
 
         <mat-form-field appearance="outline" fxFlex="49"> 
             <mat-label>Nombre y Apellido*</mat-label>
-            <input matInput type="text" required formControlName="name">
+            <input matInput type="text"  required formControlName="name">
         </mat-form-field> 
         <!-- <mat-error  *ngIf ="validField ('name')">
           completa este dato
@@ -60,14 +59,17 @@
 
         <div fxLayoutAlign="space-between center">
 
-        <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
-            <mat-label>Fecha de Nacimiento</mat-label>
-            <input matInput [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker">
-              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-            </mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
+ 
+
+
+    <mat-form-field class="example-full-width" appearance="outline" fxFlex="49" (click)="picker.open()" autocomplete="off">
+          <mat-label >Fecha de Nacimiento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dateBirth" required>
+          <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> 
 
           <mat-form-field appearance="outline" fxFlex="24">
             <mat-label>Pais*</mat-label>

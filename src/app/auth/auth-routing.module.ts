@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login/login.component';
 import { RegistrationComponent } from './pages/registration/registration/registration.component';
+import { ConfirmEmailComponent } from './pages/confirmEmail/confirm-email.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
       {
         path: 'registro',
         component: RegistrationComponent
+      },
+      {
+        path: 'confirmacion',
+        component: ConfirmEmailComponent
       },
       {
         path: '**',

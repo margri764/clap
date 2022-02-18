@@ -1,4 +1,8 @@
 
+.mat-dialog-container{
+  border: 6px solid #b0bcec;
+}
+
 img{
     width: 20%;
     border-radius: 600px;
@@ -19,6 +23,10 @@ img{
       font-size: 0.8em;
   }
 
+  input{
+    font-size: 1.3vw;
+  }
+
   mat-label{
       font-size: 1.3em;
   }
@@ -28,6 +36,13 @@ img{
     border-radius: 30px;
     background-color:#b0bcec;
 
+}
+
+.mat-button{
+  border: 2px solid;
+  border-radius: 20px;
+  border-color: rgb(211, 211, 211);
+  font-size: 1.2vw;
 }
 
 .buttonGroup{

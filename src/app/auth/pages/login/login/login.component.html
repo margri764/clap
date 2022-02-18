@@ -1,5 +1,6 @@
 
 
+
 <div   style="width:100%; height: 100%; background-color: rgb(53, 53, 53);">
 
 
@@ -19,7 +20,7 @@
             
                 <div fxFlex="100"  style="margin-top: 50px; padding:10px;">
                     <h1><b>Iniciar Sesión</b></h1>
-                    <h2>¿No tienes una cuenta? <a routerLink=""> <b>Registrate</b></a></h2>
+                    <h2>¿No tienes una cuenta? <a routerLink="/auth/registro"> <b>Registrate</b></a></h2>
 
 <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form">     
 
@@ -30,10 +31,7 @@
             <mat-label fxLayoutAlign="center">Correo electronico</mat-label>
             <input matInput type="text" required formControlName="web">
         </mat-form-field> 
-        <!-- <mat-error  *ngIf ="validField ('web')">
-            completa este dato
-        </mat-error> 
-        </div>  -->
+ 
     </div>
 
     <div fxLayoutAlign="center">
@@ -41,10 +39,7 @@
             <mat-label fxLayoutAlign="center" >Contraseña</mat-label>
             <input matInput type="text" required formControlName="titular">
         </mat-form-field> 
-        <!-- <mat-error  *ngIf ="validField ('titular')">
-            completa este dato
-        </mat-error> 
-        </div> -->
+ 
         </div>
             
                 
@@ -77,6 +72,7 @@
             <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: black;border-radius: 30px;"><mat-label style="color: blanchedalmond;">Iniciar Sesión</mat-label></button>
             
             </div> 
+</form>      
     <hr>
 
     <div fxLayoutAlign="center center"  >
@@ -86,11 +82,10 @@
         </div> 
         <div fxLayout="row" fxLayoutAlign="start center" style="margin-top: 40px" >
         
-            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit"  style="background-color: whitesmoke;border-radius: 30px;"><img src="assets/google.png" fxFlex="10" fxFlexOffset="18" > <mat-label> &nbsp; Conectar con Google</mat-label></button>
+            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit"  style="background-color: whitesmoke;border-radius: 30px;" (click)="signInWithGoogle()"><img src="assets/google.png" fxFlex="10" fxFlexOffset="18"  > <mat-label> &nbsp; Conectar con Google</mat-label></button>
             
             </div>     
 
-                          </form>
 
                 </div>
 

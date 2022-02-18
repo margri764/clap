@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LogoutComponent } from './pages/logout/logout/logout.component';
 import { SuggestionComponent } from './pages/suggestion/suggestion/suggestion.component';
+import { WelcomeComponent } from './pages/welcome/welcome/welcome.component';
 
 
 
@@ -14,7 +15,8 @@ import { SuggestionComponent } from './pages/suggestion/suggestion/suggestion.co
   declarations: [
     DeletePopupComponent,
     LogoutComponent,
-    SuggestionComponent
+    SuggestionComponent,
+    WelcomeComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,10 @@ import { SuggestionComponent } from './pages/suggestion/suggestion/suggestion.co
   exports:[
     DeletePopupComponent,
     LogoutComponent,
-    SuggestionComponent
+    SuggestionComponent,
+    WelcomeComponent
+
+    
 
 
   ]

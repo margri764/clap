@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { ArtistService } from 'src/app/services/artist/artist.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-card-user',
@@ -21,61 +24,17 @@ states: string[] = [
   'Alabama',
   'Alaska',
   'Arizona',
-  'Arkansas',
-  'California',
-  'Colorado',
-  'Connecticut',
-  'Delaware',
-  'Florida',
-  'Georgia',
-  'Hawaii',
-  'Idaho',
-  'Illinois',
-  'Indiana',
-  'Iowa',
-  'Kansas',
-  'Kentucky',
-  'Louisiana',
-  'Maine',
-  'Maryland',
-  'Massachusetts',
-  'Michigan',
-  'Minnesota',
-  'Mississippi',
-  'Missouri',
-  'Montana',
-  'Nebraska',
-  'Nevada',
-  'New Hampshire',
-  'New Jersey',
-  'New Mexico',
-  'New York',
-  'North Carolina',
-  'North Dakota',
-  'Ohio',
-  'Oklahoma',
-  'Oregon',
-  'Pennsylvania',
-  'Rhode Island',
-  'South Carolina',
-  'South Dakota',
-  'Tennessee',
-  'Texas',
-  'Utah',
-  'Vermont',
-  'Virginia',
-  'Washington',
-  'West Virginia',
-  'Wisconsin',
-  'Wyoming',
+
 ];
 
 myForm:FormGroup = this.fb.group({
-  name:    ['', [Validators.required] ],
-  alias:   ['', [Validators.required] ],
-  titular: ['', [Validators.required]],
-  web :    [''],
-  email:   [''],
+  name:    ['marcelo griotti', [Validators.required] ],
+  alias:   ['bul', [Validators.required] ],
+  titular: ['no se q eso', [Validators.required]],
+  web :    ['www.feintdevs.com', [Validators.required]],
+  email:   ['margri@gmail.com', [Validators.required]],
+  dateBirth: ['2022-02-17T03:00:00.000+00:00', [Validators.required]],
+
 
 
 });
@@ -83,6 +42,9 @@ myForm:FormGroup = this.fb.group({
 
   constructor(
             private fb : FormBuilder,
+            private service : ArtistService,
+            private router: Router,
+            private dialogRef: MatDialogRef<CardUserComponent>
   )
    { }
 
@@ -95,8 +57,31 @@ myForm:FormGroup = this.fb.group({
             && this.myForm.controls[field].touched;
   }
 
-  sendForm (){
-    console.log(this.myForm.value)
+  confirmArtist(){
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Artista creado correctamente',
+      showConfirmButton: false,
+      timer: 4000
+    });
+  
+  }
+  sendFormArtist (){
+    // alert(JSON.stringify(this.myForm.value));
+
+    this.service.dataArtistToBackend(this.myForm.value).subscribe(
+      res => { 
+        if(res){
+          this.confirmArtist();
+          this.dialogRef.close([]);
+          this.router.navigateByUrl('../artistas/lista');
+
+              
+          // this.myForm.reset(); 
+        }
+      }
+    )
   }
 
 

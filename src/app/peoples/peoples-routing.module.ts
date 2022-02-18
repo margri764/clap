@@ -6,6 +6,7 @@ import { ProfileComponent } from './pages/profile/profile/profile.component';
 import { MyapplyComponent } from './pages/myapply/myapply/myapply.component';
 import { SettingsComponent } from './pages/settings/settings/settings.component';
 import { BookmarksComponent } from './pages/bookmarks/bookmarks/bookmarks.component';
+import { IndustryComponent } from './pages/industry/industry/industry.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,10 @@ const routes: Routes = [
 
       {    
         path: "ajustes", component: SettingsComponent 
+      },
+
+      {    
+        path: "industrias", component: IndustryComponent
       },
       {
         path: '**',
