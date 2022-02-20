@@ -24,6 +24,14 @@ export class ArtistService {
     
      ) {    }
   
+
+login (body:any) {
+
+  return this.http.post<any> (`${this.baseUrl}api/auth/login`,body)
+}
+  
+  
+
   dataArtistToBackend( body : Artist ) {
     return this.http.post<any>(`${this.baseUrl}api/artist`, body)
   
@@ -34,8 +42,6 @@ export class ArtistService {
           user : this.artist
          };
         }),
-        // catchError( err => of(false) )
-        
         )
       };
 

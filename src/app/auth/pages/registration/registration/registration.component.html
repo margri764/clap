@@ -28,7 +28,7 @@
 
             <mat-form-field appearance="outline" fxFlex="100" >		
             <mat-label fxLayoutAlign="center">Correo electronico</mat-label>
-            <input matInput type="text" required formControlName="web">
+            <input matInput type="text" required formControlName="email">
         </mat-form-field> 
         <!-- <mat-error  *ngIf ="validField ('web')">
             completa este dato
@@ -39,7 +39,7 @@
     <div fxLayoutAlign="center">
         <mat-form-field appearance="outline" fxFlex="100">		
             <mat-label fxLayoutAlign="center" >Contraseña</mat-label>
-            <input matInput type="text" required formControlName="titular">
+            <input matInput type="text" required formControlName="password">
         </mat-form-field> 
         <!-- <mat-error  *ngIf ="validField ('titular')">
             completa este dato
@@ -55,7 +55,7 @@
 
              <div>
                 <section class="example-section" fxFlex="100"  >
-                    <mat-radio-button class="example-margin" value="after">He leido y acepto los<a> <b>términos y condiciones</b></a></mat-radio-button>
+                    <mat-radio-button class="example-margin" value="after" (click)="test()">He leido y acepto los<a>&nbsp; <b>términos y condiciones</b></a></mat-radio-button>
                 </section>  
             </div>
 
@@ -65,21 +65,22 @@
         
         <div fxLayoutAlign="center center" style="margin-top: 10px;"  >
         
-            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: black;border-radius: 30px;"><mat-label style="color: blanchedalmond;">Crear cuenta</mat-label></button>
+            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" [disabled]="!iAgree" style="background-color: black;border-radius: 30px; color: white; font-size: 1vw;">Crear cuenta</button>
             
             </div> 
     <hr>
 
     <div fxLayoutAlign="center center"  >
         
-        <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="background-color: rgb(42, 111, 175);border-radius: 30px;"><mat-label style="color: blanchedalmond;">Conectar con Linkedin</mat-label></button>
+        <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit" style="border-radius: 30px;" disabled ><mat-label style="color: blanchedalmond;" >Conectar con Linkedin</mat-label></button>
+        <!-- background-color: rgb(42, 111, 175); -->
         
         </div> 
         <div fxLayout="row" fxLayoutAlign="start center" style="margin-top: 40px" >
         
-            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit"  style="background-color: whitesmoke;border-radius: 30px;"><img src="assets/google.png" fxFlex="10" fxFlexOffset="18" > <mat-label> &nbsp; Conectar con Google</mat-label></button>
+            <button  fxFlex="100" mat-raised-button  appearance="outline" type="submit"  style="background-color: whitesmoke;border-radius: 30px;" disabled><img src="assets/google.png" fxFlex="10" fxFlexOffset="18" > <mat-label> &nbsp; Conectar con Google</mat-label></button>
             
-            </div>     
+            </div>   
 
                           </form>
 

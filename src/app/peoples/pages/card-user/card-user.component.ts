@@ -1,10 +1,8 @@
-import { HttpErrorResponse, HttpParams } from '@angular/common/http';
-import { ThisReceiver } from '@angular/compiler';
+import { HttpErrorResponse} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Artist } from 'src/app/interfaces/artist.interface';
 import { ArtistService } from 'src/app/services/artist/artist.service';
 import Swal from 'sweetalert2';
 
@@ -32,14 +30,13 @@ states: string[] = [
 ];
 
 myForm:FormGroup = this.fb.group({
-  name:    ['', [Validators.required] ],
-  alias:   ['', [Validators.required] ],
-  titular: ['', [Validators.required]],
-  web :    ['', [Validators.required]],
+  name:    ['marcelo', [Validators.required] ],
+  alias:   ['bul', [Validators.required] ],
+  titular: ['rtrtrt', [Validators.required]],
+  web :    ['ererer', [Validators.required]],
   email:   ['', [Validators.required]],
-  dateBirth: ['', [Validators.required]],
-
-
+  dateBirth: ['5454545', [Validators.required]],
+  // _id:[ '6211863226a2cca7e2a7f0de']
 
 });
   
