@@ -28,7 +28,7 @@
 
         <mat-form-field appearance="outline" fxFlex="49"> 
             <mat-label>Nombre y Apellido*</mat-label>
-            <input matInput type="text"  required formControlName="name">
+            <input matInput type="text"  required formControlName="userName">
         </mat-form-field> 
         <!-- <mat-error  *ngIf ="validField ('name')">
           completa este dato
@@ -73,7 +73,7 @@
 
           <mat-form-field appearance="outline" fxFlex="24">
             <mat-label>Pais*</mat-label>
-            <mat-select>
+            <mat-select required formControlName="city">
               <mat-option>None</mat-option>
               <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
             </mat-select>
@@ -81,7 +81,7 @@
 
           <mat-form-field appearance="outline" fxFlex="24">
             <mat-label>Ciudad*</mat-label>
-            <mat-select>
+            <mat-select required formControlName="state">
               <mat-option>None</mat-option>
               <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
             </mat-select>
@@ -102,14 +102,19 @@
           </mat-error> 
              -->
 
-            <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
+
+     
+
+            <mat-form-field  appearance="outline" fxFlex="49" autocomplete="off">
               <mat-label>Inicio de actividad laboral</mat-label>
-              <input matInput [matDatepicker]="picker">
-              <mat-datepicker-toggle matSuffix [for]="picker">
-                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+              <input matInput [matDatepicker]="dp3" formControlName="jobDate">
+              <mat-datepicker-toggle matSuffix [for]="dp3">
+                <!-- <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon> -->
               </mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>  
+              <mat-datepicker #dp3></mat-datepicker>
+            </mat-form-field>  
+            
+            
           
         </div> 
           
@@ -120,7 +125,7 @@
 
           <mat-form-field appearance="outline" fxFlex="40" >		
             <mat-label >Pagina Web</mat-label>
-            <input matInput type="text" required formControlName="web">
+            <input matInput type="text" required formControlName="website">
         </mat-form-field> 
         <!-- <mat-error  *ngIf ="validField ('web')">
             completa este dato

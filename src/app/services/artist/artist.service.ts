@@ -43,16 +43,17 @@ login (body:any) {
 
   dataArtistToBackend( body : Artist ) {
     return this.http.post<any>(`${this.baseUrl}api/artist`, body)
+  }
   
-    .pipe(
-      map( res   => { 
-           this.artist= res.user   
-        return {
-          user : this.artist
-         };
-        }),
-        )
-      };
+    // .pipe(
+    //   map( res   => { 
+    //        this.artist= res.user   
+    //     return {
+    //       user : this.artist
+    //      };
+    //     }),
+    //     )
+    //   };
 
 
 

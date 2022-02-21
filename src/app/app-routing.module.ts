@@ -4,7 +4,7 @@ import { HomeComponent } from './shared/pages/home/home/home.component';
 import { Page404Component } from './shared/pages/page404/page404/page404.component';
 
 const routes: Routes = [
-
+  
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule )
@@ -13,10 +13,14 @@ const routes: Routes = [
     path: 'artistas',
     loadChildren: () => import('./peoples/peoples.module').then( m => m.PeoplesModule )
   },
-
+  
   {
     path: 'escuelas',
     loadChildren: () => import('./school/school.module').then( m => m.SchoolModule )
+  },
+  
+  {
+    path: 'page404',   component: Page404Component
   },
 
   {
@@ -24,10 +28,6 @@ const routes: Routes = [
   },
     {
     path: "", redirectTo: "home", pathMatch: 'full'
-  },
- 
-  {
-    path: 'page404',   component: Page404Component
   },
   {
     path: '**',

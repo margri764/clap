@@ -8,7 +8,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 //components
 import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
-import { WorkExperienceComponent } from './pages/workExperience/work-experience/work-experience.component';
 import { EducationComponent } from './pages/education/education/education.component';
 import { FooterComponent } from './pages/footer/footer/footer.component';
 import { HomeComponent } from './pages/home/home/home.component';
@@ -23,7 +22,6 @@ import { PostExperienceComponent } from './pages/postExperience/post-experience/
     FooterComponent,
     HomeComponent,
     Page404Component,
-    WorkExperienceComponent,
     EducationComponent,
     PostExperienceComponent,
 
@@ -43,7 +41,6 @@ import { PostExperienceComponent } from './pages/postExperience/post-experience/
     HomeComponent,
     Page404Component,
     EducationComponent,
-    WorkExperienceComponent,
     PostExperienceComponent,
 
 

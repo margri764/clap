@@ -19,7 +19,7 @@ const routes: Routes = [
       },
     
       {    
-        path: "perfil/:id", component: ProfileComponent   
+        path: "perfil", component: ProfileComponent   
       },
 
       {    

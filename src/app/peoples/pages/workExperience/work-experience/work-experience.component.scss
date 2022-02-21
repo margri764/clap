@@ -11,8 +11,25 @@
   }
 
   mat-label{
-      font-size: 1.3em;
+      font-size: 1vw;
   }
+
+  mat-select{
+    font-size: 1vw;
+  }
+
+  input{
+    
+    font-size: 1vw;
+
+  }
+
+
+  textarea{
+    font-size: 1vw;
+
+  }
+
 
   .example-spacer{
     flex:1 1 auto;

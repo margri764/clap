@@ -30,15 +30,21 @@ states: string[] = [
 ];
 
 myForm:FormGroup = this.fb.group({
-  name:    ['marcelo', [Validators.required] ],
-  alias:   ['bul', [Validators.required] ],
-  titular: ['rtrtrt', [Validators.required]],
-  web :    ['ererer', [Validators.required]],
-  email:   ['', [Validators.required]],
-  dateBirth: ['5454545', [Validators.required]],
-  // _id:[ '6211863226a2cca7e2a7f0de']
-
+  userName:    ['', [Validators.required] ],
+  city:        ['', [Validators.required] ],  
+  state:       ['', [Validators.required] ],  
+  website :        ['www.feintdevs.com', [Validators.required]],
+  email:       ['margri764@gmail.com', [Validators.required]],
+  dateBirth:   ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
+  jobDate:     ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
+  alias:       ['bul', [Validators.required] ],  //tendria q ir dentro del objeto profileData[]
+  titular:     ['rtrtrt', [Validators.required]],
+  
 });
+
+//agregar el cratedAT y updateAT o ver si ponerlo desde el back
+
+//el status deberia ir en true mien
   
 
   constructor(
@@ -69,18 +75,29 @@ myForm:FormGroup = this.fb.group({
   
   }
 
+// PUEDE SERVIR PARA LINK DESDE PERSONAS AL ARTISTA SELECCIONADO
+
+  // this.artistService.dataArtistToBackend(this.myForm.value).subscribe( 
+  //   ({user}) => { 
+  //        this.confirmArtist();
+  //        this.dialogRef.close([]);
+  //        this.artistService.getDataArtist(user._id).subscribe(
+  //        res => 
+  //        this.router.navigateByUrl(`artistas/perfil/${user._id}`)
+  //      )
+  //    }
 
   sendFormArtist (){
+    // alert(JSON.stringify(this.myForm.value))
 
     this.artistService.dataArtistToBackend(this.myForm.value).subscribe( 
-       ({user}) => { 
+       (res) => { if(res)
             this.confirmArtist();
             this.dialogRef.close([]);
-            this.artistService.getDataArtist(user._id).subscribe(
-            res => 
-            this.router.navigateByUrl(`artistas/perfil/${user._id}`)
-          )
-        },(err: HttpErrorResponse)=> {
+            this.router.navigateByUrl('home');
+        
+          
+          },(err: HttpErrorResponse)=> {
             //error de desconexion con el back end
             if(err.status === 0){
               alert ('opps!!')

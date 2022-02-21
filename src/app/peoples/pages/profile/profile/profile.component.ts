@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Artist } from 'src/app/interfaces/artist.interface';
 import { ArtistService } from 'src/app/services/artist/artist.service';
+import { WorkExperienceComponent } from 'src/app/peoples/pages/workExperience/work-experience/work-experience.component';
 import { ResumeComponent } from '../../resume/resume/resume.component';
 
 @Component({
@@ -63,6 +64,15 @@ public userProfile!: Artist;
 
   openDialog() {
     const dialogRef = this.dialog.open(ResumeComponent, {
+      width: '800px',
+
+      panelClass:"custom-modalbox-opacity",
+      // scrollStrategy: new NoopScrollStrategy()
+    });
+  }
+
+  openDialogExperience() {
+    const dialogRef = this.dialog.open(WorkExperienceComponent, {
       width: '800px',
 
       panelClass:"custom-modalbox-opacity",

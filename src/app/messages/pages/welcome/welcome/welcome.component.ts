@@ -21,6 +21,8 @@ export class WelcomeComponent implements OnInit {
     // private router : Router
   ) { }
 
+
+  
   ngOnInit(): void {
     // this.authService.authState.subscribe(user => {
     //   this.user = user;
@@ -29,9 +31,8 @@ export class WelcomeComponent implements OnInit {
     this.activatedRoute.params
     .subscribe( ({token}) => {
       console.log(token);
-      this.loginService.confirm(token).subscribe(
-        res=> alert(token)
-      )
+      this.loginService.confirm(token).subscribe()
+      
     })
 
 
