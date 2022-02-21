@@ -31,14 +31,10 @@ login (body:any) {
 }
 
 
+insertExperienceInDB (body: any){
+  return this.http.post<any>(`${this.baseUrl}api/artist/capabilities`, body)
 
-// confirm (token: string) {
-  
-// let params = new HttpParams().set("token",`${ token }`);
-// return this.http.get( `${this.baseUrl}/api/auth/confirm`, { params } )
-
-// }
-  
+}  
   
 
   dataArtistToBackend( body : Artist ) {

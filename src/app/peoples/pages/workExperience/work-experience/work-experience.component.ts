@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ArtistService } from 'src/app/services/artist/artist.service';
 
 @Component({
   selector: 'app-work-experience',
@@ -46,6 +47,7 @@ myForm:FormGroup = this.fb.group({
   
             constructor(
                        private fb : FormBuilder,
+                       private artistService : ArtistService
 
             ) { }
 
@@ -58,7 +60,12 @@ myForm:FormGroup = this.fb.group({
             && this.myForm.controls[field].touched;
   }
   sendForm(){
-    alert(JSON.stringify(this.myForm.value))
+    // alert(JSON.stringify(this.myForm.value))
+    this.artistService.insertExperienceInDB(this.myForm.value).subscribe(
+      (res)=>{ if(res) alert('experiencia agregada correctamente')}
+    )
+
+
 
   }
 
