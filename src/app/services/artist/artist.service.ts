@@ -29,6 +29,15 @@ login (body:any) {
 
   return this.http.post<any> (`${this.baseUrl}api/auth/login`,body)
 }
+
+
+
+// confirm (token: string) {
+  
+// let params = new HttpParams().set("token",`${ token }`);
+// return this.http.get( `${this.baseUrl}/api/auth/confirm`, { params } )
+
+// }
   
   
 

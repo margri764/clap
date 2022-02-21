@@ -56,8 +56,8 @@ export class RegistrationComponent implements OnInit {
 
       this.artistService.login(this.myForm.value).subscribe( 
          ( ) => { 
-         alert('te enviaremos un email para verificar')
-              this.router.navigateByUrl('artistas/industrias')
+      
+              this.router.navigateByUrl('auth/confirmacion')
 
               
               // this.router.navigateByUrl(`artistas/perfil/${user._id}`)

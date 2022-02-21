@@ -14,7 +14,8 @@
               <app-dashboard *ngIf="!(router.url === '/auth/login' || router.url === '/auth/registro'|| router.url === '/invitacion' 
               || router.url === '/escuelas/posteo' || router.url === '/escuelas/sugerir' || router.url === '/eliminar'
               || router.url === '/cerrar-sesion' || router.url === '/invitar' || router.url === '/gestion-aplicantes'
-              || router.url === '/artistas/industrias' || router.url === '/bienvenida'|| router.url === '/auth/confirmacion')"></app-dashboard>
+              || router.url === '/artistas/industrias' || router.url === '/bienvenida'|| router.url === '/auth/confirmacion')
+              && id==false" ></app-dashboard>
               <!-- <app-header></app-header>
   
               <app-slide-up *ngIf="!(router.url === '/contact-us')"></app-slide-up> -->
@@ -31,7 +32,8 @@
               <app-footer *ngIf="!(router.url === '/login'|| router.url === '/auth/registro' || router.url === '/invitacion'
                || router.url === '/escuelas/posteo' || router.url === '/escuelas/sugerir' || router.url === '/eliminar'
                || router.url === '/cerrar-sesion' || router.url === '/invitar' || router.url === '/gestion-aplicantes'
-               || router.url === '/artistas/industrias' || router.url === '/bienvenida' || router.url === '/auth/confirmacion')"></app-footer>
+               || router.url === '/artistas/industrias' || router.url === '/bienvenida' || router.url === '/auth/confirmacion')
+               && id==false" ></app-footer>
             </div> 
         </div> 
     </div>

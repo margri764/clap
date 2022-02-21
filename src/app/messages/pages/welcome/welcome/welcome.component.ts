@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
 import { LoginService } from 'src/app/services/login/login.service';
 
@@ -16,25 +17,26 @@ export class WelcomeComponent implements OnInit {
     private authService: SocialAuthService,
     // private fb : FormBuilder,
     private loginService : LoginService,
+    private activatedRoute : ActivatedRoute
     // private router : Router
   ) { }
 
   ngOnInit(): void {
-    this.authService.authState.subscribe(user => {
-      this.user = user;
+    // this.authService.authState.subscribe(user => {
+    //   this.user = user;
+    // });
 
-      
-    //   if(user!=null){
-    //     const {idToken} = user
-    //     this.employeeService.userLogin={
-    //       // name,
-    //       // email
-    //       idToken
-    //   }
- 
+    this.activatedRoute.params
+    .subscribe( ({token}) => {
+      console.log(token);
+      this.loginService.confirm(token).subscribe(
+        res=> alert(token)
+      )
+    })
 
-    // } 
-    });
+
+
+
   }
 
 }
