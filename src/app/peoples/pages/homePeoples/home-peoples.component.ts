@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EducationComponent } from 'src/app/shared/pages/education/education/education.component';
 import { CardUserComponent } from '../card-user/card-user.component';
 
 @Component({
@@ -42,12 +41,6 @@ export class HomePeoplesComponent implements OnInit {
     });
   }
 
-  openDialogEducation() {
-    const dialogRef = this.dialog.open(EducationComponent, {
-      width: '800px',
-      panelClass:"custom-modalbox",
-    });
-  }
 
 
 

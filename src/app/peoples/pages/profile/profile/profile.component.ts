@@ -6,6 +6,9 @@ import { Artist } from 'src/app/interfaces/artist.interface';
 import { ArtistService } from 'src/app/services/artist/artist.service';
 import { WorkExperienceComponent } from 'src/app/peoples/pages/workExperience/work-experience/work-experience.component';
 import { ResumeComponent } from '../../resume/resume/resume.component';
+import { EducationComponent } from '../../education/education/education.component';
+import { IndustryComponent } from '../../industry/industry/industry.component';
+import { MyIndustryComponent } from '../../myIndustry/my-industry/my-industry.component';
 
 @Component({
   selector: 'app-profile',
@@ -18,6 +21,7 @@ public graphic : boolean = false;
 public photo : boolean = false;
 public animation : boolean = false;
 public userProfile!: Artist;
+public edit : boolean = false;
 
   heroeHeader =[
     {
@@ -71,8 +75,28 @@ public userProfile!: Artist;
     });
   }
 
+  openDialogIndustries() {
+    const dialogRef = this.dialog.open(MyIndustryComponent, {
+      width: '800px',
+
+      panelClass:"custom-modalbox-opacity",
+      // scrollStrategy: new NoopScrollStrategy()
+    });
+  }
+
+
+
   openDialogExperience() {
     const dialogRef = this.dialog.open(WorkExperienceComponent, {
+      width: '800px',
+
+      panelClass:"custom-modalbox-opacity",
+      // scrollStrategy: new NoopScrollStrategy()
+    });
+  }
+
+  openDialogEducation() {
+    const dialogRef = this.dialog.open(EducationComponent, {
       width: '800px',
 
       panelClass:"custom-modalbox-opacity",

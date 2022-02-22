@@ -32,7 +32,12 @@ login (body:any) {
 
 
 insertExperienceInDB (body: any){
-  return this.http.post<any>(`${this.baseUrl}api/artist/capabilities`, body)
+  return this.http.post<any>(`${this.baseUrl}api/artist/experience`, body)
+
+}  
+
+insertEducationInDB (body: any){
+  return this.http.post<any>(`${this.baseUrl}api/artist/education`, body)
 
 }  
   

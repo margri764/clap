@@ -1,0 +1,106 @@
+
+
+
+<div class="mat-dialog-container" style="border: 5px solid #61a7e9;" >
+
+
+<br>
+  <h1 mat-dialog-title style="">Mis Industrias </h1>
+
+<mat-divider></mat-divider>  
+
+<mat-dialog-content fxLayout="row wrap" fxLayoutAlign="center">
+
+
+<div fxFlex="100" style="margin-top: 20px;">
+    <mat-label style="opacity: 0.7;">¿A que tipo de industria perteneces?</mat-label>
+</div> 
+
+
+
+
+    <!-- start form -->
+  <div   fxLayout="row wrap" fxFlex="100" style="" >
+  
+    <form  [formGroup]="myForm"  id="form" fxFlex="100" fxLayoutAlign="space-between center" fxLayout="row wrap" style="" >     
+
+     
+    <div class="whiteBorder" fxFlex="100">
+    
+        <div fxFlex="50" fxFlexOffset="3" style="">    
+                <mat-form-field style=""  >
+                <mat-label>Selecciona tu industria</mat-label>
+                    <mat-select required formControlName="type">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let ind of industries" [value]="ind">{{ind}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div fxFlex="50" fxLayoutAlign="end" style="margin-right: 20px; margin-top: 17px;">
+                <mat-icon class="material-icons-outlined" style="cursor: pointer;">more_vert</mat-icon>
+            </div>
+
+     </div>
+
+     <!-- start card industry select  -->
+     <div class="whiteBorderSelected" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center start">
+
+        <div fxFlex="100" fxLayout="row wrap" style="">
+            <div fxFlex="50"  style="margin-top: 30px; ">
+                <mat-label fxFlexOffset="3">Animacion</mat-label>
+            </div> 
+            
+            <div fxFlex="45" fxLayoutAlign="end" style="margin-right: 20px; margin-top: 20px;">
+                <mat-icon class="material-icons-outlined" style="cursor: pointer;">more_vert</mat-icon>
+            </div>
+        </div>    
+
+        <div fxFlex="97" class="divider"></div>
+
+        <div fxFlex="100">
+            <mat-label style="margin-left: 20px; opacity: 0.7;">Selecciona tus campos con un solo Click</mat-label>
+        </div>
+        <!-- start container skills -->
+        <div fxFlex="100" fxLayout="row wrap" fxLayoutGap="2px" fxLayoutAlign="space-around space-between" style="margin-top: 30px; height: 100px;">
+
+       
+        <button mat-raised-button fxFlex="25" (click)="selectedSkill('editorial')"  >Diseño editorial</button>
+        <button mat-raised-button fxFlex="25" (click)="selectedSkill('ux')"  #ux class="uxa" >Diseño UX/UI</button>
+        <button mat-raised-button fxFlex="25" >Branding</button>
+        <button mat-raised-button fxFlex="25">Diseño editorial</button>
+        <button mat-raised-button fxFlex="25">Diseño UX/UI</button>
+        <button mat-raised-button fxFlex="25">Diseño UX/UI</button>
+
+
+        </div>
+        <!-- end container skills -->
+    </div>
+ 
+
+     <!-- end card industry select -->
+
+     <div fxFlex="100" fxLayoutAlign="center">
+         
+        <button mat-button type="submit" fxFlex="70"(click)="sendForm()" 
+        style="background-color: black; color: white; border-radius: 30px;font-size: 1.2vw"> Guardar</button>
+
+     </div>
+
+    </form>
+
+
+</div>
+<!-- end form -->
+
+
+
+
+
+
+</mat-dialog-content>
+  
+  
+  </div> 
+
+

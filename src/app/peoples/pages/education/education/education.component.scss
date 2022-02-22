@@ -8,12 +8,23 @@
   }
 
   mat-label{
-      font-size: 1.3em;
-  }
+    font-size: 1vw;
+}
+
+mat-select{
+  font-size: 1vw;
+}
 
   mat-error{
     font-size: 1.5em;
   }
+
+  input{
+    
+    font-size: 1vw;
+
+  }
+
 
   .example-spacer{
     flex:1 1 auto;

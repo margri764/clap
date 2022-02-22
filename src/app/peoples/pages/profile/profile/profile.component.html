@@ -36,47 +36,54 @@
 
             <div>
 
-             <div class="text" fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100" >
+    <div class="text" fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100" >
 
-                     <div fxFlex="40" style="margin-top: 30px; padding: 20px;">
+            <div fxFlex="40" style="margin-top: 30px; padding: 20px;">
 
-                        <mat-label style="font-size: 2vw;"> <b>mar</b></mat-label> <br>
-                        <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
-                         <mat-label>{{heroe.nombre}}</mat-label> <br>
-                         <mat-label>Bogota - Colombia</mat-label> <br>
-                         <mat-label>2 años de Experiencia</mat-label> <br>
-                         <mat-label>Ingles - Español</mat-label>
+            <mat-label style="font-size: 2vw;"> <b>mar</b></mat-label> <br>
+            <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
+                <mat-label>{{heroe.nombre}}</mat-label> <br>
+                <mat-label>Bogota - Colombia</mat-label> <br>
+                <mat-label>2 años de Experiencia</mat-label> <br>
+                <mat-label>Ingles - Español</mat-label>
 
-                         
-                     </div>
-                     
-             
-                     <div fxFlex="60" fxLayout="row wrap" fxLayoutAlign="end space-between" style="margin-top: 30px;">
-                       
-                        <div fxFlex="100" fxLayoutAlign="end end" >
-                          <button  mat-button  appearance="outline" type="submit" class="follow"
-                           >Seguir</button>
-         
-                           <mat-icon class="bookmark" >bookmark_border</mat-icon>
-                           <mat-icon class="bookmark" >more_vert</mat-icon>       
-                       
-                        </div>
+                
+            </div>
+            
+    
+            <div fxFlex="60" fxLayout="row wrap" fxLayoutAlign="end space-between" style="margin-top: 30px;">
+            
+            <div fxFlex="100" fxLayoutAlign="end end" *ngIf="edit">
+                <button  mat-button  appearance="outline" type="submit" class="follow">Seguir</button>
 
-                        <div style="margin-right: 1em"> <mat-label style="font-size: 1.8vw;"> 43  </mat-label>Seguidores</div>
+                <mat-icon class="bookmark" >bookmark_border</mat-icon>
+                <mat-icon class="bookmark" >more_vert</mat-icon>       
+            
+            </div>
 
-                        <div  fxLayoutAlign="end center" style="padding: 10px;">
-                            
-                            <div fxLayoutAlign="center center"  style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon"  >bookmark_border</mat-icon> </div>
-                            <div fxLayoutAlign="center center" style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon" >more_vert</mat-icon> </div>
-                            <div fxLayoutAlign="center center"  style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon"  >person</mat-icon> </div>
-                            <div fxLayoutAlign="center center" style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon" >groups</mat-icon> </div>
+            <div fxFlex="100" fxLayoutAlign="end end" >
+                <button  mat-button  appearance="outline" type="submit" class="follow" (click)="openDialogIndustries()" >Editar</button>
 
-                        </div>
+                    <mat-icon class="material-icons-outlined" >share</mat-icon>
+                
+                
+                </div>
 
-                     </div>           
-                 </div>
-              
-               
+            <div style="margin-right: 1em"> <mat-label style="font-size: 1.8vw;"> 43  </mat-label>Seguidores</div>
+
+            <div  fxLayoutAlign="end center" style="padding: 10px;">
+                
+                <div fxLayoutAlign="center center"  style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon"  >bookmark_border</mat-icon> </div>
+                <div fxLayoutAlign="center center" style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon" >more_vert</mat-icon> </div>
+                <div fxLayoutAlign="center center"  style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon"  >person</mat-icon> </div>
+                <div fxLayoutAlign="center center" style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon" >groups</mat-icon> </div>
+
+            </div>
+
+            </div>           
+        </div>
+    
+    
     
       </div>
       <!-- end brown -->
@@ -238,8 +245,14 @@
 
 
 <!-- start education -->
-<div class="experience" fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="95"  style="height:40px; margin-top: 30px;">
-    <mat-label style="margin-left: 20px;">  Educacion</mat-label>
+<div class="education" fxLayout="row wrap" fxLayoutAlign="space-between center" fxFlex="95"  style="height:40px; margin-top: 30px;">
+   
+    <div>
+        <mat-label style="margin-left: 20px; font-size: 1.2vw;">  Educacion</mat-label>
+        </div>
+    <div>
+        <mat-icon class="material-icons-outlined" aria-hidden="false" fxLayoutAlign="center center" style="font-size: 2vw; margin-right: 10px; cursor: pointer; " (click)="openDialogEducation()">add</mat-icon>
+    </div>
 </div>
 <!-- end education-->
 

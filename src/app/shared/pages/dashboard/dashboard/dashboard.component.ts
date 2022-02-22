@@ -7,7 +7,6 @@ import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-soc
 
 
 import { CardUserComponent } from '../../../../peoples/pages/card-user/card-user.component';
-import { EducationComponent } from '../../education/education/education.component';
 import { CardJobCreatorComponent } from 'src/app/jobs/pages/cardJobCreator/card-job-creator/card-job-creator.component';
 import { HomeJobsComponent } from 'src/app/jobs/pages/homeJobs/home-jobs/home-jobs.component';
 import { HomeBusinessComponent } from 'src/app/business/pages/homeBusiness/home-business/home-business.component';
@@ -248,12 +247,7 @@ getCompetitions(){
 
 
 
-  openDialogEducation() {    
-    const dialogRef = this.dialog.open(EducationComponent, {
-      width: '800px',
-      panelClass:"custom",
-    });  
-  }
+
 
   openDialogJob(){
     const dialogRef = this.dialog.open(CardJobCreatorComponent, {

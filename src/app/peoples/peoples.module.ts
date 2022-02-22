@@ -16,6 +16,8 @@ import { SettingsComponent } from './pages/settings/settings/settings.component'
 import { BookmarksComponent } from './pages/bookmarks/bookmarks/bookmarks.component';
 import { IndustryComponent } from './pages/industry/industry/industry.component';
 import { WorkExperienceComponent } from './pages/workExperience/work-experience/work-experience.component';
+import { EducationComponent } from './pages/education/education/education.component';
+import { MyIndustryComponent } from './pages/myIndustry/my-industry/my-industry.component';
 
 
 
@@ -31,7 +33,9 @@ import { WorkExperienceComponent } from './pages/workExperience/work-experience/
     SettingsComponent,
     BookmarksComponent,
     IndustryComponent,
-    WorkExperienceComponent
+    WorkExperienceComponent,
+    EducationComponent,
+    MyIndustryComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +55,10 @@ import { WorkExperienceComponent } from './pages/workExperience/work-experience/
     SettingsComponent,
     BookmarksComponent,
     IndustryComponent,
-    WorkExperienceComponent
+    WorkExperienceComponent,
+    EducationComponent,
+    MyIndustryComponent    
+
 
 
 
