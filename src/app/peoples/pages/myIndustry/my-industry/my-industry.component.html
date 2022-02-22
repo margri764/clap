@@ -38,7 +38,9 @@
             </div>
 
             <div fxFlex="50" fxLayoutAlign="end" style="margin-right: 20px; margin-top: 17px;">
-                <mat-icon class="material-icons-outlined" style="cursor: pointer;">more_vert</mat-icon>
+                <button mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
             </div>
 
      </div>
@@ -51,8 +53,15 @@
                 <mat-label fxFlexOffset="3">Animacion</mat-label>
             </div> 
             
-            <div fxFlex="45" fxLayoutAlign="end" style="margin-right: 20px; margin-top: 20px;">
-                <mat-icon class="material-icons-outlined" style="cursor: pointer;">more_vert</mat-icon>
+            <div fxFlex="47" fxLayoutAlign="end" style=" margin-top: 20px;">
+
+                <button mat-icon-button [matMenuTriggerFor]="msg">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+
+                <mat-menu #msg="matMenu" yPosition="below" fxLayoutAlign="center center" >
+                    <button mat-raised-button class="msg">Eliminar</button>
+                  </mat-menu>
             </div>
         </div>    
 
@@ -61,16 +70,21 @@
         <div fxFlex="100">
             <mat-label style="margin-left: 20px; opacity: 0.7;">Selecciona tus campos con un solo Click</mat-label>
         </div>
+
         <!-- start container skills -->
         <div fxFlex="100" fxLayout="row wrap" fxLayoutGap="2px" fxLayoutAlign="space-around space-between" style="margin-top: 30px; height: 100px;">
 
        
-        <button mat-raised-button fxFlex="25" (click)="selectedSkill('editorial')"  >Diseño editorial</button>
-        <button mat-raised-button fxFlex="25" (click)="selectedSkill('ux')"  #ux class="uxa" >Diseño UX/UI</button>
-        <button mat-raised-button fxFlex="25" >Branding</button>
-        <button mat-raised-button fxFlex="25">Diseño editorial</button>
-        <button mat-raised-button fxFlex="25">Diseño UX/UI</button>
-        <button mat-raised-button fxFlex="25">Diseño UX/UI</button>
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('editorial')" [ngStyle]="editorial && closeEditorial ? {'backgroundColor': 'black','color':'white'}  : {}" >Diseño editorial 
+            &nbsp;
+        <mat-icon style="color: white;" [ngStyle]="editorial ? {'display':'inline'}:{'display':'none'} " (click)="closeSkill('editorial')"*ngIf="value" (click)="value=''" >close</mat-icon> </button>
+       
+
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('ux')" [ngStyle]="ux ? {'backgroundColor': 'black','color':'white'}  : {'backgroundColor': 'success'}" >Diseño UX/UI</button>
+
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('branding')" [ngStyle]="branding ? {'backgroundColor': 'black','color':'white'}  : {'backgroundColor': 'success'}" >Branding</button>
+    
+
 
 
         </div>

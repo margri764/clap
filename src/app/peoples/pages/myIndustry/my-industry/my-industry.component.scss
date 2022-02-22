@@ -31,6 +31,14 @@
 
   }
 
+  ::ng-deep .customize {
+    align-items: center;
+  }  
+
+  .msg:hover{
+    background-color: black;
+    color: white;
+  }
 
   .example-spacer{
     flex:1 1 auto;
