@@ -28,7 +28,9 @@ public edit : boolean = false;
 public arrExperience :any = [];
 public arrEducation :any = [];
 
-
+get artists(){
+  return this.artistService.artists
+}
 
 
   heroeHeader =[
@@ -74,7 +76,7 @@ public arrEducation :any = [];
     this.activatedRoute.params
     .subscribe( ({id}) => {
       console.log(id);
-      this.userProfile= this.artistService.artists
+      // this.userProfile= this.artistService.artists
       // this.artistService.getDataArtist("testId")
       // .subscribe ( artist => {
       //   console.log(artist)
@@ -83,9 +85,6 @@ public arrEducation :any = [];
 
     this.getExperience();
     this.getEducation();
-    // this.arrExperienceLength= this.arrExperience.length;
-    // console.log('init',this.arrExperience.length)
-    // console.log('init',this.arrExperienceLength)
 
 
   }

@@ -14,3 +14,9 @@ export interface Artist{
     web:        string    
 
 }
+
+export interface Auth {
+    id:      string;
+    email:   string;
+    usuario: string;
+}

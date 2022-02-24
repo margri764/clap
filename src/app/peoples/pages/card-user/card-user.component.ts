@@ -90,12 +90,13 @@ myForm:FormGroup = this.fb.group({
   sendFormArtist (){
     // alert(JSON.stringify(this.myForm.value))
 
-    this.artistService.dataArtistToBackend(this.myForm.value).subscribe( 
-       (res) => { if(res)
+    this.artistService.dataArtistToBackend(this.myForm.value).subscribe( ()=>{
+    
+      //  ( {user }) => { alert(JSON.stringify(user))
             this.confirmArtist();
             this.dialogRef.close([]);
-            this.router.navigateByUrl('home');
-        
+            // this.router.navigateByUrl('home');
+            // JSON.stringify(this.artistService.artists)
           
           },(err: HttpErrorResponse)=> {
             //error de desconexion con el back end

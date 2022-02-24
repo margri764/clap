@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, Observable, of } from 'rxjs';
-import { Artist } from 'src/app/interfaces/artist.interface';
+import { catchError, map, Observable, of, tap } from 'rxjs';
+import { Artist, Auth } from 'src/app/interfaces/artist.interface';
 import { environment } from 'src/environments/environment';
 
 
@@ -14,6 +14,7 @@ export class ArtistService {
   private artist!: Artist;
   public artExperience: any []=[];
   public artEducation: any []=[];
+  private _auth: any;
 
 
 
@@ -28,6 +29,11 @@ export class ArtistService {
   get artistEducation (){
     return this.artEducation;
   }
+
+  get auth() {
+    return { ...this._auth! }
+  }
+
 
 
  
@@ -90,17 +96,11 @@ insertSkillsInDB (body: any){
 
 dataArtistToBackend( body : Artist ) {
   return this.http.post<any>(`${this.baseUrl}api/artist/create-profile`, body)
-}
+   .pipe(
+       tap( res =>{ localStorage.setItem('token',res._id) }),
+       map( res   => { this.artist= res}) )
   
-    // .pipe(
-    //   map( res   => { 
-    //        this.artist= res.user   
-    //     return {
-    //       user : this.artist
-    //      };
-    //     }),
-    //     )
-    //   };
+  };
 
 
 

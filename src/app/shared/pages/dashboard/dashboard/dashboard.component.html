@@ -25,8 +25,9 @@
               </form>
           </div>
 
+                                                              <!-- PARA GOOGLE *ngIf="showMainDashboard && !user">  -->
           <!-- main button up dashboard start -->
-          <div class="" fxLayout="wrap" fxFlex="33" fxLayoutAlign="end start" *ngIf="showMainDashboard && !user"> 
+          <div class="" fxLayout="wrap" fxFlex="33" fxLayoutAlign="end start" *ngIf="showNoLogginDashboard"> 
         
       
           <button  mat-raised-button fxShow="" appearance="outline" type="submit" routerLink="../auth/registro" style="margin-right: 2em;">Registrate</button>
@@ -39,16 +40,17 @@
 
 
           <!-- Profile button up dashboard start -->
+                                                                <!-- PARA GOOGLE*ngIf="showProfileDashboard || user"     -->
 
-
-          <div class="" fxLayout="wrap" fxFlex="33" fxLayoutAlign="end" *ngIf="showProfileDashboard || user" style="padding:8px"> 
+          <div class="" fxLayout="wrap" fxFlex="33" fxLayoutAlign="end" *ngIf="showProfileDashboard" style="padding:8px"> 
         
       
              <mat-icon aria-hidden="false" class="material-icons-outlined" style="font-size: 2vw; margin-right: 1.5vw"> notifications</mat-icon>
              
-             <div *ngIf="user">
+             <!-- ESTO ES PARA GOOGLE!!!!!!!!!!!!!!!!! -->
+             <!-- <div *ngIf="user">
               <img *ngIf="user.photoUrl"  src="{{ user.photoUrl }}" class="imgProfile">
-              </div>
+              </div> -->
         
              <!-- <mat-icon aria-hidden="false" class="material-icons-outlined" style="font-size: 2vw; margin-right: 1.5vw;"> public</mat-icon> -->
 
@@ -99,8 +101,7 @@
 
 <div fxFlex.gt-xs="65"  fxFlex.md="60" fxFlex.lg="60"  >
 
-    <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-around center" class="mat-elevation-z10"
-    fxLayoutGap.md="30px" fxLayoutGap.lg="0px" [ngStyle]="styleObject()"  >
+    <mat-toolbar fxLayout="row wrap" fxLayoutAlign="space-around center" class="mat-elevation-z10" fxLayoutGap.md="30px" fxLayoutGap.lg="0px" [ngStyle]="styleObject()"  >
  
         <button mat-button routerLink="../artistas/lista"> Personas</button>        
         <button mat-button (click)="getJobs()"         routerLink="../empleos">  Empleos</button>
@@ -124,11 +125,11 @@
 
 
 <!-- Profile Menu start-->
-<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center" *ngIf="showProfileDashboard">
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center" *ngIf="showMenuProfile">
   
   <div  fxFlex.gt-xs="17"  fxFlex.md="20"  fxFlex.lg="40" >
 
-    <button mat-button class="perfil" appearance="outline"  fxFlex="25">  <b>Perfil</b> </button>
+    <button mat-raised-button class="perfil" appearance="outline"  fxFlex="25" routerLink="../artistas/perfil">  <b>Perfil</b> </button>
 
 </div>
   
@@ -152,7 +153,7 @@
 <!-- Profile Menu End -->
 
 <!-- Profile-Bookmarks Menu start-->
-<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center" *ngIf="showProfileBookmarksDashboard">
+<!-- <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center center" *ngIf="showProfileBookmarksDashboard">
   
   <div  fxFlex.gt-xs="17"  fxFlex.md="20"  fxFlex.lg="40" >
 
@@ -193,7 +194,7 @@
       
 <div fxFlex.gt-xs="17" fxFlex.md="20" fxFlex.lg="10"></div>
 
-</div>
+</div> -->
 <!-- Profile-Bookmarks Menu End -->
 
 
