@@ -54,7 +54,7 @@ export class RegistrationComponent implements OnInit {
   
     sendForm (){
 
-      this.artistService.login(this.myForm.value).subscribe( 
+      this.artistService.validateEmail(this.myForm.value).subscribe( 
          ( ) => { 
       
               this.router.navigateByUrl('auth/confirmacion')

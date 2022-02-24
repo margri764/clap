@@ -28,9 +28,9 @@
     <div class="whiteBorder" fxFlex="100">
     
         <div fxFlex="50" fxFlexOffset="3" style="">    
-                <mat-form-field style=""  >
+                <mat-form-field   >
                 <mat-label>Selecciona tu industria</mat-label>
-                    <mat-select required formControlName="type">
+                    <mat-select required formControlName="type" (selectionChange)="selectIndustry($event.value)">
                     <mat-option>None</mat-option>
                     <mat-option *ngFor="let ind of industries" [value]="ind">{{ind}}</mat-option>
                     </mat-select>
@@ -45,8 +45,14 @@
 
      </div>
 
-     <!-- start card industry select  -->
-     <div class="whiteBorderSelected" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center start">
+     <!-- start white frame -->
+     <!-- <div class="whiteBorderSelected" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center start" *ngIf="emptyWhiteFrame"></div> -->
+     <!-- end white frame -->
+
+
+
+     <!-- start card industry ANIMATION select  -->
+     <div class="whiteBorderSelected" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center start" *ngIf="animation" >
 
         <div fxFlex="100" fxLayout="row wrap" style="">
             <div fxFlex="50"  style="margin-top: 30px; ">
@@ -60,7 +66,7 @@
                 </button>
 
                 <mat-menu #msg="matMenu" yPosition="below" fxLayoutAlign="center center" >
-                    <button mat-raised-button class="msg">Eliminar</button>
+                    <button mat-raised-button class="msg" (click)="closeSkill('animation')" >Eliminar</button>
                   </mat-menu>
             </div>
         </div>    
@@ -75,24 +81,120 @@
         <div fxFlex="100" fxLayout="row wrap" fxLayoutGap="2px" fxLayoutAlign="space-around space-between" style="margin-top: 30px; height: 100px;">
 
        
-        <button mat-raised-button fxFlex="25" (click)="selectSkill('editorial')" [ngStyle]="editorial && closeEditorial ? {'backgroundColor': 'black','color':'white'}  : {}" >Diseño editorial 
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('triD')" [ngStyle]="triD ? {'backgroundColor': 'black','color':'white'}  : {}" >Animacion 3D 
             &nbsp;
-        <mat-icon style="color: white;" [ngStyle]="editorial ? {'display':'inline'}:{'display':'none'} " (click)="closeSkill('editorial')"*ngIf="value" (click)="value=''" >close</mat-icon> </button>
+        <mat-icon style="color: white;" [ngStyle]="triD ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
        
 
-        <button mat-raised-button fxFlex="25" (click)="selectSkill('ux')" [ngStyle]="ux ? {'backgroundColor': 'black','color':'white'}  : {'backgroundColor': 'success'}" >Diseño UX/UI</button>
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('modeling')" [ngStyle]="modeling ? {'backgroundColor': 'black','color':'white'}  : {}" >Modelado 
+            &nbsp;
+        <mat-icon style="color: white;" [ngStyle]="modeling ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
 
-        <button mat-raised-button fxFlex="25" (click)="selectSkill('branding')" [ngStyle]="branding ? {'backgroundColor': 'black','color':'white'}  : {'backgroundColor': 'success'}" >Branding</button>
-    
-
-
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('print3D')" [ngStyle]="print3D ? {'backgroundColor': 'black','color':'white'}  : {}" >Impresion 3D 
+            &nbsp;
+        <mat-icon style="color: white;" [ngStyle]="print3D ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
 
         </div>
         <!-- end container skills -->
     </div>
- 
+     <!-- end card industry ANIMATION select -->
 
-     <!-- end card industry select -->
+        <!-- start card industry DESIGN select  -->
+    <div class="whiteBorderSelected" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center start" *ngIf="design" >
+
+        <div fxFlex="100" fxLayout="row wrap" style="">
+            <div fxFlex="50"  style="margin-top: 30px; ">
+                <mat-label fxFlexOffset="3">Diseño</mat-label>
+            </div> 
+            
+            <div fxFlex="47" fxLayoutAlign="end" style=" margin-top: 20px;">
+
+                <button mat-icon-button [matMenuTriggerFor]="msg">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+
+                <mat-menu #msg="matMenu" yPosition="below" fxLayoutAlign="center center" >
+                    <button mat-raised-button class="msg" (click)="closeSkill('design')" >Eliminar</button>
+                    </mat-menu>
+            </div>
+        </div>    
+
+        <div fxFlex="97" class="divider"></div>
+
+        <div fxFlex="100">
+            <mat-label style="margin-left: 20px; opacity: 0.7;">Selecciona tus campos con un solo Click</mat-label>
+        </div>
+
+        <!-- start container skills -->
+        <div fxFlex="100" fxLayout="row wrap" fxLayoutGap="2px" fxLayoutAlign="space-around space-between" style="margin-top: 30px; height: 100px;">
+
+        
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('editorial')" [ngStyle]="editorial ? {'backgroundColor': 'black','color':'white'}  : {}" >Diseño editorial 
+            &nbsp;
+        <mat-icon style="color: white;" [ngStyle]="editorial ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+        
+
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('ux')" [ngStyle]="ux ? {'backgroundColor': 'black','color':'white'}  : {}" >Diseño UX/UI 
+            &nbsp;
+        <mat-icon style="color: white;" [ngStyle]="ux ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('branding')" [ngStyle]="branding ? {'backgroundColor': 'black','color':'white'}  : {}" >Branding 
+            &nbsp;
+        <mat-icon style="color: white;" [ngStyle]="branding ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+
+        </div>
+        <!-- end container skills -->
+    </div>
+        <!-- end card industry DESIGN select -->
+
+    <!-- start card industry DESIGN select  -->
+    <div class="whiteBorderSelected" fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center start" *ngIf="photography" >
+
+        <div fxFlex="100" fxLayout="row wrap" style="">
+            <div fxFlex="50"  style="margin-top: 30px; ">
+                <mat-label fxFlexOffset="3">Fotografía</mat-label>
+            </div> 
+            
+            <div fxFlex="47" fxLayoutAlign="end" style=" margin-top: 20px;">
+
+                <button mat-icon-button [matMenuTriggerFor]="msg">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+
+                <mat-menu #msg="matMenu" yPosition="below" fxLayoutAlign="center center" >
+                    <button mat-raised-button class="msg" (click)="closeSkill('photo')" >Eliminar</button>
+                    </mat-menu>
+            </div>
+        </div>    
+
+        <div fxFlex="97" class="divider"></div>
+
+        <div fxFlex="100">
+            <mat-label style="margin-left: 20px; opacity: 0.7;">Selecciona tus campos con un solo Click</mat-label>
+        </div>
+
+        <!-- start container skills -->
+        <div fxFlex="100" fxLayout="row wrap" fxLayoutGap="2px" fxLayoutAlign="space-around space-between" style="margin-top: 30px; height: 100px;">
+
+        
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('publicity')" [ngStyle]="publicity ? {'backgroundColor': 'black','color':'white'}  : {}" >Fotografia Publicitaria 
+            &nbsp;
+        <mat-icon style="color: white;" [ngStyle]="publicity ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+        
+
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('portrait')" [ngStyle]="portrait ? {'backgroundColor': 'black','color':'white'}  : {}" >Retratos 
+            &nbsp;
+        <mat-icon style="color: white;" [ngStyle]="portrait ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('landscape')" [ngStyle]="landscape  ? {'backgroundColor': 'black','color':'white'}  : {}" >Paisajismo
+            &nbsp;
+        <mat-icon style="color: white;" [ngStyle]="landscape  ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+
+        </div>
+        <!-- end container skills -->
+    </div>
+        <!-- end card industry DESIGN select -->    
+
 
      <div fxFlex="100" fxLayoutAlign="center">
          

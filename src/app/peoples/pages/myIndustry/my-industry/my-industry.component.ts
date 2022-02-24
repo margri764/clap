@@ -1,4 +1,4 @@
-import { AfterViewChecked, ChangeDetectorRef, Component, ElementRef, HostListener, OnChanges, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ArtistService } from 'src/app/services/artist/artist.service';
 
@@ -9,12 +9,42 @@ import { ArtistService } from 'src/app/services/artist/artist.service';
 })
 export class MyIndustryComponent implements OnInit, AfterViewChecked {
 
-// public ux: boolean= false;
+//show skills selected in template
 public editorial: boolean= false;
 public ux: boolean= false;
 public branding: boolean= false;
-public value: string= 'clear';
-public closeEditorial: boolean= false;
+public triD: boolean= false;
+public modeling: boolean= false;
+public print3D: boolean= false;
+public publicity: boolean= false;
+public portrait: boolean= false;
+public landscape: boolean= false;
+
+
+
+
+
+//add to object to send DB
+public uxSkill : string ='';
+public editorialSkill : string ='';
+public brandingSkill : string ='';
+public triDSkill: string ='';
+public modelingSkill: string ='';
+public print3DSkill: string ='';
+public publicitySkill: string ='';
+public portraitSkill: string ='';
+public landscapeSkill: string ='';
+
+
+
+
+
+//show industries selected in template
+public animation: boolean= false;
+public design : boolean = false;
+public photography : boolean = false;
+
+public emptyWhiteFrame : boolean = true;
 
 
 
@@ -23,18 +53,20 @@ public closeEditorial: boolean= false;
 
 
   myForm:FormGroup = this.fb.group({
-    jobTitle:    ['jefe diseñador', [Validators.required] ],
+    type:    ['artistSkills', [Validators.required] ],
   })
 
     industries: string[] = [
       'Animación',
       'Diseño',
+      'Fotografía'
     
     ];
   
   constructor(
             private fb : FormBuilder,
-            private cdRef:ChangeDetectorRef
+            private cdRef:ChangeDetectorRef,
+            private artistService : ArtistService
             
   ) { }
 
@@ -42,9 +74,11 @@ public closeEditorial: boolean= false;
   }
 
   ngAfterViewChecked() {
+    
     this.cdRef.detectChanges();
- 
+    
   }
+
 
 
   validField( field: string ) {
@@ -53,76 +87,110 @@ public closeEditorial: boolean= false;
             && this.myForm.controls[field].touched;
   }
 
-//   styleButtonSkill(value : string){
+  selectIndustry(value : string){
+  
+    ( value == "Animación")? this.animation=true: '';
+    ( value == "Diseño")? this.design=true : '';
+    ( value == "Fotografía")? this.photography=true : '';
 
-//     if(value=='ux' ){ return  { "background":"black","color":"white" } };
-//     if(this.editorial==true ){ return  { "background":"black","color":"white" } };
+  }
 
+   closeSkill(skillToClose : string){
 
-//  return{}
+    switch( skillToClose ){ 
+      
+      case 'animation' :
+      this.animation=false;
+      break;
+      
+      case 'design' :
+      this.design=false;
+      break;
 
-//   }
+      case 'photography' :
+      this.publicity=false;
+      break;
+  
+    }
+   }
+  
 
   selectSkill(skill : string){
 
     switch( skill ){ 
+
       case 'ux' :
-     
-      this.ux=true
-  
+      this.ux=!this.ux;
+      (this.ux==true)? this.uxSkill='Diseñador UX/UI' :this.uxSkill='';
+
        break;
 
       case 'editorial' :
-
-        if(this.value !='no se debe enviar'){
-          this.editorial=!this.editorial;
-          this.closeEditorial=true;
-          console.log('valor para mandar a BD','valor: ',this.value)
-      }
-    
-      
-   
-      // if(this.editorial==false){ return} 
-      
-      break;
-
-      case 'branding' :
-        this.branding=true;
-  
-        break;
-    }
-
-  }
-  closeSkill( skill : string){
-    switch( skill ){ 
-      case 'ux' :
-     
-      this.ux=true
-  
+        this.editorial=!this.editorial;
+       (this.editorial==true)? this.editorialSkill='Diseño Editorial' :this.editorialSkill='';
        break;
 
-      case 'editorial' :
-      this.closeEditorial=false;
-      this.editorial=true;
-      this.value='no se debe enviar'
-      console.log('no se deberia mandar el valor para mandar a BD','valor: ',this.value)
-   
-
+      case 'branding' :
+        this.branding=!this.branding;
+       (this.branding==true)? this.brandingSkill='Branding' :this.brandingSkill='';
       break;
 
-      case 'branding' :
-        this.branding=true;
-  
-        break;
+      case 'triD' :
+        this.triD=!this.triD;
+       (this.triD==true)? this.triDSkill='Animación 3D' :this.triDSkill='';
+      break;
+
+      case 'modeling' :
+        this.modeling=!this.modeling;
+        (this.modeling==true)? this.modelingSkill='Modelado' :this.modelingSkill='';
+       break;
+
+      case 'print3D' :
+        this.print3D=!this.print3D;
+        (this.print3D==true)? this.print3DSkill='Impresión 3D' :this.print3DSkill='';
+      break;
+
+      case 'publicity' :
+        this.publicity=!this.publicity;
+        (this.publicity==true)? this.publicitySkill='Fotografía Publicitaria' :this.publicitySkill='';
+      break;
+
+      case 'portrait' :
+        this.portrait=!this.portrait;
+        (this.portrait==true)? this.portraitSkill='Retratos' :this.portraitSkill='';
+      break;
+
+      case 'landscape' :
+        this.landscape=!this.landscape;
+        (this.landscape==true)? this.landscapeSkill='Paisajismo' :this.landscapeSkill='';
+      break;
     }
 
   }
+
 
   sendForm(){
-    alert(JSON.stringify(this.myForm.value))
-    // this.artistService.insertExperienceInDB(this.myForm.value).subscribe(
-    //   (res)=>{ if(res) alert('experiencia agregada correctamente')}
-    // )
+    const skills =[
+     
+            {
+              design: [this.uxSkill,this.editorialSkill,this.brandingSkill]
+            },
+            {
+              animation: [this.triDSkill, this.modelingSkill,this.print3DSkill]
+            },
+            {
+            photography: [this.publicitySkill, this.portraitSkill, this.landscapeSkill]
+            }
+        ]
+     
+
+    Object.assign(this.myForm.value,skills)
+    // alert(JSON.stringify(this.myForm.value))
+    console.log(this.myForm.value)
+
+    this.artistService.insertSkillsInDB(this.myForm.value).subscribe(
+      (res)=>{ if(res) alert('skills agregados correctamente')}
+    )
 
 }
 

@@ -11,12 +11,18 @@ import { environment } from 'src/environments/environment';
 export class ArtistService {
 
   private baseUrl: string = environment.baseUrl; //ojo con el import xq puede ser prod!!
+  private artist!: Artist;
+  public artExperience: any []=[];
+
 
   get artists(){
     return this.artist
-
   }
- private artist!: Artist;
+
+  get artistExperience (){
+    return this.artExperience;
+  }
+
  
 
   constructor( 
@@ -25,26 +31,33 @@ export class ArtistService {
      ) {    }
   
 
-login (body:any) {
+validateEmail (body:any) {
 
   return this.http.post<any> (`${this.baseUrl}api/auth/login`,body)
 }
 
+insertAboutInDB (body: any){
+  return this.http.post<any>(`${this.baseUrl}api/artist/about`, body)
+} 
 
 insertExperienceInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/experience`, body)
-
-}  
+   .pipe(
+      map( res   => { this.artExperience= res; })
+   )
+};  
 
 insertEducationInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/education`, body)
-
 }  
-  
 
-  dataArtistToBackend( body : Artist ) {
-    return this.http.post<any>(`${this.baseUrl}api/artist`, body)
-  }
+insertSkillsInDB (body: any){
+  return this.http.post<any>(`${this.baseUrl}api/artist/skills`, body)
+}  
+
+dataArtistToBackend( body : Artist ) {
+  return this.http.post<any>(`${this.baseUrl}api/artist/create-profile`, body)
+}
   
     // .pipe(
     //   map( res   => { 

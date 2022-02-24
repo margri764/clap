@@ -129,15 +129,14 @@ img{
 
 .portfolio{
     height: 220px;
+    border-radius: 20px; 
 
     background: #b4b2b2;
     background: linear-gradient(180deg,#b4b2b2 0%, #ffffff 50%);
     background: -webkit-linear-gradient(180deg,#b4b2b2 0%, #ffffff 50%);
     background: -moz-linear-gradient(180deg,#b4b2b2 0%, #ffffff 50%);;
 
-    border-radius: 20px; 
     box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
-    
    -webkit-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
    -moz-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);   
 }
@@ -161,8 +160,18 @@ img{
     margin-top: 35px;
     margin-bottom: 35px;
 }
+.btnSave{
+    background-color: black;
+    color:white;
+    font-size: 1vw;
+    border-radius: 20px; 
+    margin-right: 10px;
+    
+    box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
 
-
+}
 // .card:hover {
 //     background-color:  #8cbce9;
 //     .follow{

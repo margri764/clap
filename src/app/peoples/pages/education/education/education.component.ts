@@ -44,6 +44,7 @@ export class EducationComponent implements OnInit {
     city:     ['', [Validators.required] ],
     endDate:     ['', [Validators.required] ],
     modo:     ['', [Validators.required] ],
+    uid: ["621396c1d3c5d65a3b5b5081"]
   });
     
               constructor(

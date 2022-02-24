@@ -18,6 +18,7 @@ import { IndustryComponent } from './pages/industry/industry/industry.component'
 import { WorkExperienceComponent } from './pages/workExperience/work-experience/work-experience.component';
 import { EducationComponent } from './pages/education/education/education.component';
 import { MyIndustryComponent } from './pages/myIndustry/my-industry/my-industry.component';
+import { CardExperienceComponent } from './pages/cardExperience/card-experience/card-experience.component';
 
 
 
@@ -35,7 +36,8 @@ import { MyIndustryComponent } from './pages/myIndustry/my-industry/my-industry.
     IndustryComponent,
     WorkExperienceComponent,
     EducationComponent,
-    MyIndustryComponent
+    MyIndustryComponent,
+    CardExperienceComponent
   ],
   imports: [
     CommonModule,
@@ -57,14 +59,16 @@ import { MyIndustryComponent } from './pages/myIndustry/my-industry/my-industry.
     IndustryComponent,
     WorkExperienceComponent,
     EducationComponent,
-    MyIndustryComponent    
+    MyIndustryComponent,
+    CardExperienceComponent
+
 
 
 
 
 
   ],
-  providers: [HomePeoplesComponent],
+  providers: [HomePeoplesComponent, CardExperienceComponent],
 
 })
 export class PeoplesModule { }

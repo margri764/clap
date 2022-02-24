@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ArtistService } from 'src/app/services/artist/artist.service';
@@ -9,7 +10,7 @@ import { ArtistService } from 'src/app/services/artist/artist.service';
 })
 export class WorkExperienceComponent implements OnInit {
 
-
+public experience = {};
   
 type: string[] = [
   'contrato',
@@ -39,7 +40,8 @@ myForm:FormGroup = this.fb.group({
   endDate: [''],
   country: [''],
   city:[''],
-  description:['aca va la descripcion del trabajo']
+  description:['aca va la descripcion del trabajo'],
+  uid: ["621396c1d3c5d65a3b5b5081"]
 
 
 
@@ -61,13 +63,10 @@ myForm:FormGroup = this.fb.group({
   }
   sendForm(){
     // alert(JSON.stringify(this.myForm.value))
-    this.artistService.insertExperienceInDB(this.myForm.value).subscribe(
-      (res)=>{ if(res) alert('experiencia agregada correctamente')}
-    )
-
-
+    this.artistService.insertExperienceInDB(this.myForm.value).subscribe();
 
   }
+
 
   onCommentChange() {
     console.log(this.comment.value);
