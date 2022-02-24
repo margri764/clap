@@ -20,12 +20,13 @@ img{
 .card{
 
      border-radius: 20px;
-    //  margin-bottom: 0px;
+     margin-bottom: 20px;
+     margin-top: 20px;
      
      border-top: 4px solid #b0bcec;
-     border-right: 6px solid #b0bcec;
-     border-bottom: 10px solid #b0bcec;
-     border-left: 6px solid #b0bcec;
+     border-right: 1px solid #b0bcec;
+     border-bottom: 4px solid #b0bcec;
+     border-left: 1px solid #b0bcec;
 
      box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
@@ -150,6 +151,10 @@ img{
 }
 
 .experience{
+    border: 4px solid #b0bcec;
+    border-radius: 10px;
+}
+.education{
     border: 4px solid #b0bcec;
     border-radius: 10px;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { ArtistService } from 'src/app/services/artist/artist.service';
 
 @Component({
@@ -6,18 +6,36 @@ import { ArtistService } from 'src/app/services/artist/artist.service';
   templateUrl: './card-experience.component.html',
   styleUrls: ['./card-experience.component.scss']
 })
-export class CardExperienceComponent implements OnInit {
+export class CardExperienceComponent implements OnInit, AfterViewChecked,AfterViewInit {
 
-  public arrayExperience : any;
+  
+  
+  public arrExperience :any = ['tt'];
+
 
   constructor(
-              private artistService : ArtistService
+              private artistService : ArtistService,
+              private cdRef:ChangeDetectorRef
   ) { }
+  ngAfterViewInit(): void {
+
+  
+  }
+
+  ngAfterViewChecked(): void {
+   
+
+  
+  }
+
 
   ngOnInit( ): void {
 
-    this.arrayExperience = this.artistService.artistExperience;
-    console.log(this.arrayExperience)
+
   }
 
+  // insertExperienceInTemplate(){
+  //   this.arrExperience = this.artistService.artistExperience;
+  //  console.log(this.arrExperience);
+  // }
 }

@@ -1,16 +1,19 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ArtistService } from 'src/app/services/artist/artist.service';
+import { CardExperienceComponent } from '../../cardExperience/card-experience/card-experience.component';
 
 @Component({
   selector: 'app-work-experience',
   templateUrl: './work-experience.component.html',
   styleUrls: ['./work-experience.component.scss']
 })
-export class WorkExperienceComponent implements OnInit {
+export class WorkExperienceComponent implements OnInit  {
 
-public experience = {};
+  @ViewChild(CardExperienceComponent) viewChild!: CardExperienceComponent;
+
+public arrExperience :any = [];
   
 type: string[] = [
   'contrato',
@@ -49,9 +52,13 @@ myForm:FormGroup = this.fb.group({
   
             constructor(
                        private fb : FormBuilder,
-                       private artistService : ArtistService
+                       private artistService : ArtistService,
+                       private cardExperience : CardExperienceComponent
 
             ) { }
+
+
+
 
   ngOnInit(): void {
   }
@@ -63,11 +70,11 @@ myForm:FormGroup = this.fb.group({
   }
   sendForm(){
     // alert(JSON.stringify(this.myForm.value))
-    this.artistService.insertExperienceInDB(this.myForm.value).subscribe();
-
+    this.artistService.insertExperienceInDB(this.myForm.value).subscribe()
   }
 
-
+  // this.cardExperience.insertExperienceInTemplate(
+  // alert(JSON.stringify(this.arrExperience)) 
   onCommentChange() {
     console.log(this.comment.value);
   } 

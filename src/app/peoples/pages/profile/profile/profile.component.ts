@@ -1,5 +1,5 @@
 import { NoopScrollStrategy } from '@angular/cdk/overlay';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Artist } from 'src/app/interfaces/artist.interface';
@@ -10,6 +10,8 @@ import { EducationComponent } from '../../education/education/education.componen
 import { IndustryComponent } from '../../industry/industry/industry.component';
 import { MyIndustryComponent } from '../../myIndustry/my-industry/my-industry.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { CardExperienceComponent } from '../../cardExperience/card-experience/card-experience.component';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-profile',
@@ -23,6 +25,10 @@ public photo : boolean = false;
 public animation : boolean = false;
 public userProfile!: Artist;
 public edit : boolean = false;
+public arrExperience :any = [];
+public arrEducation :any = [];
+
+
 
 
   heroeHeader =[
@@ -57,7 +63,11 @@ public edit : boolean = false;
               private artistService : ArtistService,
               private activatedRoute: ActivatedRoute,
               private fb : FormBuilder,
+              private cardExperience : CardExperienceComponent,
+              private cdRef:ChangeDetectorRef
   ) { }
+
+
 
   ngOnInit(): void {
 
@@ -71,11 +81,16 @@ public edit : boolean = false;
       // })
     } );
 
+    this.getExperience();
+    this.getEducation();
+    // this.arrExperienceLength= this.arrExperience.length;
+    // console.log('init',this.arrExperience.length)
+    // console.log('init',this.arrExperienceLength)
+
+
   }
 
-  // onCommentChange() {
-  //   alert(this.comment.value);
-  // } 
+
 
   validField( field: string ) {
 
@@ -83,10 +98,21 @@ public edit : boolean = false;
             && this.myForm.controls[field].touched;
   }
   sendForm(){
-    // alert(JSON.stringify(this.myForm.value))
     this.artistService.insertAboutInDB(this.myForm.value).subscribe(
       (res)=>{ if(res) alert('about agregada correctamente')}
     )
+  }
+
+ getExperience(){
+  this.artistService.getExperienceFromDB( this.myForm.controls['uid'].value).subscribe( 
+    ( {experience} ) => { this.arrExperience= experience}
+  )        
+  }
+
+ getEducation(){
+  this.artistService.getEducationFromDB( this.myForm.controls['uid'].value).subscribe(
+    ( {education} ) => {this.arrEducation = education}
+  )        
   }
 
   openDialog() {
@@ -106,8 +132,6 @@ public edit : boolean = false;
       // scrollStrategy: new NoopScrollStrategy()
     });
   }
-
-
 
   openDialogExperience() {
     const dialogRef = this.dialog.open(WorkExperienceComponent, {

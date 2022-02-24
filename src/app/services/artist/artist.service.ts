@@ -13,6 +13,8 @@ export class ArtistService {
   private baseUrl: string = environment.baseUrl; //ojo con el import xq puede ser prod!!
   private artist!: Artist;
   public artExperience: any []=[];
+  public artEducation: any []=[];
+
 
 
   get artists(){
@@ -22,6 +24,11 @@ export class ArtistService {
   get artistExperience (){
     return this.artExperience;
   }
+
+  get artistEducation (){
+    return this.artEducation;
+  }
+
 
  
 
@@ -42,14 +49,40 @@ insertAboutInDB (body: any){
 
 insertExperienceInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/experience`, body)
-   .pipe(
-      map( res   => { this.artExperience= res; })
-   )
+  //  .pipe(
+  //     map( res   => { this.artExperience= res
+  //       return { experience: this.artExperience} 
+  //     })
+  //  )
 };  
+
+getExperienceFromDB (id: string){
+  return this.http.get<any>(`${this.baseUrl}api/artist/experience/${id} `)
+
+      .pipe(
+      map( res   => { 
+           this.artExperience= res.experience   
+        return {
+          experience : this.artExperience
+         };
+        }),
+        )
+};
+
 
 insertEducationInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/education`, body)
 }  
+
+getEducationFromDB (id: string){
+  return this.http.get<any>(`${this.baseUrl}api/artist/education/${id} `)
+      .pipe(
+      map( res   => { 
+           this.artEducation= res.education   
+        return { education : this.artEducation };
+        }),
+        )
+      };
 
 insertSkillsInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/skills`, body)
