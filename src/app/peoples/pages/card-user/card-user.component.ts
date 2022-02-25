@@ -20,7 +20,6 @@ string:any;
 clicked:boolean= false;
 hidden: boolean = false;
 showSpinner : boolean = false;
-private test! : any;
   
 countries: string[] = [
   'Colombia',
