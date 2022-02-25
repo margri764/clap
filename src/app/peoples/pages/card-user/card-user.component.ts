@@ -95,33 +95,32 @@ myForm:FormGroup = this.fb.group({
   sendFormArtist (){
     // alert(JSON.stringify(this.myForm.value))
 
-    this.artistService.dataArtistToBackend(this.myForm.value).subscribe( ()=>{
+    this.artistService.dataArtistToBackend(this.myForm.value).subscribe(
+       () =>{
     
-      //  ( {user }) => { alert(JSON.stringify(user))
             this.confirmArtist();
             this.dialogRef.close([]);
-            // this.router.navigateByUrl('home');
-            // JSON.stringify(this.artistService.artists)
-          
-          },(err: HttpErrorResponse)=> {
-            //error de desconexion con el back end
-            if(err.status === 0){
-              alert ('opps!!')
-              return
-            };
+       })
+      }
+        //   },(err: HttpErrorResponse)=> {
+        //     //error de desconexion con el back end
+        //     if(err.status === 0){
+        //       alert ('opps!!')
+        //       return
+        //     };
 
-            if(err.status === 400 || err.status === 403 || err.status === 500 
-              || err.status === 510 ){
-                alert(err.error.msg);
-                this.router.navigateByUrl('home');
-                this.dialogRef.close([]);
+        //     if(err.status === 400 || err.status === 403 || err.status === 500 
+        //       || err.status === 510 ){
+        //         alert(err.error.msg);
+        //         this.router.navigateByUrl('home');
+        //         this.dialogRef.close([]);
 
-              }
+        //       }
               
-          return
+        //   return
 
-        })
-    }
+        // })
+    // }
 
 
 
