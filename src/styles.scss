@@ -10,7 +10,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     mat-dialog-container {
         padding: 0;
         width: 800px;
-        height: 700px;
+        height: 100%;
    
 
     }
@@ -27,7 +27,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       padding: 0px;
       width: 900px;
       height: 700px;
-      opacity: 0.97;
+      // opacity: 0.97;
   
     }
 

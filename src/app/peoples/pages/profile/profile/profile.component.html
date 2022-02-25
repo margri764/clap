@@ -5,7 +5,7 @@
 
 
 <!-- start profile -->
-<div fxFlex="65"  fxLayoutAlign="center" >
+<div fxFlex="70"  fxLayoutAlign="center" >
     
 <!-- start container (border) profile -->
     <div class="whiteBorder" fxFlex="90" fxLayout="row wrap" fxLayoutAlign="center center"> 
@@ -174,7 +174,7 @@
         <mat-label style="margin-left: 20px; font-size: 1.2vw;">  Acerca de</mat-label>
     </div>
     <div>
-        <mat-icon class="material-icons-outlined" aria-hidden="false" fxLayoutAlign="center center" style="font-size: 2vw; margin-right: 10px; cursor: pointer; " >edit</mat-icon>
+        <mat-icon class="material-icons-outlined" aria-hidden="false" fxLayoutAlign="center center" (click)="hidAbout()" style="font-size: 2vw; margin-right: 10px; cursor: pointer; " >edit</mat-icon>
     </div>
 
 </div>
@@ -183,7 +183,7 @@
 <!-- start "about" -->
 <div class="about"  fxLayout="row wrap"  fxLayoutAlign="space-between center" fxFlex="95"  style=" margin-top: 30px;">
 
-    <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxLayout="row wrap" fxFlex="100"  >  
+    <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxLayout="row wrap" fxFlex="100" *ngIf="hideAbout" >  
     
     <mat-form-field appearance="outline" fxFlex="100" >
         <textarea matInput 
@@ -196,19 +196,23 @@
     </mat-form-field> 
     
     <div fxFlex="100" fxLayoutAlign="end center" >
-        <button class="btnSave" mat-button type="submit" >Guardar</button>
+        <button class="btnSave" mat-button type="submit"  >Guardar</button>
     </div>
     </form>
-    <div fxFlex="100" *ngFor="let about of arrAbout" >
 
-    <mat-label>{{about.about}}</mat-label>
+    <div  fxLayout="column wrap"   *ngFor="let about of arrAbout" style="margin-top:20px;padding: 10px;" >
+
+     
+         <p>{{about.about}}</p> <br>
+     
+   
 
         
     </div>
 
-    <div fxFlex="100" fxLayoutAlign="start start" style=" margin-top: 30px; margin-bottom: 20px;" >
+    <!-- <div fxFlex="100" fxLayoutAlign="start start" style=" margin-top: 30px; margin-bottom: 20px; padding: 5px;" >
         <button class="btnSave" mat-button type="submit" (click)="getAbout()" >Publicar </button>
-    </div>
+    </div> -->
     
 </div>
 <!-- end about -->
@@ -381,9 +385,117 @@
 
 
 <!-- start container skills -->
-    <div fxFlex="95">
-    <app-card-skills></app-card-skills>
+    <div fxLayout="row wrap" fxLayout.xs="column" fxFlex="95"  fxLayoutAlign="space-between center" style="margin-top: 30px; margin-bottom: 30px;">
+
+<!-- start-card-habilidades -->
+    <div  class="cardSkill"  fxFlex="32"   routerLink="../../artistas/perfil" style="cursor: pointer; padding: 20px;">
     
+        <div   fxLayout="row wrap" fxLayoutAlign="center" fxFlex="100">
+    
+            <div fxFlex="100" fxLayoutAlign="start center" style="margin-bottom: 15px;">
+    
+            <mat-label> <b>Habilidades</b></mat-label> 
+    
+            </div>
+        
+            <div fxFlex="95" class="divider"></div>
+
+         <div fxLayout="row wrap" fxLayoutAlign="center"   >
+    
+            <form   fxLayoutAlign="center" style="margin-top: 15px;">
+
+                <mat-form-field class="example-full-width" appearance="outline" fxFlex="80">
+                <mat-label> &nbsp; Buscar </mat-label>
+                <!-- <span matPrefix>+1 &nbsp;</span> -->
+                <input type="text" matInput>
+                <mat-icon matSuffix>search</mat-icon>
+                </mat-form-field>
+            </form>
+            
+            <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+            <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+            <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+            <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+            <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+    
+        </div>
+     </div>
+   </div>
+<!-- end-card-habilidades -->
+    
+<!-- start-card-software -->
+<div  class="cardSkill"  fxFlex="32"   routerLink="../../artistas/perfil" style="cursor: pointer; padding: 20px;">
+    
+    <div   fxLayout="row wrap" fxLayoutAlign="center" fxFlex="100">
+
+        <div fxFlex="100" fxLayoutAlign="start center" style="margin-bottom: 15px;">
+
+        <mat-label> <b>Software</b></mat-label> 
+
+        </div>
+    
+        <div fxFlex="95" class="divider"></div>
+
+     <div fxLayout="row wrap" fxLayoutAlign="center"   >
+
+        <form   fxLayoutAlign="center" style="margin-top: 15px;">
+
+            <mat-form-field class="example-full-width" appearance="outline" fxFlex="80">
+            <mat-label> &nbsp; Buscar </mat-label>
+            <!-- <span matPrefix>+1 &nbsp;</span> -->
+            <input type="text" matInput>
+            <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </form>
+        
+        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+
+    </div>
+ </div>
+</div>
+<!-- end-card-software -->
+
+<!-- start-card-languajes -->
+<div  class="cardSkill"  fxFlex="32"   routerLink="../../artistas/perfil" style="cursor: pointer; padding: 20px;">
+    
+    <div   fxLayout="row wrap" fxLayoutAlign="center" fxFlex="100">
+
+        <div fxFlex="100" fxLayoutAlign="start center" style="margin-bottom: 15px;">
+
+        <mat-label> <b>Idiomas</b></mat-label> 
+
+        </div>
+    
+        <div fxFlex="95" class="divider"></div>
+
+     <div fxLayout="row wrap" fxLayoutAlign="center"   >
+
+        <form   fxLayoutAlign="center" style="margin-top: 15px;">
+
+            <mat-form-field class="example-full-width" appearance="outline" fxFlex="80">
+            <mat-label> &nbsp; Buscar </mat-label>
+            <!-- <span matPrefix>+1 &nbsp;</span> -->
+            <input type="text" matInput>
+            <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </form>
+        
+        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+
+    </div>
+ </div>
+</div>
+<!-- end-card-languajes -->
+
+
     </div>
 <!-- end container skills -->
 
@@ -398,7 +510,7 @@
 
 
 <!-- start similar Artits (right page) -->
-<div fxFlex="35" fxLayout="row wrap" fxLayoutAlign="start start" >
+<div fxFlex="30" fxLayout="row wrap" fxLayoutAlign="start start" >
     
     <div fxFlex="70"  style=" margin-top: 35px; " >
     <button mat-button  fxFlex="100" style="background-color: #b0bcec;"> <mat-label fxFlex="60"  fxLayoutAlign="start">Artistas Similares</mat-label> <mat-label fxFlex="40"  fxLayoutAlign="end" >Ver mas</mat-label> </button>

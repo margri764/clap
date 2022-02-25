@@ -38,12 +38,12 @@ myForm:FormGroup = this.fb.group({
   userName:    ['', [Validators.required] ],
   city:        ['', [Validators.required] ],  
   state:       ['', [Validators.required] ],  
-  website :        ['www.feintdevs.com', [Validators.required]],
-  email:       ['margri764@gmail.com', [Validators.required]],
+  website :    ['', [Validators.required]],
+  email:       ['', [Validators.required]],
   dateBirth:   ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
   jobDate:     ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
-  alias:       ['bul', [Validators.required] ],  //tendria q ir dentro del objeto profileData[]
-  titular:     ['rtrtrt', [Validators.required]],
+  alias:       ['', [Validators.required] ],  //tendria q ir dentro del objeto profileData[]
+  titular:     ['', [Validators.required]],
   
 });
 
@@ -61,6 +61,8 @@ myForm:FormGroup = this.fb.group({
    { }
 
   ngOnInit(): void {
+    this.randomApi();
+    console.log(this.api)
   }
 
   validField( field: string ) {
@@ -79,8 +81,17 @@ myForm:FormGroup = this.fb.group({
     });
   
   }
+public api : any=[];
+ randomApi(){
+   
 
-// PUEDE SERVIR PARA LINK DESDE PERSONAS AL ARTISTA SELECCIONADO
+  fetch('https://randomuser.me/api')
+  .then(res =>res.json())
+  .then(data =>{this.api.push(data.results ["0"])})
+  }
+// console.log(data.results ["0"])
+
+  // PUEDE SERVIR PARA LINK DESDE PERSONAS AL ARTISTA SELECCIONADO
 
   // this.artistService.dataArtistToBackend(this.myForm.value).subscribe( 
   //   ({user}) => { 

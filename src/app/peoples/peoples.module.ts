@@ -10,7 +10,6 @@ import { PeoplesRoutingModule } from './peoples-routing.module';
 import { ProfileComponent } from './pages/profile/profile/profile.component';
 import { ResumeComponent } from './pages/resume/resume/resume.component';
 import { CardEducationComponent } from './pages/cardEducation/card-education/card-education.component';
-import { CardSkillsComponent } from './pages/cardSkills/card-skills/card-skills.component';
 import { MyapplyComponent } from './pages/myapply/myapply/myapply.component';
 import { SettingsComponent } from './pages/settings/settings/settings.component';
 import { BookmarksComponent } from './pages/bookmarks/bookmarks/bookmarks.component';
@@ -29,7 +28,6 @@ import { CardExperienceComponent } from './pages/cardExperience/card-experience/
     ProfileComponent,
     ResumeComponent,
     CardEducationComponent,
-    CardSkillsComponent,
     MyapplyComponent,
     SettingsComponent,
     BookmarksComponent,
@@ -52,7 +50,6 @@ import { CardExperienceComponent } from './pages/cardExperience/card-experience/
     ProfileComponent,
     ResumeComponent,
     CardEducationComponent,
-    CardSkillsComponent,
     MyapplyComponent,
     SettingsComponent,
     BookmarksComponent,

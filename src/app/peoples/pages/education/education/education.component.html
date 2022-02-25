@@ -37,8 +37,8 @@
           
             <mat-form-field appearance="outline" fxFlex="49" > 
               
-            <mat-label>Disciplina académica</mat-label>
-                    <input matInput type="text" required formControlName="education">
+            <!-- <mat-label>Disciplina académica</mat-label> -->
+                    <input matInput type="text" required formControlName="education" placeholder="Disciplina académica*">
                     <!-- <mat-error  *ngIf ="validField ('education')">
                       completa este dato
                     </mat-error>  -->
@@ -49,8 +49,8 @@
   
           <mat-form-field appearance="outline" fxFlex="49">		
           
-            <mat-label >Título</mat-label>
-            <input matInput type="text" required formControlName="degree">
+            <!-- <mat-label >Título</mat-label> -->
+            <input matInput type="text" required formControlName="degree" placeholder="Título*">
              <!-- <mat-error  *ngIf ="validField ('degree')">
                 completa este dato / no es un formato de email valido
             </mat-error>  -->
@@ -65,8 +65,8 @@
         
           <mat-form-field appearance="outline" fxFlex="49" >
             
-            <mat-label>Institución académica</mat-label>
-                <mat-select required formControlName="school">
+            <!-- <mat-label>Institución académica</mat-label> -->
+                <mat-select required formControlName="school" placeholder="Institución académica*">
                   <mat-option>None</mat-option>
                   <mat-option *ngFor="let school of schools" [value]="school">{{school}}</mat-option>
                 </mat-select>
@@ -77,8 +77,8 @@
        
 
           <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
-            <mat-label>Fecha de inicio</mat-label>
-            <input matInput [matDatepicker]="picker" required formControlName="startDate">
+            <!-- <mat-label>Fecha de inicio</mat-label> -->
+            <input matInput [matDatepicker]="picker" required formControlName="startDate" placeholder="Fecha de inicio*">
             <mat-datepicker-toggle matSuffix [for]="picker">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
@@ -90,8 +90,8 @@
         
             <mat-form-field appearance="outline" fxFlex="24" >
               
-                <mat-label>Pais</mat-label>
-                    <mat-select required formControlName="country">
+                <!-- <mat-label>Pais</mat-label> -->
+                    <mat-select required formControlName="country" placeholder="Pais*">
                       <mat-option>None</mat-option>
                       <mat-option *ngFor="let country of countrys" [value]="country">{{country}}</mat-option>
                     </mat-select>
@@ -100,8 +100,8 @@
             
             <mat-form-field appearance="outline" fxFlex="24">
               
-                <mat-label>Ciudad</mat-label>
-                    <mat-select required formControlName="city">
+                <!-- <mat-label>Ciudad</mat-label> -->
+                    <mat-select required formControlName="city" placeholder="Ciudad*">
                       <mat-option>None</mat-option>
                       <mat-option *ngFor="let city of citys" [value]="city">{{city}}</mat-option>
                     </mat-select>
@@ -109,8 +109,8 @@
        
 
           <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
-            <mat-label>Fecha de finalización</mat-label>
-            <input matInput [matDatepicker]="dp3" required formControlName="endDate" >
+            <!-- <mat-label>Fecha de finalización</mat-label> -->
+            <input matInput [matDatepicker]="dp3" required formControlName="endDate" placeholder="Fecha de finalización*">
             <mat-datepicker-toggle matSuffix [for]="dp3">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
             </mat-datepicker-toggle>
@@ -123,8 +123,8 @@
 
             <mat-form-field appearance="outline" fxFlex="49" >
               
-                <mat-label>Modalidad</mat-label>
-                    <mat-select required formControlName="modo">
+                <!-- <mat-label>Modalidad</mat-label> -->
+                    <mat-select required formControlName="modo" placeholder="Modalidad*">
                       <mat-option>None</mat-option>
                       <mat-option *ngFor="let modo of modos" [value]="modo">{{modo}}</mat-option>
                     </mat-select>
@@ -132,7 +132,7 @@
 
             <section class="example-section" fxFlex="49" >
                
-                    <mat-radio-button class="example-margin" value="after">Estudio actualmente acá</mat-radio-button>
+                    <mat-radio-button class="example-margin" value="after" style="opacity: 0.8;">Estudio actualmente acá</mat-radio-button>
              
 
             </section>

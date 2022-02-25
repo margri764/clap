@@ -36,15 +36,15 @@ country: string[] = [
 comment = new FormControl();
 
 myForm:FormGroup = this.fb.group({
-  jobTitle:    ['jefe diseñador', [Validators.required] ],
-  companyName:    ['disney', [Validators.required] ],
+  jobTitle:    ['', [Validators.required] ],
+  companyName:    ['', [Validators.required] ],
   type:     ['', [Validators.required]],
-  linkPortfolio :    ['no se bien q hace'],
-  startDate:   [''],
-  endDate: [''],
-  country: [''],
-  city:[''],
-  description:['aca va la descripcion del trabajo'],
+  linkPortfolio :    ['',[Validators.required]],
+  startDate:   ['',[Validators.required]],
+  endDate: ['',[Validators.required]],
+  country: ['',[Validators.required]],
+  city:['',[Validators.required]],
+  description:['',[Validators.required]],
   id: [this.idArtist]
 
 

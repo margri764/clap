@@ -27,6 +27,7 @@ public arrExperience :any = [];
 public arrEducation :any = [];
 public arrAbout :any = [];
 public arrArtist : any =[];
+public hideAbout : boolean= false;
 private idArtist : string=JSON.parse(localStorage.getItem('token')!)
 
 
@@ -89,7 +90,10 @@ private idArtist : string=JSON.parse(localStorage.getItem('token')!)
 
   }
 
+hidAbout(){
+  this.hideAbout=!this.hideAbout
 
+}
 
   validField( field: string ) {
 
@@ -99,7 +103,7 @@ private idArtist : string=JSON.parse(localStorage.getItem('token')!)
   sendForm(){
     alert(JSON.stringify(this.myForm.value))
     this.artistService.insertAboutInDB(this.myForm.value).subscribe(
-      (res)=>{ if(res) alert('about agregada correctamente')}
+      ()=>{ this.getAbout()}
     )
   }
 
@@ -124,7 +128,11 @@ private idArtist : string=JSON.parse(localStorage.getItem('token')!)
 
   getAbout(){
     this.artistService.getAboutFromDB( this.idArtist).subscribe( 
-      ( {about} ) => { this.arrAbout= about}
+      ( {about} ) => { this.arrAbout= about;
+        // console.log(this.arrAbout.length)
+        //               if(this.arrAbout.length != 0){
+        //                 this.hideAbout=false;}
+                      }
     )        
     }
 

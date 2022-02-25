@@ -134,4 +134,6 @@ getDataArtist (id: string) {
 
 
     }
-}
+   
+  
+  }
