@@ -58,7 +58,7 @@ private idArtist! : string;
 
   myForm:FormGroup = this.fb.group({
     about:    ['', [Validators.required] ],
-    id: [''] 
+    id: [this.idArtist] 
   
   });
 
@@ -79,9 +79,9 @@ private idArtist! : string;
 
     this.idArtist=JSON.parse(localStorage.getItem('token')!)
   
-    // this.getExperience();
-    // this.getEducation();
-    // this.getAbout();
+    this.getExperience();
+    this.getEducation();
+    this.getAbout();
     this.getArtist( );
 
 
