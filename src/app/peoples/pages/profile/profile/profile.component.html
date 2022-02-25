@@ -98,9 +98,9 @@
     </div>
     <div fxFlex="62" fxLayoutAlign="start end" fxLayoutGap="10">
 
-        <button  mat-button  appearance="outline" (mouseover)="btnPressed('graphic')"#graphic >Diseño Grafico</button>
-        <button  mat-button  appearance="outline"  (mouseover)="btnPressed('animation')" #animation >Animación</button>
-        <button  mat-button  appearance="outline" (mouseover)="btnPressed('photo')" #photo>Fotografía</button>
+        <button  mat-button  appearance="outline" (mouseover)="btnPressed('graphic')"     >Diseño Grafico</button>
+        <button  mat-button  appearance="outline"  (mouseover)="btnPressed('animation')"  >Animación</button>
+        <button  mat-button  appearance="outline" (mouseover)="btnPressed('photo')"   >  Fotografía</button>
     </div>
 
 
@@ -116,17 +116,15 @@
       
 
 <!-- start conditional "Diseño grafico" -->
-    
-<div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center"
-     *ngIf="graphic" (mouseleave)="btnPressedOut()" > 
-   
+<div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center"  *ngIf="graphic"  > 
+     <!-- (mouseleave)="btnPressedOut()" -->
   
         <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
     
             <button  mat-button  appearance="outline" >Branding</button>
             <button  mat-button  appearance="outline" >Editorial</button>
             <button  mat-button  appearance="outline" >Empaques</button>
-            <button  mat-button  appearance="outline" >Empaques</button>
+            <!-- <button  mat-button  appearance="outline" >Empaques</button> -->
             
         </div>
     
@@ -153,8 +151,7 @@
 <!-- end conditional "animacion" -->
 
 <!-- start conditional "animacion" -->
-<div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center"
-*ngIf="photo" (mouseleave)="btnPressedOut()" > 
+<div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="photo" (mouseleave)="btnPressedOut()"  > 
 
    <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
 
@@ -171,7 +168,7 @@
 
 
 <!-- start "about" -->
-<div class="about" fxLayout="row wrap" fxLayoutAlign="space-between center" fxFlex="95"  style="height:40px; margin-top: 30px;" >
+<div class="about" fxLayout="row wrap" fxLayoutAlign="space-between center" fxFlex="95"  style="height:40px; margin-top: 35px;" >
 
     <div>
         <mat-label style="margin-left: 20px; font-size: 1.2vw;">  Acerca de</mat-label>

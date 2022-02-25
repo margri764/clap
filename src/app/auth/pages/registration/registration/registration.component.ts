@@ -55,47 +55,13 @@ export class RegistrationComponent implements OnInit {
     sendForm (){
 
       this.artistService.validateEmail(this.myForm.value).subscribe( 
-         ( ) => { 
-      
-              this.router.navigateByUrl('auth/confirmacion')
+         ( ) => {this.router.navigateByUrl('auth/confirmacion'), console.log('despara confirm')
 
-              
-              // this.router.navigateByUrl(`artistas/perfil/${user._id}`)
+      } )
+    }   
             
-          },(err: HttpErrorResponse)=> {
-              //error de desconexion con el back end
-              if(err.status === 0){
-                alert ('opps!!')
-                return
-              };
-  
-              if(err.status === 400 || err.status === 403 || err.status === 500 
-                || err.status === 510 ){
-                  alert(err.error.msg);
-                  // this.router.navigateByUrl('home');
-                  // this.dialogRef.close([]);
-                  return
-  
-                };
-                if(err.error.errors){ // error desde los check (nombre obligatorio)
-                  const test = err.error.errors;
-        
-                  //recorro el arreglo de errores y guardo en "msgs" cada error y muestro la propiedad error
-                 test.map((msgs:any) => {
-                   
-                   if(!msgs.msg.includes('Cast'))
-                   alert (msgs.msg)
-                   console.log(msgs)
-                 });
-                         
-         
-        
-                  return      
-                 };
-                
-  
-          })
-      }
+          
+      
   
   test(){
     return this.iAgree=true;

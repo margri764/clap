@@ -20,6 +20,7 @@ export class ProfileComponent implements OnInit {
 public graphic : boolean = false;
 public photo : boolean = false;
 public animation : boolean = false;
+
 public userProfile!: Artist;
 public edit : boolean = false;
 public arrExperience :any = [];
@@ -173,24 +174,23 @@ private idArtist : string=JSON.parse(localStorage.getItem('token')!)
       break;
       
       case 'photo': 
-            this.graphic = false;
             this.photo = true;
+            this.graphic = false;
             this.animation = false;
       break;
 
       case 'animation': 
+            this.animation = true;
             this.graphic = false;
             this.photo = false;
-            this.animation = true;
       break;
   
     }
 }
    btnPressedOut(){
-
             this.graphic = false;
             this.photo = false;
-            this.animation = true;
+            this.animation = false;
     
   }
 
