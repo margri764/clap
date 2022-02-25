@@ -17,7 +17,7 @@
 
 
 
-    <div  class="card" *ngFor="let artist of arrArtist"   >
+    <div  class="card"   >
   
       <div fxLayout="row wrap" style="height: 80%;" (mouseover)="btnPressedOut()">
 
@@ -40,10 +40,10 @@
 
             <div fxFlex="40" style="margin-top: 30px; padding: 20px;">
 
-            <mat-label style="font-size: 2vw;"> <b>{{artist.userName}}</b></mat-label> <br>
+            <mat-label style="font-size: 2vw;"> <b>{{arrArtist.userName}}</b></mat-label> <br>
             <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
                 <mat-label></mat-label> <br>
-                <mat-label>{{artist.city}}-{{artist.state}}</mat-label> <br>
+                <mat-label>{{arrArtist.city}}-{{arrArtist.state}}</mat-label> <br>
                 <mat-label>2 años de Experiencia</mat-label> <br>
                 <mat-label>Ingles - Español</mat-label>
 
@@ -69,8 +69,7 @@
                 
                 </div>
 
-            <!-- <div style="margin-right: 1em"> <mat-label style="font-size: 1.8vw;"> 43  </mat-label>Seguidores</div> -->
-            <div style="margin-right: 1em"> <mat-label style="font-size: 1.8vw;"> {{arrArtist._id}}  </mat-label></div>
+            <div style="margin-right: 1em"> <mat-label style="font-size: 1.8vw;"> 43  </mat-label>Seguidores</div>
 
             <div  fxLayoutAlign="end center" style="padding: 10px;">
                 

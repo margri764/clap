@@ -25,8 +25,9 @@ public edit : boolean = false;
 public arrExperience :any = [];
 public arrEducation :any = [];
 public arrAbout :any = [];
-public arrArtist : any =[]
-private idArtist : string= JSON.parse(localStorage.getItem('token')!)
+public arrArtist : any =[];
+private idArtist! : string;
+
 
 
 // get artists(){
@@ -57,7 +58,7 @@ private idArtist : string= JSON.parse(localStorage.getItem('token')!)
 
   myForm:FormGroup = this.fb.group({
     about:    ['', [Validators.required] ],
-    uid: [this.idArtist] 
+    id: [''] 
   
   });
 
@@ -67,19 +68,21 @@ private idArtist : string= JSON.parse(localStorage.getItem('token')!)
               private activatedRoute: ActivatedRoute,
               private fb : FormBuilder,
               private cardExperience : CardExperienceComponent,
-              private cdRef:ChangeDetectorRef
-  ) { }
+              private cdRef:ChangeDetectorRef,
+  ) {
+  
+  }
 
 
 
   ngOnInit(): void {
 
+    this.idArtist=JSON.parse(localStorage.getItem('token')!)
   
-
-    this.getExperience();
-    this.getEducation();
-    this.getAbout();
-    this.showDataArtist();
+    // this.getExperience();
+    // this.getEducation();
+    // this.getAbout();
+    this.getArtist( );
 
 
 
@@ -98,7 +101,7 @@ private idArtist : string= JSON.parse(localStorage.getItem('token')!)
     )
   }
 
- showDataArtist(){
+ getArtist(){
    this.artistService.getDataArtist(this.idArtist).subscribe(
     ( {user} ) => { this.arrArtist= user }
 
@@ -106,19 +109,19 @@ private idArtist : string= JSON.parse(localStorage.getItem('token')!)
  } 
 
  getExperience(){
-  this.artistService.getExperienceFromDB( this.myForm.controls['uid'].value).subscribe( 
-    ( {experience} ) => { this.arrExperience= experience}
+  this.artistService.getExperienceFromDB( this.myForm.controls['id'].value).subscribe( 
+    ( {experience} ) => { this.arrExperience= experience, console.log(this.arrExperience)}
   )        
   }
 
  getEducation(){
-  this.artistService.getEducationFromDB( this.myForm.controls['uid'].value).subscribe(
+  this.artistService.getEducationFromDB( this.myForm.controls['id'].value).subscribe(
     ( {education} ) => {this.arrEducation = education}
   )        
   }
 
   getAbout(){
-    this.artistService.getAboutFromDB( this.myForm.controls['uid'].value).subscribe( 
+    this.artistService.getAboutFromDB( this.myForm.controls['id'].value).subscribe( 
       ( {about} ) => { this.arrAbout= about}
     )        
     }
