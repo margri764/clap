@@ -64,7 +64,7 @@ export class EducationComponent implements OnInit {
               && this.myForm.controls[field].touched;
     }
     sendForm(){
-      // alert(JSON.stringify(this.myForm.value));
+      alert(JSON.stringify(this.myForm.value));
       this.artistService.insertEducationInDB(this.myForm.value).subscribe(
         (res)=>{ if(res) alert('educacion agregada correctamente')}
       )

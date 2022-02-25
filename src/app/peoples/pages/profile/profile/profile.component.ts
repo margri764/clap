@@ -26,7 +26,7 @@ public arrExperience :any = [];
 public arrEducation :any = [];
 public arrAbout :any = [];
 public arrArtist : any =[];
-private idArtist! : string;
+private idArtist : string=JSON.parse(localStorage.getItem('token')!)
 
 
 
@@ -77,7 +77,7 @@ private idArtist! : string;
 
   ngOnInit(): void {
 
-    this.idArtist=JSON.parse(localStorage.getItem('token')!)
+    // this.idArtist=JSON.parse(localStorage.getItem('token')!)
   
     this.getExperience();
     this.getEducation();
@@ -96,6 +96,7 @@ private idArtist! : string;
             && this.myForm.controls[field].touched;
   }
   sendForm(){
+    alert(JSON.stringify(this.myForm.value))
     this.artistService.insertAboutInDB(this.myForm.value).subscribe(
       (res)=>{ if(res) alert('about agregada correctamente')}
     )
@@ -109,19 +110,19 @@ private idArtist! : string;
  } 
 
  getExperience(){
-  this.artistService.getExperienceFromDB( this.myForm.controls['id'].value).subscribe( 
+  this.artistService.getExperienceFromDB( this.idArtist).subscribe( 
     ( {experience} ) => { this.arrExperience= experience, console.log(this.arrExperience)}
   )        
   }
 
  getEducation(){
-  this.artistService.getEducationFromDB( this.myForm.controls['id'].value).subscribe(
+  this.artistService.getEducationFromDB( this.idArtist).subscribe(
     ( {education} ) => {this.arrEducation = education}
   )        
   }
 
   getAbout(){
-    this.artistService.getAboutFromDB( this.myForm.controls['id'].value).subscribe( 
+    this.artistService.getAboutFromDB( this.idArtist).subscribe( 
       ( {about} ) => { this.arrAbout= about}
     )        
     }
@@ -189,7 +190,7 @@ private idArtist! : string;
 
             this.graphic = false;
             this.photo = false;
-            this.animation = false;
+            this.animation = true;
     
   }
 

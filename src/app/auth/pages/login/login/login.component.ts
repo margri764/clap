@@ -27,9 +27,9 @@ export class LoginComponent implements OnInit {
 
   
     constructor(
-              private authService: SocialAuthService,
+              // private authService: SocialAuthService,
               private fb : FormBuilder,
-              private loginService : LoginService,
+              // private loginService : LoginService,
               private router : Router
     )
      {
@@ -37,21 +37,9 @@ export class LoginComponent implements OnInit {
   
     ngOnInit(): void {
 
-      this.authService.authState.subscribe(user => {
-        this.user = user;
-  
-        
-      //   if(user!=null){
-      //     const {idToken} = user
-      //     this.employeeService.userLogin={
-      //       // name,
-      //       // email
-      //       idToken
-      //   }
-   
-  
-      // } 
-      });
+      // this.authService.authState.subscribe(user => {
+      //   this.user = user;
+      // });
   
     }
   
@@ -64,37 +52,28 @@ export class LoginComponent implements OnInit {
     sendForm (){
       // console.log(this.myForm.value)
       // alert(JSON.stringify(this.user));
-      this.router.navigateByUrl("home")
+      // this.router.navigateByUrl("home")
  
-      this.authService.authState.subscribe(user => {
-        this.user = user;
-        this.router.navigateByUrl("home")
+      // this.authService.authState.subscribe(user => {
+      //   this.user = user;
+      //   this.router.navigateByUrl("home")
 
-        
-  
-        
-      //   if(user!=null){
-      //     const {idToken} = user
-      //     this.employeeService.userLogin={
-      //       // name,
-      //       // email
-      //       idToken
-      //   }
+    
    
   
-      // } 
-      });
+      // // } 
+      // });
       
     }
   
     signInWithGoogle(): void {
-      this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
-      this.authService.authState.subscribe(user => {
-          this.user = user;
-          this.loginWithGoogle();
-          if(user!=null){
+      // this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+      // this.authService.authState.subscribe(user => {
+      //     this.user = user;
+      //     this.loginWithGoogle();
+      //     if(user!=null){
 
-            this.router.navigateByUrl('/bienvenida');
+      //       this.router.navigateByUrl('/bienvenida');
          }
         // //   if(user!=null){
       // //     const {idToken} = user
@@ -104,23 +83,23 @@ export class LoginComponent implements OnInit {
       // //       idToken
       // //   }
       // // } 
-      });
-    }
+      // });
+    // }
    
     signOut(): void {
-      this.authService.signOut();
+      // this.authService.signOut();
     }
   
     refreshGoogleToken(): void {
-      this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
+      // this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
     }
   
   // VER EXPLICACION ABAJO
   
   loginWithGoogle(){
-      if(this.user!= null) {
-        this.loginService.loginWithGoogle(this.user).subscribe((res)=>{ console.log(res) })
-     }
+    //   if(this.user!= null) {
+    //     this.loginService.loginWithGoogle(this.user).subscribe((res)=>{ console.log(res) })
+    //  }
   }
   
   }
