@@ -64,11 +64,11 @@
     
     </div>
 
-    <button mat-button (click)="openDialog()">Personas</button> 
-    <button mat-button  routerLink="../../concurso">Concurso</button> 
-    <button mat-button  routerLink="../../invitacion"  >Invitacion</button>  
-    <button mat-button  routerLink="../../publicacion"  >Experiencia publicada</button>  
-    <button mat-button  routerLink="../../eliminar"  >Eliminar</button>  
+   
+
+    
+    <!-- <button mat-button  routerLink="../../publicacion"  >Experiencia publicada</button>  
+    <button mat-button  routerLink="../../eliminar"  >Eliminar</button>   -->
 
 
 
@@ -77,7 +77,7 @@
        style="padding: 20px;" >
 
 
-    <div  class="card" *ngFor="let heroe of heroes" fxFlex="49" fxFlex.xs="100"  routerLink="../../artistas/perfil" style="cursor: pointer;">
+    <div  class="card" *ngFor="let artist of arrArtist" fxFlex="49" fxFlex.xs="100"  routerLink="../../artistas/perfil" style="cursor: pointer;">
   
 
          <div fxLayout="row" fxLayoutAlign="center center" fxFlex="30"  >
@@ -93,18 +93,19 @@
 
                      <div fxFlex="40" fxLayout="row wrap" fxLayoutAlign="start space-around" style="margin-top: 1em;">
 
-                      <mat-label style="font-size: 1.6vw;"> <b>{{heroe.nombre}}</b></mat-label> <br>
-                      <mat-label style="font-size: 1vw;"> DISEÑADOR UX/UI EN WAGON</mat-label> <br>
-                      <mat-label>www.feintdevs.com</mat-label>
+                      <mat-label style="font-size: 1.6vw;"> <b>{{artist.userName}}</b></mat-label> <br>
+                      <mat-label style="font-size: 1vw;"> </mat-label> <br>
+                      <mat-label>{{artist.email}}</mat-label>
                          
                      </div>
                      
              
                      <div fxFlex="60" fxLayoutAlign="end start">
                      
-                          <button  mat-button  appearance="outline" type="submit" class="follow">Seguir</button>
+                          <button  mat-button  appearance="outline" type="submit" class="follow"   matTooltip="en proceso"
+                            >Seguir</button>
          
-                           <mat-icon class="bookmark" >bookmark_border</mat-icon>
+                           <mat-icon class="bookmark"  matTooltip="en proceso">bookmark_border</mat-icon>
                    
                  </div>
               
@@ -113,7 +114,7 @@
          
          <div class="text" fxLayout="row" fxLayoutAlign="space-between" >
              <!-- <mat-divider [inset]="true"></mat-divider> -->
-             <h4 style="">Colombia - Bogota</h4>
+             <h4 style="">{{artist.city}} - {{artist.state}}</h4>
              <h4 style="margin-right: 1em;">2 años de experiencia</h4>
          </div>  
     

@@ -36,6 +36,7 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
   public showProfileDashboard : boolean = false;
   public showMenuProfile : boolean = false;
   public showNoLogginDashboard : boolean = false;
+  public userLogin : boolean = false;
 
   // public showProfileBookmarksDashboard : boolean = true;
   user!: SocialUser;
@@ -94,7 +95,10 @@ styleObject() {
     if(localStorage.getItem('token')){
       this.showProfileDashboard = true;
       this.showMainDashboard = true;
-      this.showNoLogginDashboard=false      
+      this.showNoLogginDashboard=false;
+      this.userLogin=true;
+
+
     }else{  this.showNoLogginDashboard=true }
   
   }
@@ -265,12 +269,9 @@ getCompetitions(){
     // } 
     });
 
-    if(localStorage.getItem('token')){
-      this.showMainDashboard = false;
-      this.showProfileDashboard = true;
-      // this.showProfileBookmarksDashboard= false;
-
-    }
+    // if(localStorage.getItem('token')){
+    //   this.userLogin=true;
+    // }
 
 
   }

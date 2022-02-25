@@ -14,6 +14,8 @@ export class ArtistService {
   private artist!: Artist;
   public artExperience: any []=[];
   public artEducation: any []=[];
+  public artAbout: any []=[];
+  public arrArtist : any =[]
   private _auth: any;
 
 
@@ -53,6 +55,16 @@ insertAboutInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/about`, body)
 } 
 
+getAboutFromDB (id: string){
+  return this.http.get<any>(`${this.baseUrl}api/artist/about/${id} `)
+      .pipe(
+      map( res   => { 
+           this.artAbout= res.about   
+        return { about : this.artAbout };
+        }),
+        )
+};
+
 insertExperienceInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/experience`, body)
   //  .pipe(
@@ -75,7 +87,6 @@ getExperienceFromDB (id: string){
         )
 };
 
-
 insertEducationInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/education`, body)
 }  
@@ -97,19 +108,30 @@ insertSkillsInDB (body: any){
 dataArtistToBackend( body : Artist ) {
   return this.http.post<any>(`${this.baseUrl}api/artist/create-profile`, body)
    .pipe(
-       tap( res =>{ localStorage.setItem('token',res._id) }),
+       tap( res =>{ localStorage.setItem('token',JSON.stringify(res._id)) }),
        map( res   => { this.artist= res}) )
   
-  };
+};
+
+// getters
+
+getDataArtist (id: string) {
+
+    return this.http.get <any>(`${this.baseUrl}api/artist/${id}`)
+ }
+
+ getArtists () {
+
+  return this.http.get <any>(`${this.baseUrl}api/artist`)
+  .pipe(
+    map( res   => { 
+         this.arrArtist= res.user   
+      return {
+         user : this.arrArtist
+       };
+      }),
+      )
 
 
-
-  getDataArtist (id: string) : Observable <Artist>{
-
-    return this.http.get <Artist>(`${this.baseUrl}api/artist/${id}`)
-  }
-
-
+    }
 }
-
-// { path: 'pais/:id', component: VerPaisComponent },

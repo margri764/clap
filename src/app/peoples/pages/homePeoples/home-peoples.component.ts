@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ArtistService } from 'src/app/services/artist/artist.service';
 import { CardUserComponent } from '../card-user/card-user.component';
 
 @Component({
@@ -9,22 +10,13 @@ import { CardUserComponent } from '../card-user/card-user.component';
 })
 export class HomePeoplesComponent implements OnInit {
 
-  heroes =[
-    {
-      nombre: "Santiago Reyes"
-    },
-    {
-      nombre: "fenando"
-    },
-    {
-      nombre: "juan"
-    }
-  ]
 
   public showPeople: boolean =false;
+  public arrArtist :any=[];
 
   constructor(
-              private dialog : MatDialog
+              private dialog : MatDialog,
+              private artistService : ArtistService
   ) { }
 
   ngOnInit(): void {
@@ -33,13 +25,13 @@ export class HomePeoplesComponent implements OnInit {
 
   getPeoples(){
     this.showPeople= true;
+    this.artistService.getArtists().subscribe(
+      ({user})=> { this.arrArtist = user,
+      console.log(this.arrArtist)
+      })
   }
-  openDialog() {
-    const dialogRef = this.dialog.open(CardUserComponent, {
-      width: '800px',
-      panelClass:"custom-modalbox",
-    });
-  }
+
+
 
 
 

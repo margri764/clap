@@ -75,7 +75,7 @@
             <mat-label>Pais*</mat-label>
             <mat-select required formControlName="city">
               <mat-option>None</mat-option>
-              <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+              <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
             </mat-select>
           </mat-form-field>
 
@@ -83,7 +83,7 @@
             <mat-label>Ciudad*</mat-label>
             <mat-select required formControlName="state">
               <mat-option>None</mat-option>
-              <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+              <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
             </mat-select>
           </mat-form-field>
       

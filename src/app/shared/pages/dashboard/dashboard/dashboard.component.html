@@ -91,7 +91,10 @@
 
   <div  fxFlex.gt-xs="17"  fxFlex.md="20"  fxFlex.lg="20" >
 
-    <button mat-button class="industrias" appearance="outline"  [matMenuTriggerFor]="industries" style="margin-left: 2em;">  <b>Industrias</b>  <mat-icon >expand_more</mat-icon></button>
+    <button mat-raised-button class="perfil" appearance="outline" *ngIf="userLogin"  fxFlex="25" routerLink="../artistas/perfil" style="margin-left: 2em;">  <b>Perfil</b> </button>
+
+
+    <button mat-button class="industrias" appearance="outline" *ngIf="!userLogin" [matMenuTriggerFor]="industries" style="margin-left: 2em;">  <b>Industrias</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #industries="matMenu" >
       <button mat-menu-item>Item 1</button>
       <button mat-menu-item>Item 2</button>

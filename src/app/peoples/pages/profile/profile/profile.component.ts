@@ -1,5 +1,4 @@
-import { NoopScrollStrategy } from '@angular/cdk/overlay';
-import { AfterViewChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import {  ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { Artist } from 'src/app/interfaces/artist.interface';
@@ -7,11 +6,9 @@ import { ArtistService } from 'src/app/services/artist/artist.service';
 import { WorkExperienceComponent } from 'src/app/peoples/pages/workExperience/work-experience/work-experience.component';
 import { ResumeComponent } from '../../resume/resume/resume.component';
 import { EducationComponent } from '../../education/education/education.component';
-import { IndustryComponent } from '../../industry/industry/industry.component';
 import { MyIndustryComponent } from '../../myIndustry/my-industry/my-industry.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CardExperienceComponent } from '../../cardExperience/card-experience/card-experience.component';
-import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-profile',
@@ -27,11 +24,15 @@ public userProfile!: Artist;
 public edit : boolean = false;
 public arrExperience :any = [];
 public arrEducation :any = [];
+public arrAbout :any = [];
+public arrArtist : any =[]
+private idArtist : string= JSON.parse(localStorage.getItem('token')!)
 
-get artists(){
-  return this.artistService.artists
-}
 
+// get artists(){
+  
+//   return this.artistService.artists
+// }
 
   heroeHeader =[
     {
@@ -56,7 +57,7 @@ get artists(){
 
   myForm:FormGroup = this.fb.group({
     about:    ['', [Validators.required] ],
-    uid: ["621396c1d3c5d65a3b5b5081"] 
+    uid: [this.idArtist] 
   
   });
 
@@ -73,18 +74,13 @@ get artists(){
 
   ngOnInit(): void {
 
-    this.activatedRoute.params
-    .subscribe( ({id}) => {
-      console.log(id);
-      // this.userProfile= this.artistService.artists
-      // this.artistService.getDataArtist("testId")
-      // .subscribe ( artist => {
-      //   console.log(artist)
-      // })
-    } );
+  
 
     this.getExperience();
     this.getEducation();
+    this.getAbout();
+    this.showDataArtist();
+
 
 
   }
@@ -102,6 +98,13 @@ get artists(){
     )
   }
 
+ showDataArtist(){
+   this.artistService.getDataArtist(this.idArtist).subscribe(
+    ( {user} ) => { this.arrArtist= user }
+
+   )
+ } 
+
  getExperience(){
   this.artistService.getExperienceFromDB( this.myForm.controls['uid'].value).subscribe( 
     ( {experience} ) => { this.arrExperience= experience}
@@ -113,6 +116,12 @@ get artists(){
     ( {education} ) => {this.arrEducation = education}
   )        
   }
+
+  getAbout(){
+    this.artistService.getAboutFromDB( this.myForm.controls['uid'].value).subscribe( 
+      ( {about} ) => { this.arrAbout= about}
+    )        
+    }
 
   openDialog() {
     const dialogRef = this.dialog.open(ResumeComponent, {

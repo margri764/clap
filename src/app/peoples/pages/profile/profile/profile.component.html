@@ -17,7 +17,7 @@
 
 
 
-    <div  class="card" *ngFor="let heroe of heroeHeader"  >
+    <div  class="card" *ngFor="let artist of arrArtist"   >
   
       <div fxLayout="row wrap" style="height: 80%;" (mouseover)="btnPressedOut()">
 
@@ -40,10 +40,10 @@
 
             <div fxFlex="40" style="margin-top: 30px; padding: 20px;">
 
-            <mat-label style="font-size: 2vw;"> <b>mar</b></mat-label> <br>
+            <mat-label style="font-size: 2vw;"> <b>{{artist.userName}}</b></mat-label> <br>
             <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
-                <mat-label>{{heroe.nombre}}</mat-label> <br>
-                <mat-label>Bogota - Colombia</mat-label> <br>
+                <mat-label></mat-label> <br>
+                <mat-label>{{artist.city}}-{{artist.state}}</mat-label> <br>
                 <mat-label>2 años de Experiencia</mat-label> <br>
                 <mat-label>Ingles - Español</mat-label>
 
@@ -70,7 +70,7 @@
                 </div>
 
             <!-- <div style="margin-right: 1em"> <mat-label style="font-size: 1.8vw;"> 43  </mat-label>Seguidores</div> -->
-            <div style="margin-right: 1em"> <mat-label style="font-size: 1.8vw;"> {{artists._id}}  </mat-label></div>
+            <div style="margin-right: 1em"> <mat-label style="font-size: 1.8vw;"> {{arrArtist._id}}  </mat-label></div>
 
             <div  fxLayoutAlign="end center" style="padding: 10px;">
                 
@@ -185,24 +185,34 @@
 <!-- end about -->
 
 <!-- start "about" -->
-<div class="about"  fxLayoutAlign="space-between center" fxFlex="95"  style="height:300px; margin-top: 30px;">
+<div class="about"  fxLayout="row wrap"  fxLayoutAlign="space-between center" fxFlex="95"  style=" margin-top: 30px;">
 
     <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxLayout="row wrap" fxFlex="100"  >  
     
     <mat-form-field appearance="outline" fxFlex="100" >
-        <!-- <mat-label>Descripcion del trabajo</mat-label> -->
         <textarea matInput 
         rows="7" 
          formControlName="about" 
-        required >   
+        required 
+        >   
         </textarea>
+      
     </mat-form-field> 
     
     <div fxFlex="100" fxLayoutAlign="end center" >
         <button class="btnSave" mat-button type="submit" >Guardar</button>
     </div>
-
     </form>
+    <div fxFlex="100" *ngFor="let about of arrAbout" >
+
+    <mat-label>{{about.about}}</mat-label>
+
+        
+    </div>
+
+    <div fxFlex="100" fxLayoutAlign="start start" style=" margin-top: 30px; margin-bottom: 20px;" >
+        <button class="btnSave" mat-button type="submit" (click)="getAbout()" >Publicar </button>
+    </div>
     
 </div>
 <!-- end about -->

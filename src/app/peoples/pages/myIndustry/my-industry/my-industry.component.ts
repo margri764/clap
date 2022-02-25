@@ -1,5 +1,6 @@
 import { AfterViewChecked, ChangeDetectorRef, Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import { ArtistService } from 'src/app/services/artist/artist.service';
 
 @Component({
@@ -36,20 +37,12 @@ public portraitSkill: string ='';
 public landscapeSkill: string ='';
 
 
-
-
-
 //show industries selected in template
 public animation: boolean= false;
 public design : boolean = false;
 public photography : boolean = false;
 
 public emptyWhiteFrame : boolean = true;
-
-
-
-
-
 
 
   myForm:FormGroup = this.fb.group({
@@ -66,11 +59,16 @@ public emptyWhiteFrame : boolean = true;
   constructor(
             private fb : FormBuilder,
             private cdRef:ChangeDetectorRef,
-            private artistService : ArtistService
+            private artistService : ArtistService,
+            // private _bottomSheetRef: MaBottomSheetRef<MyIndustryComponent>
             
-  ) { }
+  ) { 
+
+    }
+
 
   ngOnInit(): void {
+
   }
 
   ngAfterViewChecked() {
@@ -78,6 +76,7 @@ public emptyWhiteFrame : boolean = true;
     this.cdRef.detectChanges();
     
   }
+
 
 
 

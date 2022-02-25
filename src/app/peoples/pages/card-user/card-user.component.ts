@@ -22,11 +22,16 @@ hidden: boolean = false;
 showSpinner : boolean = false;
 private test! : any;
   
-states: string[] = [
-  'Alabama',
-  'Alaska',
-  'Arizona',
+countries: string[] = [
+  'Colombia',
+  'Argentina',
+  'Peru',
+];
 
+cities: string[] = [
+  'Bogota',
+  'Realicó',
+  'Lima',
 ];
 
 myForm:FormGroup = this.fb.group({

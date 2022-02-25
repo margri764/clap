@@ -9,6 +9,8 @@ import { ArtistService } from 'src/app/services/artist/artist.service';
 })
 export class EducationComponent implements OnInit {
 
+  private idArtist : string= JSON.parse(localStorage.getItem('token')!)
+
   states: string[] = [
     'West Virginia',
     'Wisconsin',
@@ -44,7 +46,7 @@ export class EducationComponent implements OnInit {
     city:     ['', [Validators.required] ],
     endDate:     ['', [Validators.required] ],
     modo:     ['', [Validators.required] ],
-    uid: ["621396c1d3c5d65a3b5b5081"]
+    uid: [this.idArtist]
   });
     
               constructor(

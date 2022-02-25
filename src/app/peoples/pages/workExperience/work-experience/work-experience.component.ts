@@ -14,6 +14,7 @@ export class WorkExperienceComponent implements OnInit  {
   @ViewChild(CardExperienceComponent) viewChild!: CardExperienceComponent;
 
 public arrExperience :any = [];
+private idArtist:any=JSON.parse(localStorage.getItem('token')!);
   
 type: string[] = [
   'contrato',
@@ -44,7 +45,7 @@ myForm:FormGroup = this.fb.group({
   country: [''],
   city:[''],
   description:['aca va la descripcion del trabajo'],
-  uid: ["621396c1d3c5d65a3b5b5081"]
+  uid: [this.idArtist]
 
 
 
@@ -59,8 +60,14 @@ myForm:FormGroup = this.fb.group({
 
 
 
+ 
 
   ngOnInit(): void {
+
+    if(localStorage.getItem('token') ){
+      this.idArtist= JSON.parse(localStorage.getItem('token')!)
+    }
+    console.log(this.idArtist)
   }
 
   validField( field: string ) {
@@ -69,7 +76,7 @@ myForm:FormGroup = this.fb.group({
             && this.myForm.controls[field].touched;
   }
   sendForm(){
-    // alert(JSON.stringify(this.myForm.value))
+    alert(JSON.stringify(this.myForm.value))
     this.artistService.insertExperienceInDB(this.myForm.value).subscribe()
   }
 
