@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './shared/pages/home/home/home.component';
 import { Page404Component } from './shared/pages/page404/page404/page404.component';
+import { RevalidateTokenGuardGuard } from './guards/revalidate-token-guard.guard';
 
 const routes: Routes = [
   
@@ -11,7 +12,9 @@ const routes: Routes = [
   },
   {
     path: 'artistas',
-    loadChildren: () => import('./peoples/peoples.module').then( m => m.PeoplesModule )
+    loadChildren: () => import('./peoples/peoples.module').then( m => m.PeoplesModule ),
+    canActivate: [RevalidateTokenGuardGuard ],
+    canLoad: [RevalidateTokenGuardGuard ],
   },
   
   {

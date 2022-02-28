@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
 import { LoginService } from 'src/app/services/login/login.service';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-login',
@@ -16,20 +18,15 @@ export class LoginComponent implements OnInit {
 
 
   myForm:FormGroup = this.fb.group({
-    name:    ['', [Validators.required] ],
-    alias:   ['', [Validators.required] ],
-    titular: ['', [Validators.required]],
-    web :    [''],
-    email:   [''],
-  
-  
+    email:    ['', [Validators.required] ],
+    password:   ['', [Validators.required] ],
   });
 
   
     constructor(
               // private authService: SocialAuthService,
               private fb : FormBuilder,
-              // private loginService : LoginService,
+              private loginService : LoginService,
               private router : Router
     )
      {
@@ -49,22 +46,29 @@ export class LoginComponent implements OnInit {
               && this.myForm.controls[field].touched;
     }
   
-    sendForm (){
-      // console.log(this.myForm.value)
-      // alert(JSON.stringify(this.user));
-      // this.router.navigateByUrl("home")
- 
-      // this.authService.authState.subscribe(user => {
-      //   this.user = user;
-      //   this.router.navigateByUrl("home")
-
+    ErrorMsg( error : string){
+      Swal.fire({
+        title: error,
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      })
     
-   
-  
-      // // } 
-      // });
-      
     }
+    sendForm (){
+      const { email, password } = this.myForm.value;
+      this.loginService.login(email, password).subscribe( 
+         ( success) => { if(success){
+          //  console.log(res.success);
+           this.router.navigateByUrl('home') }
+         } ,(err)=>{ this.ErrorMsg(err.error.msg) }
+      ) 
+    } 
+     
+    
   
     signInWithGoogle(): void {
       // this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);

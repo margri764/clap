@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ArtistService } from 'src/app/services/artist/artist.service';
+import { LoginService } from 'src/app/services/login/login.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,8 +16,8 @@ export class RegistrationComponent implements OnInit {
   public iAgree: boolean=false;
 
   myForm:FormGroup = this.fb.group({
-    email:   ['',[Validators.required]],
-    password:    ['', [Validators.required] ],
+    email:    ['', [Validators.required]],
+    password: ['', [Validators.required] ],
 
   
   
@@ -25,7 +26,8 @@ export class RegistrationComponent implements OnInit {
   
     constructor(
               private fb : FormBuilder,
-              private artistService : ArtistService,
+              // private artistService : ArtistService,
+              private loginService : LoginService,
               private router : Router
     )
      {
@@ -41,24 +43,28 @@ export class RegistrationComponent implements OnInit {
     }
 
 
-    confirmArtist(){
+    ErrorMsg( error : string){
       Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Artista creado correctamente',
-        showConfirmButton: false,
-        timer: 4000
-      });
+        title: error,
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      })
     
     }
   
     sendForm (){
 
-      this.artistService.validateEmail(this.myForm.value).subscribe( 
-         ( ) => {this.router.navigateByUrl('auth/confirmacion'), console.log('despara confirm')
-
-      } )
-    }   
+      const { email, password } = this.myForm.value;
+      this.loginService.validateEmail(email, password).subscribe( 
+         (res) => { if(res.success==true){
+           this.router.navigateByUrl('auth/confirmacion') }
+          //  else{ alert('o')}
+         } ,(err)=>{ this.ErrorMsg(err.error.msg) }
+        ) } 
             
           
       

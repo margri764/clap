@@ -1,6 +1,6 @@
 import {  ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Artist } from 'src/app/interfaces/artist.interface';
 import { ArtistService } from 'src/app/services/artist/artist.service';
 import { WorkExperienceComponent } from 'src/app/peoples/pages/workExperience/work-experience/work-experience.component';
@@ -9,6 +9,7 @@ import { EducationComponent } from '../../education/education/education.componen
 import { MyIndustryComponent } from '../../myIndustry/my-industry/my-industry.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CardExperienceComponent } from '../../cardExperience/card-experience/card-experience.component';
+import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
   selector: 'app-profile',
@@ -28,10 +29,12 @@ public arrEducation :any = [];
 public arrAbout :any = [];
 public arrArtist : any =[];
 public hideAbout : boolean= false;
-private idArtist : string=JSON.parse(localStorage.getItem('token')!)
+private idArtist : string='';
 
 
-
+get dataUser(){
+  return this.loginService.dataUser;
+}
 // get artists(){
   
 //   return this.artistService.artists
@@ -67,6 +70,8 @@ private idArtist : string=JSON.parse(localStorage.getItem('token')!)
   constructor(
               private dialog : MatDialog,
               private artistService : ArtistService,
+              private loginService : LoginService,
+              private route : Router,
               private activatedRoute: ActivatedRoute,
               private fb : FormBuilder,
               private cardExperience : CardExperienceComponent,
@@ -78,13 +83,23 @@ private idArtist : string=JSON.parse(localStorage.getItem('token')!)
 
 
   ngOnInit(): void {
+   
+    // this.loginService.tokenValidator().subscribe(
+    //   res =>console.log(res)
+    // )
 
+    console.log(this.loginService.dataUser)
     // this.idArtist=JSON.parse(localStorage.getItem('token')!)
-  
-    this.getExperience();
-    this.getEducation();
-    this.getAbout();
-    this.getArtist( );
+    if(this.loginService.dataUser.statusAccount== false){
+      console.log('industrias')
+      this.route.navigateByUrl('../artistas/industrias')
+    }
+
+    // this.idArtist!=this.loginService.dataUser.id;
+    // this.getExperience();
+    // this.getEducation();
+    // this.getAbout();
+    // this.getArtist( );
 
 
 
@@ -202,10 +217,6 @@ hidAbout(){
     
   }
 
-  
- 
-
-  
   
   }
   

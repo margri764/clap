@@ -20,3 +20,11 @@ export interface Auth {
     email:   string;
     usuario: string;
 }
+
+export interface User {
+    id?: string;
+    name?: string;
+    email?: string;
+    statusAccount?:boolean
+}
+

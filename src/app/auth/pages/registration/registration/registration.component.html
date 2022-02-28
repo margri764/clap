@@ -19,7 +19,7 @@
             
                 <div fxFlex="100"  style="margin-top: 50px; padding:10px;">
                     <h1><b>Crea tu cuenta</b></h1>
-                    <h2>¿Ya tienes una cuenta? <a routerLink=""> <b>Inicia Sesión</b></a></h2>
+                    <h2>¿Ya tienes una cuenta? <a routerLink="../auth/login"> <b>Inicia Sesión</b></a></h2>
 
 <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form">     
 
@@ -27,8 +27,7 @@
     <div fxLayoutAlign="center center"> 
 
             <mat-form-field appearance="outline" fxFlex="100" >		
-            <!-- <mat-label fxLayoutAlign="center" style="font-size: 1vw;">Correo electronico</mat-label> -->
-            <input matInput type="text" required formControlName="email" style="font-size: 1.3vw;" placeholder="Correo electónico*">
+            <input matInput type="text" required formControlName="email"  placeholder="Correo electrónico*">
         </mat-form-field> 
         <!-- <mat-error  *ngIf ="validField ('web')">
             completa este dato
@@ -38,7 +37,6 @@
 
     <div fxLayoutAlign="center">
         <mat-form-field appearance="outline" fxFlex="100">		
-            <!-- <mat-label fxLayoutAlign="center" style="font-size: 1vw;">Contraseña</mat-label> -->
             <input matInput type="text" required formControlName="password" placeholder="Contraseña*" style="font-size: 1.3vw;">
         </mat-form-field> 
         <!-- <mat-error  *ngIf ="validField ('titular')">

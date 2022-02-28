@@ -27,6 +27,10 @@ img{
       font-size: 1.3em;
   }
 
+  input {
+          font-size: 1.3vw;
+  }
+
   .mat-raised-button{
 
     border-radius: 30px;
@@ -46,8 +50,6 @@ img{
 }
 
 
-
-
 hr{
     height: 1px;
     width: 100%;
@@ -59,4 +61,21 @@ hr{
     margin-bottom: 20px;;
     opacity: 0.5;
 }
+
+//input outline color
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #61a7e9;
+    opacity: 1!important;
+}
+
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: green!important;
+}
+
+::ng-deep .mat-input  {
+    background-color: green!important;
+  }
 

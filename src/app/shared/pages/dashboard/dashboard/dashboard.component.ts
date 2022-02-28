@@ -92,7 +92,7 @@ styleObject() {
   if(window.location.pathname.includes('home')){ 
     
     this.showMenuProfile=false;
-    if(localStorage.getItem('token')){
+    if(localStorage.getItem('token') != undefined){
       this.showProfileDashboard = true;
       this.showMainDashboard = true;
       this.showNoLogginDashboard=false;

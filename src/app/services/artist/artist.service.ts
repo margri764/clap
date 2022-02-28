@@ -46,10 +46,10 @@ export class ArtistService {
      ) {    }
   
 
-validateEmail (body:any) {
+// validateEmail (body:any) {
 
-  return this.http.post<any> (`${this.baseUrl}api/auth/login`,body)
-}
+//   return this.http.post<any> (`${this.baseUrl}api/auth/login`,body)
+// }
 
 insertAboutInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/about`, body)
@@ -99,7 +99,7 @@ getEducationFromDB (id: string){
         return { education : this.artEducation };
         }),
         )
-      };
+};
 
 insertSkillsInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/skills`, body)
@@ -133,7 +133,7 @@ getDataArtist (id: string) {
       )
 
 
-    }
+};
    
   
   }

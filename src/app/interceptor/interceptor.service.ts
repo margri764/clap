@@ -12,19 +12,16 @@ export class InterceptorService implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
    
-    const reqClone = req.clone({
-      // headers
-      //tambien puedo agregar params
-    });
-
-    return next.handle( reqClone ).pipe(
-      catchError( this.handleError )
+    return next.handle(req).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.warn(
+          'the interceptor has caught an error, process it here',
+          error
+        );
+        return throwError(() => error);
+      })
     );
   }
-    handleError( error: HttpErrorResponse ) {
-console.log(error);
-      return throwError(error);
-    }
-  
-  }
+}
+
   
