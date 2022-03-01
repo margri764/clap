@@ -13,8 +13,8 @@ const routes: Routes = [
   {
     path: 'artistas',
     loadChildren: () => import('./peoples/peoples.module').then( m => m.PeoplesModule ),
-    canActivate: [RevalidateTokenGuardGuard ],
-    canLoad: [RevalidateTokenGuardGuard ],
+    // canActivate: [RevalidateTokenGuardGuard ],
+    // canLoad: [RevalidateTokenGuardGuard ],
   },
   
   {

@@ -20,6 +20,7 @@ public print3D: boolean= false;
 public publicity: boolean= false;
 public portrait: boolean= false;
 public landscape: boolean= false;
+public arrSkill : any []=[];
 
 
 
@@ -113,6 +114,18 @@ public emptyWhiteFrame : boolean = true;
     }
    }
   
+   //se arma el arreglo para mandar al back
+  skillSelectedToBack(skill : string){
+
+    // if(skill == true){
+
+    this.arrSkill.push(skill)
+
+
+
+    // }
+  }
+
 
   selectSkill(skill : string){
 
@@ -164,30 +177,30 @@ public emptyWhiteFrame : boolean = true;
         (this.landscape==true)? this.landscapeSkill='Paisajismo' :this.landscapeSkill='';
       break;
     }
-
+    this.skillSelectedToBack(skill);
   }
 
 
   sendForm(){
-    const skills =[
+    // const skills =[
      
-            {
-              design: [this.uxSkill,this.editorialSkill,this.brandingSkill]
-            },
-            {
-              animation: [this.triDSkill, this.modelingSkill,this.print3DSkill]
-            },
-            {
-            photography: [this.publicitySkill, this.portraitSkill, this.landscapeSkill]
-            }
-        ]
+    //         {
+    //           design: [this.uxSkill,this.editorialSkill,this.brandingSkill]
+    //         },
+    //         {
+    //           animation: [this.triDSkill, this.modelingSkill,this.print3DSkill]
+    //         },
+    //         {
+    //         photography: [this.publicitySkill, this.portraitSkill, this.landscapeSkill]
+    //         }
+    //     ]
      
 
-    Object.assign(this.myForm.value,skills)
+    // Object.assign(this.myForm.value,skills)
     // alert(JSON.stringify(this.myForm.value))
-    console.log(this.myForm.value)
+    alert(JSON.stringify(this.arrSkill));
 
-    this.artistService.insertSkillsInDB(this.myForm.value).subscribe(
+    this.artistService.insertSkillsInDB(this.arrSkill).subscribe(
       (res)=>{ if(res) alert('skills agregados correctamente')}
     )
 

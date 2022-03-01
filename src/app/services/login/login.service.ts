@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
 export class LoginService {
 
   private baseUrl: string = environment.baseUrl;
-  private user!: User;
+  public user!: User;
 
   get dataUser() {
     return { ...this.user };
@@ -23,7 +23,22 @@ export class LoginService {
 
   //confirmacion desde el WELCOME una vez q recibio el email
   confirm (token : string) {
-    return this.http.get(`${this.baseUrl}api/auth/confirm/${token}` )
+    return this.http.get<AuthResponse>(`${this.baseUrl}api/auth/confirm/${token}` )
+    .pipe(
+      tap( resp => {
+        if ( resp.success ) {
+          this.user={
+            id: resp.id,
+            // email: resp.email,
+            // statusAccount: resp.statusAccount
+          }
+          console.log(this.user);
+        }
+      }),
+      map( resp => { resp.success;
+      return true
+      } )
+    )
   }
 
 //desde REGISTRO se chequea que no este registrado o en proceso de registro
@@ -39,14 +54,14 @@ export class LoginService {
     .pipe(
       tap( resp => {
         if ( resp.success ) {
-          console.log(resp);
-          localStorage.setItem('token', resp.token! ),
+        localStorage.setItem('token', resp.id! )
+        // localStorage.setItem('token', resp.token! ),
           this.user={
             id: resp.id,
             email: resp.email,
             statusAccount: resp.statusAccount
           }
-          console.log(this.user);
+          // console.log(this.user);
         }
       }),
       map( resp => {

@@ -17,7 +17,7 @@ img{
     // width: 3px;
 }
 
-.card{
+.cardHeader{
 
      border-radius: 20px;
      margin-bottom: 20px;
@@ -36,6 +36,21 @@ img{
 
 }
 
+.btnHeader{
+     background-color: #b0bcec;
+     height: 50px;
+
+     border-radius: 0px 0px 20px 23px;
+     -webkit-border-radius: 0px 0px 20px 10px;
+     -moz-border-radius: 0px 0px 20px 23px;
+    
+
+
+
+    //  box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    //  -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+    //  -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+     
 .cardSimilar{
 
     border-radius: 20px;
@@ -46,14 +61,6 @@ img{
     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
 }
 
-.btnHeader{
-     background-color: #b0bcec;
-     height: 50px;
-
-     box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
-     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
-     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
-     
 }
 
 .conditionalHeader{

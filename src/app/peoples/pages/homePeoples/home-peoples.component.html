@@ -2,6 +2,7 @@
 
 
 <!-- se muestran cuando se presiona persona -->
+<div fxLayout="row wrap" >
 <div fxLayout="row wrap"  fxLayoutAlign="space-evenly center" fxLayoutGap="2px" style="height: 180px;" *ngIf="showPeople" >
 
   <button mat-flat-button  style=" cursor:text; "> 
@@ -71,6 +72,30 @@
     <button mat-button  routerLink="../../eliminar"  >Eliminar</button>   -->
 
 
+<!-- Chips start -->
+        <!-- start container skills -->
+        <!-- <div fxFlex="100" fxLayout="row wrap" fxLayoutGap="2px" fxLayoutAlign="space-around space-between" style="margin-top: 30px; height: 100px;">
+
+        
+          <button mat-raised-button fxFlex="25" (click)="selectSkill('publicity')" [ngStyle]="publicity ? {'backgroundColor': 'black','color':'white'}  : {}" >Fotografia Publicitaria 
+              &nbsp;
+          <mat-icon style="color: white;" [ngStyle]="publicity ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+          
+  
+          <button mat-raised-button fxFlex="25" (click)="selectSkill('portrait')" [ngStyle]="portrait ? {'backgroundColor': 'black','color':'white'}  : {}" >Retratos 
+              &nbsp;
+          <mat-icon style="color: white;" [ngStyle]="portrait ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+  
+          <button mat-raised-button fxFlex="25" (click)="selectSkill('landscape')" [ngStyle]="landscape  ? {'backgroundColor': 'black','color':'white'}  : {}" >Paisajismo
+              &nbsp;
+          <mat-icon style="color: white;" [ngStyle]="landscape  ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+  
+          </div> -->
+          <!-- end container skills -->
+ 
+<!-- Chips end -->
+
+
 
     
    <div fxLayout="row wrap" fxLayout.xs="column"  fxLayoutAlign="space-between center" fxLayoutGap="10px"
@@ -123,3 +148,7 @@
  </div>
 </div>
 
+
+
+
+</div>

@@ -13,11 +13,10 @@ import { HomeBusinessComponent } from 'src/app/business/pages/homeBusiness/home-
 import { HomeEventsComponent } from 'src/app/events/pages/homeEvents/home-events/home-events.component';
 import { HomeCompetitionComponent } from 'src/app/competition/pages/homeCompetition/home-competition/home-competition.component';
 import { ThisReceiver } from '@angular/compiler';
+import { LoginService } from 'src/app/services/login/login.service';
 
 
-export interface Fruit {
-  name: string;
-}
+
 
 
 @Component({
@@ -27,9 +26,7 @@ export interface Fruit {
 })
 export class DashboardComponent implements OnInit, AfterViewChecked   {
   
-  addOnBlur = true;
-  readonly separatorKeysCodes = [ENTER, COMMA] as const;
-  fruits: Fruit[] = [{name: 'Lemon'}, {name: 'Lime'}, {name: 'Apple'}];
+
   
   public showPeople : boolean = false;
   public showMainDashboard : boolean = true;
@@ -42,34 +39,20 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
   user!: SocialUser;
   GoogleLoginProvider = GoogleLoginProvider;
 
-
-
-
-
-
-  add(event: MatChipInputEvent): void {
-    const value = (event.value || '').trim();
-
-    // Add our fruit
-    if (value) {
-      this.fruits.push({name: value});
-    }
-
-    // Clear the input value
-    event.chipInput!.clear();
+  get dataUser(){
+    return this.loginService.dataUser;
   }
 
-  remove(fruit: Fruit): void {
-    const index = this.fruits.indexOf(fruit);
 
-    if (index >= 0) {
-      this.fruits.splice(index, 1);
-    }
-  }
+
+
+
+
 
   constructor(
               public dialog: MatDialog,  
               private compJob : HomeJobsComponent,
+              private loginService : LoginService,
               // private compPeople : HomePeoplesComponent,
               private compBusiness : HomeBusinessComponent,
               // private compSchool : HomeSchoolComponent,
@@ -253,25 +236,6 @@ getCompetitions(){
 
 
   ngOnInit(): void {
-    this.authService.authState.subscribe(user => {
-      this.user = user;
-
-      
-    //   if(user!=null){
-    //     const {idToken} = user
-    //     this.employeeService.userLogin={
-    //       // name,
-    //       // email
-    //       idToken
-    //   }
- 
-
-    // } 
-    });
-
-    // if(localStorage.getItem('token')){
-    //   this.userLogin=true;
-    // }
 
 
   }

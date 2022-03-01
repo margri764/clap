@@ -8,3 +8,17 @@ export interface AuthResponse {
     token?: string
     statusAccount?:boolean
 }
+
+export interface ArtistResponse {
+    id?:         string;
+    userName?:       string;
+    alias?:      string;
+    titular?:    string;
+    dateBirth?:  Date;
+    country?:    string;
+    city?:      string;
+    email?:      string;
+    jobDate?:    Date;
+    website?:        string,
+    success?: boolean;  
+}

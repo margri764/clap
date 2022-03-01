@@ -1,7 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { ReadPropExpr } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of, tap } from 'rxjs';
-import { Artist, Auth } from 'src/app/interfaces/artist.interface';
+import { Artist, Auth, User } from 'src/app/interfaces/artist.interface';
+import { ArtistResponse } from 'src/app/interfaces/auth';
 import { environment } from 'src/environments/environment';
 
 
@@ -11,7 +13,7 @@ import { environment } from 'src/environments/environment';
 export class ArtistService {
 
   private baseUrl: string = environment.baseUrl; //ojo con el import xq puede ser prod!!
-  private artist!: Artist;
+  public artist!: Artist;
   public artExperience: any []=[];
   public artEducation: any []=[];
   public artAbout: any []=[];
@@ -20,7 +22,7 @@ export class ArtistService {
 
 
 
-  get artists(){
+  get getArtist(){
     return this.artist
   }
 
@@ -113,13 +115,38 @@ dataArtistToBackend( body : Artist ) {
   
 };
 
-// getters
-
+// data del artista para el perfil
 getDataArtist (id: string) {
 
-    return this.http.get <any>(`${this.baseUrl}api/artist/${id}`)
+    return this.http.get <ArtistResponse>(`${this.baseUrl}api/artist/${id}`)
+    .pipe(
+      tap( resp => {
+        if ( resp.success ) {
+          // localStorage.setItem('token', resp.token! ),
+          this.artist={
+            id: resp.id,
+            userName: resp.userName,
+            alias: resp.alias,
+            titular: resp.titular,
+            dateBirth: resp.dateBirth,
+            country: resp.country,
+            city: resp.city,
+            email: resp.email,
+            jobDate: resp.jobDate,
+            website: resp.website
+          }
+          
+          // console.log(this.artist, 'artista del artitsService');
+        }
+      }),
+      map( (resp) => { resp.success;
+         return true  } )
+    )
+        
  }
 
+
+ //trae todos los artistas para artistas/lista 
  getArtists () {
 
   return this.http.get <any>(`${this.baseUrl}api/artist`)

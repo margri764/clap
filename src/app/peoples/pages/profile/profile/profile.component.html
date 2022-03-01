@@ -17,7 +17,7 @@
 
 
 
-    <div  class="card"   >
+    <div  class="cardHeader"   >
   
       <div fxLayout="row wrap" style="height: 80%;" (mouseover)="btnPressedOut()">
 
@@ -36,24 +36,28 @@
 
             <div>
 
-    <div class="text" fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100" >
+    <div class="text" fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100" style="border: 4px red solid;" >
 
-            <div fxFlex="40" style="margin-top: 30px; padding: 20px;">
+            <div fxFlex="40" fxLayout="row wrap" style="margin-top: 30px; padding: 20px; border: 4px  green solid;">
 
-            <mat-label style="font-size: 2vw;"> <b>{{arrArtist.userName}}</b></mat-label> <br>
+            <mat-label style="font-size: 2vw;"> <b>{{artist.userName | uppercase}}</b></mat-label> <br>
             <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
-                <mat-label></mat-label> <br>
-                <mat-label>{{arrArtist.city}}-{{arrArtist.state}}</mat-label> <br>
-                <mat-label>2 años de Experiencia</mat-label> <br>
-                <mat-label>Ingles - Español</mat-label>
+                <mat-label>wdwdwdwd</mat-label> <br>
+                <!-- <mat-label>{{arrArtist.city}}-{{arrArtist.state}}</mat-label> <br> -->
+                <mat-label fxFlex="100"> {{seniorityDate}} años de Experiencia</mat-label> <br>
+                <mat-label fxFlex="100">Ingles - Español</mat-label>
+                <mat-label fxFlex="100">Ingles</mat-label>
+                <mat-label fxFlex="100">Ingles - Español</mat-label>
+                <mat-label fxFlex="100">Ingles - Español</mat-label>
+
 
                 
             </div>
             
     
-            <div fxFlex="60" fxLayout="row wrap" fxLayoutAlign="end space-between" style="margin-top: 30px;">
+            <div fxFlex="60" fxLayout="row wrap" fxLayoutAlign="end space-between" style="margin-top: 30px;border: 4px solid blue;">
             
-            <div fxFlex="100" fxLayoutAlign="end end" *ngIf="edit">
+            <div fxFlex="100" fxLayoutAlign="end end" *ngIf="edit" style="border: 4px solid brown;">
                 <button  mat-button  appearance="outline" type="submit" class="follow">Seguir</button>
 
                 <mat-icon class="bookmark" >bookmark_border</mat-icon>
@@ -61,7 +65,7 @@
             
             </div>
 
-            <div fxFlex="100" fxLayoutAlign="end end" >
+            <div fxFlex="100" fxLayoutAlign="end end" style="border: 4px solid ;" >
                 <button  mat-button  appearance="outline" type="submit" class="follow" (click)="openDialogIndustries()" >Editar</button>
 
                     <mat-icon class="material-icons-outlined" >share</mat-icon>
@@ -69,9 +73,9 @@
                 
                 </div>
 
-            <div style="margin-right: 1em"> <mat-label style="font-size: 1.8vw;"> 43  </mat-label>Seguidores</div>
+            <div fxLayoutAlign="end" style="border: 4px solid;" fxFlex="100"><mat-label style="font-size: 1.5vw;"> 43 Seguidores</mat-label></div>
 
-            <div  fxLayoutAlign="end center" style="padding: 10px;">
+            <div  fxLayoutAlign="end center" style="padding: 10px;border: 4px solid;">
                 
                 <div fxLayoutAlign="center center"  style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon"  >bookmark_border</mat-icon> </div>
                 <div fxLayoutAlign="center center" style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon" >more_vert</mat-icon> </div>
@@ -121,9 +125,9 @@
   
         <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
     
+            <button  mat-button  appearance="outline" >Diseño Editorial</button>
+            <button  mat-button  appearance="outline" >diseño UX/UI</button>
             <button  mat-button  appearance="outline" >Branding</button>
-            <button  mat-button  appearance="outline" >Editorial</button>
-            <button  mat-button  appearance="outline" >Empaques</button>
             <!-- <button  mat-button  appearance="outline" >Empaques</button> -->
             
         </div>
@@ -139,10 +143,9 @@
 
    <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
 
-       <button  mat-button  appearance="outline" >animacion</button>
-       <button  mat-button  appearance="outline" >animacion</button>
-       <button  mat-button  appearance="outline" >animacion</button>
-       <button  mat-button  appearance="outline" >animacion</button>
+       <button  mat-button  appearance="outline" >Animación 3D</button>
+       <button  mat-button  appearance="outline" >Modelado</button>
+       <button  mat-button  appearance="outline" >Impresión 3D</button>
        
    </div>
 
@@ -155,10 +158,9 @@
 
    <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
 
-       <button  mat-button  appearance="outline" >photo</button>
-       <button  mat-button  appearance="outline" >photo</button>
-       <button  mat-button  appearance="outline" >photo</button>
-       <button  mat-button  appearance="outline" >PHOTO</button>
+       <button  mat-button  appearance="outline" >Fotografía Publicitaria</button>
+       <button  mat-button  appearance="outline" >Retratos</button>
+       <button  mat-button  appearance="outline" >Paisajismo</button>
        
    </div>
 
@@ -539,8 +541,6 @@
 
                         <mat-label style="font-size: 1vw;"> <b> Jeison Mayorga</b></mat-label> <br>
                         <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
-                        <pre>{{dataUser|json}}</pre> 
-
                         <mat-label>{{heroe.nombre}}</mat-label> <br>
                         <mat-label>Bogota - Colombia</mat-label> <br>
                 

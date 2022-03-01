@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ArtistService } from 'src/app/services/artist/artist.service';
+import { LoginService } from 'src/app/services/login/login.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -20,6 +21,7 @@ string:any;
 clicked:boolean= false;
 hidden: boolean = false;
 showSpinner : boolean = false;
+private idArtist?: string= this.loginService.user.id;
   
 countries: string[] = [
   'Colombia',
@@ -43,6 +45,7 @@ myForm:FormGroup = this.fb.group({
   jobDate:     ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
   alias:       ['', [Validators.required] ],  //tendria q ir dentro del objeto profileData[]
   titular:     ['', [Validators.required]],
+  id:          [this.idArtist] 
   
 });
 
@@ -55,13 +58,18 @@ myForm:FormGroup = this.fb.group({
             private fb : FormBuilder,
             private artistService : ArtistService,
             private router: Router,
+            private loginService : LoginService,
             private dialogRef: MatDialogRef<CardUserComponent>
   )
    { }
 
+
+
+
   ngOnInit(): void {
     this.randomApi();
-    console.log(this.api)
+    console.log(this.loginService.user.id,'desde el card-user')
+    // this.idArtist!=this.loginService.user.id;
   }
 
   validField( field: string ) {
@@ -81,14 +89,13 @@ myForm:FormGroup = this.fb.group({
   
   }
 public api : any=[];
- randomApi(){
-   
+ 
+randomApi(){
 
   fetch('https://randomuser.me/api')
   .then(res =>res.json())
   .then(data =>{this.api.push(data.results ["0"])})
   }
-// console.log(data.results ["0"])
 
   // PUEDE SERVIR PARA LINK DESDE PERSONAS AL ARTISTA SELECCIONADO
 
@@ -103,8 +110,8 @@ public api : any=[];
   //    }
 
   sendFormArtist (){
-    // alert(JSON.stringify(this.myForm.value))
-
+    alert(JSON.stringify(this.myForm.value))
+     
     this.artistService.dataArtistToBackend(this.myForm.value).subscribe(
        () =>{
     

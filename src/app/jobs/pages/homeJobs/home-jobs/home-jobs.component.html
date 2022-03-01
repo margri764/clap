@@ -3,38 +3,48 @@
 <!-- se muestran cuando se presiona EMPLEOS -->
 <div fxLayout="row wrap"   fxLayoutAlign="space-between center"  fxLayoutGap="2px" style="height: 180px;margin-left: 20px; margin-right: 20px; " *ngIf="showJobs">
   
-  <button mat-flat-button  style=" cursor:text; "> 
+
+  <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxFlex="100"  >     
+
+  <!-- <button mat-flat-button  style=" cursor:text; "> 
     <mat-label style="font-size: 1.3vw;"> <b >FILTROS</b> </mat-label>       
-  </button>
-    
+  </button> -->
  
- <button mat-button [matMenuTriggerFor]="aboveMenu" appearance="outline" >  <b>Categoría</b>  <mat-icon >expand_more</mat-icon></button>
- <mat-menu #aboveMenu="matMenu" >
-   <button mat-menu-item>Item 1</button>
-   <button mat-menu-item>Item 2</button>
- </mat-menu>
+  <mat-form-field appearance="outline">
+
+    <mat-select placeholder="Categoría" formControlName="category">
+      <mat-option>NINGUNO</mat-option>
+      <mat-option *ngFor="let mod of modo" [value]="mod">{{mod}}</mat-option>
+    </mat-select>
+    <!-- <mat-hint align="end">Here's the dropdown arrow ^</mat-hint> -->
+  </mat-form-field>
  
+<!-- <mat-form-field>
  <button mat-button [matMenuTriggerFor]="modo">  <b>Modalidad</b>  <mat-icon >expand_more</mat-icon></button>
  <mat-menu #modo="matMenu" >
    <button mat-menu-item>Virtual</button>
    <button mat-menu-item>Presencial</button>
  </mat-menu>
- 
+</mat-form-field>
+
+<mat-form-field>
  <button mat-button [matMenuTriggerFor]="salary">  <b>Salario</b>  <mat-icon >expand_more</mat-icon></button>
  <mat-menu #salary="matMenu" >
    <button mat-menu-item>Número</button>
    <button mat-menu-item>Moneda</button>
  </mat-menu>
- 
+</mat-form-field>
 
+<mat-form-field>
  <button mat-button >  <b (click)="picker.open()">Fecha de Inicio</b>
    <input matInput [matDatepicker]="picker" style="width:0px; height: 0px;">
    <mat-datepicker-toggle matSuffix [for]="picker">
    </mat-datepicker-toggle>
    <mat-datepicker #picker></mat-datepicker>    
  </button>
-
+</mat-form-field>
  
+<mat-form-field>
  <button mat-button [matMenuTriggerFor]="expertise"> <b>Experiencia</b> <mat-icon >expand_more</mat-icon></button>
  <mat-menu #expertise="matMenu">
    <button mat-menu-item [matMenuTriggerFor]="min">Min</button>
@@ -49,22 +59,23 @@
    <button mat-menu-item>5 año</button>
    <button mat-menu-item>10 años</button>
  </mat-menu>
- 
+</mat-form-field> 
 
-
+<mat-form-field>
 
  <button mat-button [matMenuTriggerFor]="contract"> <b>Contrato</b> <mat-icon >expand_more</mat-icon></button>
  <mat-menu #contract="matMenu">
    <button mat-menu-item >Termino indefinido</button>
    <button mat-menu-item >Prestación de servicios</button>
    <button mat-menu-item >Obra labor</button>
-   </mat-menu>
+   </mat-menu></mat-form-field>
+ -->
 
-
-   <button mat-button  style=" background-color: black;color: whitesmoke; "> 
-     <mat-label> <b >Buscar</b> </mat-label>       
+   <button mat-button type="submit" style=" background-color: black;color: whitesmoke; "> 
+     <b >Buscar</b>       
    </button>
  
+   </form>
  <!-- <div class="example-button-row">
    <div class="example-flex-container">
      <div class="example-button-container">
