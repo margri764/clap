@@ -17,6 +17,8 @@ import { Artist } from 'src/app/interfaces/artist.interface';
 
 
 import { ArtistService } from 'src/app/services/artist/artist.service';
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -39,6 +41,21 @@ public hideAbout : boolean= false;
 public idArtist : string='';
 public seniorityDate! : number;
 public artist : Artist={};
+
+private arrLanguaje : any []=[];
+
+public spanish : boolean = false;
+public english : boolean = false;
+public italian : boolean = false;
+public illustrator : boolean = false;
+public sketchup : boolean = false;
+public gimp : boolean = false;
+public programming : boolean = false;
+public cloudComputing : boolean = false;
+public blockchain : boolean = false;
+
+
+
 
 
 
@@ -73,6 +90,10 @@ public artist : Artist={};
   
   });
 
+  myFormSkill:FormGroup = this.fb.group({});
+  myFormLanguaje:FormGroup = this.fb.group({});
+  myFormSoftware:FormGroup = this.fb.group({});
+
   constructor(
               private dialog : MatDialog,
               private artistService : ArtistService,
@@ -85,6 +106,7 @@ public artist : Artist={};
   ) {
   
   }
+
   ngOnChanges(changes: SimpleChanges): void {
     throw new Error('Method not implemented.');
   }
@@ -112,17 +134,79 @@ hidAbout(){
 
 }
 
-  validField( field: string ) {
+  // validField( field: string ) {
 
-    return this.myForm.controls[field].errors 
-            && this.myForm.controls[field].touched;
-  }
+  //   return this.myForm.controls[field].errors 
+  //           && this.myForm.controls[field].touched;
+  // }
   sendForm(){
-    alert(JSON.stringify(this.myForm.value))
+    // alert(JSON.stringify(this.myForm.value))
     // this.artistService.insertAboutInDB(this.myForm.value).subscribe(
     //   ()=>{ this.getAbout()}
     // )
   }
+
+  sendFormSkill(){
+    alert(JSON.stringify(this.myFormSkill.value))
+   }
+
+  sendFormSoftware(){
+    alert(JSON.stringify(this.myFormSoftware.value))
+  }
+
+  sendFormLanguaje(){
+    alert(JSON.stringify(this.myFormLanguaje.value))
+  }
+
+
+ //con este metodo cambio los colores de las 
+  selectSkill( value:string) {
+
+        
+    
+        // this.arrLanguaje.push(value)
+        // this.myForm2.addControl('test', this.fb.control(this.arrLanguaje, Validators.required));
+
+    switch(value){
+      
+      case 'español':
+        this.spanish=!this.spanish; 
+      break
+
+      case 'ingles':
+      this.english= !this.english;
+      break
+
+      case 'italiano':
+        this.italian=!this.italian;
+      break  
+
+      case 'Adobe Illustrator':
+        this.illustrator=!this.illustrator;  
+      break
+
+      case 'Google Sketchup':
+        this.sketchup =!this.sketchup;
+      break  
+
+      case 'Gimp':
+        this.gimp=!this.gimp;
+      break
+
+      case 'Programación':
+        this.programming=!this.programming;
+        break
+
+      case 'Cloud Computing':
+        this.cloudComputing=!this.cloudComputing;
+        break
+      
+      case 'Blockchain':
+        this.blockchain=!this.blockchain;
+        break
+    }
+  }
+
 
  getArtist(){
 

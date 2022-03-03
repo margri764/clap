@@ -19,9 +19,9 @@
     
     <button mat-button [matMenuTriggerFor]="skills">  <b>Habilidades</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #skills="matMenu" >
-      <button mat-menu-item (click)="arrToFilter('Diseño Editorial')">Diseño Editorial</button>
-      <button mat-menu-item (click)="arrToFilter('Diseño UX/UI')">Diseño UX/UI</button>
-      <button mat-menu-item (click)="arrToFilter('Branding')">Branding</button>
+      <button mat-menu-item (click)="arrToFilter('Programacion')">Programacion</button>
+      <button mat-menu-item (click)="arrToFilter('Cloud Computing')">Cloud Computing</button>
+      <button mat-menu-item (click)="arrToFilter('Blockchain')">Blockchain</button>
 
     </mat-menu>
     
@@ -35,8 +35,10 @@
     
     <button mat-button [matMenuTriggerFor]="languaje">  <b>Idiomas</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #languaje="matMenu" >
-      <button mat-menu-item (click)="arrToFilter('Ingles')">Inglés</button>
+      <button mat-menu-item (click)="arrToFilter('Ingles')">Ingles</button>
       <button mat-menu-item (click)="arrToFilter('Español')">Español</button>
+      <button mat-menu-item (click)="arrToFilter('Italiano')">Italiano</button>
+
     </mat-menu>
     
 
@@ -77,27 +79,48 @@
     
     </div>
 
-    <div fxLayout="row wrap" fxLayoutAlign="start" >
+<!-- start filter options -->
+    <div fxLayout="row wrap" fxLayoutAlign="start" fxLayoutGap="5px" >
 
-    <div fxFlex="20" style="margin-left: 20px;" >     
-      <button mat-raised-button *ngIf="camp" (click)="closeElementToFilter('campo'); dataToDelete(catCampo)"  >{{catCampo}} 
+    <div [ngStyle]="(camp) ? {'display': 'inline'} : {'display': 'none'}"  style="margin-left: 20px;" >     
+      <button mat-raised-button  (click)="closeElementToFilter('campo'); dataToDelete(catCampo)"  >{{catCampo}} 
         &nbsp;
-    <mat-icon  >close</mat-icon> </button>
+    <mat-icon [ngStyle]="camp ? {'display':'inline'}:{'display':'none'} " >close</mat-icon> </button>
     </div>
 
-    <div fxFlex="20">     
-      <button mat-raised-button *ngIf="hab" (click)="closeElementToFilter('habilidad');dataToDelete(catHabilidad)"  >{{catHabilidad}} 
+    <div [ngStyle]="(hab) ? {'display': 'inline'} : {'display': 'none'}">     
+      <button mat-raised-button  (click)="closeElementToFilter('habilidad'); dataToDelete(catHabilidad)"  >{{catHabilidad}} 
         &nbsp;
-    <mat-icon >close</mat-icon> </button>
-  </div>
+    <mat-icon [ngStyle]="hab ? {'display':'inline'}:{'display':'none'} "  >close</mat-icon> </button>
+    </div>
 
-  <div fxFlex="0">     
-    <button mat-raised-button *ngIf="soft" (click)="closeElementToFilter('software');dataToDelete(catSoftware)"  >{{catSoftware}} 
-      &nbsp;
-  <mat-icon >close</mat-icon> </button>
-  </div>
+    <div [ngStyle]="(soft) ? {'display': 'inline'} : {'display': 'none'}">     
+      <button mat-raised-button  (click)="closeElementToFilter('software'); dataToDelete(catSoftware)"  >{{catSoftware}} 
+        &nbsp;
+    <mat-icon [ngStyle]="soft ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+    </div>
+
+    <div [ngStyle]="(lang) ? {'display': 'inline'} : {'display': 'none'}">     
+      <button mat-raised-button *ngIf="lang" (click)="closeElementToFilter('languaje'); dataToDelete(catLanguaje)"  >{{catLanguaje}} 
+        &nbsp;
+    <mat-icon [ngStyle]="lang ? {'display':'inline'}:{'display':'none'}" >close</mat-icon> </button>
+    </div>
+
+    <div [ngStyle]="(exp) ? {'display': 'inline'} : {'display': 'none'}">     
+      <button mat-raised-button  (click)="closeElementToFilter('experience'); dataToDelete(catExperience)"  >{{catExperience}} 
+        &nbsp;
+    <mat-icon [ngStyle]="exp ? {'display':'inline'}:{'display':'none'}">close</mat-icon> </button>
+    </div>
+
+    <div [ngStyle]="(contr) ? {'display': 'inline'} : {'display': 'none'}" >     
+      <button mat-raised-button  (click)="closeElementToFilter('contract'); dataToDelete(catContract)"  >{{catContract}} 
+        &nbsp;
+    <mat-icon [ngStyle]="contr? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button>
+    </div>
+
 
     </div>
+<!-- end filter options -->
 
    
 

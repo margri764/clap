@@ -17,9 +17,9 @@
         <div fxLayoutAlign="center" fxFlex="33" > 
               <form class="example-form" fxFlex="60" >
                 <mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label> &nbsp; Buscar </mat-label>
+              
                   <!-- <span matPrefix>+1 &nbsp;</span> -->
-                  <input type="text" matInput>
+                  <input type="text" matInput placeholder="Buscar">
                   <mat-icon matSuffix>search</mat-icon>
                 </mat-form-field>
               </form>
@@ -101,8 +101,10 @@
 
     <button mat-button class="industrias" appearance="outline" *ngIf="!userLogin" [matMenuTriggerFor]="industries" style="margin-left: 2em;">  <b>Industrias</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #industries="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
+      <button mat-menu-item>Animacion</button>
+      <button mat-menu-item>Diseño</button>
+      <button mat-menu-item>Fotografia</button>
+    
     </mat-menu>
 </div>
 

@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
 
 
   myForm:FormGroup = this.fb.group({
-    email:    ['', [Validators.required] ],
-    password:   ['', [Validators.required] ],
+    email:    ['eber.retabaeza@gmail.com', [Validators.required] ],
+    password:   ['123123123', [Validators.required] ],
   });
 
   
@@ -61,10 +61,15 @@ export class LoginComponent implements OnInit {
     sendForm (){
       const { email, password } = this.myForm.value;
       this.loginService.login(email, password).subscribe( 
-         ( success) => { if(success){
-          //  console.log(res.success);
-           this.router.navigateByUrl('home') }
-         } ,(err)=>{ this.ErrorMsg(err.error.msg) }
+        (res)=> {if(res){
+          this.router.navigateByUrl('home') 
+        }
+      },(err)=>{ this.ErrorMsg(err.error.msg) }
+
+        //  ( success) => { if(success){
+        //   //  console.log(res.success);
+        //    this.router.navigateByUrl('home') }
+        //  } ,(err)=>{ this.ErrorMsg(err.error.msg) }
       ) 
     } 
      

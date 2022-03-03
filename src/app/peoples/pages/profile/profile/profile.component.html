@@ -36,9 +36,9 @@
 
             <div>
 
-    <div class="text" fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100" style="border: 4px red solid;" >
+    <div class="text" fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100"  >
 
-            <div fxFlex="40" fxLayout="row wrap" style="margin-top: 30px; padding: 20px; border: 4px  green solid;">
+            <div fxFlex="40" fxLayout="row wrap" style="margin-top: 30px; padding: 20px; ">
 
             <mat-label style="font-size: 2vw;"> <b>{{artist.userName | uppercase}}</b></mat-label> <br>
             <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
@@ -55,9 +55,9 @@
             </div>
             
     
-            <div fxFlex="60" fxLayout="row wrap" fxLayoutAlign="end space-between" style="margin-top: 30px;border: 4px solid blue;">
+            <div fxFlex="60" fxLayout="row wrap" fxLayoutAlign="end space-between" style="margin-top: 30px;">
             
-            <div fxFlex="100" fxLayoutAlign="end end" *ngIf="edit" style="border: 4px solid brown;">
+            <div fxFlex="100" fxLayoutAlign="end end" *ngIf="edit" style="">
                 <button  mat-button  appearance="outline" type="submit" class="follow">Seguir</button>
 
                 <mat-icon class="bookmark" >bookmark_border</mat-icon>
@@ -65,7 +65,7 @@
             
             </div>
 
-            <div fxFlex="100" fxLayoutAlign="end end" style="border: 4px solid ;" >
+            <div fxFlex="100" fxLayoutAlign="end end" style="" >
                 <button  mat-button  appearance="outline" type="submit" class="follow" (click)="openDialogIndustries()" >Editar</button>
 
                     <mat-icon class="material-icons-outlined" >share</mat-icon>
@@ -73,9 +73,9 @@
                 
                 </div>
 
-            <div fxLayoutAlign="end" style="border: 4px solid;" fxFlex="100"><mat-label style="font-size: 1.5vw;"> 43 Seguidores</mat-label></div>
+            <div fxLayoutAlign="end" style="" fxFlex="100"><mat-label style="font-size: 1.5vw;"> 43 Seguidores</mat-label></div>
 
-            <div  fxLayoutAlign="end center" style="padding: 10px;border: 4px solid;">
+            <div  fxLayoutAlign="end center" style="padding: 10px;">
                 
                 <div fxLayoutAlign="center center"  style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon"  >bookmark_border</mat-icon> </div>
                 <div fxLayoutAlign="center center" style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon" >more_vert</mat-icon> </div>
@@ -387,10 +387,12 @@
 
 
 <!-- start container skills -->
-    <div fxLayout="row wrap" fxLayout.xs="column" fxFlex="95"  fxLayoutAlign="space-between center" style="margin-top: 30px; margin-bottom: 30px;">
+    <div fxLayout="row wrap" fxLayout.xs="column" fxFlex="95"  fxLayoutAlign="space-between center" 
+    style="margin-top: 30px; margin-bottom: 30px; ">
 
 <!-- start-card-habilidades -->
-    <div  class="cardSkill"  fxFlex="32"   routerLink="../../artistas/perfil" style="cursor: pointer; padding: 20px;">
+    <div  class="cardSkill"  fxFlex="32"   routerLink="../../artistas/perfil" 
+    style="cursor: pointer; padding: 20px; height: 40vh;">
     
         <div   fxLayout="row wrap" fxLayoutAlign="center" fxFlex="100">
     
@@ -413,20 +415,31 @@
                 <mat-icon matSuffix>search</mat-icon>
                 </mat-form-field>
             </form>
-            
-            <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-            <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-            <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-            <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-            <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-    
+
+            <form [formGroup]="myFormSkill" fxLayout="row wrap" fxLayoutAlign="center" >
+
+                <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" [ngStyle]="programming ? {'backgroundColor': 'black','color':'white'}  : {}" (click)="selectSkill('Programación')" >   Programación
+                    &nbsp;  &nbsp;<mat-icon style="color: white;" [ngStyle]="programming ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> 
+             
+        
+                <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" [ngStyle]="cloudComputing ? {'backgroundColor': 'black','color':'white'}  : {}" (click)="selectSkill('Cloud Computing')"> Cloud Computing
+                    &nbsp;  &nbsp;<mat-icon style="color: white;" [ngStyle]="cloudComputing ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> 
+                
+                <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" [ngStyle]="blockchain ? {'backgroundColor': 'black','color':'white'}  : {}" (click)="selectSkill('Blockchain')"> Blockchain
+                    &nbsp;  &nbsp;<mat-icon style="color: white;" [ngStyle]="blockchain ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> 
+        
+                
+                <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" (click)="sendFormSkill()"> Enviar</button> 
+               </form>
+
+   
         </div>
      </div>
    </div>
 <!-- end-card-habilidades -->
     
 <!-- start-card-software -->
-<div  class="cardSkill"  fxFlex="32"   routerLink="../../artistas/perfil" style="cursor: pointer; padding: 20px;">
+<div  class="cardSkill"  fxFlex="32"   routerLink="../../artistas/perfil" style="cursor: pointer; padding: 20px; height: 40vh;">
     
     <div   fxLayout="row wrap" fxLayoutAlign="center" fxFlex="100">
 
@@ -450,11 +463,22 @@
             </mat-form-field>
         </form>
         
-        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+        <form [formGroup]="myFormSoftware" fxLayout="row wrap" fxLayoutAlign="center" >
+
+            <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" [ngStyle]="illustrator ? {'backgroundColor': 'black','color':'white'}  : {}" (click)="selectSkill('Adobe Illustrator')" >  Adobe Illustrator
+                &nbsp;  &nbsp;<mat-icon style="color: white;" [ngStyle]="illustrator ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> 
+         
+    
+            <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" [ngStyle]="sketchup ? {'backgroundColor': 'black','color':'white'}  : {}" (click)="selectSkill('Google Sketchup')"> Google Sketchup
+                &nbsp;  &nbsp;<mat-icon style="color: white;" [ngStyle]="sketchup ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> 
+            
+            <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" [ngStyle]="gimp ? {'backgroundColor': 'black','color':'white'}  : {}" (click)="selectSkill('Gimp')"> Gimp
+                &nbsp;  &nbsp;<mat-icon style="color: white;" [ngStyle]="gimp ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> 
+    
+            
+            <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" (click)="sendFormSoftware()"> Enviar</button> 
+           </form>
+
 
     </div>
  </div>
@@ -462,7 +486,7 @@
 <!-- end-card-software -->
 
 <!-- start-card-languajes -->
-<div  class="cardSkill"  fxFlex="32"   routerLink="../../artistas/perfil" style="cursor: pointer; padding: 20px;">
+<div  class="cardSkill"  fxFlex="32"   routerLink="../../artistas/perfil" style="cursor: pointer; padding: 20px; height: 40vh;">
     
     <div   fxLayout="row wrap" fxLayoutAlign="center" fxFlex="100">
 
@@ -485,12 +509,27 @@
             <mat-icon matSuffix>search</mat-icon>
             </mat-form-field>
         </form>
+<!-- 
+        <button mat-raised-button fxFlex="25" (click)="selectSkill('triD')" [ngStyle]="triD ? {'backgroundColor': 'black','color':'white'}  : {}" >Animacion 3D 
+            &nbsp;
+        <mat-icon style="color: white;" [ngStyle]="triD ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> -->
+    
+          
+        <form [formGroup]="myFormLanguaje" fxLayout="row wrap" fxLayoutAlign="center" >
+
+        <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" [ngStyle]="spanish ? {'backgroundColor': 'black','color':'white'}  : {}" (click)="selectSkill('español')" > Español
+            &nbsp;  &nbsp;<mat-icon style="color: white;" [ngStyle]="spanish ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> 
+     
+
+        <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" [ngStyle]="english ? {'backgroundColor': 'black','color':'white'}  : {}" (click)="selectSkill('ingles')"> Ingles
+            &nbsp;  &nbsp;<mat-icon style="color: white;" [ngStyle]="english ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> 
         
-        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
-        <button mat-stroked-button style="margin-top: 10px;"> Desarrollo Web</button> 
+        <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" [ngStyle]="italian ? {'backgroundColor': 'black','color':'white'}  : {}" (click)="selectSkill('italiano')"> Italiano
+            &nbsp;  &nbsp;<mat-icon style="color: white;" [ngStyle]="italian ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> 
+
+        
+        <button mat-stroked-button fxFlex="80" style="margin-top: 10px;" (click)="sendFormLanguaje()"> Enviar</button> 
+       </form>
 
     </div>
  </div>

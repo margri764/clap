@@ -24,14 +24,30 @@ export class HomePeoplesComponent implements OnInit {
   public catCampo : string='' ;
   public catHabilidad : string= '';
   public catSoftware : string= '';
-
+  public catLanguaje : string= '';
+  public catExperience : string= '';
+  public catContract : string= '';
 
   public camp:boolean = false;
   public hab:boolean = false;
   public soft:boolean = false;
+  public lang:boolean = false;
+  public exp:boolean = false;
+  public contr:boolean = false;
+  
+  
+  arrCampo:any =['tech1','tech2']
+  arrHabil : any =['Programacion','Cloud Computing','Blockchain'];
+  arrSoft : any =['Adobe Illustrator','Google Sketchup','Gimp'];
+  arrLanguaje : any =['Ingles','Español','Italiano'];
+  arrExperience : any =[''];
+  arrContract : any =['Termino indefinido','Prestacion de servicios','Obra labor'];
 
 
 
+  
+  
+  
 modo: string[] = ['Virtual','Presencial'];
 contract: string[] = ['Término indefenido','Prestación de servicios','Obra labor'];
 salary: string[] = ['$200','$500'];
@@ -61,10 +77,6 @@ myForm:FormGroup = this.fb.group({
 
 
 
-arrCampo:any =['tech1','tech2']
-arrHabil : any =['Diseño Editorial','Diseño UX/UI','Branding'];
-arrSoft : any =['Adobe Illustrator','Google Sketchup','Gimp'];
-
      
 arrToFilter(value : string  ){
 
@@ -74,25 +86,40 @@ arrToFilter(value : string  ){
   if(this.arrCampo.includes(value) ){
     
     this.camp=true;
-    
     this.catCampo = value;
 
  
  }else if(this.arrHabil.includes(value) ){
-
-  this.catHabilidad = value;
-  
+   
     this.hab=true;
+    this.catHabilidad = value;
+  
   } else if(this.arrSoft.includes(value) ){
-
+    
+    this.soft=true;
     this.catSoftware = value;
     
-      this.soft=true;
-    }
+  } else if(this.arrLanguaje.includes(value) ){
+  
+   this.lang=true;
+   this.catLanguaje = value;
+ 
+ } else if(this.arrExperience.includes(value) ){
+   
+   this.exp=true;
+   this.catExperience = value;
+   
+ }else if(this.arrContract.includes(value) ){
+   
+  this.contr=true;
+  this.catContract = value;
+}
 }
 
 
-//estos son los que se borran y no se deben mandar
+//estos son los que se borran y no se deben mandar, se dispara el metodo cuando se cancela una opcion y se filtra para q solo
+//se guarde una vez el que se borro (para despues compara el array de "cancelados" y el array con todas las opciones q se fueron seleccionando)
+//el metodo q hace esto es queryToBack()
 dataToDelete(value : string ){
 
 
@@ -107,8 +134,9 @@ dataToDelete(value : string ){
 
 }
 
+
+//muestra el boton asignado para c/ categoria (se supone q va a seleccionar una opcion de cada categoria)
 closeElementToFilter( value : string){
-  // console.log(value)
   switch(value){
     case 'campo':
         this.camp=false;
@@ -122,45 +150,37 @@ closeElementToFilter( value : string){
         this.soft=false;
     break
 
+    case 'languaje':
+      this.lang=false;
+    break
+
+    case 'experience':
+      this.exp=false;
+    break
+
+    case 'contract':
+      this.contr=false;
+    break
   }
 
 }
 //toma todos los datos repetidos del array y crea uno nuevo sin repetidos
-  skills(  ){
-   let data:any;
-   let data2:any;
-   
-  //  const arrayConcat = this.array.concat(this.arrDataToDelete) 
-   
-  //  console.log(arrayConcat);
-   
-  //  data = new Set ( this.array);
-
-   console.log('dataDelete: ',this.dataDelete);
+  queriesToBack( ){
    
    const uArray =  this.array.filter((valor, indice) => {
      return  this.array.indexOf(valor) === indice;
     }
     );
 
-    console.log('uArray: ',uArray);
 
-   const uniqueArray2 = uArray.filter( value => this.dataDelete.indexOf(value) == -1)
-
-   console.log('uniqueArray2: ',uniqueArray2);
-  
-   const array1=['a','b','c','d'];
-   const array2=['a','b'];
-
-    const uniqueArray = array1.filter(value => array2.indexOf(value) == -1)
-    console.log(uniqueArray)
+   const uniqueArray2 = uArray.filter( value => this.dataDelete.indexOf(value) == -1);
+  alert(JSON.stringify(uniqueArray2));
 
 }
 
   sendForm(){
 
-    this.skills();
-
+    this.queriesToBack();
 
   }
 

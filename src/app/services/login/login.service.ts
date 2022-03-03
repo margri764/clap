@@ -49,28 +49,45 @@ export class LoginService {
 
   //si ya estoy registrado me envia
   login (email : string, password:string) {
-    const body = {email,password};
-    return this.http.post<AuthResponse> (`${this.baseUrl}api/auth/login`,body)
+
+    const body= {email, password}
+
+    return this.http.post<any> (`${this.baseUrl}api/login`, body)
     .pipe(
-      tap( resp => {
-        if ( resp.success ) {
-        localStorage.setItem('token', resp.id! )
-        // localStorage.setItem('token', resp.token! ),
-          this.user={
-            id: resp.id,
-            email: resp.email,
-            statusAccount: resp.statusAccount
-          }
-          // console.log(this.user);
-        }
+      tap( resp=>{
+        localStorage.setItem('token', resp.token)
       }),
-      map( resp => {
-        resp.success;
-      return true
-      } )
+      map( resp=>{ return true})
     )
+    // .pipe(
+    //   tap( resp => {
+    //     if ( resp.success ) {
+    //     localStorage.setItem('token', resp.id! )
+    //     // localStorage.setItem('token', resp.token! ),
+    //       this.user={
+    //         id: resp.id,
+    //         email: resp.email,
+    //         statusAccount: resp.statusAccount
+    //       }
+    //       // console.log(this.user);
+    //     }
+    //   }),
+    //   map( resp => {
+    //     resp.success;
+    //   return true
+    //   } )
+    // )
 
   }
+
+
+  // token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjBhMDQ4YzE0MDYzNjdiN2ZkYzM1OCIsIm5hbWUiOiJFYmVyIFJldGEiLCJmaXJzdE5hbWUiOiJFYmVyIiwibGFzdE5hbWUiOiJSZXRhIiwicm9sZSI6InVzZXIiLCJlbWFpbCI6ImViZXIucmV0YWJhZXphQGdtYWlsLmNvbSIsImVtYWlsVmVyaWZpZWQiOmZhbHNlLCJpYXQiOjE2NDYzMjY4ODUsImV4cCI6MTY0NjM2Mjg4NX0.Za3uA3hKo4GHzhzlh_FgKKsheLg6BUASH2G0i_myQno"
+  // const headers = new Headers({
+
+  //   'Content-Type': 'application/json',
+  //   'Authorization': `Bearer ${token}`
+
+  // });
 
   tokenValidator(): Observable<boolean> {
 
