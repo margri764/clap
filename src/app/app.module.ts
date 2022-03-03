@@ -17,6 +17,7 @@ import { CompetitionModule } from './competition/competition.module';
 import { MessagesModule } from './messages/messages.module';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { InterceptorService } from './interceptor/interceptor.service';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -40,7 +41,12 @@ import { InterceptorService } from './interceptor/interceptor.service';
   ],
   providers: [{
     provide: MAT_DATE_LOCALE, useValue: 'en-GB'
-    },
+    
+  },
+  {
+    provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'never'}
+  },
+
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {

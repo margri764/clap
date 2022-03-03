@@ -16,7 +16,9 @@ img{
     display: block;
     // width: 3px;
 }
-
+::ng-deep .mat-select-element::placeholder{
+    color: red;
+}
 
 .card{
 

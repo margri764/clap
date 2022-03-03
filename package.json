@@ -25,6 +25,7 @@
     "angularx-social-login": "^4.0.1",
     "animate.css": "^4.1.1",
     "font-awesome": "^4.7.0",
+    "lodash": "^4.17.21",
     "material-design-icons": "^3.0.1",
     "moment": "^2.29.1",
     "rxjs": "~7.5.0",

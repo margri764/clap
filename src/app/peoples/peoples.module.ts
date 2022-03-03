@@ -18,6 +18,7 @@ import { WorkExperienceComponent } from './pages/workExperience/work-experience/
 import { EducationComponent } from './pages/education/education/education.component';
 import { MyIndustryComponent } from './pages/myIndustry/my-industry/my-industry.component';
 import { CardExperienceComponent } from './pages/cardExperience/card-experience/card-experience.component';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 
@@ -65,7 +66,8 @@ import { CardExperienceComponent } from './pages/cardExperience/card-experience/
 
 
   ],
-  providers: [HomePeoplesComponent, CardExperienceComponent],
+  providers: [HomePeoplesComponent, CardExperienceComponent,
+  ],
 
 })
 export class PeoplesModule { }

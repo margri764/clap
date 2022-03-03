@@ -2,36 +2,41 @@
 
 
 <!-- se muestran cuando se presiona persona -->
-<div fxLayout="row wrap" >
+
+
 <div fxLayout="row wrap"  fxLayoutAlign="space-evenly center" fxLayoutGap="2px" style="height: 180px;" *ngIf="showPeople" >
 
-  <button mat-flat-button  style=" cursor:text; "> 
+ <button mat-flat-button  style=" cursor:text; "> 
     <mat-label style="font-size: 1.3vw;"> <b >FILTROS</b> </mat-label>       
   </button>
     
     
     <button mat-button [matMenuTriggerFor]="field">  <b>Campos</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #field="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
+      <button mat-menu-item (click)="arrToFilter('tech1')">tech1</button>
+      <button mat-menu-item (click)="arrToFilter('tech2')">tech2</button>
     </mat-menu>
     
     <button mat-button [matMenuTriggerFor]="skills">  <b>Habilidades</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #skills="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
+      <button mat-menu-item (click)="arrToFilter('Diseño Editorial')">Diseño Editorial</button>
+      <button mat-menu-item (click)="arrToFilter('Diseño UX/UI')">Diseño UX/UI</button>
+      <button mat-menu-item (click)="arrToFilter('Branding')">Branding</button>
+
     </mat-menu>
     
     <button mat-button [matMenuTriggerFor]="software">  <b>Software</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #software="matMenu" >
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
+      <button mat-menu-item (click)="arrToFilter('Adobe Illustrator')">Adobe Illustrator </button>
+      <button mat-menu-item (click)="arrToFilter('Google Sketchup')">Google Sketchup</button>
+      <button mat-menu-item (click)="arrToFilter('Gimp')"> Gimp</button>
+
     </mat-menu>
     
     <button mat-button [matMenuTriggerFor]="languaje">  <b>Idiomas</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #languaje="matMenu" >
-      <button mat-menu-item>Inglés</button>
-      <button mat-menu-item>Español</button>
+      <button mat-menu-item (click)="arrToFilter('Ingles')">Inglés</button>
+      <button mat-menu-item (click)="arrToFilter('Español')">Español</button>
     </mat-menu>
     
 
@@ -41,28 +46,57 @@
    <button mat-menu-item [matMenuTriggerFor]="max">Max</button>
  </mat-menu>
  <mat-menu #min="matMenu">
-   <button mat-menu-item>1 año</button>
-   <button mat-menu-item>5 años</button>
+   <button mat-menu-item (click)="arrToFilter('min 1')">1 año</button>
+   <button mat-menu-item (click)="arrToFilter('min 5')">5 años</button>
  </mat-menu>
 
  <mat-menu #max="matMenu">
-   <button mat-menu-item>5 años</button>
-   <button mat-menu-item>10 años</button>
+   <button mat-menu-item (click)="arrToFilter('max 5')">5 años</button>
+   <button mat-menu-item (click)="arrToFilter('max 10')">10 años</button>
  </mat-menu>
  
     
     <button mat-button [matMenuTriggerFor]="contract">  <b>Contrato</b>  <mat-icon >expand_more</mat-icon></button>
     <mat-menu #contract="matMenu" >
-      <button mat-menu-item>Termino indefinido</button>
-      <button mat-menu-item>Prestación de servicios</button>
-      <button mat-menu-item>Obra labor</button>
+      <button mat-menu-item (click)="arrToFilter('Termino indefinido')">Termino indefinido</button>
+      <button mat-menu-item (click)="arrToFilter('Prestacion de servicios')">Prestación de servicios</button>
+      <button mat-menu-item (click)="arrToFilter('Obra labor')">Obra labor</button>
     </mat-menu>
     
-    <button mat-button  style=" background-color: black;color: whitesmoke; "> 
+    <button mat-button  style=" background-color: black;color: whitesmoke; " (click)="sendForm()"> 
       <mat-label> <b >Buscar</b> </mat-label>       
-    </button>
+    </button> 
+
+ 
+
+<!--      
+    <button mat-raised-button fxFlex="25" (click)="selectSkill('triD')" [ngStyle]="triD ? {'backgroundColor': 'black','color':'white'}  : {}" >Animacion 3D 
+      &nbsp;
+  <mat-icon style="color: white;" [ngStyle]="triD ? {'display':'inline'}:{'display':'none'} ">close</mat-icon> </button> -->
+ 
     
-    
+    </div>
+
+    <div fxLayout="row wrap" fxLayoutAlign="start" >
+
+    <div fxFlex="20" style="margin-left: 20px;" >     
+      <button mat-raised-button *ngIf="camp" (click)="closeElementToFilter('campo'); dataToDelete(catCampo)"  >{{catCampo}} 
+        &nbsp;
+    <mat-icon  >close</mat-icon> </button>
+    </div>
+
+    <div fxFlex="20">     
+      <button mat-raised-button *ngIf="hab" (click)="closeElementToFilter('habilidad');dataToDelete(catHabilidad)"  >{{catHabilidad}} 
+        &nbsp;
+    <mat-icon >close</mat-icon> </button>
+  </div>
+
+  <div fxFlex="0">     
+    <button mat-raised-button *ngIf="soft" (click)="closeElementToFilter('software');dataToDelete(catSoftware)"  >{{catSoftware}} 
+      &nbsp;
+  <mat-icon >close</mat-icon> </button>
+  </div>
+
     </div>
 
    
@@ -151,4 +185,3 @@
 
 
 
-</div>
