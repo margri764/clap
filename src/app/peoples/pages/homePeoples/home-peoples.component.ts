@@ -2,7 +2,7 @@ import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, OnInit }
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ArtistService } from 'src/app/services/artist/artist.service';
-import  {Cliente}  from '../../test'
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-home-peoples',
@@ -18,6 +18,7 @@ export class HomePeoplesComponent implements OnInit {
   
   private array : any []= [];
   private arrDataToDelete : any [] = [];
+  private dataDelete : any [] = [];
 
   
   public catCampo : string='' ;
@@ -89,7 +90,7 @@ arrToFilter(value : string  ){
       this.soft=true;
     }
 }
-private dataDelete : any ;
+
 
 //estos son los que se borran y no se deben mandar
 dataToDelete(value : string ){
@@ -97,8 +98,11 @@ dataToDelete(value : string ){
 
   this.arrDataToDelete.push(value);
 
- 
-  // this.dataDelete = new Set ( this.arrDataToDelete);
+  const uniqueArray =  this.arrDataToDelete.filter((valor, indice) => {
+      return  this.arrDataToDelete.indexOf(valor) === indice;
+    }
+  );
+ this.dataDelete = uniqueArray;
 
 
 }
@@ -123,52 +127,43 @@ closeElementToFilter( value : string){
 }
 //toma todos los datos repetidos del array y crea uno nuevo sin repetidos
   skills(  ){
-   let data;
+   let data:any;
+   let data2:any;
    
   //  const arrayConcat = this.array.concat(this.arrDataToDelete) 
    
   //  console.log(arrayConcat);
    
-   data = new Set ( this.array);
+  //  data = new Set ( this.array);
 
+   console.log('dataDelete: ',this.dataDelete);
+   
+   const uArray =  this.array.filter((valor, indice) => {
+     return  this.array.indexOf(valor) === indice;
+    }
+    );
 
-   var data3=[];
+    console.log('uArray: ',uArray);
 
-   _.each(data1,function(objeto) {
-     
-     var elemento_en_data2 = _.find(data2,objeto);
-     
-     if(elemento_en_data2===undefined) {
-       data3.push(objeto);
-     }
-     
-   });
+   const uniqueArray2 = uArray.filter( value => this.dataDelete.indexOf(value) == -1)
 
+   console.log('uniqueArray2: ',uniqueArray2);
+  
+   const array1=['a','b','c','d'];
+   const array2=['a','b'];
 
+    const uniqueArray = array1.filter(value => array2.indexOf(value) == -1)
+    console.log(uniqueArray)
 
-
-
-
-
-
-
-
-
-
-   console.log(data)
-   return data;
 }
 
   sendForm(){
-  console.log(this.arrDataToDelete,'arrDataToDelete');
-  // console.log(this.arrDataToDelete,'antes de borrar repetidos arrdattodelete'); //antes de borra repetidos
-  //   console.log(this.dataDelete);
+
     this.skills();
-    // console.log(this.array)
-    // alert(JSON.stringify(this.myForm.value))
-    // alert(JSON.stringify(this.array));
+
 
   }
+
 
 
   ngOnInit(): void {
