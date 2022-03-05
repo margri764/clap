@@ -1,7 +1,7 @@
 
 
 
-<div class="container" fxLayoutAlign="center">
+<div class="container" fxLayoutAlign="center"  *ngFor="let ap of api" >
 
 
 <!-- start profile -->
@@ -11,51 +11,44 @@
     <div class="whiteBorder" fxFlex="90" fxLayout="row wrap" fxLayoutAlign="center center"> 
       
     
-<!-- start header profile -->
-<div fxFlex="100" style="height: 300px;">
 
 
 
-
-    <div  class="cardHeader"   >
+<div  class="cardHeader" fxFlex="100" style=""  >
   
-      <div fxLayout="row wrap" style="height: 80%;" (mouseover)="btnPressedOut()">
+      <div fxLayout="row wrap" (mouseover)="btnPressedOut()">
 
   
 
-        <div fxLayout="row" fxLayoutAlign="center center" fxFlex="25" >
+ <div  fxFlex="25" fxLayoutAlign="center center"  style=" height: 180px; " >
 
-                 <div fxFlex="80"  >
-                     <img  src="assets/carwash3.png">   			
-                 </div>
-                 
-     
-         </div>
+              
+        <img mat-card-image [src]="[ap.picture.large]" fxFlex="60" style="border-radius: 100px; margin-left: 10px;">  			
+</div>
 
-          <div  fxLayout="column" fxFlex="75">
+  <div  fxLayout="row wrap" fxFlex="75" style=" height: 180px;">
 
-            <div>
+         
 
-    <div class="text" fxLayout="row wrap"  fxLayoutAlign="space-between space-between" fxFlex="100"  >
 
-            <div fxFlex="40" fxLayout="row wrap" style="margin-top: 30px; padding: 20px; ">
+        <div fxFlex="50" fxLayout="row wrap" style=" height: 180px;  ">
 
-            <mat-label style="font-size: 2vw;"> <b>{{artist.userName | uppercase}}</b></mat-label> <br>
-            <mat-label> <b>ANIMADOR 2D Y 3D</b> </mat-label> <br>
-                <mat-label>wdwdwdwd</mat-label> <br>
-                <!-- <mat-label>{{arrArtist.city}}-{{arrArtist.state}}</mat-label> <br> -->
-                <mat-label fxFlex="100"> {{seniorityDate}} años de Experiencia</mat-label> <br>
-                <mat-label fxFlex="100">Ingles - Español</mat-label>
-                <mat-label fxFlex="100">Ingles</mat-label>
-                <mat-label fxFlex="100">Ingles - Español</mat-label>
-                <mat-label fxFlex="100">Ingles - Español</mat-label>
-
+            <!-- <mat-label style="font-size: 2vw;"> <b>{{artist.userName | uppercase}}</b></mat-label> <br>
+             -->
+             <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="start center" style="margin: 1px;line-height: 20px;   letter-spacing: -1px;">
+                <h5 class="nameHeader" fxFlex="100">{{ap.name.first}} &nbsp;{{ap.name.last}}</h5> 
+                <p> DISEÑADOR DIGITAL </p> 
+                <p fxFlex="100" > {{seniorityDate}} años de Experiencia</p> 
+                <p fxFlex="100">Ingles - Español</p>
+                <p fxFlex="100">Bogota Colombia</p>
+                <p fxFlex="100">margri@gmail.com </p>
+            </div>    
 
                 
             </div>
             
     
-            <div fxFlex="60" fxLayout="row wrap" fxLayoutAlign="end space-between" style="margin-top: 30px;">
+            <div fxFlex="50" fxLayout="row wrap" fxLayoutAlign="end space-around" style="height: 180px; padding: 10px; padding-right: 30px;">
             
             <div fxFlex="100" fxLayoutAlign="end end" *ngIf="edit" style="">
                 <button  mat-button  appearance="outline" type="submit" class="follow">Seguir</button>
@@ -66,64 +59,61 @@
             </div>
 
             <div fxFlex="100" fxLayoutAlign="end end" style="" >
-                <button  mat-button  appearance="outline" type="submit" class="follow" (click)="openDialogIndustries()" >Editar</button>
+                <button  mat-button  appearance="outline" type="submit" class="edit" (click)="openDialogIndustries()" >Editar</button>
 
-                    <mat-icon class="material-icons-outlined" >share</mat-icon>
+                    <mat-icon class="material-icons-outlined share"  >share</mat-icon>
                 
                 
                 </div>
 
-            <div fxLayoutAlign="end" style="" fxFlex="100"><mat-label style="font-size: 1.5vw;"> 43 Seguidores</mat-label></div>
+        <div fxLayoutAlign="end" style="" fxFlex="100"><mat-label style="font-size: 1.3vw; color: rgb(173, 173, 173);"> 43 Seguidos</mat-label></div>
 
-            <div  fxLayoutAlign="end center" style="padding: 10px;">
-                
-                <div fxLayoutAlign="center center"  style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon"  >bookmark_border</mat-icon> </div>
-                <div fxLayoutAlign="center center" style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon" >more_vert</mat-icon> </div>
-                <div fxLayoutAlign="center center"  style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon"  >person</mat-icon> </div>
-                <div fxLayoutAlign="center center" style="width: 40px; border-radius: 7px;"> <mat-icon class="material-icon" >groups</mat-icon> </div>
+            <div  fxFlex.xs="10" fxLayoutAlign="end center" fxLayoutGap="8px" style="">
 
+                <div fxLayoutAlign="center center"  class="social"> <img src="assets/instagram.svg"> </div>
+                <div fxLayoutAlign="center center"  class="social"> <img src="assets/twitter.svg"> </div>
+                <div fxLayoutAlign="center center"  class="social"> <img src="assets/youtube.svg"> </div>
+                <div fxLayoutAlign="center center"  class="social"> <img src="assets/vimeo.svg"> </div>
+                <div fxLayoutAlign="center center"  class="social"> <img src="assets/pinterest.svg"> </div>
+                <div fxLayoutAlign="center center"  class="social"> <img src="assets/behance.svg"> </div>
             </div>
 
-            </div>           
-        </div>
+        </div>           
     
-    
-    
-      </div>
-      <!-- end brown -->
     
     </div>
   </div>
   
-  <div class="btnHeader" fxLayout="row wrap">
+  <div  class="btnHeader" fxLayout="row wrap" fxLayoutAlign="center center" >
    
-    <div fxFlex="30" fxFlexOffset="8" fxLayoutAlign="none end" >
-        <button  mat-button  appearance="outline" >Industrias</button>
+    <div fxFlex="20"  fxLayoutAlign="center"  >
+        <button  mat-button  appearance="outline" > Mis Industrias</button>
     </div>
-    <div fxFlex="62" fxLayoutAlign="start end" fxLayoutGap="10">
+    <div fxFlex="70" fxLayoutAlign="start end" fxLayoutGap="10" >
 
-        <button  mat-button  appearance="outline" (mouseover)="btnPressed('graphic')"     >Diseño Grafico</button>
-        <button  mat-button  appearance="outline"  (mouseover)="btnPressed('animation')"  >Animación</button>
-        <button  mat-button  appearance="outline" (mouseover)="btnPressed('photo')"   >  Fotografía</button>
+        <button  mat-button class="btnIndustries" appearance="outline" fxFlex="30" (mouseover)="btnPressed('graphic')">Diseño Grafico</button>
+        <button  mat-button class="btnIndustries" appearance="outline" fxFlex="30" (mouseover)="btnPressed('animation')"  >Animación</button>
+        <button  mat-button class="btnIndustries" appearance="outline" fxFlex="30" (mouseover)="btnPressed('photo')">  Fotografía</button>
     </div>
-
+    <div fxFlex="10" fxLayoutAlign="end" class="pencilEdit" >
+        <img src="assets/edit.svg" alt="" style="margin-right: 20px;">
+    </div>
 
   </div>
 
-    </div>
-    <!-- end card -->
+</div>
+<!-- end card -->
 
 
         
-</div>
-<!-- end header profile -->
+
       
 
 <!-- start conditional "Diseño grafico" -->
-<div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center"  *ngIf="graphic"  > 
+<div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="graphic"  > 
      <!-- (mouseleave)="btnPressedOut()" -->
   
-        <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
+        <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" style="margin-top: 20px;" >
     
             <button  mat-button  appearance="outline" >Diseño Editorial</button>
             <button  mat-button  appearance="outline" >diseño UX/UI</button>
@@ -141,7 +131,7 @@
 <div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center"
 *ngIf="animation" (mouseleave)="btnPressedOut()" > 
 
-   <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
+   <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" style="margin-top: 20px;">
 
        <button  mat-button  appearance="outline" >Animación 3D</button>
        <button  mat-button  appearance="outline" >Modelado</button>
@@ -156,7 +146,7 @@
 <!-- start conditional "animacion" -->
 <div class="conditionalHeader"  fxFlex="100" fxLayout="row wrap" fxLayoutAlign="center center" *ngIf="photo" (mouseleave)="btnPressedOut()"  > 
 
-   <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10" >
+   <div  fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10"style="margin-top: 20px;">
 
        <button  mat-button  appearance="outline" >Fotografía Publicitaria</button>
        <button  mat-button  appearance="outline" >Retratos</button>
@@ -564,7 +554,7 @@
         <div fxLayout="row" fxLayoutAlign="center center" fxFlex="25" >
 
                 <div fxFlex="100"  >
-                    <img  src="assets/carwash3.png" style="margin-left: 10px;">   			
+                    <img  src="assets/carwash3.png" class="imgCard" style="margin-left: 10px;">   			
                 </div>
                 
     

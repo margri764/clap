@@ -1,10 +1,11 @@
 
+
 .container{
     width: 100%;
 }
 
 
-img{
+.imgCard{
     width: 90%;
     height: 90%;
 }
@@ -16,17 +17,28 @@ img{
     display: block;
     // width: 3px;
 }
+.social:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
 
 .cardHeader{
 
      border-radius: 20px;
-     margin-bottom: 20px;
-     margin-top: 20px;
+    //  margin-bottom: 20px;
+     height: 240px;
+     position: relative;
+    //  margin-top: 20px;
      
-     border-top: 4px solid #b0bcec;
-     border-right: 1px solid #b0bcec;
+    //  border-top: 4px solid #b0bcec;
+
+     border-radius: 0px 0px 21px 21px;
+    -webkit-border-radius: 0px 0px 21px 21px;
+    -moz-border-radius: 0px 0px 21px 21px;
+
+     border-right: 3px solid #b0bcec;
      border-bottom: 4px solid #b0bcec;
-     border-left: 1px solid #b0bcec;
+     border-left: 3px solid #b0bcec;
 
      box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
@@ -38,18 +50,38 @@ img{
 
 .btnHeader{
      background-color: #b0bcec;
-     height: 50px;
+     height: 60px;
+    //  z-index: -1;
 
-     border-radius: 0px 0px 20px 23px;
-     -webkit-border-radius: 0px 0px 20px 10px;
-     -moz-border-radius: 0px 0px 20px 23px;
-    
-
-
+     border-radius: 0px 0px 21px 21px;
+     -webkit-border-radius: 0px 0px 21px 21px;
+     -moz-border-radius: 0px 0px 21px 21px;
 
     //  box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     //  -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     //  -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
+
+
+}
+
+.btnIndustries{
+    color: rgb(61, 61, 61);
+}
+
+p{
+   
+    margin: 0;
+    
+}
+
+.nameHeader{
+    font-size: 1.7vw;
+    font-family: 'ribeye';
+    // letter-spacing: 1px;
+
+
+}
+     
      
 .cardSimilar{
 
@@ -61,11 +93,11 @@ img{
     -moz-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
 }
 
-}
+
 
 .conditionalHeader{
     height: 100px;
-    margin-top: 10px;
+    margin-top: -20px;
 
     box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
     -webkit-box-shadow: 8px 7px 11px -5px rgba(0,0,0,0.75);
@@ -84,9 +116,9 @@ img{
 
 .whiteBorder{
      border: 4px solid rgb(240, 240, 240);
-     margin-top: 30px;
+    //  margin-top: 30px;
 
-     border-radius: 20px; 
+    //  border-radius: 20px; 
      box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
 
     -webkit-box-shadow: -19px 15px 14px -21px rgba(0,0,0,0.75);
@@ -199,18 +231,51 @@ img{
 
 .follow:hover{
     background-color: #b0bcec;
+    
     // border-radius: 15px;
     // line-height: 20px;
     //  margin-right: 1em;
 }
 
+.edit{
+    border-radius: 15px;
+    line-height: 25px;
+    margin-right: 1em;
+    border: 4px solid #b0bcec;
+    color:rgb(112, 112, 112);
+}
+
+.edit:hover{
+   background-color: #b0bcec;
+   color: white;
+}
+.pencilEdit{
+
+    color:rgb(112, 112, 112);
+}
+
+.pencilEdit:hover{
+   transform: scale(1.05);
+   cursor: pointer;
+}
+
+.share{
+    color: rgb(195, 195, 195);
+}
+
+.share:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+
+}
 
 
 .mat-button{
     border: 2px solid;
     border-radius: 20px;
-    border-color: rgb(211, 211, 211);
-    font-size: 1.2vw;
+    border-color: rgb(153, 153, 153);
+    font-size: 1vw;
+    line-height: 1.7vw;
 }
 
 
@@ -228,9 +293,9 @@ img{
 
 
 img{
-    width: 90%;
-    height: 90%;
-    border-radius: 13px;
+    // width: 90%;
+    // height: 90%;
+    // border-radius: 13px;
      
 }
 

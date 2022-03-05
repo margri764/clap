@@ -54,7 +54,7 @@ public programming : boolean = false;
 public cloudComputing : boolean = false;
 public blockchain : boolean = false;
 
-
+public api : any=[];
 
 
 
@@ -119,10 +119,16 @@ public blockchain : boolean = false;
 
 
   }
+  randomApi(){
 
+    fetch('https://randomuser.me/api')
+    .then(res =>res.json())
+    .then(data =>{this.api.push(data.results ["0"])})
+    }
 
 
   ngOnInit(): void {
+    this.randomApi();
     
     this.getArtist( );
 
