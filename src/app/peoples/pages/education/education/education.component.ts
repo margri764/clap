@@ -9,7 +9,7 @@ import { ArtistService } from 'src/app/services/artist/artist.service';
 })
 export class EducationComponent implements OnInit {
 
-  private idArtist : string= JSON.parse(localStorage.getItem('token')!)
+  // private idArtist : string= JSON.parse(localStorage.getItem('token')!)
 
   states: string[] = [
     'West Virginia',
@@ -46,7 +46,9 @@ export class EducationComponent implements OnInit {
     city:     ['', [Validators.required] ],
     endDate:     ['', [Validators.required] ],
     modo:     ['', [Validators.required] ],
-    id: [this.idArtist]
+    id: ['']
+    // id: [this.idArtist]
+
   });
     
               constructor(
@@ -65,9 +67,9 @@ export class EducationComponent implements OnInit {
     }
     sendForm(){
       alert(JSON.stringify(this.myForm.value));
-      this.artistService.insertEducationInDB(this.myForm.value).subscribe(
-        (res)=>{ if(res) alert('educacion agregada correctamente')}
-      )
+      // this.artistService.insertEducationInDB(this.myForm.value).subscribe(
+      //   (res)=>{ if(res) alert('educacion agregada correctamente')}
+      // )
   
   
     }

@@ -2,12 +2,26 @@
 
 
   .mat-dialog-container {
-    border-radius: 40px !important;
-    flex:1 1 auto;
+
+    padding: 0!important;
+    overflow-y: hidden;
+
+    border-radius: 0px 0px 25px 25px;
+    -webkit-border-radius: 0px 0px 25px 25px;
+    -moz-border-radius: 0px 0px 25px 25px;
+
+    border: 5px solid #b0bcec;
+
+    // border-top: 5px solid #b0bcec;
+    // border-right: 5px solid #b0bcec;
+    // border-bottom: 25px solid #b0bcec;
+    // border-left: 5px solid #b0bcec;
   }
 
   mat-form-field{
+      border-color: 5px solid #b0bcec;
       font-size: 0.8em;
+      line-height: 0.9vw;
   }
 
   mat-label{
@@ -29,7 +43,11 @@
     font-size: 1vw;
 
   }
-
+ 
+  .close{
+    margin-top: 10vw; 
+    padding-right: 5px;
+  }
 
   .example-spacer{
     flex:1 1 auto;
@@ -38,32 +56,34 @@
   .mat-raised-button{
 
       border-radius: 30px;
-      background-color:#61a7e9;
+      background-color:#b0bcec;
 
+  }
+
+  .title{
+    margin-top: 3vw;
   }
   
   .buttonGroup{
-       background-color: #61a7e9;
-       height: 5em; 
-       border-radius: 15px;
-       box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
-      -webkit-box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
-      -moz-box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
-      margin-bottom: 25px;
-
+       background-color: #b0bcec;
+       height: 20vw; 
+       
+       border-radius:25px;
+  
+      //  position: static;
   }
 
 //input outline color
 
   ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #61a7e9;
+    color: #b0bcec;
     opacity: 1!important;
 }
 
 
 //mat-input focused color
 ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-  color: #61a7e9!important;
+  color: #b0bcec!important;
 }
 
 
@@ -75,5 +95,92 @@
 
 // mat-label focused style
 ::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
-  color: #61a7e9!important;
+  color: #b0bcec!important;
+}
+
+
+@media only screen and (max-width: 479px) {
+    
+       
+       
+}  
+   
+ 
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+
+.close{
+  margin-top: 1vw; 
+}
+
+.buttonGroup{
+    height: 10vw; 
+    margin-bottom: 0;
+    border-radius: 3vw solid #b0bcec;
+    // margin-top:2vw;
+}
+
+  
+    
+
+  
+   
+}  
+   
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+   
+
+
+
+  
+
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1280px) {
+   
+.buttonGroup{
+  height: 6vw; 
+  margin-top:30px;
+}
+
+.title{
+  margin-top: 3vw;
+}
+
+.close{
+  margin-top: 2vw; 
+  padding-right: 5px;
+}
+
+  
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1281px) and (max-width: 1900px) {
+
+
+  .buttonGroup{
+    height: 5vw; 
+    margin-bottom:10px;
+}
+
+.close{
+  margin-top: 2vw; 
+  padding-right: 5px;
+}
+
+.title{
+  margin-top: 2vw;
+}
+
+
+ 
+   
 }

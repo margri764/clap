@@ -14,7 +14,7 @@ export class WorkExperienceComponent implements OnInit  {
   @ViewChild(CardExperienceComponent) viewChild!: CardExperienceComponent;
 
 public arrExperience :any = [];
-private idArtist: string=JSON.parse(localStorage.getItem('token')!);
+// private idArtist: string=JSON.parse(localStorage.getItem('token')!);
   
 type: string[] = [
   'contrato',
@@ -45,8 +45,8 @@ myForm:FormGroup = this.fb.group({
   country: ['',[Validators.required]],
   city:['',[Validators.required]],
   description:['',[Validators.required]],
-  id: [this.idArtist]
-
+  id: ['']
+  // id: [this.idArtist
 
 
 });
@@ -72,9 +72,10 @@ myForm:FormGroup = this.fb.group({
     return this.myForm.controls[field].errors 
             && this.myForm.controls[field].touched;
   }
+
   sendForm(){
     alert(JSON.stringify(this.myForm.value))
-    this.artistService.insertExperienceInDB(this.myForm.value).subscribe()
+    // this.artistService.insertExperienceInDB(this.myForm.value).subscribe()
   }
 
   // this.cardExperience.insertExperienceInTemplate(

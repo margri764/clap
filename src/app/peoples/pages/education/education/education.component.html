@@ -3,30 +3,30 @@
 
 
 
-<div class="mat-dialog-container" style="border: 5px solid #61a7e9;">
+<div class="mat-dialog-container" fxLayout="row wrap" fxLayoutAlign="center center" >
 
-    <div >
+  
+      <div fxFlex="90" fxLayout="row wrap" align="end" fxLayoutAlign="space-between center" class="close" >
   
  
+        <img src="assets/Flecha atras.svg" mat-dialog-close style="cursor: pointer;">
+        <img src="assets/cerrar.svg" mat-dialog-close style="cursor: pointer;">
+
+     </div>
   
-          <mat-dialog-actions align="end" fxLayoutAlign="space-between center">
-            <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">arrow_back</mat-icon>
-            <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">close</mat-icon>
-          </mat-dialog-actions>
-  </div>
-  <br>
-  <h1 mat-dialog-title style="color: #61a7e9;">Añade tu educación </h1>
-  <!-- <mat-label style="font-size: 0.9em;">*campos obligatorios</mat-label> -->
-  <br>
   
-  <mat-dialog-content>
+  <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="90" class="title" >
+    <h1 style="color: #b0bcec;">Añade tu educacion </h1>
+</div>
+  
+  <mat-dialog-content fxLayout="row" fxLayoutAlign="space-between" fxFlex="90" >
 
  
 
-  <div  fxLayout="row" fxLayoutAlign="center center" fxFlex="100">
+  <!-- <div  fxLayout="row" fxLayoutAlign="center center" fxFlex="90"> -->
   
   
-      <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxFlex="100"  >     
+      <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxFlex="100" >     
   
          
           
@@ -149,7 +149,7 @@
     
     
         </form>
-   </div>
+   <!-- </div> -->
   
   </mat-dialog-content>
   

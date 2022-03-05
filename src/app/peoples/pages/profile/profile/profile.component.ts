@@ -54,7 +54,10 @@ public programming : boolean = false;
 public cloudComputing : boolean = false;
 public blockchain : boolean = false;
 
+//solo para pruebas sin back
 public api : any=[];
+
+
 
 
 
@@ -123,14 +126,16 @@ public api : any=[];
 
     fetch('https://randomuser.me/api')
     .then(res =>res.json())
-    .then(data =>{this.api.push(data.results ["0"])})
+    .then(data =>{this.api.push(data.results['0']);
+              
+          })
     }
 
 
   ngOnInit(): void {
     this.randomApi();
     
-    this.getArtist( );
+    // this.getArtist( );
 
   }
 
@@ -263,18 +268,16 @@ hidAbout(){
 
   openDialogExperience() {
     const dialogRef = this.dialog.open(WorkExperienceComponent, {
-      width: '800px',
 
-      panelClass:"custom-modalbox-opacity",
+      panelClass:"custom-modalbox-experience",
       // scrollStrategy: new NoopScrollStrategy()
     });
   }
 
   openDialogEducation() {
     const dialogRef = this.dialog.open(EducationComponent, {
-      width: '800px',
 
-      panelClass:"custom-modalbox-opacity",
+      panelClass:"custom-modalbox-education",
       // scrollStrategy: new NoopScrollStrategy()
     });
   }
