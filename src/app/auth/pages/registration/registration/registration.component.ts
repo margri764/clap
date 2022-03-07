@@ -59,12 +59,17 @@ export class RegistrationComponent implements OnInit {
     sendForm (){
 
       const { email, password } = this.myForm.value;
-      this.loginService.validateEmail(email, password).subscribe( 
-         (res) => { if(res.success==true){
-           this.router.navigateByUrl('auth/confirmacion') }
-          //  else{ alert('o')}
-         } ,(err)=>{ this.ErrorMsg(err.error.msg) }
-        ) } 
+      this.loginService.signUp(email, password).subscribe( res => console.log(res)
+
+      )
+      }
+
+
+        //  (res) => { if(res.success==true){
+        //    this.router.navigateByUrl('auth/confirmacion') }
+        //   //  else{ alert('o')}
+        //  } ,(err)=>{ this.ErrorMsg(err.error.msg) }
+        // ) } 
             
           
       

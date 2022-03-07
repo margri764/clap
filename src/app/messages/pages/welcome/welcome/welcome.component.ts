@@ -28,10 +28,10 @@ export class WelcomeComponent implements OnInit {
     //   this.user = user;
     // });
 
-    this.activatedRoute.params
-    .subscribe( ({token}) => {
-      console.log(token);
-      this.loginService.confirm(token).subscribe()
+    this.activatedRoute.params.subscribe(
+       ({emailkey}) => {
+      console.log(emailkey);
+      this.loginService.validateEmail(emailkey).subscribe()
       
     })
 

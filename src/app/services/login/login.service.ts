@@ -19,7 +19,27 @@ export class LoginService {
   }
 
 
+
   constructor( private http : HttpClient) { }
+
+  //desde REGISTRO se chequea que no este registrado o en proceso de registro
+  signUp (email : string, password:string) {
+    const body = {email,password};
+    return this.http.post<any> (`${this.baseUrl}users/signup`,body)
+ 
+  }
+  //EBER   confirmacion desde el WELCOME una vez q recibio el email
+  validateEmail (emailkey : string) {
+    // emailkey="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjY4YTIzMTY2YjM2MDA1YWY0MDM0OSIsIm5hbWUiOiJVc2VyIFBydWViYSIsImZpcnN0TmFtZSI6IlVzZXIiLCJsYXN0TmFtZSI6IlBydWViYSIsInJvbGUiOiJ1c2VyIiwiZW1haWwiOiJtYXJncmk3NjRAZ21haWwuY29tIiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImlhdCI6MTY0NjY5MjkwMCwiZXhwIjoxNjQ2NzI4OTAwfQ.FRRIXZiTii5c1Gl1drdRrFkh3PRxCXDOfrnO06rq1Fg"
+
+    return this.http.put(`${this.baseUrl}api/validate-email`,emailkey )
+
+  }
+
+
+
+
+
 
   //confirmacion desde el WELCOME una vez q recibio el email
   confirm (token : string) {
@@ -42,7 +62,7 @@ export class LoginService {
   }
 
 //desde REGISTRO se chequea que no este registrado o en proceso de registro
-  validateEmail (email : string, password:string) {
+  validateEmailAAAAA (email : string, password:string) {
     const body = {email,password};
     return this.http.post<AuthResponse> (`${this.baseUrl}api/auth/validate`,body)
   }
