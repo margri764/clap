@@ -20,7 +20,7 @@ const routes: Routes = [
     },
 
     {
-      path: 'confirmar/emailkey/:token', component: WelcomeComponent
+      path: 'confirmar/emailKey/:token', component: WelcomeComponent
     },
   ]
 

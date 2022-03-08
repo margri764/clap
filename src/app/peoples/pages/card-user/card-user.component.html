@@ -28,7 +28,7 @@
 
         <mat-form-field appearance="outline" fxFlex="49"  > 
             <!-- <mat-label>Nombre y Apellido*</mat-label> -->
-            <input matInput type="text"  required formControlName="userName" placeholder="Nombre y Apellido*">
+            <input matInput type="text"  required formControlName="name" placeholder="Nombre y Apellido*">
         </mat-form-field> 
         <!-- <mat-error  *ngIf ="validField ('name')">
           completa este dato
@@ -47,7 +47,7 @@
         <div fxLayoutAlign="center">
         <mat-form-field appearance="outline" fxFlex="100">		
             <!-- <mat-label >Titular</mat-label> -->
-            <input matInput type="text" required formControlName="titular" placeholder="Titular*">
+            <input matInput type="text" required formControlName="bio" placeholder="Titular*">
         </mat-form-field> 
         <!-- <mat-error  *ngIf ="validField ('titular')">
             completa este dato
@@ -73,7 +73,7 @@
 
           <mat-form-field appearance="outline" fxFlex="24">
             <!-- <mat-label>Pais*</mat-label> -->
-            <mat-select required formControlName="city" placeholder="Pais*">
+            <mat-select required formControlName="countryId" placeholder="Pais*">
               <mat-option>None</mat-option>
               <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
             </mat-select>
@@ -81,7 +81,7 @@
 
           <mat-form-field appearance="outline" fxFlex="24">
             <!-- <mat-label>Ciudad*</mat-label> -->
-            <mat-select required formControlName="state" placeholder="Ciudad*">
+            <mat-select required formControlName="cityId" placeholder="Ciudad*">
               <mat-option>None</mat-option>
               <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
             </mat-select>
@@ -107,7 +107,7 @@
 
             <mat-form-field  appearance="outline" fxFlex="49" autocomplete="off">
               <!-- <mat-label>Inicio de actividad laboral</mat-label> -->
-              <input matInput [matDatepicker]="dp3" formControlName="jobDate" placeholder="Inicio de actividad laboral*">
+              <input matInput [matDatepicker]="dp3" formControlName="since" placeholder="Inicio de actividad laboral*">
               <mat-datepicker-toggle matSuffix [for]="dp3">
                 <!-- <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon> -->
               </mat-datepicker-toggle>

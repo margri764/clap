@@ -18,6 +18,7 @@ export class RegistrationComponent implements OnInit {
   myForm:FormGroup = this.fb.group({
     email:    ['', [Validators.required]],
     password: ['', [Validators.required] ],
+    username: ['marcelo']
 
   
   
@@ -58,8 +59,8 @@ export class RegistrationComponent implements OnInit {
   
     sendForm (){
 
-      const { email, password } = this.myForm.value;
-      this.loginService.signUp(email, password).subscribe( res => console.log(res)
+      // const { email, password } = this.myForm.value;
+      this.loginService.signUp(this.myForm.value).subscribe( res => console.log(res)
 
       )
       }

@@ -23,7 +23,9 @@ clicked:boolean= false;
 hidden: boolean = false;
 showSpinner : boolean = false;
 private modalHeight : string = '';
-// private idArtist?: string= this.loginService.user.id;
+private idArtist?: string= this.loginService.user.id;
+private emailArtist?: string= this.loginService.user.email;
+
   
 countries: string[] = [
   'Colombia',
@@ -37,17 +39,23 @@ cities: string[] = [
   'Lima',
 ];
 
+social={
+facebook:"www.facebook.com/test"
+}
+
 myForm:FormGroup = this.fb.group({
-  userName:    ['', [Validators.required] ],
-  city:        ['', [Validators.required] ],  
-  state:       ['', [Validators.required] ],  
+  name:    ['', [Validators.required] ],
+  // userName:    ['', [Validators.required] ],
+  bio:        ['', [Validators.required] ],  
+  countryId:  ['1', [Validators.required] ],  
+  cityId:      ['2'],
   website :    ['', [Validators.required]],
-  email:       ['', [Validators.required]],
+  email:       [this.emailArtist, [Validators.required]],
   dateBirth:   ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
-  jobDate:     ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
+  since:     ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
   alias:       ['', [Validators.required] ],  //tendria q ir dentro del objeto profileData[]
-  titular:     ['', [Validators.required]],
-  id:           ['']
+  social:     [this.social, [Validators.required]],
+  // id:           ['']
   // id:          [this.idArtist] 
   
 });
@@ -125,14 +133,15 @@ randomApi(){
 
   sendFormArtist (){
     alert(JSON.stringify(this.myForm.value))
-  }
+  
 
-    // this.artistService.dataArtistToBackend(this.myForm.value).subscribe(
-    //    () =>{
+    this.artistService.dataArtistToBackend(this.myForm.value , this.loginService.user.email!).subscribe(
+       () =>{
     
-    //         this.confirmArtist();
-    //         this.dialogRef.close([]);
-    //    })
+            this.confirmArtist();
+            this.dialogRef.close([]);
+       })
+      }  
     //   }
         //   },(err: HttpErrorResponse)=> {
         //     //error de desconexion con el back end

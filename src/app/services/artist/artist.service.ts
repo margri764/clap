@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ReadPropExpr } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of, tap } from 'rxjs';
@@ -107,13 +107,25 @@ insertSkillsInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/skills`, body)
 }  
 
-dataArtistToBackend( body : Artist ) {
-  return this.http.post<any>(`${this.baseUrl}api/artist/create-profile`, body)
+dataArtistToBackend( body : Artist, id : string) {
+
+
+  console.log(id)
+  console.log(body)
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
+
+  });
+  return this.http.post<any>(`${this.baseUrl}/api/users/${id}}/profiles`, body,{headers:headers})
    .pipe(
-       tap( res =>{ localStorage.setItem('token',JSON.stringify(res._id)) }),
-       map( res   => { this.artist= res}) )
-  
-};
+       tap( res => console.log(res)
+          // localStorage.setItem('token',JSON.stringify(res._id)) }),
+      //  map( res   => { this.artist= res}) )
+       ))
+    }
+
+
 
 // data del artista para el perfil
 getDataArtist (id: string) {

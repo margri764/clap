@@ -23,8 +23,11 @@ export interface Auth {
 
 export interface User {
     id?: string;
-    name?: string;
     email?: string;
-    statusAccount?:boolean
+    role? : string;
+    firstName?: string,
+    lastName?: string;
+    userName?: string;
+    emailVerified?: string,
 }
 

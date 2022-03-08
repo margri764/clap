@@ -1,6 +1,8 @@
+import { T } from '@angular/cdk/keycodes';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
+import { pipe } from 'rxjs';
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
@@ -27,12 +29,11 @@ export class WelcomeComponent implements OnInit {
   
 
     this.activatedRoute.params.subscribe(
-       ({emailkey}) => {
-      console.log(emailkey);
-      this.loginService.validateEmail(emailkey).subscribe()
+       ({token}) => {
+      console.log(token);
+      this.loginService.validateEmail(token).subscribe()
       
     })
-
 
 
 

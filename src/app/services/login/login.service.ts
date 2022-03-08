@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 // import { off } from 'process';
-import { catchError, map, Observable, tap } from 'rxjs';
+import { catchError, map, Observable, pipe, tap } from 'rxjs';
 import { User } from 'src/app/interfaces/artist.interface';
 import { AuthResponse } from 'src/app/interfaces/auth';
 import { environment } from 'src/environments/environment';
@@ -13,6 +13,7 @@ export class LoginService {
 
   private baseUrl: string = environment.baseUrl;
   public user!: User;
+  public userId : any;
 
   get dataUser() {
     return { ...this.user };
@@ -23,27 +24,59 @@ export class LoginService {
   constructor( private http : HttpClient) { }
 
   //desde REGISTRO se chequea que no este registrado o en proceso de registro
-  signUp (email : string, password:string) {
-    const body = {email,password};
-    return this.http.post<any> (`${this.baseUrl}users/signup`,body)
+  signUp (body : string) {
+    // const body = {email,password};
+    return this.http.post<any> (`${this.baseUrl}/users/signup`,body)
  
   }
+
   //EBER   confirmacion desde el WELCOME una vez q recibio el email
   validateEmail (emailkey : string) {
-  // const headers = new Headers({
+   const key= {
+      key: emailkey
+    } 
+  // const headers = new HttpHeaders()
 
-  //   'Content-Type': 'application/json',
-  //   'Authorization': `Bearer ${emailkey}`
+  //  headers.set('Content-Type', 'application/json');
+  //  headers.set('Access-Control-Allow-Origin', '*');
+    // 'Authorization': `Bearer ${emailkey}`
+    // , {headers: headers} 
 
-  // });
 
-    return this.http.put(`${this.baseUrl}api/validate-email`,emailkey )
+    return this.http.put<any>(`${this.baseUrl}/api/validate-email`,key)
+    .pipe(
+      tap( res =>
+        localStorage.setItem('token', res.token)
+
+        // console.log(res)
+      )
+    )
 
   }
 
 
+//EBER obtener id usuario
 
+whoAmI(){
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
 
+  });
+  return this.http.get<User>(`${this.baseUrl}/api/whoAmI`,{headers:headers})
+  .pipe(
+    tap( res => {
+  
+        this.user={
+          id: res.id,
+          email: res.email
+        }
+      }),
+      map( res => {return true})
+
+  )
+
+}
 
 
   //confirmacion desde el WELCOME una vez q recibio el email
@@ -126,7 +159,7 @@ export class LoginService {
               this.user={
                 id: resp.id,
                 email: resp.email,
-                statusAccount: resp.statusAccount
+                // statusAccount: resp.statusAccount
               }
   
               return true;
