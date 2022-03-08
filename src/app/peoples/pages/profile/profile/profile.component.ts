@@ -13,7 +13,7 @@ import { WorkExperienceComponent } from 'src/app/peoples/pages/workExperience/wo
 import { CardExperienceComponent } from '../../cardExperience/card-experience/card-experience.component';
 import { EducationComponent } from '../../education/education/education.component';
 import { LoginService } from 'src/app/services/login/login.service';
-import { Artist } from 'src/app/interfaces/artist.interface';
+import { Artist, User } from 'src/app/interfaces/artist.interface';
 
 
 import { ArtistService } from 'src/app/services/artist/artist.service';
@@ -39,9 +39,10 @@ public arrEducation :any = [];
 public arrAbout :any = [];
 public arrArtist : any =[];
 public hideAbout : boolean= false;
-public idArtist : string='';
 public seniorityDate! : number;
-public artist : Artist={};
+public artist : User={};
+public idArtist: string = '';
+private emailArtist: string= '';
 
 private arrLanguaje : any []=[];
 
@@ -59,6 +60,7 @@ private modalHeight : string = '';
 private modalHeightExperience : string = '';
 
 
+
 //solo para pruebas sin back
 public api : any=[];
 
@@ -67,9 +69,10 @@ public api : any=[];
 
 
 
-// get artist(){
-//   return this.artistService.getArtist;
-// }
+get artistLogin(){
+  this.idArtist!= this._loginservice.user;
+  return this._loginservice.user;
+}
 
   heroeHeader =[
     {
@@ -93,8 +96,8 @@ public api : any=[];
   ]
 
   myForm:FormGroup = this.fb.group({
-    about:    ['', [Validators.required] ],
-    id: [this.idArtist] 
+    // about:    ['', [Validators.required] ],
+    // id: [this.idArtist] 
   
   });
 
@@ -104,8 +107,8 @@ public api : any=[];
 
   constructor(
               private dialog : MatDialog,
-              private artistService : ArtistService,
-              private loginService : LoginService,
+              private _artistservice : ArtistService,
+              private _loginservice : LoginService,
               private route : Router,
               private activatedRoute: ActivatedRoute,
               private fb : FormBuilder,
@@ -121,7 +124,7 @@ public api : any=[];
 
   seniority(){
     const actualDay = moment();
-    const jobDate= moment(this.artistService.getArtist.jobDate);
+    const jobDate= moment(this._artistservice.getArtist.jobDate);
    
     this.seniorityDate=actualDay.diff(jobDate, 'years');
 
@@ -135,10 +138,28 @@ public api : any=[];
               
           })
     }
+    // whoAmI(){
+    //   this._loginservice.whoAmI().subscribe(
+    //     (res:any) => {
+    //           if(res){
+    //          this.artist=res
+    //          console.log(this.artist)
+    //     }
+    //   }
+    //   )
+    // }
 
+    getUserById(){
+      this._artistservice.getDataArtist(this.idArtist).subscribe(
+        res=> console.log(res)
+      )
+    }
 
   ngOnInit(): void {
     this.randomApi();
+    // this.whoAmI();
+    this.getUserById();
+    
 
     if(screen.width <= 1280) { this.modalHeightExperience='600px'};
     if(screen.width > 1300) { this.modalHeightExperience='600px'} ;
@@ -167,7 +188,7 @@ hidAbout(){
   // }
   sendForm(){
     // alert(JSON.stringify(this.myForm.value))
-    // this.artistService.insertAboutInDB(this.myForm.value).subscribe(
+    // this._artistservice.insertAboutInDB(this.myForm.value).subscribe(
     //   ()=>{ this.getAbout()}
     // )
   }
@@ -237,28 +258,28 @@ hidAbout(){
  getArtist(){
 
   
-  this.artistService.getDataArtist(this.loginService.user.id!).subscribe(
-    (success)=>{ if(success){
-                this.artist = this.artistService.artist;
-              this.seniority();
-            }
-    })
+  // this._artistservice.getDataArtist(this._loginservice.user.id!).subscribe(
+  //   (success)=>{ if(success){
+  //               this.artist = this._artistservice.artist;
+  //             this.seniority();
+  //           }
+  //   })
  } 
 
  getExperience(){
-  // this.artistService.getExperienceFromDB( this.idArtist).subscribe( 
+  // this._artistservice.getExperienceFromDB( this.idArtist).subscribe( 
   //   ( {experience} ) => { this.arrExperience= experience}
   // )        
   }
 
  getEducation(){
-  // this.artistService.getEducationFromDB( this.idArtist).subscribe(
+  // this._artistservice.getEducationFromDB( this.idArtist).subscribe(
   //   ( {education} ) => {this.arrEducation = education}
   // )        
   }
 
   getAbout(){
-    // this.artistService.getAboutFromDB( this.idArtist).subscribe( 
+    // this._artistservice.getAboutFromDB( this.idArtist).subscribe( 
     //   ( {about} ) => { this.arrAbout= about; }
     // )        
     }

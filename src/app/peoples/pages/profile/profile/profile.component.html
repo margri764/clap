@@ -36,12 +36,14 @@
             <!-- <mat-label style="font-size: 2vw;"> <b>{{artist.userName | uppercase}}</b></mat-label> <br>
              -->
              <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="start center" style="margin: 1px;line-height: 20px;   letter-spacing: -1px;">
-                <h5 class="nameHeader" fxFlex="100">{{ap.name.first}} &nbsp;{{ap.name.last}}</h5> 
-                <p> DISEÑADOR DIGITAL </p> 
+                <h5 class="nameHeader" fxFlex="100">{{artist.firstName}} &nbsp;{{artist.lastName}}</h5> 
+                <!-- <h5 class="nameHeader" fxFlex="100">{{ap.name.first}} &nbsp;{{ap.name.last}}</h5>  -->
+
+            
                 <p fxFlex="100" > {{seniorityDate}} años de Experiencia</p> 
                 <p fxFlex="100">Ingles - Español</p>
                 <p fxFlex="100">Bogota Colombia</p>
-                <p fxFlex="100">margri@gmail.com </p>
+                <p fxFlex="100">{{artist.email}} </p>
             </div>    
 
                 

@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
 
 
   myForm:FormGroup = this.fb.group({
-    email:    ['eber.retabaeza@gmail.com', [Validators.required] ],
-    password:   ['123123123', [Validators.required] ],
+    email:    ['', [Validators.required] ],
+    password:   ['', [Validators.required] ],
   });
 
   

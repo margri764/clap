@@ -128,32 +128,20 @@ dataArtistToBackend( body : Artist, id : string) {
 
 
 // data del artista para el perfil
-getDataArtist (id: string) {
+getDataArtist (user_id: string) {
 
-    return this.http.get <ArtistResponse>(`${this.baseUrl}api/artist/${id}`)
-    .pipe(
-      tap( resp => {
-        if ( resp.success ) {
-          // localStorage.setItem('token', resp.token! ),
-          this.artist={
-            id: resp.id,
-            userName: resp.userName,
-            alias: resp.alias,
-            titular: resp.titular,
-            dateBirth: resp.dateBirth,
-            country: resp.country,
-            city: resp.city,
-            email: resp.email,
-            jobDate: resp.jobDate,
-            website: resp.website
-          }
-          
-          // console.log(this.artist, 'artista del artitsService');
-        }
-      }),
-      map( (resp) => { resp.success;
-         return true  } )
-    )
+  console.log(user_id)
+  const headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
+
+  });
+  return this.http.get<any>(`${this.baseUrl}/api/users/${user_id}/profiles`, {headers:headers})
+   .pipe(
+      //  tap( res => console.log(res)
+          // localStorage.setItem('token',JSON.stringify(res._id)) }),
+       map( res   => { console.log(res); return res}) )
+       
         
  }
 

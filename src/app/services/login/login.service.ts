@@ -72,7 +72,7 @@ whoAmI(){
           email: res.email
         }
       }),
-      map( res => {return true})
+      map( res => {return res})
 
   )
 
@@ -110,7 +110,7 @@ whoAmI(){
 
     const body= {email, password}
 
-    return this.http.post<any> (`${this.baseUrl}api/login`, body)
+    return this.http.post<any> (`${this.baseUrl}/api/user/login`, body)
     .pipe(
       tap( resp=>{
         localStorage.setItem('token', resp.token)

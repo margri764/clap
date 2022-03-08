@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
   GoogleLoginProvider = GoogleLoginProvider;
 
   get dataUser(){
-    return this.loginService.dataUser;
+    return this._loginservice.dataUser;
   }
 
 
@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
   constructor(
               public dialog: MatDialog,  
               private compJob : HomeJobsComponent,
-              private loginService : LoginService,
+              private _loginservice : LoginService,
               // private compPeople : HomePeoplesComponent,
               private compBusiness : HomeBusinessComponent,
               // private compSchool : HomeSchoolComponent,
@@ -208,7 +208,9 @@ if(window.location.pathname.includes('gestion-aplicantes')){
 
 }  
 
-
+whoAmI(){
+  this._loginservice.whoAmI().subscribe( res => console.log(this._loginservice.user))
+}
 
 getPeople(){
   // (this.showJobs = true) ? this.showJobs = false : this.showJobs= true;

@@ -72,9 +72,9 @@
               <button mat-menu-item  routerLink="../../artistas/ajustes">
                 <mat-label>Ajustes</mat-label>
               </button>
-              <button mat-menu-item routerLink="../../artistas/perfil">   
+              <!-- <button mat-menu-item routerLink="../../artistas/perfil">   
                 <mat-label >Perfil</mat-label>
-              </button>
+              </button> -->
 
               <mat-divider></mat-divider>
 
@@ -99,7 +99,7 @@
 
   <div  fxFlex.gt-xs="17"  fxFlex.md="20"  fxFlex.lg="20" >
 
-    <button mat-raised-button class="perfil" appearance="outline" *ngIf="userLogin"  fxFlex="30" routerLink="../artistas/perfil" style="margin-left: 2em;">  <b>Perfil</b> </button>
+    <button mat-raised-button class="perfil" appearance="outline" *ngIf="userLogin"  fxFlex="30" routerLink="../artistas/perfil" (click)="whoAmI()" style="margin-left: 2em;">  <b>Perfil</b> </button>
 
 
     <button mat-button class="industrias" appearance="outline" *ngIf="!userLogin" [matMenuTriggerFor]="industries" style="margin-left: 2em;">  <b>Industrias</b>  <mat-icon >expand_more</mat-icon></button>
