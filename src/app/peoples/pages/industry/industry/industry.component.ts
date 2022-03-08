@@ -16,7 +16,7 @@ export class IndustryComponent implements OnInit {
 
   ngOnInit(): void {
 
-    (screen.width < 1280) ? this.modalHeight='600' : this.modalHeight='700' 
+    (screen.width < 1280) ? this.modalHeight='600px' : this.modalHeight='700px' 
   }
 
 

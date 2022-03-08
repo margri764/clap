@@ -1,15 +1,15 @@
 
 
 
-<div class="mat-dialog-container" style="border: 5px solid #61a7e9;" >
+<div class="mat-dialog-container" >
 
 
-<br>
-  <h1 mat-dialog-title style="">Mis Industrias </h1>
+
+  <h1  style="">Mis Industrias </h1>
 
 <mat-divider></mat-divider>  
 
-<mat-dialog-content fxLayout="row wrap" fxLayoutAlign="center">
+<div fxLayout="row wrap" fxLayoutAlign="center start " fXFlex="98" >
 
 
 <div fxFlex="100" style="margin-top: 20px;">
@@ -20,9 +20,9 @@
 
 
     <!-- start form -->
-  <div   fxLayout="row wrap" fxFlex="100" style="" >
+  <mat-dialog-content   fxLayout="row wrap" fxFlex="100" fxLayoutAlign="space-between space-between" style="height: 450px;">
   
-    <form  [formGroup]="myForm"  id="form" fxFlex="100" fxLayoutAlign="space-between center" fxLayout="row wrap" style="" >     
+    <form  [formGroup]="myForm"  fxFlex="100" fxLayoutAlign="space-between " fxLayout="row wrap"  >     
 
      
     <div class="whiteBorder" fxFlex="100">
@@ -196,25 +196,25 @@
         <!-- end card industry DESIGN select -->    
 
 
-     <div fxFlex="100" fxLayoutAlign="center">
-         
-        <button mat-button type="submit" fxFlex="70"(click)="sendForm()" 
-        style="background-color: black; color: white; border-radius: 30px;font-size: 1.2vw" matTooltip="en proceso..."> Guardar</button>
-
-     </div>
-
     </form>
 
+
   
-</div>
+  </mat-dialog-content>
 <!-- end form -->
 
 
 
 
+<div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="center" >
+         
+    <button mat-button type="submit" fxFlex="95"(click)="sendForm()" class="buttonGroup" > Guardar</button>
+
+ </div>
 
 
-</mat-dialog-content>
+
+</div>
   
   
   </div> 

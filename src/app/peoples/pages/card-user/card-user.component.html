@@ -12,10 +12,10 @@
 
 <div >
 
-<div  fxLayout="row" fxLayoutAlign="center center"  fxFlex="100">
+<div  fxLayout="row" fxLayoutAlign="center center"  fxFlex="100" >
 
 
-    <form  [formGroup]="myForm" (ngSubmit)="sendFormArtist()" id="form"   >     
+    <form  [formGroup]="myForm" (ngSubmit)="sendFormArtist()"   >     
 
        
         
@@ -23,7 +23,7 @@
             <img mat-card-image [src]="[a.picture.large]" >
         </div>
         
-        <div fxLayoutAlign="space-between center" >  
+        <div fxLayoutAlign="space-between center" style="margin-top: 20px;" >  
 
 
         <mat-form-field appearance="outline" fxFlex="49"  > 
@@ -133,7 +133,7 @@
      </div>  -->
     </div>
 
-    <div fxLayout="row wrap"fxLayoutAlign="center center">
+    <div fxLayout="row wrap"fxLayoutAlign="center center" style="margin-top: 20px;">
         <mat-label> <b>Redes Sociales</b></mat-label>
         <div fxLayoutAlign="center center"  class="social" fxFlex="8"> <img src="assets/instagram.svg"> </div>
         <div fxLayoutAlign="center center"  class="social" fxFlex="8"> <img src="assets/behance.svg"> </div>

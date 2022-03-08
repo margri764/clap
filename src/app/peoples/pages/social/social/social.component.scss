@@ -1,6 +1,6 @@
 .mat-dialog-container {
     padding: 0!important;
-    // overflow-y: hidden;
+    overflow-y: hidden;
     overflow-x: hidden;
   
   
@@ -13,7 +13,7 @@
     }
   
     .close{
-      height: 20px;
+      // height: 20px;
       // margin-top: 20px;
     }
 
@@ -22,11 +22,13 @@
     // }
 
 .social{
-  margin-bottom: 14px;
+  // margin-bottom: 14px;
 }
  
  
-  ::ng-deep .mat-form-field{ line-height:1px !important; }
+mat-form-field.mat-form-field{
+  font-size: 0.8vw;
+}
 
 img{
   opacity: 0.8;
@@ -34,9 +36,8 @@ img{
   
   
     input{
-      line-height: 1vw;
       
-      // font-size: 1vw;
+      font-size: 1vw;
   
     }
   
@@ -87,3 +88,9 @@ img{
   color: #b0bcec!important;
   }
   
+
+  @media  screen and (min-width: 1281px) and (max-width: 1919px){ 
+    mat-form-field.mat-form-field{
+      font-size: 0.5vw;
+  }
+}

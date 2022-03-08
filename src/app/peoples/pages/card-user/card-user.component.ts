@@ -22,6 +22,7 @@ string:any;
 clicked:boolean= false;
 hidden: boolean = false;
 showSpinner : boolean = false;
+private modalHeight : string = '';
 // private idArtist?: string= this.loginService.user.id;
   
 countries: string[] = [
@@ -71,16 +72,26 @@ myForm:FormGroup = this.fb.group({
 
   ngOnInit(): void {
     this.randomApi();
-    console.log(this.loginService.user.id,'desde el card-user')
+    console.log(this.loginService.user.id,'desde el card-user');
     // this.idArtist!=this.loginService.user.id;
+    
+    (screen.width <= 1280) ? this.modalHeight='1000px' : this.modalHeight='700px' 
   }
-
+  
   validField( field: string ) {
-
+    
     return this.myForm.controls[field].errors 
-            && this.myForm.controls[field].touched;
+    && this.myForm.controls[field].touched;
   }
-
+  
+  openDialogSocial() {
+    const dialogRef = this.dialog.open(SocialComponent, {
+      maxHeight: '90vh',
+      height: this.modalHeight,
+      panelClass:"custom-modalbox-social",
+      // scrollStrategy: new NoopScrollStrategy()
+    });
+  }
   confirmArtist(){
     Swal.fire({
       position: 'center',
@@ -115,6 +126,7 @@ randomApi(){
   sendFormArtist (){
     alert(JSON.stringify(this.myForm.value))
   }
+
     // this.artistService.dataArtistToBackend(this.myForm.value).subscribe(
     //    () =>{
     
@@ -148,13 +160,5 @@ randomApi(){
               
           // this.myForm.reset(); 
 
-          openDialogSocial() {
-            const dialogRef = this.dialog.open(SocialComponent, {
-              maxHeight: '90vh',
-              panelClass:"custom-modalbox-social",
-              // scrollStrategy: new NoopScrollStrategy()
-            });
-          }
-        
   
 }

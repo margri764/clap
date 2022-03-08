@@ -17,6 +17,7 @@ import { Artist } from 'src/app/interfaces/artist.interface';
 
 
 import { ArtistService } from 'src/app/services/artist/artist.service';
+import { CardUserComponent } from '../../card-user/card-user.component';
 
 
 @Component({
@@ -53,6 +54,10 @@ public gimp : boolean = false;
 public programming : boolean = false;
 public cloudComputing : boolean = false;
 public blockchain : boolean = false;
+
+private modalHeight : string = '';
+private modalHeightExperience : string = '';
+
 
 //solo para pruebas sin back
 public api : any=[];
@@ -134,6 +139,16 @@ public api : any=[];
 
   ngOnInit(): void {
     this.randomApi();
+
+    if(screen.width <= 1280) { this.modalHeightExperience='600px'};
+    if(screen.width > 1300) { this.modalHeightExperience='600px'} ;
+
+    // (screen.width <= 1280) ? this.modalHeightExperience='600px' : this.modalHeightExperience='800px';
+    // (screen.width >= 1281) ? this.modalHeightExperience='800px' : this.modalHeightExperience='800';
+
+
+    
+    // (screen.width < 1280) ? this.modalHeight='600px' : this.modalHeight='700px' 
     
     // this.getArtist( );
 
@@ -257,19 +272,33 @@ hidAbout(){
     });
   }
 
-  openDialogIndustries() {
-    const dialogRef = this.dialog.open(MyIndustryComponent, {
-      width: '800px',
 
-      panelClass:"custom-modalbox-opacity",
+
+  openDialogCardUser() {
+    const dialogRef = this.dialog.open(CardUserComponent, {
+      maxHeight:'90vh',
+      height:this.modalHeight,
+      panelClass:"custom-modalbox-user",
+    });
+  }
+
+
+
+  openDialogIndustries() {
+      this.dialog.open(MyIndustryComponent, {
+      maxHeight:'90vh',
+      height: this.modalHeight,
+      panelClass:"custom-modalbox-industries",
+              
       // scrollStrategy: new NoopScrollStrategy()
     });
   }
 
   openDialogExperience() {
-    const dialogRef = this.dialog.open(WorkExperienceComponent, {
-
+     this.dialog.open(WorkExperienceComponent, {
       panelClass:"custom-modalbox-experience",
+      maxHeight:'90vh',
+      height: this.modalHeightExperience
       // scrollStrategy: new NoopScrollStrategy()
     });
   }
@@ -304,7 +333,7 @@ hidAbout(){
       break;
   
     }
-}
+  }
    btnPressedOut(){
             this.graphic = false;
             this.photo = false;

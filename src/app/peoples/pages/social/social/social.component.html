@@ -2,22 +2,16 @@
 
 <div class="mat-dialog-container" fxLayout="row wrap" fxLayoutAlign="center center" >
 
-  
-    <div fxFlex="90" fxLayout="row wrap"  fxLayoutAlign="end center" class="close" >
+  <div fxLayout="row wrap" fxLayoutAlign="space-between start" fxFlex="90" style="margin-top: 10px; ">
 
-      <img src="assets/cerrar.svg" mat-dialog-close style="cursor: pointer; width: 20px;">
-
-   </div>
-
-
-<div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="90" class="title" >
-    <h1 fxFlex="100"><b>Redes Sociales...</b> </h1>
-    <h4 style="">Enlaza tus redes sociales </h4>
+   
+        <h1 ><b>Redes Sociales...</b> </h1>
+        <img src="assets/cerrar.svg" mat-dialog-close style="cursor: pointer; width: 20px; margin-top: 10px;">
+        <h4 style="">Enlaza tus redes sociales </h4>
 </div>
 
-
   
-  <mat-dialog-content fxLayout="row wrap" fxLayoutAlign="space-between" fxFlex="90" >
+  <div fxLayout="row wrap" fxLayoutAlign="space-between" fxFlex="90" style="margin-bottom: 10px;" >
 
  
     <form  [formGroup]="myForm" (ngSubmit)="sendForm()"  fxLayout="row wrap" fxLayoutAlign="center" fxFlex="100" >     
@@ -92,7 +86,7 @@
 
 
 
-</mat-dialog-content>
+</div>
 </div>
 
   

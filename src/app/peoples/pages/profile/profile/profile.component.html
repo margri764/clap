@@ -59,7 +59,7 @@
             </div>
 
             <div fxFlex="100" fxLayoutAlign="end end" style="" >
-                <button  mat-button  appearance="outline" type="submit" class="edit" (click)="openDialogIndustries()" >Editar</button>
+                <button  mat-button  appearance="outline" type="submit" class="edit" (click)="openDialogCardUser()" >Editar</button>
 
                     <mat-icon class="material-icons-outlined share"  >share</mat-icon>
                 
@@ -95,7 +95,7 @@
         <button  mat-button class="btnIndustries" appearance="outline" fxFlex="30" (mouseover)="btnPressed('animation')"  >Animación</button>
         <button  mat-button class="btnIndustries" appearance="outline" fxFlex="30" (mouseover)="btnPressed('photo')">  Fotografía</button>
     </div>
-    <div fxFlex="10" fxLayoutAlign="end" class="pencilEdit" >
+    <div fxFlex="10" fxLayoutAlign="end" class="pencilEdit" (click)="openDialogIndustries()" >
         <img src="assets/edit.svg" alt="" style="margin-right: 20px;">
     </div>
 

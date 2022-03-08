@@ -1,38 +1,29 @@
 
 
 
-<div class="mat-dialog-container" fxLayout="row wrap" fxLayoutAlign="center center"  >
+<div class="mat-dialog-container" fxLayout="row wrap" fxLayoutAlign="center "  >
 
-  <div fxFlex="90" fxLayout="row wrap" align="end" fxLayoutAlign="space-between center" class="close" >
-  
- 
-          <img src="assets/Flecha atras.svg" mat-dialog-close style="cursor: pointer;">
-          <img src="assets/cerrar.svg" mat-dialog-close style="cursor: pointer;">
-
-          <!-- <mat-dialog-actions align="end" fxLayoutAlign="space-between center"> -->
-            <!-- <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">arrow_back</mat-icon> -->
-            <!-- <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">close</mat-icon> -->
-          <!-- </mat-dialog-actions> -->
+  <div fxFlex="90" fxLayout="row wrap" align="end" fxLayoutAlign="space-between center" style="margin-top: 20px;" >
+      <img src="assets/Flecha atras.svg" mat-dialog-close style="cursor: pointer; width: 20px;">
+      <img src="assets/cerrar.svg" mat-dialog-close style="cursor: pointer; width: 20px;">
   </div>
 
 
 
-  <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="90" class="title" >
-    <h1 style="color: #61a7e9;">Añade tu experiencia </h1>
-  <!-- <h1 mat-dialog-title style="color: #61a7e9;">Añade tu experiencia </h1> -->
-</div>
-  <br>
+ 
+    <h1 fxLayout="row wrap" fxLayoutAlign="start start" fxFlex="90"   style="border: 2px solid;" style="color: #61a7e9;">Añade tu experiencia </h1>
+
+
   
   <!-- <mat-dialog-content> -->
  
 
-  <div  fxLayout="row" fxLayoutAlign="center center" fxFlex="90" style="margin-top: 30px;" >
+  <div  fxLayout="row" fxLayoutAlign="center start" fxFlex="90"  >
   
   
-      <form  [formGroup]="myForm" (ngSubmit)="sendForm()" id="form" fxFlex="100"  >     
+      <form  [formGroup]="myForm" (ngSubmit)="sendForm()" fxFlex="100"  >     
   
-         
-          
+       
       
           
         <div fxLayoutAlign="space-between center">  
@@ -77,7 +68,6 @@
                 </mat-error>  -->
 
           <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
-            <mat-label>Fecha de inicio</mat-label>
             <input matInput [matDatepicker]="picker" required formControlName="startDate" placeholder="Fecha de inicio*">
             <mat-datepicker-toggle matSuffix [for]="picker">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -92,16 +82,13 @@
         <div fxLayoutAlign="space-between center" >
 
           <mat-form-field appearance="outline" fxFlex="49" > 
-              
-            <!-- <mat-label>Link portafolio de este empleo</mat-label> -->
-                    <input matInput placeholder="Link portafolio de este empleo*" required formControlName="linkPortfolio">
+                <input matInput placeholder="Link portafolio de este empleo*" required formControlName="linkPortfolio">
             </mat-form-field>
         
 
 
 
           <mat-form-field class="example-full-width" appearance="outline" fxFlex="49">
-            <!-- <mat-label>Fecha de finalización</mat-label> -->
             <input matInput [matDatepicker]="dp3" placeholder="Fecha de finalización*" required formControlName="endDate">
             <mat-datepicker-toggle matSuffix [for]="dp3">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -146,9 +133,8 @@
         <div fxLayoutAlign="center"  >
 
         <mat-form-field appearance="outline" fxFlex="100" >
-            <!-- <mat-label>Descripcion del trabajo</mat-label> -->
             <textarea matInput 
-            rows="7" 
+            rows="6" 
              formControlName="comment" 
             (change)="onCommentChange()" 
             required formControlName="description"
@@ -166,12 +152,7 @@
     
         </form>
    </div>
-<!-- 
-   <div fxFlex="100" fxLayout="row" class="buttonGroup" fxLayoutAlign="center center" fxLayoutGap="20px"  >
-      <button  fxFlex="30" mat-raised-button  appearance="outline" type="submit"><mat-label >Guardar</mat-label></button>
-      <button  fxFlex="30" mat-raised-button  appearance="outline" type="submit" ><mat-label >Previsualizar</mat-label></button>
-      <button  fxFlex="30" mat-raised-button  appearance="outline" type="submit" style="background-color: black;;"><mat-label style="color: blanchedalmond;">Publicar</mat-label></button>
-  </div>  -->
+
 
   
   

@@ -2,27 +2,20 @@
 
 
   .mat-dialog-container {
-
     padding: 0!important;
-    overflow-y: hidden;
+    border: 5px solid #b0bcec;
 
     border-radius: 0px 0px 25px 25px;
     -webkit-border-radius: 0px 0px 25px 25px;
     -moz-border-radius: 0px 0px 25px 25px;
-
-    border: 5px solid #b0bcec;
-
-    // border-top: 5px solid #b0bcec;
-    // border-right: 5px solid #b0bcec;
-    // border-bottom: 25px solid #b0bcec;
-    // border-left: 5px solid #b0bcec;
   }
 
-  mat-form-field{
-      border-color: 5px solid #b0bcec;
-      font-size: 0.8em;
-      line-height: 0.9vw;
+  mat-form-field.mat-form-field{
+    font-size: 0.7vw;
+    border-color: 5px solid #b0bcec;
+
   }
+
 
   mat-label{
       font-size: 1vw;
@@ -44,11 +37,6 @@
 
   }
  
-  .close{
-    margin-top: 10vw; 
-    padding-right: 5px;
-  }
-
   .example-spacer{
     flex:1 1 auto;
   }
@@ -57,20 +45,16 @@
 
       border-radius: 30px;
       background-color:#b0bcec;
-
   }
 
-  .title{
-    margin-top: 3vw;
-  }
-  
   .buttonGroup{
        background-color: #b0bcec;
-       height: 20vw; 
-       
-       border-radius:25px;
-  
-      //  position: static;
+       margin-bottom: 15px;
+       border-radius:10px;
+
+       box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
+      -webkit-box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
+      -moz-box-shadow: 10px 10px 29px -6px rgba(87,87,87,0.83);
   }
 
 //input outline color
@@ -149,14 +133,7 @@
   margin-top:30px;
 }
 
-.title{
-  margin-top: 3vw;
-}
 
-.close{
-  margin-top: 2vw; 
-  padding-right: 5px;
-}
 
   
 
@@ -171,13 +148,17 @@
     margin-bottom:10px;
 }
 
-.close{
-  margin-top: 2vw; 
-  padding-right: 5px;
+mat-form-field.mat-form-field{
+  font-size: 0.5vw;
+
 }
 
-.title{
-  margin-top: 2vw;
+mat-select{
+  font-size: 0.8vw;
+}
+
+input{
+  font-size: 0.8vw;
 }
 
 
