@@ -1,11 +1,12 @@
 import { HttpErrorResponse} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ArtistService } from 'src/app/services/artist/artist.service';
 import { LoginService } from 'src/app/services/login/login.service';
 import Swal from 'sweetalert2';
+import { SocialComponent } from '../social/social/social.component';
 
 @Component({
   selector: 'app-card-user',
@@ -21,7 +22,7 @@ string:any;
 clicked:boolean= false;
 hidden: boolean = false;
 showSpinner : boolean = false;
-private idArtist?: string= this.loginService.user.id;
+// private idArtist?: string= this.loginService.user.id;
   
 countries: string[] = [
   'Colombia',
@@ -45,7 +46,8 @@ myForm:FormGroup = this.fb.group({
   jobDate:     ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
   alias:       ['', [Validators.required] ],  //tendria q ir dentro del objeto profileData[]
   titular:     ['', [Validators.required]],
-  id:          [this.idArtist] 
+  id:           ['']
+  // id:          [this.idArtist] 
   
 });
 
@@ -59,7 +61,8 @@ myForm:FormGroup = this.fb.group({
             private artistService : ArtistService,
             private router: Router,
             private loginService : LoginService,
-            private dialogRef: MatDialogRef<CardUserComponent>
+            private dialogRef: MatDialogRef<CardUserComponent>,
+            private dialog : MatDialog
   )
    { }
 
@@ -111,14 +114,14 @@ randomApi(){
 
   sendFormArtist (){
     alert(JSON.stringify(this.myForm.value))
-     
-    this.artistService.dataArtistToBackend(this.myForm.value).subscribe(
-       () =>{
+  }
+    // this.artistService.dataArtistToBackend(this.myForm.value).subscribe(
+    //    () =>{
     
-            this.confirmArtist();
-            this.dialogRef.close([]);
-       })
-      }
+    //         this.confirmArtist();
+    //         this.dialogRef.close([]);
+    //    })
+    //   }
         //   },(err: HttpErrorResponse)=> {
         //     //error de desconexion con el back end
         //     if(err.status === 0){
@@ -145,6 +148,13 @@ randomApi(){
               
           // this.myForm.reset(); 
 
-
+          openDialogSocial() {
+            const dialogRef = this.dialog.open(SocialComponent, {
+              maxHeight: '90vh',
+              panelClass:"custom-modalbox-social",
+              // scrollStrategy: new NoopScrollStrategy()
+            });
+          }
+        
   
 }

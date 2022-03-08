@@ -19,6 +19,7 @@ import { EducationComponent } from './pages/education/education/education.compon
 import { MyIndustryComponent } from './pages/myIndustry/my-industry/my-industry.component';
 import { CardExperienceComponent } from './pages/cardExperience/card-experience/card-experience.component';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { SocialComponent } from './pages/social/social/social.component';
 
 
 
@@ -36,7 +37,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     WorkExperienceComponent,
     EducationComponent,
     MyIndustryComponent,
-    CardExperienceComponent
+    CardExperienceComponent,
+    SocialComponent
   ],
   imports: [
     CommonModule,

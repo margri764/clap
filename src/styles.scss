@@ -6,15 +6,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 
-  .custom-modalbox {
-    mat-dialog-container {
-        padding: 0;
-        width: 800px;
-        height: 100%;
-   
-
-    }
-}
 .mat-dialog-content{
   padding: 0!important;
 }  
@@ -35,6 +26,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
   }
 
+  .custom-modalbox-user {
+    mat-dialog-container {
+        padding: 0px!important;
+        width: 650px;
+        // height:600px;
+     }
+    }
+
   .custom-modalbox-experience {
     mat-dialog-container {
         padding: 0px!important;
@@ -52,6 +51,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       overflow-y: hidden;
     }
   }  
+
+  .custom-modalbox-social{
+    mat-dialog-container {
+        padding: 0px!important;
+        width: 400px;
+        height: 800px;
+      }
+    }    
 
   ul{
     list-style: none;

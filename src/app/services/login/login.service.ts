@@ -30,7 +30,12 @@ export class LoginService {
   }
   //EBER   confirmacion desde el WELCOME una vez q recibio el email
   validateEmail (emailkey : string) {
-    // emailkey="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMjY4YTIzMTY2YjM2MDA1YWY0MDM0OSIsIm5hbWUiOiJVc2VyIFBydWViYSIsImZpcnN0TmFtZSI6IlVzZXIiLCJsYXN0TmFtZSI6IlBydWViYSIsInJvbGUiOiJ1c2VyIiwiZW1haWwiOiJtYXJncmk3NjRAZ21haWwuY29tIiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImlhdCI6MTY0NjY5MjkwMCwiZXhwIjoxNjQ2NzI4OTAwfQ.FRRIXZiTii5c1Gl1drdRrFkh3PRxCXDOfrnO06rq1Fg"
+  // const headers = new Headers({
+
+  //   'Content-Type': 'application/json',
+  //   'Authorization': `Bearer ${emailkey}`
+
+  // });
 
     return this.http.put(`${this.baseUrl}api/validate-email`,emailkey )
 

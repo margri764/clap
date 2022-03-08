@@ -1,11 +1,23 @@
 
 .mat-dialog-container{
-  border: 6px solid #b0bcec;
+  // overflow-y: hidden;
+  overflow-x: hidden;
+
+
+  border-radius: 0px 0px 25px 25px;
+  -webkit-border-radius: 0px 0px 25px 25px;
+  -moz-border-radius: 0px 0px 25px 25px;
+
+  border: 8px solid #b0bcec;
+  background: white;
+
 }
 
-img{
-    width: 25%;
-    border-radius: 600px;
+.mat-card-image{
+    width: 120px;
+    border-radius: 100px;
+    border: 5px double #b0bcec;
+    margin-top: 0px;
 }
 
 .spacer {
@@ -13,14 +25,17 @@ img{
     flex: 1 1 auto;  //eso le dice al span que cubra el espacio disponible entre los botones
 }
 
+.mas{
+  border: 1px solid #b0bcec;
+  height: 35px; width: 35px; 
+  border-radius: 100px;
+  cursor: pointer;
+}
 
-  .mat-dialog-container {
-    border-radius: 40px !important;
-    flex:1 1 auto;
-  }
 
-  mat-form-field{
-      font-size: 0.8em;
+
+  mat-form-field.mat-form-field{
+      font-size: 0.5vw;
   }
 
   mat-select{
@@ -85,13 +100,8 @@ color: red!important;
 color: #b0bcec!important;
 }
 
-hr{
-    height: 2px;
-    width: 70%;
-    background-color: rgb(173, 173, 173);
-    box-shadow: 10px 10px 29px -1px rgba(87,87,87,1);
-    -webkit-box-shadow: 10px 10px 29px -1px rgba(87,87,87,1);
-    -moz-box-shadow: 10px 10px 29px -1px rgba(87,87,87,1);
-    margin-bottom: 30px;
-    opacity: 0.5;
+.divider{
+  height: 2px;
+  background-color:rgb(209, 209, 209); 
+
 }

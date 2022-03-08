@@ -1,34 +1,32 @@
 
-<div class="mat-dialog-container" >
+<div class="mat-dialog-container" fxLayout="row wrap" >
 
-  <div fxLayoutAlign="space-between center">
+  <div  fxLayoutAlign="space-between center" fxFlex="100">
+     
+        <h1  style="color: #b0bcec; ">Mi Perfil </h1>
+   
+      <div style="margin-bottom: 15px;">
+        <img src="./assets/cerrar.svg"  mat-button mat-dialog-close style="cursor: pointer; width: 20px;">
+      </div> 
+      </div>
 
-        <h1 mat-dialog-title style="color: #b0bcec;">Mi Perfil </h1>
+<div >
 
-        <mat-dialog-actions align="end">
-          <mat-icon  mat-button mat-dialog-close style="cursor: pointer;">close</mat-icon>
-        </mat-dialog-actions>
-</div>
-<br>
-<mat-dialog-content >
-
-<div  fxLayout="row" fxLayoutAlign="center center"  fxFlex="100" style="margin-top: 180px;">
+<div  fxLayout="row" fxLayoutAlign="center center"  fxFlex="100">
 
 
-    <form  [formGroup]="myForm" (ngSubmit)="sendFormArtist()" id="form" >     
+    <form  [formGroup]="myForm" (ngSubmit)="sendFormArtist()" id="form"   >     
 
        
         
         <div fxLayoutAlign="center" *ngFor="let a of api">
-            <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"> -->
-            <img mat-card-image [src]="[a.picture.large]" width="300px">
-
+            <img mat-card-image [src]="[a.picture.large]" >
         </div>
         
         <div fxLayoutAlign="space-between center" >  
 
 
-        <mat-form-field appearance="outline" fxFlex="49"> 
+        <mat-form-field appearance="outline" fxFlex="49"  > 
             <!-- <mat-label>Nombre y Apellido*</mat-label> -->
             <input matInput type="text"  required formControlName="userName" placeholder="Nombre y Apellido*">
         </mat-form-field> 
@@ -134,28 +132,30 @@
         </mat-error> 
      </div>  -->
     </div>
-     <br>
-    <div fxLayoutAlign="center center">
+
+    <div fxLayout="row wrap"fxLayoutAlign="center center">
         <mat-label> <b>Redes Sociales</b></mat-label>
-        <mat-icon>keyboard_arrow_down</mat-icon>
-        <mat-icon>close</mat-icon>
-        <mat-icon>cancel</mat-icon>
+        <div fxLayoutAlign="center center"  class="social" fxFlex="8"> <img src="assets/instagram.svg"> </div>
+        <div fxLayoutAlign="center center"  class="social" fxFlex="8"> <img src="assets/behance.svg"> </div>
+        <div fxLayoutAlign="center center"  class="social" fxFlex="8"> <img src="assets/Dribble.svg"> </div>
+        <div fxLayoutAlign="center center"  class="social" fxFlex="8"> <img src="assets/vimeo.svg"> </div>
+        <div fxLayoutAlign="center center"  class="social" fxFlex="8"> <img src="assets/youtube.svg"> </div>
+        <div fxLayoutAlign="center center"  class="social"  class="mas"> <img src="assets/mas.svg" (click)="openDialogSocial()"> </div>
+
+     
     </div>
-
-  
-    <br>
-    <hr>
-    <br>
-
+<br>
+    <div class="divider"></div>
+<br>
       <div fxLayoutAlign="center center"  >
        
-        <button  fxFlex="60" mat-raised-button  appearance="outline" type="submit"  routerLink="../home"     style="background-color: black;border-radius: 30px;"><mat-label style="color: blanchedalmond;">Publicar</mat-label></button>
+        <button  fxFlex="60" mat-raised-button  appearance="outline" type="submit"  routerLink=""     style="background-color: black;border-radius: 30px;"><mat-label style="color: blanchedalmond;">Publicar</mat-label></button>
       </div> 
 
       </form>
  </div>
 
-</mat-dialog-content>
+</div>
 
 
 </div>

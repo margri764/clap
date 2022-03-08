@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatDialog } from '@angular/material/dialog';
 import { ArtistService } from 'src/app/services/artist/artist.service';
 import * as _ from 'lodash';
+import { SocialComponent } from '../social/social/social.component';
 
 @Component({
   selector: 'app-home-peoples',

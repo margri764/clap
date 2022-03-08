@@ -1,0 +1,9 @@
+
+
+{
+    "/api/*":{
+        "target":"https://clap-api.herokuapp.com/",
+        "secure":false,
+        "logLevel":"debug"
+    }
+}

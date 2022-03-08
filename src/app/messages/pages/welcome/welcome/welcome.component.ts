@@ -24,9 +24,7 @@ export class WelcomeComponent implements OnInit {
 
   
   ngOnInit(): void {
-    // this.authService.authState.subscribe(user => {
-    //   this.user = user;
-    // });
+  
 
     this.activatedRoute.params.subscribe(
        ({emailkey}) => {
