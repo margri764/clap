@@ -322,7 +322,7 @@
     </div>
     
     <!-- start-card-education -->
-    <div  class="card"  fxFlex="48" *ngFor="let edu of arrEducation"   style="cursor: pointer; padding: 10px;">
+    <div  class="card"  fxFlex="48" *ngFor="let education of arrEducation"   style="cursor: pointer; padding: 10px;">
     
       <div fxLayout="row" fxLayoutAlign=" center" fxFlex="30">
     
@@ -337,10 +337,10 @@
     
                   <div fxFlex="80" style="">
     
-                    <mat-label> <b>{{edu.education | uppercase}}</b> </mat-label> <br>
-                    <mat-label>{{edu.degree}}</mat-label> <br>
-                    <mat-label>{{edu.school}}</mat-label> <br>
-                    <mat-label>{{edu.startDate | date: 'dd/MM/yyyy'}}-{{edu.endDate | date: 'dd/MM/yyyy'}}</mat-label> 
+                    <mat-label> <b>{{education.title | uppercase}}</b> </mat-label> <br>
+                    <mat-label>{{education.degree}}</mat-label> <br>
+                    <mat-label>{{education.school}}</mat-label> <br>
+                    <mat-label>{{education.startDate | date: 'dd/MM/yyyy'}}-{{education.endDate | date: 'dd/MM/yyyy'}}</mat-label> 
 
                 
     

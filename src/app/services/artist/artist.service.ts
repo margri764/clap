@@ -19,6 +19,8 @@ export class ArtistService {
   public artAbout: any []=[];
   public arrArtist : any =[]
   private _auth: any;
+  public arrSocial : any []=[];
+  public arrEducation : any [] = [];
 
 
 
@@ -93,15 +95,25 @@ insertEducationInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/education`, body)
 }  
 
-getEducationFromDB (id: string){
-  return this.http.get<any>(`${this.baseUrl}api/artist/education/${id} `)
-      .pipe(
-      map( res   => { 
-           this.artEducation= res.education   
-        return { education : this.artEducation };
-        }),
-        )
-};
+// getEducationFromDB (user_id: string){
+
+//   const headers = new HttpHeaders({
+//     'Content-Type': 'application/json',
+//     'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
+
+//   });
+//   let profileID='hjjkhj'
+
+//   let params = new HttpParams().set("where",`${ id:profileID }`);
+
+//   return this.http.patch<any>(`${this.baseUrl}/api/users/${user_id}/profiles`,{headers:headers},{params})
+//       // .pipe(
+//       // map( res   => { 
+//       //      this.artEducation= res.education   
+//       //   return { education : this.artEducation };
+//       //   }),
+//       //   )
+// };
 
 insertSkillsInDB (body: any){
   return this.http.post<any>(`${this.baseUrl}api/artist/skills`, body)
@@ -119,10 +131,10 @@ dataArtistToBackend( body : Artist, id : string) {
   });
   return this.http.post<any>(`${this.baseUrl}/api/users/${id}}/profiles`, body,{headers:headers})
    .pipe(
-       tap( res => console.log(res)
+       tap( res => console.log(res) ),
           // localStorage.setItem('token',JSON.stringify(res._id)) }),
-      //  map( res   => { this.artist= res}) )
-       ))
+       map( res   => {return res} )
+       )
     }
 
 
@@ -162,5 +174,14 @@ getDataArtist (user_id: string) {
 
 };
    
+
+
+getSocialMedia(socialArray : any){
+  this.arrSocial = socialArray
+}
+
+getDataEducation(education : any){
+  this.arrEducation= education;
+}
   
   }

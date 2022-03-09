@@ -68,7 +68,7 @@ import { SocialComponent } from './pages/social/social/social.component';
 
 
   ],
-  providers: [HomePeoplesComponent, CardExperienceComponent,
+  providers: [HomePeoplesComponent, CardExperienceComponent, CardUserComponent
   ],
 
 })

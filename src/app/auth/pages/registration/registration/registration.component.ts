@@ -60,11 +60,15 @@ export class RegistrationComponent implements OnInit {
     sendForm (){
 
       // const { email, password } = this.myForm.value;
-      this.loginService.signUp(this.myForm.value).subscribe( res => console.log(res)
+      this.loginService.signUp(this.myForm.value).subscribe( 
+        ({token}) => { if(token)
+          console.log(token)
+          this.router.navigateByUrl('auth/confirmacion') } 
+          ,(err)=>{ this.ErrorMsg('Ups! algo salió mal, por favor intenta mas tarde') }
+          // ,(err)=>{ this.ErrorMsg(err.error.msg) }
 
       )
       }
-
 
         //  (res) => { if(res.success==true){
         //    this.router.navigateByUrl('auth/confirmacion') }

@@ -72,6 +72,7 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
 
 logout(){
   localStorage.removeItem('token');
+
 }
 styleObject() {
 

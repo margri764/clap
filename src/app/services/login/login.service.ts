@@ -25,8 +25,15 @@ export class LoginService {
 
   //desde REGISTRO se chequea que no este registrado o en proceso de registro
   signUp (body : string) {
+      const headers = new HttpHeaders()
+
+   headers.set('Content-Type', 'application/json');
+   headers.set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS')
+   headers.set('Access-Control-Allow-Origin', '*');
+    // 'Authorization': `Bearer ${emailkey}`
+    // , {headers: headers} 
     // const body = {email,password};
-    return this.http.post<any> (`${this.baseUrl}/users/signup`,body)
+    return this.http.post<any> (`${this.baseUrl}/users/signup`,body, {headers:headers})
  
   }
 

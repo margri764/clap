@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ArtistService } from 'src/app/services/artist/artist.service';
+import { CardUserComponent } from '../../card-user/card-user.component';
 
 @Component({
   selector: 'app-social',
@@ -49,30 +50,75 @@ export class SocialComponent implements OnInit {
     pinterest:   ['']
 
     // id: [this.idArtist]
-
-  });
     
-              constructor(
-                         private fb : FormBuilder,
-                         private artistService : ArtistService,
-                         private dialog : MatDialog 
+  });
   
-              ) { }
   
-    ngOnInit(): void {
-    }
-  
+  constructor(
+    private fb : FormBuilder,
+    private _artistservice : ArtistService,
+    private dialog : MatDialog,
+    private cardusercomponent : CardUserComponent
+
+    
+    ) { }
+    
     validField( field: string ) {
-  
+      
       return this.myForm.controls[field].errors 
-              && this.myForm.controls[field].touched;
+      && this.myForm.controls[field].touched;
     }
-    sendForm(){
-      alert(JSON.stringify(this.myForm.value));
-      // this.artistService.insertEducationInDB(this.myForm.value).subscribe(
-      //   (res)=>{ if(res) alert('educacion agregada correctamente')}
-      // )
-  
-    }
+
  
+ 
+
+
+    ngOnInit(): void {
+
+    }
+    
+  public arrSocial : any []=[];  
+    socialSelect(input : any){
+
+      switch (input) {
+        case 'linkedin':
+
+          if(this.myForm.controls[input].dirty == true){
+            // this.arrSocial.push(this.myForm.controls[input].value)
+            this.arrSocial.push('linkedin')
+
+            // console.log(this.arrSocial)
+          }
+        break
+
+        case 'behance':
+
+          if(this.myForm.controls[input].dirty == true){
+            // this.arrSocial.push(this.myForm.controls[input].value)
+            this.arrSocial.push('behance')
+
+            // console.log(this.arrSocial)
+          }
+        break
+        
+        
+  }
 }
+
+    link : any;
+    sendForm(){
+
+      // this._artistservice.getSocialMedia(this.arrSocial);
+      // alert(JSON.stringify(this.arrSocial));
+      // this.cardusercomponent.getArrSocial();
+
+     
+      
+      // this._artistservice.insertEducationInDB(this.myForm.value).subscribe(
+        //   (res)=>{ if(res) alert('educacion agregada correctamente')}
+        // )
+                  
+      }
+      
+    }
+    

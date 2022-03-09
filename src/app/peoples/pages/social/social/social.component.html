@@ -11,7 +11,7 @@
 </div>
 
   
-  <div fxLayout="row wrap" fxLayoutAlign="space-between" fxFlex="90" style="margin-bottom: 10px;" >
+  <!-- <div fxLayout="row wrap" fxLayoutAlign="space-between" fxFlex="90" style="margin-bottom: 10px;" >
 
  
     <form  [formGroup]="myForm" (ngSubmit)="sendForm()"  fxLayout="row wrap" fxLayoutAlign="center" fxFlex="100" >     
@@ -29,7 +29,7 @@
             
             <div fxLayoutAlign="center center"  class="social" fxFlex="20"> <img src="assets/instagram.svg"> </div>
             <mat-form-field appearance="outline" fxFlex="80" > 
-                <input matInput type="text"  formControlName="instagram" placeholder="https://Instagram">
+                <input matInput type="text"  formControlName="instagram" placeholder="https://Instagram" >
             </mat-form-field>
         </div>
         
@@ -38,6 +38,84 @@
             <div fxLayoutAlign="center center"  class="social" fxFlex="20"> <img src="assets/behance.svg"> </div>
             <mat-form-field appearance="outline" fxFlex="80" > 
                 <input matInput type="text"  formControlName="behance" placeholder="https://Behance">
+            </mat-form-field>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">    
+        <div fxLayoutAlign="center center"  class="social" fxFlex="20"> <img src="assets/artstation-ref.png"> </div>
+        <mat-form-field appearance="outline" fxFlex="80" > 
+            <input matInput type="text"  formControlName="artstation" placeholder="https://Artstation">
+        </mat-form-field>
+        </div>
+
+        <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">    
+            <div fxLayoutAlign="center center"  class="social" fxFlex="20"> <img src="assets/Dribble.svg"> </div>
+            <mat-form-field appearance="outline" fxFlex="80" > 
+                <input matInput type="text"  formControlName="dribble" placeholder="https://Dribble">
+            </mat-form-field>
+        </div>
+        
+        <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">    
+            
+            <div fxLayoutAlign="center center"  class="social" fxFlex="20"> <img src="assets/vimeo.svg"> </div>
+            <mat-form-field appearance="outline" fxFlex="80" > 
+                <input matInput type="text"  formControlName="vimeo" placeholder="https://Vimeo">
+            </mat-form-field>
+        </div>
+        
+        <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">    
+
+        <div fxLayoutAlign="center center"  class="social" fxFlex="20"> <img src="assets/youtube.svg"> </div>
+        <mat-form-field appearance="outline" fxFlex="80" > 
+            <input matInput type="text"  formControlName="youtube" placeholder="https://Youtube">
+        </mat-form-field>
+    </div>
+    
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">    
+        
+        <div fxLayoutAlign="center center"  class="social" fxFlex="20" > <img src="assets/pinterest.svg" > </div>
+        <mat-form-field appearance="outline" fxFlex="80" > 
+            <input matInput type="text"  formControlName="pinterest" placeholder="https://Pinterest">
+        </mat-form-field>
+    </div>    
+    <button  fxFlex="80" mat-raised-button  appearance="outline" type="" style="background-color: black;;"><mat-label style="color: blanchedalmond;">Publicar</mat-label></button>
+
+    
+    
+</form>
+
+
+
+</div> -->
+
+
+<div fxLayout="row wrap" fxLayoutAlign="space-between" fxFlex="90" style="margin-bottom: 10px;" >
+
+ 
+    <form  [formGroup]="myForm" (ngSubmit)="sendForm()"  fxLayout="row wrap" fxLayoutAlign="center" fxFlex="100" >     
+        
+        
+        <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">    
+            
+            <div fxLayoutAlign="center center"  class="social" fxFlex="20"> <img src="assets/linkedin.svg"> </div>
+            <mat-form-field appearance="outline" fxFlex="80" > 
+                <input matInput type="text"  formControlName="linkedin" placeholder="https://Linkedin" (change)="socialSelect('linkedin')">
+            </mat-form-field>
+        </div>    
+        
+        <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">    
+            
+            <div fxLayoutAlign="center center"  class="social" fxFlex="20"> <img src="assets/instagram.svg"> </div>
+            <mat-form-field appearance="outline" fxFlex="80" > 
+                <input matInput type="text"  formControlName="instagram" placeholder="https://Instagram" >
+            </mat-form-field>
+        </div>
+        
+        <div fxLayout="row wrap" fxLayoutAlign="center center" fxFlex="100">    
+            
+            <div fxLayoutAlign="center center"  class="social" fxFlex="20"> <img src="assets/behance.svg"> </div>
+            <mat-form-field appearance="outline" fxFlex="80" > 
+                <input matInput type="text"  formControlName="behance" placeholder="https://Behance" (change)="socialSelect('behance')">
             </mat-form-field>
         </div>
 

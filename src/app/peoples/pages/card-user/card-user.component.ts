@@ -1,5 +1,5 @@
 import { HttpErrorResponse} from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -13,7 +13,7 @@ import { SocialComponent } from '../social/social/social.component';
   templateUrl: './card-user.component.html',
   styleUrls: ['./card-user.component.scss']
 })
-export class CardUserComponent implements OnInit {
+export class CardUserComponent implements OnInit,AfterViewChecked {
 
 
 quantity:any;
@@ -23,6 +23,9 @@ clicked:boolean= false;
 hidden: boolean = false;
 showSpinner : boolean = false;
 private modalHeight : string = '';
+public linkedin : boolean =false;
+public behance : boolean =false;
+
 private idArtist?: string= this.loginService.user.id;
 private emailArtist?: string= this.loginService.user.email;
 
@@ -51,9 +54,11 @@ myForm:FormGroup = this.fb.group({
   cityId:      ['2'],
   website :    ['', [Validators.required]],
   email:       [this.emailArtist, [Validators.required]],
-  dateBirth:   ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
-  since:     ['', [Validators.required]], //tendria q ir dentro del objeto profileData[]
-  alias:       ['', [Validators.required] ],  //tendria q ir dentro del objeto profileData[]
+  // email:       ['', [Validators.required]],
+
+  dateBirth:   ['', [Validators.required]], 
+  since:     ['', [Validators.required]], 
+  alias:       ['', [Validators.required] ], 
   social:     [this.social, [Validators.required]],
   // id:           ['']
   // id:          [this.idArtist] 
@@ -67,21 +72,52 @@ myForm:FormGroup = this.fb.group({
 
   constructor(
             private fb : FormBuilder,
-            private artistService : ArtistService,
+            private _artistservice : ArtistService,
             private router: Router,
             private loginService : LoginService,
             private dialogRef: MatDialogRef<CardUserComponent>,
-            private dialog : MatDialog
+            private dialog : MatDialog,
+            private cdRef:ChangeDetectorRef
   )
    { }
+   
+  ngAfterViewChecked(): void {
+    // this.behance;
+    // console.log(this.behance)
+    // this.cdRef.detectChanges();
 
+  }
 
+ getArrSocial(){
+
+  this._artistservice.arrSocial.map(social => ({
+    ...social,
+     social : (this.getSocial(social)),    
+  })
+  );
+
+ }
+
+ getSocial(social:any){
+   switch (social){
+     case 'linkedin':
+       console.log('linkedin')
+       break
+
+      case 'behance':
+        this.behance=true;
+      console.log('behance')
+      break
+   }
+ }
 
 
   ngOnInit(): void {
+
     this.randomApi();
-    console.log(this.loginService.user.id,'desde el card-user');
-    // this.idArtist!=this.loginService.user.id;
+
+
+
     
     (screen.width <= 1280) ? this.modalHeight='1000px' : this.modalHeight='700px' 
   }
@@ -93,7 +129,7 @@ myForm:FormGroup = this.fb.group({
   }
   
   openDialogSocial() {
-    const dialogRef = this.dialog.open(SocialComponent, {
+      this.dialog.open(SocialComponent, {
       maxHeight: '90vh',
       height: this.modalHeight,
       panelClass:"custom-modalbox-social",
@@ -121,22 +157,22 @@ randomApi(){
 
   // PUEDE SERVIR PARA LINK DESDE PERSONAS AL ARTISTA SELECCIONADO
 
-  // this.artistService.dataArtistToBackend(this.myForm.value).subscribe( 
+  // this._artistservice.dataArtistToBackend(this.myForm.value).subscribe( 
   //   ({user}) => { 
   //        this.confirmArtist();
   //        this.dialogRef.close([]);
-  //        this.artistService.getDataArtist(user._id).subscribe(
+  //        this._artistservice.getDataArtist(user._id).subscribe(
   //        res => 
   //        this.router.navigateByUrl(`artistas/perfil/${user._id}`)
   //      )
   //    }
 
   sendFormArtist (){
-    alert(JSON.stringify(this.myForm.value))
+    // alert(JSON.stringify(this.myForm.value))
   
 
-    this.artistService.dataArtistToBackend(this.myForm.value , this.loginService.user.email!).subscribe(
-       () =>{
+    this._artistservice.dataArtistToBackend(this.myForm.value , this.loginService.user.email!).subscribe(
+       ( res ) =>{ console.log(res)
     
             this.confirmArtist();
             this.dialogRef.close([]);

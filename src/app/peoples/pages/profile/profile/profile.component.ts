@@ -34,8 +34,8 @@ public animation : boolean = false;
 
 public userProfile!: Artist;
 public edit : boolean = false;
-public arrExperience :any = [];
-public arrEducation :any = [];
+public arrExperience :any  = [];
+public arrEducation :any [] = [];
 public arrAbout :any = [];
 public arrArtist : any =[];
 public hideAbout : boolean= false;
@@ -58,6 +58,8 @@ public blockchain : boolean = false;
 
 private modalHeight : string = '';
 private modalHeightExperience : string = '';
+
+public education : any;
 
 
 
@@ -123,10 +125,10 @@ get artistLogin(){
   }
 
   seniority(){
-    const actualDay = moment();
-    const jobDate= moment(this._artistservice.getArtist.jobDate);
+    // const actualDay = moment();
+    // const jobDate= moment(this._artistservice.getArtist.jobDate);
    
-    this.seniorityDate=actualDay.diff(jobDate, 'years');
+    // this.seniorityDate=actualDay.diff(jobDate, 'years');
 
 
   }
@@ -138,16 +140,16 @@ get artistLogin(){
               
           })
     }
-    // whoAmI(){
-    //   this._loginservice.whoAmI().subscribe(
-    //     (res:any) => {
-    //           if(res){
-    //          this.artist=res
-    //          console.log(this.artist)
-    //     }
-    //   }
-    //   )
-    // }
+    whoAmI(){
+      this._loginservice.whoAmI().subscribe(
+        (res:any) => {
+              if(res){
+             this.artist=res
+             console.log(this.artist)
+        }
+      }
+      )
+    }
 
     getUserById(){
       this._artistservice.getDataArtist(this.idArtist).subscribe(
@@ -157,8 +159,8 @@ get artistLogin(){
 
   ngOnInit(): void {
     this.randomApi();
-    // this.whoAmI();
-    this.getUserById();
+    this.whoAmI();
+    // this.getUserById();
     
 
     if(screen.width <= 1280) { this.modalHeightExperience='600px'};
@@ -272,7 +274,11 @@ hidAbout(){
   // )        
   }
 
+  e:boolean=false;
  getEducation(){
+   this.e=true;
+   this.education =this._artistservice.arrEducation;
+   console.log(this.education)
   // this._artistservice.getEducationFromDB( this.idArtist).subscribe(
   //   ( {education} ) => {this.arrEducation = education}
   // )        

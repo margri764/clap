@@ -38,22 +38,24 @@ export class EducationComponent implements OnInit {
   ];
   
   myForm: FormGroup = this.fb.group({
-    education:    ['tecno', [Validators.required] ],
-    degree:     ['Ingeniero', [Validators.required] ],
-    school:     ['', [Validators.required] ],
-    startDate:     ['', [Validators.required] ],
-    country:     ['', [Validators.required] ],
+    discipline:    ['', [Validators.required] ],
+    title:     ['', [Validators.required] ],
+    institution:     ['', [Validators.required] ],
+    initdate:     ['', [Validators.required] ],
     city:     ['', [Validators.required] ],
-    endDate:     ['', [Validators.required] ],
-    modo:     ['', [Validators.required] ],
-    id: ['']
+    country:     ['', [Validators.required] ],
+    enddate:     ['', [Validators.required] ],
+    mode:     ['', [Validators.required] ],
+    currenteducation:     [true ],
+    
+    // id: ['']
     // id: [this.idArtist]
 
   });
     
               constructor(
                          private fb : FormBuilder,
-                         private artistService : ArtistService
+                         private _artistservice : ArtistService
   
               ) { }
   
@@ -66,8 +68,10 @@ export class EducationComponent implements OnInit {
               && this.myForm.controls[field].touched;
     }
     sendForm(){
+      this._artistservice.getDataEducation(this.myForm.value);
+      
       alert(JSON.stringify(this.myForm.value));
-      // this.artistService.insertEducationInDB(this.myForm.value).subscribe(
+      // this._artistservice.insertEducationInDB(this.myForm.value).subscribe(
       //   (res)=>{ if(res) alert('educacion agregada correctamente')}
       // )
   
