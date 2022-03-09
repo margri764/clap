@@ -68,8 +68,11 @@ export class DashboardComponent implements OnInit, AfterViewChecked   {
   ngAfterViewChecked(): void {
     this.cdRef.detectChanges();
     this.styleObject();
-
   }
+
+logout(){
+  localStorage.removeItem('token');
+}
 styleObject() {
 
   if(window.location.pathname.includes('home')){ 
@@ -209,7 +212,7 @@ if(window.location.pathname.includes('gestion-aplicantes')){
 }  
 
 whoAmI(){
-  this._loginservice.whoAmI().subscribe( res => console.log(this._loginservice.user))
+  this._loginservice.whoAmI().subscribe( )
 }
 
 getPeople(){
